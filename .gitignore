@@ -11,3 +11,6 @@
 logs/
 *.log
 .DS_Store
+
+# Local isolated worktrees
+.worktrees/
