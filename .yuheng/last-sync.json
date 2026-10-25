@@ -1,0 +1,9 @@
+{
+  "scriptVersion": "0.1.0",
+  "appliedAt": "2026-10-25T16:32:37.406981+08:00",
+  "changes": [],
+  "legacyNamespaces": [
+    "athena-rules",
+    "athena-skills"
+  ]
+}

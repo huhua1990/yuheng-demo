@@ -1,0 +1,13 @@
+# Maven
+/target/
+.flattened-pom.xml
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Runtime
+logs/
+*.log
+.DS_Store

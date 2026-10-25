@@ -1,0 +1,25 @@
+schemaVersion: 1
+project:
+  id: yuheng-demo
+  kind: consumer
+codeVersion: 0.1.0-SNAPSHOT
+artifacts:
+  server: com.yuheng:yuheng-server:0.1.0-SNAPSHOT
+  ui: yuheng-ui@0.1.0-SNAPSHOT
+governanceVersion: 0.1.0
+knowledgeVersion: 0.1.0
+overlayVersion: core-2026.10.25
+compatibility:
+  code: '>=0.1.0 <1.0.0'
+  governance: '>=0.1.0 <1.0.0'
+  knowledge: '>=0.1.0 <1.0.0'
+knowledgeTracks:
+  - server
+  - ui
+  - data
+sourceCommit: 54600e6
+generatedAt: 2026-10-25T12:00:00+08:00
+overlays: []
+legacyNamespaces:
+  - athena-rules
+  - athena-skills

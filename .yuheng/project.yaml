@@ -1,0 +1,7 @@
+projectId: yuheng-demo
+kind: consumer
+scriptVersion: 0.1.0
+governanceNamespace: yuheng
+legacyNamespaces:
+  - athena-rules
+  - athena-skills
