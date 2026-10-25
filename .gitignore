@@ -14,3 +14,7 @@ logs/
 
 # Local isolated worktrees
 .worktrees/
+
+# Frontend build artifacts
+yuheng-demo-ui/node_modules/
+yuheng-demo-ui/dist/
