@@ -17,8 +17,8 @@ knowledgeTracks:
   - server
   - ui
   - data
-sourceCommit: 54600e6
-generatedAt: 2026-10-25T12:00:00+08:00
+sourceCommit: c7efc4b
+generatedAt: 2026-10-26T07:30:00+08:00
 overlays: []
 legacyNamespaces:
   - athena-rules
