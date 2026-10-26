@@ -1,7 +1,9 @@
 {
   "scriptVersion": "0.1.0",
-  "appliedAt": "2026-10-25T16:32:37.406981+08:00",
-  "changes": [],
+  "appliedAt": "2026-10-26T21:02:28.205159+08:00",
+  "changes": [
+    "yuheng-manifest.yaml"
+  ],
   "legacyNamespaces": [
     "athena-rules",
     "athena-skills"

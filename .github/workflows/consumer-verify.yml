@@ -1,0 +1,70 @@
+name: yuheng-demo verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-governance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout core governance source
+        uses: actions/checkout@v4
+        with:
+          repository: huhua1990/yuheng-core
+          ref: main
+          path: yuheng-core
+
+      - name: Verify consumer project
+        run: |
+          python3 sync/skills/sync-specs/scripts/postcheck_project.py \
+            --project-root . --project-id yuheng-demo --json
+          python3 sync/skills/sync-specs/scripts/sync-specs-api.py \
+            --source yuheng-core --target . --verify --json
+
+  verify-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+          cache-dependency-path: yuheng-demo-ui/pnpm-lock.yaml
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - name: Check consumer package metadata
+        working-directory: yuheng-demo-ui
+        run: |
+          test -f package.json
+          node -e "const p=require('./package.json'); if (!p.dependencies['yuheng-ui']) process.exit(1)"
+
+      - name: Check consumer platform boundary
+        working-directory: yuheng-demo-ui
+        run: node scripts/check-platform-imports.mjs
+
+      - name: Run consumer UI checks when lockfile is available
+        if: ${{ hashFiles('yuheng-demo-ui/pnpm-lock.yaml') != '' }}
+        working-directory: yuheng-demo-ui
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm test
+          pnpm run typecheck
+          pnpm run build
+          pnpm run lint:platform-imports
