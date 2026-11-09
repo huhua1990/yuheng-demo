@@ -1,0 +1,155 @@
+# Yuheng Demo - AI 配置
+
+## AI 助手配置
+
+### 基础信息
+project_name: yuheng-demo
+platform_version: yuheng-core v0.1.0
+template_repo: https://github.com/huhua1990/yuheng-business-templates
+java_version: 17
+spring_boot_version: 3.5.15
+
+### 包名规范
+base_package: com.yuheng.demo
+business_package: com.yuheng.demo.{module}
+
+### 代码规范
+naming_convention:
+  request_vo: "{Entity}CreateReqVO, {Entity}UpdateReqVO, {Entity}PageReqVO"
+  response_vo: "{Entity}RespVO"
+  data_object: "{Entity}DO"
+  mapper: "{Entity}Mapper"
+  service: "{Entity}Service / {Entity}ServiceImpl"
+  controller: "{Entity}Controller"
+
+### 可用的平台服务
+platform_services:
+  system:
+    - AdminUserService  # 用户管理
+    - RoleService       # 角色管理
+    - PermissionService # 权限管理
+    - DeptService       # 部门管理
+    - SmsService        # 短信服务
+    - MailService       # 邮件服务
+    - TenantService     # 租户管理
+
+  infra:
+    - FileService       # 文件服务
+    - CodegenService    # 代码生成
+    - JobService        # 定时任务
+    - ConfigService     # 配置管理
+
+### 框架能力
+framework:
+  annotations:
+    - "@OperateLog"      # 操作日志
+    - "@PreAuthorize"    # 权限控制
+    - "@TenantIgnore"    # 租户忽略
+    - "@DataPermission"  # 数据权限
+
+  common_classes:
+    - "CommonResult<T>"  # 统一响应
+    - "PageResult<T>"    # 分页响应
+    - "ServiceException" # 业务异常
+
+### 提示词位置
+prompts:
+  add_module: .ai/prompts/add-module.md
+  enhance_module: .ai/prompts/enhance-module.md
+  generate_frontend: .ai/prompts/generate-frontend.md
+
+### 脚本工具
+scripts:
+  add_module: scripts/add-module.sh
+  sync_template: scripts/sync-template.sh
+
+### 开发文档
+documentation:
+  architecture: ../BUSINESS_MODULES_ARCHITECTURE.md
+  ai_guide: ../AI_DRIVEN_DEMO_DEVELOPMENT.md
+  demo_guide: ../DEMO_USAGE_GUIDE.md
+  migration_status: ../MIGRATION_STATUS.md
+
+### AI 行为配置
+ai_behavior:
+  # 是否自动执行脚本
+  auto_execute_scripts: true
+
+  # 代码生成风格
+  code_style: detailed_comments
+
+  # 是否生成测试代码
+  generate_tests: false
+
+  # 是否生成前端代码
+  generate_frontend: true
+
+  # 是否生成数据库脚本
+  generate_sql: true
+
+### 权限编码规范
+permission_pattern: "demo:{module}:{action}"
+permission_actions:
+  - query   # 查询
+  - create  # 创建
+  - update  # 更新
+  - delete  # 删除
+  - export  # 导出
+  - import  # 导入
+
+### 错误码规范
+error_code_pattern: "1_100_{module_id}_{error_id}"
+# 示例: 1_100_001_000 (demo模块 - member子模块 - 错误序号)
+
+### 数据库规范
+database:
+  # 标准字段
+  standard_fields:
+    - creator
+    - create_time
+    - updater
+    - update_time
+    - deleted
+    - tenant_id
+
+  # 表名规范
+  table_naming: lowercase_with_underscore
+
+  # 字段命名规范
+  column_naming: lowercase_with_underscore
+
+### API 规范
+api:
+  # 请求路径
+  base_path: /demo/{module}
+
+  # 标准接口
+  standard_apis:
+    - "POST /create"   # 创建
+    - "PUT /update"    # 更新
+    - "DELETE /delete" # 删除
+    - "GET /get"       # 查询单个
+    - "GET /page"      # 分页查询
+    - "GET /list"      # 列表查询
+
+### 前端规范
+frontend:
+  # 视图路径
+  views_path: yuheng-demo-ui/src/views/{module}
+
+  # API 路径
+  api_path: yuheng-demo-ui/src/api/demo
+
+  # 组件库
+  ui_framework: Element Plus
+
+  # 状态管理
+  state_management: Pinia
+
+### 版本控制
+version_control:
+  # Git 提交信息格式
+  commit_message_format: "feat({module}): {description}"
+
+  # 变更日志
+  changelog: CHANGELOG.md
