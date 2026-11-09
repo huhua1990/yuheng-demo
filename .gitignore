@@ -16,5 +16,6 @@ logs/
 .worktrees/
 
 # Frontend build artifacts
-yuheng-demo-ui/node_modules/
+yuheng-demo-ui/node_modules
 yuheng-demo-ui/dist/
+yuheng-demo-ui/vendor/

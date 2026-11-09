@@ -37,34 +37,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout core UI source
+        uses: actions/checkout@v4
+        with:
+          repository: huhua1990/yuheng-core
+          ref: main
+          path: yuheng-core
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
-          cache: pnpm
-          cache-dependency-path: yuheng-demo-ui/pnpm-lock.yaml
+          node-version: '22.23.2'
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9.15.9
 
-      - name: Check consumer package metadata
-        working-directory: yuheng-demo-ui
-        run: |
-          test -f package.json
-          node -e "const p=require('./package.json'); if (!p.dependencies['yuheng-ui']) process.exit(1)"
-
       - name: Check consumer platform boundary
         working-directory: yuheng-demo-ui
         run: node scripts/check-platform-imports.mjs
 
-      - name: Run consumer UI checks when lockfile is available
-        if: ${{ hashFiles('yuheng-demo-ui/pnpm-lock.yaml') != '' }}
+      - name: Install core UI build dependencies
+        working-directory: yuheng-core/yuheng-ui
+        run: pnpm install --frozen-lockfile
+
+      - name: Build local core artifact and verify consumer
         working-directory: yuheng-demo-ui
-        run: |
-          pnpm install --frozen-lockfile
-          pnpm test
-          pnpm run typecheck
-          pnpm run build
-          pnpm run lint:platform-imports
+        env:
+          YUHENG_CORE_ROOT: ${{ github.workspace }}/yuheng-core
+        # The verifier validates file:vendor metadata and packed name/version,
+        # builds/copies the artifact, refreshes its content-addressed lock entry,
+        # then performs a frozen consumer install and all consumer checks.
+        run: node scripts/verify-local-package.mjs --ci

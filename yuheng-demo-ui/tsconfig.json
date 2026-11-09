@@ -7,10 +7,32 @@
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": ["node", "vite/client", "vitest/globals"]
+    "types": [
+      "node",
+      "vite/client",
+      "vitest/globals"
+    ],
+    "allowImportingTsExtensions": true,
+    "strictFunctionTypes": false,
+    "noImplicitAny": false,
+    "allowJs": true,
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "tests/**/*.ts", "vite.config.ts"]
+  "include": [
+    "src",
+    "tests",
+    "types/**/*.d.ts",
+    "vite.config.ts",
+    "node_modules/yuheng-ui/compat/types/**/*.d.ts"
+  ]
 }

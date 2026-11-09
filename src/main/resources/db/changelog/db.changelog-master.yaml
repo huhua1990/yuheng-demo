@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-core-baseline
+      author: yuheng
+      changes:
+        - sqlFile:
+            path: 001-core-baseline.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: false
+  - changeSet:
+      id: 002-core-seed-data
+      author: yuheng
+      changes:
+        - sqlFile:
+            path: 002-core-seed-data.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: false
+  - changeSet:
+      id: 003-quartz-schema
+      author: yuheng
+      changes:
+        - sqlFile:
+            path: 003-quartz-schema.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: false
+  - include:
+      file: db/changelog/member/001-member-init.sql

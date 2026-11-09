@@ -278,7 +278,7 @@ yudao:
 yudao:
   info:
     version: 0.1.0
-    base-package: cn.iocoder.yudao
+    base-package: com.yuheng.platform
   web:
     admin-ui:
       url: http://localhost:3000 # Admin 管理后台 UI 的地址
