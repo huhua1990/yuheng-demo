@@ -17,6 +17,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[2]
 SCHEMA = 'yuheng_p2_member_20261117'
 APP_PORT, MYSQL_PORT, REDIS_PORT = 48220, 13373, 16453
+UI_PORT = 5203
 MYSQL, REDIS = 'yh-p2-member-mysql-20261117', 'yh-p2-member-redis-20261117'
 JAR = ROOT / 'yuheng-demo-server/yuheng-demo-server-bootstrap/target/yuheng-demo.jar'
 OUT = ROOT / 'docs/verification/2026-11-11-full-source-migration/p2-member-platform-20261117'
@@ -165,7 +166,7 @@ def stop(app):
 def main():
     validate_probe_target(SCHEMA, APP_PORT)
     assert JAR.is_file()
-    ports = (MYSQL_PORT, REDIS_PORT, APP_PORT)
+    ports = (MYSQL_PORT, REDIS_PORT, APP_PORT, UI_PORT)
     assert not any(listening(port) for port in ports)
     existing = run('docker', 'ps', '-a', '--format', '{{.Names}}').splitlines()
     assert MYSQL not in existing and REDIS not in existing
@@ -179,7 +180,7 @@ def main():
     result = {'work_id': 'YH-20261111-full-source-migration', 'schema': SCHEMA,
               'jar_sha256': hashlib.sha256(JAR.read_bytes()).hexdigest(),
               'credentials_recorded': False, 'cases': {}}
-    containers, app = [], None
+    containers, app, ui = [], None, None
     OUT.mkdir(parents=True, exist_ok=True)
     try:
         run('docker', 'run', '-d', '--name', MYSQL, '-e', 'MYSQL_ROOT_PASSWORD=' + db_password,
@@ -227,8 +228,28 @@ def main():
             result['cases']['member_runtime'] = probe.exercise(admin, guest, None, result['cases'])
             result['changesets'] = 56
             result['completed'] = all(result['cases'].get(key) for key in REQUIRED_CASES if key != 'cleanup')
+            ui_log = (Path(temp) / 'ui.log').open('w')
+            ui = subprocess.Popen(['python3', '-c',
+                'import http.server,runpy; http.server.ThreadingHTTPServer.request_queue_size=128; '
+                'runpy.run_path("scripts/ui_server.py",run_name="__main__")',
+                '--root', 'yuheng-demo-ui/dist', '--host', '127.0.0.1', '--port', str(UI_PORT),
+                '--backend', f'http://127.0.0.1:{APP_PORT}'],
+                cwd=ROOT, env=env, stdout=ui_log, stderr=ui_log)
+            deadline = time.monotonic() + 30
+            while not listening(UI_PORT):
+                assert ui.poll() is None and time.monotonic() < deadline, 'isolated UI failed to start'
+                time.sleep(.25)
+            browser_output = OUT / 'member-browser.json'
+            browser_env = dict(os.environ, YH_MEMBER_BROWSER_OUTPUT=str(browser_output),
+                               YH_MEMBER_USERNAME=admin_name, YH_MEMBER_PASSWORD=admin_password,
+                               NODE_PATH='/Users/huhua/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules')
+            browser = subprocess.run(['node', 'scripts/verification/p2_member_browser_probe.js'],
+                                     cwd=ROOT, env=browser_env, timeout=180, check=False)
+            browser_data = json.loads(browser_output.read_text())
+            result['cases']['member_browser'] = browser_data
+            result['completed'] = result['completed'] and browser.returncode == 0 and browser_data.get('completed')
     finally:
-        result['cleanup'] = {'app_stopped': stop(app), 'containers_absent': False,
+        result['cleanup'] = {'app_stopped': stop(app), 'ui_stopped': stop(ui), 'containers_absent': False,
                              'ports_listening': {str(port): listening(port) for port in ports}}
         for name in reversed(containers):
             subprocess.run(['docker', 'rm', '-fv', name], check=True, capture_output=True, text=True)

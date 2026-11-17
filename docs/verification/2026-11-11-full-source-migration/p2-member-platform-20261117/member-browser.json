@@ -1,0 +1,104 @@
+{
+  "errors": [],
+  "failed": [],
+  "events": [
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/member/tag/create",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/get",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/member/tag/update",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/admin-api/member/tag/delete",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/member/tag/create"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/get"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/member/tag/update"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "DELETE",
+      "path": "/admin-api/member/tag/delete"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    }
+  ],
+  "actions": [
+    "create",
+    "update",
+    "delete"
+  ],
+  "completed": true
+}
