@@ -1,0 +1,118 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "date": "2026-11-18",
+  "core_tarball": {
+    "path": "../yuheng-core/yuheng-ui/vendor/yuheng-ui-0.1.0-SNAPSHOT.tgz",
+    "name": "yuheng-ui",
+    "version": "0.1.0-SNAPSHOT",
+    "sha256": "7d5adb2d1a27e0c68956ed64646dd1850adb733fb0e3b5467ff6adff0d9dcebc",
+    "rebuilt_from_source_commit": "836125ca005a2e340e443a9fd40f262c9a60bb38",
+    "previous_tracked_sha256": "125b85b912806f517489c8824bc8c7651712d52723a59f1e0562497584e2d524",
+    "previous_stale_files": [
+      "compat/layout/components/Menu/src/Menu.vue",
+      "compat/views/infra/config/ConfigForm.vue",
+      "compat/views/system/role/RoleForm.vue"
+    ]
+  },
+  "build": {
+    "command": "YUHENG_UI_PACKAGE=../yuheng-core/yuheng-ui/vendor/yuheng-ui-0.1.0-SNAPSHOT.tgz ./scripts/build.sh",
+    "exit_code": 0,
+    "consumer_install": "pnpm offline install in build-ui.sh temporary copied consumer; yuheng-ui resolves to the supplied tarball",
+    "vue_typecheck": "passed",
+    "vite_modules": 3544,
+    "vite_build": "passed with existing chunk-size warning",
+    "jar_sha256": "9a7b8fa44a02a2d42da0da98b518018a7c1c2f2e5e83d15711bd5afac156dcbd",
+    "jar_static_resource_count": 612,
+    "maven_tests_skipped_in_package_command": true
+  },
+  "backend_tests": {
+    "command": "mvn -o -Dexec.skip=true test",
+    "exit_code": 0,
+    "tests": 40,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "python_script_tests": {
+    "command": "python3 -m unittest discover -s scripts/tests",
+    "exit_code": 0,
+    "tests": 36,
+    "passed": 29,
+    "failed": 0,
+    "skipped": 7
+  },
+  "p1_runtime": {
+    "evidence": "platform-runtime.json",
+    "completed": true,
+    "changesets": 56,
+    "seed_user_count": 21,
+    "seed_passwords_unchanged": true,
+    "system_infra_and_lifecycle": true,
+    "resources_cleaned": true
+  },
+  "fixed_registry_install": "not verified; configured registry does not provide the fixed yuheng-ui version",
+  "standalone_demo_ui_lockfile": "not present",
+  "core_source_commit": "836125ca005a2e340e443a9fd40f262c9a60bb38",
+  "core_build": {
+    "vite": "passed; 1466 modules; existing ineffective dynamic import warning",
+    "declarations": "vue-tsc -p tsconfig.build.json passed",
+    "default_typecheck": "vue-tsc --noEmit failed with compat TS5097/global imports/JSX/type errors; not counted as passed",
+    "tests": {
+      "command": "./node_modules/.bin/vitest run (after tarball regression added)",
+      "passed": 126,
+      "failed": 0,
+      "note": "async-validator expected required-field stderr",
+      "files": 30
+    },
+    "tarball_regression": {
+      "old_package": "failed; three stale compat files",
+      "rebuilt_package": "passed",
+      "test": "yuheng-ui/tests/release/package-content.test.ts"
+    }
+  },
+  "browser": {
+    "evidence": "../role-page-collapse-desktop-20261117/result.json",
+    "completed": true,
+    "viewports": [
+      "1440x900 mouse",
+      "390x844 mouse",
+      "320x844 mouse",
+      "390x844 touch",
+      "320x844 touch"
+    ],
+    "role_writes": 0,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "resources_cleaned": true,
+    "jar_resource_consistency": "runner now checks the full static file set and SHA-256 equality between jar and dist before starting"
+  },
+  "investigation": {
+    "initial_failure": "old tracked tarball caused submenu popper to intercept Add on both narrow mouse viewports",
+    "discarded_hypotheses": [
+      "clearing defaultOpeneds did not resolve the diagnosis; Core source edit reverted",
+      "touch-only conclusion rejected after final package also passed original narrow mouse probes"
+    ],
+    "package_consistency": "final tarball matches all compat source files; previous tracked archive omitted three committed UI fixes",
+    "artifact_source": "same final JAR SHA-256 used in platform and browser evidence"
+  },
+  "isolated_consumer_tests": {
+    "passed": 14,
+    "files": 3,
+    "import_boundary": "passed",
+    "installation": "offline tarball in temporary copied consumer",
+    "manifest": "restored original fixed-version manifest after fixture install; tests use installed binaries directly",
+    "initial_fixture_failures": [
+      "macOS /var vs /private/var realpath assertion; fixed by canonicalizing temporary root",
+      "one manifest contract test rejected temporary file: dependency; restore original manifest after install"
+    ],
+    "registry_install": false
+  },
+  "demo_python_script_tests": {
+    "tests": 38,
+    "passed": 31,
+    "skipped": 7,
+    "failed": 0,
+    "includes": "relative tarball path and JAR/dist static resource consistency pass/fail tests"
+  }
+}

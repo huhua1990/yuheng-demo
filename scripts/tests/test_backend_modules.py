@@ -83,6 +83,8 @@ class BackendModulesTest(unittest.TestCase):
             root = Path(tmp) / "demo"
             (root / "scripts").mkdir(parents=True)
             (root / "yuheng-demo-ui").mkdir()
+            module_dir = root / "yuheng-demo-server/yuheng-demo-server-bootstrap"
+            module_dir.mkdir(parents=True)
             script = root / "scripts/build-ui.sh"
             script.write_text((ROOT / "scripts/build-ui.sh").read_text())
             (root / "yuheng-demo-ui/package.json").write_text(json.dumps({
@@ -98,6 +100,83 @@ class BackendModulesTest(unittest.TestCase):
             result = subprocess.run(["bash", str(script)], env=env, capture_output=True, text=True)
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("版本不匹配", result.stderr)
+
+    def test_frontend_override_resolves_relative_package_from_demo_root(self):
+        import json
+        import tarfile
+        import io
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "demo"
+            (root / "scripts").mkdir(parents=True)
+            (root / "yuheng-demo-ui").mkdir()
+            module_dir = root / "yuheng-demo-server/yuheng-demo-server-bootstrap"
+            module_dir.mkdir(parents=True)
+            script = root / "scripts/build-ui.sh"
+            script.write_text((ROOT / "scripts/build-ui.sh").read_text())
+            (root / "yuheng-demo-ui/package.json").write_text(json.dumps({
+                "dependencies": {"yuheng-ui": "0.1.0-SNAPSHOT"}
+            }))
+            archive = root / "vendor/yuheng-ui.tgz"
+            archive.parent.mkdir()
+            data = json.dumps({"name": "yuheng-ui", "version": "0.1.0-SNAPSHOT"}).encode()
+            with tarfile.open(archive, "w:gz") as package:
+                info = tarfile.TarInfo("package/package.json")
+                info.size = len(data)
+                package.addfile(info, io.BytesIO(data))
+            pnpm = Path(tmp) / "pnpm"
+            pnpm.write_text('#!/bin/sh\nprintf "%s\\n" "$@"\nwhile [ "$#" -gt 0 ]; do\n'
+                            '  if [ "$1" = "--dir" ]; then shift; dir="$1"; fi\n'
+                            '  shift\ndone\ncat "$dir/package.json"\nmkdir -p "$dir/dist"\n'
+                            'printf "<html/>\\n" > "$dir/dist/index.html"\n')
+            pnpm.chmod(0o755)
+            env = dict(os.environ, PATH=str(tmp) + os.pathsep + os.environ["PATH"],
+                       YUHENG_UI_PACKAGE="vendor/yuheng-ui.tgz")
+            result = subprocess.run(["bash", str(script)], cwd=module_dir, env=env,
+                                    capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn(str(archive), result.stdout)
+
+    def test_role_browser_runner_rejects_ui_assets_that_do_not_match_jar(self):
+        import importlib.util
+        import zipfile
+
+        runner_path = ROOT / "scripts/verification/role_page_browser_runner.py"
+        spec = importlib.util.spec_from_file_location("role_page_browser_runner_test", runner_path)
+        runner = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runner)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            dist = root / "yuheng-demo-ui/dist"
+            dist.mkdir(parents=True)
+            (dist / "index.html").write_text("<html>different</html>")
+            archive_path = root / "demo.jar"
+            with zipfile.ZipFile(archive_path, "w") as archive:
+                archive.writestr("BOOT-INF/classes/static/index.html", "<html>packaged</html>")
+            runner.ROOT = root
+            runner.JAR = archive_path
+            with self.assertRaisesRegex(RuntimeError, "does not match tested JAR"):
+                runner.assert_static_matches_jar()
+
+    def test_role_browser_runner_accepts_matching_ui_assets(self):
+        import importlib.util
+        import zipfile
+
+        runner_path = ROOT / "scripts/verification/role_page_browser_runner.py"
+        spec = importlib.util.spec_from_file_location("role_page_browser_runner_test", runner_path)
+        runner = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runner)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            dist = root / "yuheng-demo-ui/dist"
+            dist.mkdir(parents=True)
+            (dist / "index.html").write_text("<html>same</html>")
+            archive_path = root / "demo.jar"
+            with zipfile.ZipFile(archive_path, "w") as archive:
+                archive.writestr("BOOT-INF/classes/static/index.html", "<html>same</html>")
+            runner.ROOT = root
+            runner.JAR = archive_path
+            self.assertEqual(runner.assert_static_matches_jar(), 1)
 
     def test_reactor_and_bootstrap_dependency(self):
         root = ET.parse(ROOT / "pom.xml").getroot()

@@ -7,10 +7,12 @@ import hashlib
 import json
 import os
 import secrets
+import shutil
 import socket
 import subprocess
 import time
 from pathlib import Path
+from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[2]
 SCHEMA = "yuheng_t3_role_page_20261120"
@@ -44,8 +46,29 @@ def literal(value: str) -> str:
     return "'" + value.replace("'", "''") + "'"
 
 
+def assert_static_matches_jar() -> int:
+    dist = ROOT / "yuheng-demo-ui/dist"
+    with ZipFile(JAR) as archive:
+        packaged = {
+            name.removeprefix("BOOT-INF/classes/static/"): hashlib.sha256(archive.read(name)).digest()
+            for name in archive.namelist()
+            if name.startswith("BOOT-INF/classes/static/") and not name.endswith("/")
+        }
+    built = {
+        path.relative_to(dist).as_posix(): hashlib.sha256(path.read_bytes()).digest()
+        for path in dist.rglob("*") if path.is_file()
+    }
+    if packaged != built:
+        missing = sorted(packaged.keys() - built.keys())
+        extra = sorted(built.keys() - packaged.keys())
+        changed = sorted(key for key in packaged.keys() & built.keys() if packaged[key] != built[key])
+        raise RuntimeError(f"dist does not match tested JAR static resources: missing={missing[:5]}, extra={extra[:5]}, changed={changed[:5]}")
+    return len(packaged)
+
+
 def main() -> None:
     assert JAR.is_file()
+    static_resource_count = assert_static_matches_jar()
     ports = (MYSQL_PORT, REDIS_PORT, APP_PORT, UI_PORT)
     assert not any(listening(port) for port in ports)
     existing = run("docker", "ps", "-a", "--format", "{{.Names}}").splitlines()
@@ -62,7 +85,8 @@ def main() -> None:
         "work_id": "YH-20261111-full-source-migration",
         "schema": SCHEMA,
         "jar_sha256": hashlib.sha256(JAR.read_bytes()).hexdigest(),
-        "ui_source": "current yuheng-demo-ui production build using Core compat source link",
+        "ui_source": "yuheng-demo-ui/dist; SHA-256 verified byte-for-byte against the tested JAR before startup",
+        "jar_static_resource_count": static_resource_count,
         "test_server_request_queue_size": 128,
         "ports": {"mysql": MYSQL_PORT, "redis": REDIS_PORT, "app": APP_PORT, "ui": UI_PORT},
         "credentials_recorded": False,

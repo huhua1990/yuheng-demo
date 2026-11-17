@@ -6,8 +6,8 @@ const base = process.env.YH_BROWSER_BASE
 const output = process.env.YH_BROWSER_OUTPUT
 const result = { base, viewports: {}, consoleErrors: [], pageErrors: [], requestFailed: [], writes: [] }
 
-async function inspectViewport(browser, width, height, label) {
-  const context = await browser.newContext({ viewport: { width, height } })
+async function inspectViewport(browser, width, height, label, mobile = false) {
+  const context = await browser.newContext({ viewport: { width, height }, isMobile: mobile, hasTouch: mobile })
   const page = await context.newPage()
   page.on('pageerror', error => result.pageErrors.push({ label, message: error.message }))
   page.on('console', message => {
@@ -28,7 +28,9 @@ async function inspectViewport(browser, width, height, label) {
     await user.waitFor({ state: 'visible', timeout: 30000 })
     await user.fill(process.env.YH_BROWSER_USERNAME)
     await page.locator('input[placeholder="请输入密码"]:visible').fill(process.env.YH_BROWSER_PASSWORD)
-    await page.getByRole('button', { name: '登录', exact: true }).click()
+    const loginButton = page.getByRole('button', { name: '登录', exact: true })
+    if (mobile) await loginButton.tap()
+    else await loginButton.click()
     await page.waitForURL(url => !url.pathname.includes('/login'), { timeout: 30000 })
     await page.goto(`${base}/system/role`, { waitUntil: 'domcontentloaded' })
     await page.getByPlaceholder('请输入角色名称').waitFor({ timeout: 30000 })
@@ -41,7 +43,7 @@ async function inspectViewport(browser, width, height, label) {
       rows: document.querySelectorAll('.el-table__body-wrapper tbody tr').length,
       visibleText: document.body.innerText.includes('角色管理')
     }))
-    result.viewports[label] = { initial }
+    result.viewports[label] = { input: mobile ? 'touch' : 'mouse', initial }
 
     const newButton = page.getByRole('button', { name: /新增/ }).first()
     await page.keyboard.press('Escape').catch(() => {})
@@ -72,7 +74,8 @@ async function inspectViewport(browser, width, height, label) {
     })
     await page.screenshot({ path: `${output}-${label}-before-click.png` })
     assert.strictEqual(result.viewports[label].beforeClick.hit?.text, '新增')
-    await newButton.click()
+    if (mobile) await newButton.tap()
+    else await newButton.click()
     const dialog = page.locator('.el-dialog:visible')
     await dialog.waitFor({ timeout: 15000 })
     const form = dialog.getByPlaceholder('请输入角色名称')
@@ -89,7 +92,9 @@ async function inspectViewport(browser, width, height, label) {
       }
     })
     result.viewports[label].dialog = geometry
-    await dialog.getByRole('button', { name: '取 消' }).click()
+    const cancelButton = dialog.getByRole('button', { name: '取 消' })
+    if (mobile) await cancelButton.tap()
+    else await cancelButton.click()
     await dialog.waitFor({ state: 'hidden', timeout: 15000 })
     result.viewports[label].cancelWrites = result.writes.filter(item => item.label === label).length
     assert.strictEqual(result.viewports[label].cancelWrites, 0)
@@ -120,8 +125,8 @@ async function inspectViewport(browser, width, height, label) {
   const browser = await chromium.launch({ headless: true,
     executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' })
   try {
-    for (const [width, height, label] of [[1440, 900, 'desktop-1440x900'], [390, 844, 'mobile-390x844'], [320, 844, 'mobile-320x844']]) {
-      try { await inspectViewport(browser, width, height, label) }
+    for (const [width, height, label, touch] of [[1440, 900, 'desktop-1440x900', false], [390, 844, 'mobile-390x844', false], [320, 844, 'mobile-320x844', false], [390, 844, 'touch-390x844', true], [320, 844, 'touch-320x844', true]]) {
+      try { await inspectViewport(browser, width, height, label, touch) }
       catch (error) { result.errors = result.errors || {}; result.errors[label] = error.stack }
     }
     assert.deepStrictEqual(result.errors || {}, {})

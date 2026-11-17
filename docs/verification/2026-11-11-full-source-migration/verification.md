@@ -1689,3 +1689,13 @@ Core UI Vitest 29 文件、125 项通过（必填校验测试输出预期的 asy
 
 机器可读证据：`ui-package-consumer-20261120-role-dialog.json`。这证明当前提交可以形成并被独立消费者离线安装的版本化包，也证明本次角色修复进入包内容；配置的私有 registry 仍返回 401，公共 registry 仍返回 404，未发布或伪造固定坐标消费，因此 T1 registry 子项继续开放。临时包和消费者目录位于 `/tmp`，未修改 Demo workspace、共享数据库、Redis 或历史密码。
 
+
+### 2026-11-18 P1 跟踪 UI 制品一致性与最终 JAR 复验
+
+沿用 `YH-20261111-full-source-migration`，code `0.1.0-SNAPSHOT` / governance `0.2.0` / knowledge `0.1.0`；按用户既有完整实施和 P1 优先验证授权继续。Core 源码基线 `836125c`；其旧跟踪 tarball `125b85…` 未包含已提交的 Menu/ConfigForm/RoleForm 修复。旧包构建的角色页在 390/320px 鼠标视口被系统菜单浮层拦截。临时 defaultOpeneds 源码改动无效，已撤回；输入方式不是充分根因。Core 新增发布包逐文件一致性检查，旧包红灯列出上述三个文件，最终包绿灯。
+
+从相同 Core 源码重建的 tarball 为 `7d5adb2d1a27e0c68956ed64646dd1850adb733fb0e3b5467ff6adff0d9dcebc`。Core UI 30 文件/126 项测试、导入边界、Vite 和声明构建通过；默认 `vue-tsc --noEmit` 仍失败，不能计为通过。Demo 构建脚本修复 Maven 子模块工作目录下相对 `YUHENG_UI_PACKAGE` 的解析；Python 测试 36 项、29 通过/7 跳过，新增路径回归先红后绿。Demo 固定 tarball 临时消费者类型检查和 3544 模块构建、612 静态资源 JAR 打包通过；额外独立消费者 14 项测试和平台导入边界通过。测试装包时临时 file: manifest 使固定版本断言失败，恢复原始 manifest 后通过，不称为 registry 安装。
+
+最终 JAR SHA-256 `9a7b8fa44a02a2d42da0da98b518018a7c1c2f2e5e83d15711bd5afac156dcbd`。`python3 scripts/verification/role_page_browser_runner.py` 退出 0：1440×900、390×844、320×844 鼠标和 390×844、320×844 触摸共五场景真实登录、表格加载、新增打开/填写/取消通过，无角色写请求，无 console/page/request 错误；桌面折叠菜单悬停/重新展开通过。`python3 scripts/verification/p1_platform_probe.py` 退出 0：同一 JAR 完成 56 changesets 冷装及重启，21 个种子用户密码不变，用户角色 CRUD/授权、权限拒绝、文件下载、任务查询与启停脚本通过。独立容器和端口均已清理，共享库和历史密码未触碰。
+
+证据：`p1-fixed-package-20261117/p1-build-20261118.json`、`platform-runtime.json`，及 `role-page-collapse-desktop-20261117/result.json`/`browser.json`。截图继续保留本地未提交。P1 浏览器 runner 现于启动前逐文件校验 JAR 与 dist 的 612 项资源完全一致。Demo Python 测试 38 项、31 通过/7 跳过，含资源不匹配拒绝和匹配放行回归。P1 本地 tarball 闭环通过，固定 registry 坐标安装和独立锁文件仍缺失，因此 P1 总项继续进行中；全量 T1/T3/T4 和 P2/P3 不外推为完成。

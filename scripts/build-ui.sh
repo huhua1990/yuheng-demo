@@ -13,6 +13,11 @@ EXPECTED_UI_VERSION=$(node -p 'require(process.argv[1]).dependencies?.["yuheng-u
   exit 1
 }
 
+if [[ -n "${YUHENG_UI_PACKAGE:-}" && "$YUHENG_UI_PACKAGE" != /* ]]; then
+  YUHENG_UI_PACKAGE="$ROOT/$YUHENG_UI_PACKAGE"
+  export YUHENG_UI_PACKAGE
+fi
+
 TEMP_UI=$(mktemp -d "${TMPDIR:-/tmp}/yuheng-demo-ui.XXXXXX")
 cleanup() { rm -rf "$TEMP_UI"; }
 trap cleanup EXIT
