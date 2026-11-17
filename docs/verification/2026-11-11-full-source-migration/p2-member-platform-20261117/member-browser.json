@@ -51,6 +51,46 @@
       "method": "GET",
       "path": "/admin-api/member/tag/page",
       "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/group/list-all-simple",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/list-all-simple",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/level/list-all-simple",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/member/user/update-point",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page",
+      "status": 200
     }
   ],
   "requests": [
@@ -93,12 +133,46 @@
     {
       "method": "GET",
       "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/level/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/group/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/member/user/update-point"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
     }
   ],
   "actions": [
     "create",
     "update",
-    "delete"
+    "delete",
+    "member-search",
+    "member-point-decrease"
   ],
   "completed": true
 }

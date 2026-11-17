@@ -170,11 +170,12 @@ def main():
     assert not any(listening(port) for port in ports)
     existing = run('docker', 'ps', '-a', '--format', '{{.Names}}').splitlines()
     assert MYSQL not in existing and REDIS not in existing
-    admin_name = os.environ['YUHENG_PROBE_USERNAME']
-    admin_password = os.environ['YUHENG_PROBE_PASSWORD']
     db_password, redis_password = secrets.token_hex(20), secrets.token_hex(20)
     suffix = secrets.token_hex(4)
+    admin_name, admin_password = 'p2memberadmin' + suffix, secrets.token_urlsafe(12)[:16]
     guest_name, guest_password = 'p2memberguest' + suffix, secrets.token_urlsafe(12)[:16]
+    admin_hash = subprocess.run(['htpasswd', '-bnBC', '4', admin_name, admin_password],
+                                capture_output=True, text=True, check=True).stdout.strip().split(':', 1)[1]
     guest_hash = subprocess.run(['htpasswd', '-bnBC', '4', guest_name, guest_password],
                                 capture_output=True, text=True, check=True).stdout.strip().split(':', 1)[1]
     result = {'work_id': 'YH-20261111-full-source-migration', 'schema': SCHEMA,
@@ -220,6 +221,13 @@ def main():
                 time.sleep(1)
             sql("UPDATE system_tenant SET status=0, expire_time=DATE_ADD(NOW(), INTERVAL 1 YEAR) WHERE id=2 AND deleted=0;")
             sql('INSERT INTO system_users (id,username,password,nickname,dept_id,post_ids,status,deleted,tenant_id) '
+                'VALUES (990954,' + sql_literal(admin_name) + ',' + sql_literal(admin_hash) +
+                ",'P2 admin',NULL,'[]',0,b'0',1);")
+            sql('INSERT INTO system_user_role (user_id,role_id,creator,updater,deleted,tenant_id) '
+                'SELECT 990954,role_id,creator,updater,b\'0\',tenant_id FROM system_user_role '
+                'WHERE user_id=1 AND deleted=0;')
+            assert sql('SELECT COUNT(*) FROM system_user_role WHERE user_id=990954 AND deleted=0;') != '0'
+            sql('INSERT INTO system_users (id,username,password,nickname,dept_id,post_ids,status,deleted,tenant_id) '
                 'VALUES (990953,' + sql_literal(guest_name) + ',' + sql_literal(guest_hash) +
                 ",'P2 no-role',NULL,'[]',0,b'0',1);")
             probe = Probe()
@@ -248,6 +256,17 @@ def main():
             browser_data = json.loads(browser_output.read_text())
             result['cases']['member_browser'] = browser_data
             result['completed'] = result['completed'] and browser.returncode == 0 and browser_data.get('completed')
+            if result['completed']:
+                user_point = sql('SELECT point FROM member_user WHERE id=990951;')
+                point_record = sql('SELECT CONCAT(point,":",total_point,":",biz_type) '
+                                   'FROM member_point_record WHERE user_id=990951 '
+                                   'ORDER BY id DESC LIMIT 1;')
+                assert user_point == '13' and point_record == '-2:13:2', (user_point, point_record)
+                result['cases']['member_browser_sql'] = {
+                    'member_user_point': int(user_point),
+                    'latest_point_record': point_record,
+                    'verified': True,
+                }
     finally:
         result['cleanup'] = {'app_stopped': stop(app), 'ui_stopped': stop(ui), 'containers_absent': False,
                              'ports_listening': {str(port): listening(port) for port in ports}}
