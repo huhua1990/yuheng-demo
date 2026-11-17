@@ -3,6 +3,7 @@
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
     "strict": true,
     "jsx": "preserve",
     "jsxImportSource": "vue",
@@ -10,7 +11,39 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": ["node", "vite/client", "vitest/globals"]
+    "types": ["node", "vite/client", "vitest/globals"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "yuheng-ui/compat/platform": ["./src/shims/yuheng-compat-platform.d.ts"],
+      "yuheng-ui/compat/setup": ["./src/shims/yuheng-compat-setup.d.ts"],
+      "yuheng-ui/compat/components/Pagination/index.vue": ["./src/shims/yuheng-compat-component.d.ts"],
+      "yuheng-ui/compat/components/DocAlert/index.vue": ["./src/shims/yuheng-compat-component.d.ts"],
+      "yuheng-ui/compat/components/ContentWrap": ["./src/shims/yuheng-compat-component.d.ts"],
+      "yuheng-ui/compat/components/ContentDetailWrap": ["./src/shims/yuheng-compat-component.d.ts"],
+      "yuheng-ui/compat/components/DictTag": ["./src/shims/yuheng-compat-component.d.ts"],
+      "yuheng-ui/compat/components/Dialog": ["./src/shims/yuheng-compat-component.d.ts"],
+      "yuheng-ui/compat/components/ConfigGlobal": ["./src/shims/yuheng-compat-component.d.ts"],
+      "yuheng-ui/compat/api/system/area": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/api/system/user": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/components/Card": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/components/Descriptions": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/components/ImageViewer": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/config/axios": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/store/modules/tagsView": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/utils": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/utils/constants": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/utils/dict": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/utils/formatTime": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/utils/permission": ["./src/shims/yuheng-compat-runtime.d.ts"],
+      "yuheng-ui/compat/utils/tree": ["./src/shims/yuheng-compat-runtime.d.ts"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "tests/**/*.ts", "vite.config.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "vite.config.ts",
+    "src/shims/**/*.d.ts"
+  ],
+  "exclude": ["node_modules/yuheng-ui/compat/**/*.ts", "node_modules/yuheng-ui/compat/**/*.vue"]
 }

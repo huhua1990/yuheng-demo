@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/yuheng-core/mysql/changelog.yaml
+  - include:
+      file: db/changelog/business/changelog.yaml

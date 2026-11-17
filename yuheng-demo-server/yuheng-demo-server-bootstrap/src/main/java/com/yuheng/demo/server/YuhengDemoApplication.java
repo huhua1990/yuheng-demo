@@ -1,0 +1,37 @@
+package com.yuheng.demo.server;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.apache.ibatis.annotations.Mapper;
+import org.mybatis.spring.annotation.MapperScan;
+
+/**
+ * 项目的启动类
+ *
+ * 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
+ * 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
+ * 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
+ *
+ * @author 芋道源码
+ */
+@SuppressWarnings("SpringComponentScan") // 忽略 IDEA 无法识别 ${yudao.info.base-package}
+@SpringBootApplication(scanBasePackages = {"com.yuheng.demo", "${yudao.info.base-package}.module"})
+@MapperScan(basePackages = "com.yuheng.demo.module", annotationClass = Mapper.class)
+public class YuhengDemoApplication {
+
+    public static void main(String[] args) {
+        // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
+        // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
+        // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
+
+        SpringApplication.run(YuhengDemoApplication.class, args);
+//        new SpringApplicationBuilder(YudaoServerApplication.class)
+//                .applicationStartup(new BufferingApplicationStartup(20480))
+//                .run(args);
+
+        // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
+        // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
+        // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
+    }
+
+}
