@@ -32,7 +32,7 @@ const assert = require('assert');
     await page.getByRole('button', { name: '登录', exact: true }).click();
     await page.waitForURL(url => !url.pathname.includes('/login'), { timeout: 30000 });
     await page.goto('http://127.0.0.1:5300/infra/config', { waitUntil: 'domcontentloaded' });
-    const nameFilter = page.getByPlaceholder('请输入参数名称');
+    const nameFilter = page.locator('input[placeholder="请输入参数名称"]:visible');
     await nameFilter.waitFor({ timeout: 30000 });
     const rows = page.locator('.el-table__body-wrapper tbody tr');
     await rows.first().waitFor({ timeout: 30000 });

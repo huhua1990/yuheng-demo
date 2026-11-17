@@ -12,7 +12,7 @@ com.yuheng:yuheng-server:${yuheng.version}
 
 ## 构建和运行
 
-需要 Java 17+、Maven、Python 3 和 Node.js 20.19+ 或 22.12+。Maven 仓库中需有 `yuheng-server` 对应版本；npm 仓库需有 `yuheng-ui` 对应版本。一次构建前后端：
+需要 Java 17+、Maven、Python 3、rsync、pnpm 和 Node.js 20.19+ 或 22.12+。Maven 仓库中需有 `yuheng-server` 对应版本；npm 仓库需有 `yuheng-ui` 对应版本。一次构建前后端：
 
 ```bash
 ./scripts/build.sh
@@ -25,6 +25,8 @@ com.yuheng:yuheng-server:${yuheng.version}
 ```bash
 YUHENG_UI_PACKAGE=/absolute/path/yuheng-ui-0.1.0-SNAPSHOT.tgz ./scripts/build.sh
 ```
+
+tarball 模式校验包名和版本，并在临时目录离线安装；需要 pnpm 缓存中已有其余全部依赖。当前 Demo 尚无独立锁文件，普通 registry 模式的冻结安装也需先提供匹配的锁文件。
 
 构建产物为 `yuheng-demo-server/yuheng-demo-server-bootstrap/target/yuheng-demo.jar` 和 `yuheng-demo-ui/dist/`。默认前端地址为 `http://127.0.0.1:5173`，后端端口为 `48080`；前端服务将 `/admin-api` 代理到后端。可用 `UI_PORT`、`UI_HOST`、`BACKEND_PORT` 环境变量调整。启动前检查端口，停止脚本只停止本脚本启动并完成身份校验的进程。日志和 PID 位于 `logs/lifecycle/`。
 

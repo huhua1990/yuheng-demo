@@ -134,7 +134,7 @@ def main() -> None:
             assert time.monotonic() < deadline, "isolated backend readiness timeout"
             time.sleep(1)
 
-        assert int(sql("SELECT COUNT(*) FROM DATABASECHANGELOG;")) == 54
+        assert int(sql("SELECT COUNT(*) FROM DATABASECHANGELOG;")) == 56
         menus = sql("SELECT id,permission FROM system_menu WHERE deleted=0 AND permission IN "
                     "('infra:config:create','infra:config:update','infra:config:delete','infra:config:query','infra:config:export') ORDER BY id;")
         menu_ids = {row.split("\t", 1)[1]: int(row.split("\t", 1)[0]) for row in menus.splitlines()}

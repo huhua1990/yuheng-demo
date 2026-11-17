@@ -230,6 +230,12 @@ class UiServerTests(unittest.TestCase):
 
 
 class ProcessSafetyTests(unittest.TestCase):
+    def test_start_script_forwards_redis_connection_overrides_to_launchd_plist_builder(self):
+        source = (ROOT / "scripts" / "start.sh").read_text()
+        for key in ("YUHENG_REDIS_HOST", "YUHENG_REDIS_PORT", "YUHENG_REDIS_DATABASE"):
+            self.assertIn(key + '="${' + key + '-}"', source)
+            self.assertIn('"' + key + '",', source)
+
     def test_stop_does_not_kill_unrelated_process(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

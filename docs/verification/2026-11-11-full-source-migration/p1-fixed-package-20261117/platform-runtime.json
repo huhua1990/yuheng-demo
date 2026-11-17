@@ -1,0 +1,51 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_p1_platform_20261117",
+  "jar_sha256": "d2b91f8f37a47c616c72b7c54d3b7e8c3b755189a6ebf23219baf2473595d2af",
+  "cases": {
+    "restart": {
+      "changesets": 56,
+      "seed_user_count": 21,
+      "password_rows_equal": true,
+      "changeset_rows_equal": true,
+      "success_column_absent": true,
+      "first_stopped": true,
+      "second_log_previously_run": true
+    },
+    "system_and_infra": {
+      "user_created": true,
+      "role_created": true,
+      "user_role_updated_and_read_back": true,
+      "user_role_deleted": true,
+      "unauthorized_assignment_code": 403,
+      "denied_assignment_unchanged": true,
+      "role_menu_readback": true,
+      "user_role_readback": true,
+      "granted_query": true,
+      "job_denied_code": 403,
+      "file_denied_code": 403,
+      "job_total": 33,
+      "file_total": 1,
+      "database_file_download_verified": true
+    },
+    "seed_passwords_after_operations_unchanged": true,
+    "second_stopped": true,
+    "lifecycle": {
+      "start_exit": 0,
+      "login_page_http": 200,
+      "backend_anonymous_code": 401,
+      "redis_isolated_port": 16452,
+      "stop_exit": 0,
+      "ports_released": true
+    }
+  },
+  "completed": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13372": false,
+      "16452": false,
+      "48212": false
+    }
+  }
+}

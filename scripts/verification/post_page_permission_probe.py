@@ -130,7 +130,7 @@ def main() -> None:
             assert time.monotonic() < deadline, "isolated backend readiness timeout"
             time.sleep(1)
 
-        assert int(sql("SELECT COUNT(*) FROM DATABASECHANGELOG;")) == 54
+        assert int(sql("SELECT COUNT(*) FROM DATABASECHANGELOG;")) == 56
         assert sql("SELECT permission FROM system_menu WHERE id=43 AND deleted=0;") == "system:post:query"
         for name, (user_id, username) in users.items():
             assert sql("SELECT COUNT(*) FROM system_users WHERE id=" + str(user_id)

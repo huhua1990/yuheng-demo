@@ -1,0 +1,110 @@
+{
+  "api": [
+    {
+      "method": "GET",
+      "path": "/admin-api/infra/config/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/infra/config/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/infra/config/page",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/infra/config/create",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/infra/config/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/infra/config/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/infra/config/get",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/infra/config/update",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/infra/config/page",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/admin-api/infra/config/delete",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/infra/config/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/infra/config/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/infra/config/get",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "writes": [
+    {
+      "method": "POST",
+      "path": "/admin-api/infra/config/create"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/infra/config/update"
+    },
+    {
+      "method": "DELETE",
+      "path": "/admin-api/infra/config/delete"
+    }
+  ],
+  "actions": [
+    {
+      "action": "create",
+      "status": 200,
+      "code": 0
+    },
+    {
+      "action": "update",
+      "status": 200,
+      "code": 0
+    },
+    {
+      "action": "delete",
+      "status": 200,
+      "code": 0
+    }
+  ],
+  "initialRows": 10,
+  "firstRow": "\t\n35\n\t\neam\n\t\nEAM 资产转移业务编号\n\t\neam.businessCode.assetTransfer\n\t\n${string_fix,BO}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源资产转移创建实际复用资产借用 BO 编号规则\n\t\n2026-09-26 17:59:37\n\t\n编辑\n删除",
+  "noMatchRows": 0,
+  "restoredRows": 10,
+  "rowsAfterDeleteAndReset": 10,
+  "editChanged": true,
+  "afterCancelRows": 10,
+  "completed": true
+}

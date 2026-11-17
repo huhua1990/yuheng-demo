@@ -15,6 +15,10 @@ class BackendModulesTest(unittest.TestCase):
             root = Path(tmp)
             (root / "scripts").mkdir()
             (root / "yuheng-demo-server/yuheng-demo-server-bootstrap/target").mkdir(parents=True)
+            (root / "yuheng-demo-ui").mkdir()
+            (root / "yuheng-demo-ui/package.json").write_text(
+                '{"dependencies":{"yuheng-ui":"0.1.0-SNAPSHOT"}}\n'
+            )
             build_script = root / "scripts/build.sh"
             build_script.write_text((ROOT / "scripts/build.sh").read_text())
             jar = root / "yuheng-demo-server/yuheng-demo-server-bootstrap/target/yuheng-demo.jar"
@@ -60,15 +64,40 @@ class BackendModulesTest(unittest.TestCase):
             (root / "yuheng-demo-ui").mkdir()
             script = root / "scripts/build-ui.sh"
             script.write_text((ROOT / "scripts/build-ui.sh").read_text())
+            (root / "yuheng-demo-ui/package.json").write_text(
+                '{"dependencies":{"yuheng-ui":"0.1.0-SNAPSHOT"}}\n'
+            )
             pnpm = root / "pnpm"
             pnpm.write_text('#!/bin/sh\nexit 37\n')
             pnpm.chmod(0o755)
-            node = root / "node"
-            node.write_text('#!/bin/sh\nexit 0\n')
-            node.chmod(0o755)
             env = dict(os.environ, PATH=str(root) + os.pathsep + os.environ["PATH"])
             result = subprocess.run(["bash", str(script)], env=env, capture_output=True, text=True)
             self.assertEqual(result.returncode, 37, result.stderr)
+
+    def test_frontend_override_rejects_package_with_wrong_version(self):
+        import json
+        import tarfile
+        import io
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "demo"
+            (root / "scripts").mkdir(parents=True)
+            (root / "yuheng-demo-ui").mkdir()
+            script = root / "scripts/build-ui.sh"
+            script.write_text((ROOT / "scripts/build-ui.sh").read_text())
+            (root / "yuheng-demo-ui/package.json").write_text(json.dumps({
+                "dependencies": {"yuheng-ui": "0.1.0-SNAPSHOT"}
+            }))
+            archive = Path(tmp) / "wrong.tgz"
+            data = json.dumps({"name": "yuheng-ui", "version": "0.0.0"}).encode()
+            with tarfile.open(archive, "w:gz") as package:
+                info = tarfile.TarInfo("package/package.json")
+                info.size = len(data)
+                package.addfile(info, io.BytesIO(data))
+            env = dict(os.environ, YUHENG_UI_PACKAGE=str(archive))
+            result = subprocess.run(["bash", str(script)], env=env, capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("版本不匹配", result.stderr)
 
     def test_reactor_and_bootstrap_dependency(self):
         root = ET.parse(ROOT / "pom.xml").getroot()

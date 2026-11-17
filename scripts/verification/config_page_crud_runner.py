@@ -61,7 +61,7 @@ def main():
         while not probe.listening(probe.APP_PORT):
             assert backend.poll() is None and time.monotonic() < deadline
             time.sleep(1)
-        assert int(probe.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;")) == 54
+        assert int(probe.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;")) == 56
         assert probe.sql("SELECT COUNT(*) FROM system_users WHERE id=990051 OR username=" + probe.sql_literal(username) + ";") == "0"
         probe.sql("INSERT INTO system_users (id,username,password,nickname,dept_id,post_ids,status,deleted,tenant_id) "
                   "VALUES (990051," + probe.sql_literal(username) + "," + probe.sql_literal(hashed)
