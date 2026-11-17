@@ -1,0 +1,20 @@
+{
+  "version": "0.1.0-SNAPSHOT",
+  "releaseDate": "2024-11-09",
+  "components": {
+    "server": {
+      "version": "0.1.0-SNAPSHOT",
+      "buildDate": "2024-11-09"
+    },
+    "ui": {
+      "version": "0.1.0-SNAPSHOT",
+      "buildDate": "2024-11-09"
+    }
+  },
+  "dependencies": {
+    "springBoot": "3.5.15",
+    "myBatisPlus": "3.5.7",
+    "vue": "3.x",
+    "elementPlus": "2.x"
+  }
+}
