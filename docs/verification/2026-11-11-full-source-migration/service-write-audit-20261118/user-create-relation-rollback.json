@@ -1,0 +1,40 @@
+{
+  "schema": "yuheng_t4_usercreate_20261118",
+  "changesets": 54,
+  "failure_point": "user post relation insert",
+  "before": {
+    "users": {
+      "sha256": "f990b133f112fba47a5754397e38d8ffd3fdea7c141b02a0ad78279e8b8f6c17",
+      "row_count": 21
+    },
+    "user_posts": {
+      "sha256": "0618c46b2832c1237ffcf41def3ced4f5be85d3caa88920a56f2c757d23159e5",
+      "row_count": 11
+    }
+  },
+  "after": {
+    "users": {
+      "sha256": "f990b133f112fba47a5754397e38d8ffd3fdea7c141b02a0ad78279e8b8f6c17",
+      "row_count": 21
+    },
+    "user_posts": {
+      "sha256": "0618c46b2832c1237ffcf41def3ced4f5be85d3caa88920a56f2c757d23159e5",
+      "row_count": 11
+    }
+  },
+  "user_row_rolled_back": true,
+  "events": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/user/create",
+      "http": 200,
+      "code": 500
+    }
+  ]
+}

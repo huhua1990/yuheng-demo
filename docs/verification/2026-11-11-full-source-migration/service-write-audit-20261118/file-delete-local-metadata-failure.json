@@ -1,0 +1,39 @@
+{
+  "run_date": "2026-11-15",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "isolation": {
+    "mysql_container": "yh-t4-filedelete2-mysql-20261115",
+    "schema": "yuheng_t4_filedelete2_20261115",
+    "redis_container": "yh-t4-filedelete2-redis-20261115",
+    "storage_directory": "/tmp/yh-t4-filedelete2-storage-20261115",
+    "backend_port": 48154,
+    "mysql_port": 13320,
+    "redis_port": 16391,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "file_client_config_id": 29,
+    "metadata_row_id": 990001,
+    "metadata_trigger": "Verified BEFORE UPDATE trigger on infra_file raises SQLSTATE 45000",
+    "delete_endpoint": "DELETE /admin-api/infra/file/delete?id=990001",
+    "file_path": "20261115/yh-t4-delete-probe.txt",
+    "file_bytes": 32,
+    "file_sha256": "e0e7f8619e88c88a4c8c8d263ad8cf22db06baea7095ba77603692f3c20e2bb0"
+  },
+  "result": {
+    "http_code": 200,
+    "business_code": 500,
+    "infra_file_row_deleted_flag_after": 0,
+    "local_file_exists_after": false
+  },
+  "conclusion": "The local FileClient removed the file before the metadata logical-delete update failed. The active infra_file row therefore references a file that no longer exists.",
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "exact_temporary_storage_directory_removed": true,
+    "only_disposable_mysql_and_redis_containers_removed": true,
+    "shared_database_or_redis_modified": false,
+    "historical_passwords_read_or_modified": false
+  }
+}

@@ -1,0 +1,130 @@
+- link "Yuheng Demo":
+  - /url: /
+  - generic: Yuheng Demo
+- menubar:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+  - menuitem:
+- combobox
+- generic: 请选择租户
+- generic "项目配置":
+- combobox
+- generic: 请输入菜单内容
+- button:
+- button:
+- superscript
+- button
+- button "首页":
+  - text: 首页
+- button "通知公告":
+  - text: 通知公告
+- button:
+- generic: 公告标题
+- textbox "公告标题":
+  - /placeholder: 请输入公告标题
+- generic: 公告状态
+- combobox "公告状态"
+- generic: 请选择公告状态
+- button "搜索":
+  - text: 搜索
+- button "重置":
+  - text: 重置
+- button "新增":
+  - text: 新增
+- button "批量删除" [disabled]:
+  - text: 批量删除
+- table:
+  - rowgroup:
+    - row "选择所有行 公告编号 公告标题 公告类型 状态 创建时间 操作":
+      - columnheader "选择所有行":
+        - generic "选择所有行":
+          - checkbox "选择所有行"
+      - columnheader "公告编号":
+        - generic: 公告编号
+      - columnheader "公告标题":
+        - generic: 公告标题
+      - columnheader "公告类型":
+        - generic: 公告类型
+      - columnheader "状态":
+        - generic: 状态
+      - columnheader "创建时间":
+        - generic: 创建时间
+      - columnheader "操作":
+        - generic: 操作
+- table:
+  - rowgroup:
+    - row "选择当前行 2 维护通知：2018-07-01 系统凌晨维护 公告 关闭 2021-01-05 17:03:48 编辑 删除 推送":
+      - cell "选择当前行":
+        - generic "选择当前行":
+          - checkbox "选择当前行"
+      - cell "2":
+        - generic: "2"
+      - cell "维护通知：2018-07-01 系统凌晨维护":
+        - generic: 维护通知：2018-07-01 系统凌晨维护
+      - cell "公告":
+        - generic: 公告
+      - cell "关闭":
+        - generic: 关闭
+      - cell "2021-01-05 17:03:48":
+        - generic: 2021-01-05 17:03:48
+      - cell "编辑 删除 推送":
+        - button "编辑":
+          - generic: 编辑
+        - button "删除":
+          - generic: 删除
+        - button "推送":
+          - generic: 推送
+    - row "选择当前行 1 芋道的公众 通知 开启 2021-01-05 17:03:48 编辑 删除 推送":
+      - cell "选择当前行":
+        - generic "选择当前行":
+          - checkbox "选择当前行"
+      - cell "1":
+        - generic: "1"
+      - cell "芋道的公众":
+        - generic: 芋道的公众
+      - cell "通知":
+        - generic: 通知
+      - cell "开启":
+        - generic: 开启
+      - cell "2021-01-05 17:03:48":
+        - generic: 2021-01-05 17:03:48
+      - cell "编辑 删除 推送":
+        - button "编辑":
+          - generic: 编辑
+        - button "删除":
+          - generic: 删除
+        - button "推送":
+          - generic: 推送
+- generic: 共 2 条
+- combobox
+- generic: 10条/页
+- button "上一页" [disabled]:
+- list:
+  - listitem "第 1 页": "1"
+- button "下一页" [disabled]:
+- generic: 前往
+- spinbutton "页": "1"
+- generic: 页
+- generic: Copyright ©2026 Yuheng Demo

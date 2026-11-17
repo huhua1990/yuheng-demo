@@ -1,0 +1,25 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t3_configextended_20261117",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "ports": [
+    13354,
+    16434,
+    48189,
+    5301
+  ],
+  "config_snapshot_before_sha256": "9e2ecc698d1cffe25c9a134a801fd4b3b6912cbb285056ce14a33e6053a4aa6f",
+  "config_snapshot_after_sha256": "9e2ecc698d1cffe25c9a134a801fd4b3b6912cbb285056ce14a33e6053a4aa6f",
+  "baseline_rows_unchanged": true,
+  "probe_rows": "yh.browser.batch.probe.1\tbatch-value-1\t1\nyh.browser.batch.probe.2\tbatch-value-2\t1\nyh.browser.crud.probe\tupdated-value\t1",
+  "browser_completed": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13354": false,
+      "16434": false,
+      "48189": false,
+      "5301": false
+    }
+  }
+}

@@ -1,0 +1,568 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_edit_20261114_owner",
+  "port": 48094,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-category/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-unit/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/supplier/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/customer/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/account/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=2&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-payment/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update",
+      "http": 200,
+      "code": 1030102007,
+      "msg": "付款金额(51.000000)超过采购入库单总金额(50.000000)"
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=1&status=10",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=2&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-receipt/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update",
+      "http": 200,
+      "code": 1020202007,
+      "msg": "收款金额(51.000000)超过销售出库单总金额(50.000000)"
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=1&status=10",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    }
+  ],
+  "checks": [
+    {
+      "kind": "purchase",
+      "source": 1,
+      "expected": "10",
+      "actual": "10.000000"
+    },
+    {
+      "kind": "purchase",
+      "source": 1,
+      "expected": "20",
+      "actual": "20.000000"
+    },
+    {
+      "kind": "purchase",
+      "source": 1,
+      "expected": "0",
+      "actual": "0.000000"
+    },
+    {
+      "kind": "purchase",
+      "source": 2,
+      "expected": "15",
+      "actual": "15.000000"
+    },
+    {
+      "kind": "purchase",
+      "source": 2,
+      "expected": "0",
+      "actual": "0.000000"
+    },
+    {
+      "kind": "purchase",
+      "source": 1,
+      "expected": "7",
+      "actual": "7.000000"
+    },
+    {
+      "kind": "purchase",
+      "source": 1,
+      "expected": "0",
+      "actual": "0.000000"
+    },
+    {
+      "kind": "purchase",
+      "source": 2,
+      "expected": "4",
+      "actual": "4.000000"
+    },
+    {
+      "kind": "sale",
+      "source": 1,
+      "expected": "10",
+      "actual": "10.000000"
+    },
+    {
+      "kind": "sale",
+      "source": 1,
+      "expected": "20",
+      "actual": "20.000000"
+    },
+    {
+      "kind": "sale",
+      "source": 1,
+      "expected": "0",
+      "actual": "0.000000"
+    },
+    {
+      "kind": "sale",
+      "source": 2,
+      "expected": "15",
+      "actual": "15.000000"
+    },
+    {
+      "kind": "sale",
+      "source": 2,
+      "expected": "0",
+      "actual": "0.000000"
+    },
+    {
+      "kind": "sale",
+      "source": 1,
+      "expected": "7",
+      "actual": "7.000000"
+    },
+    {
+      "kind": "sale",
+      "source": 1,
+      "expected": "0",
+      "actual": "0.000000"
+    },
+    {
+      "kind": "sale",
+      "source": 2,
+      "expected": "4",
+      "actual": "4.000000"
+    }
+  ],
+  "scope": "purchase/sale same-line amount, source and type changes, replacement, excess rollback"
+}

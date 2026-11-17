@@ -1,0 +1,253 @@
+{
+  "title": "Yuheng Demo",
+  "location": "http://127.0.0.1:5199/login",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "root": [
+    {
+      "tag": "DIV",
+      "className": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "display": "block",
+      "visibility": "visible",
+      "overflow": "hidden",
+      "minHeight": "0px"
+    },
+    {
+      "tag": "DIV",
+      "className": "v-login relative h-[100%] lt-md:px-10px lt-sm:px-10px lt-xl:px-10px lt-xl:px-10px",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "display": "block",
+      "visibility": "visible",
+      "overflow": "auto",
+      "minHeight": "0px"
+    },
+    {
+      "tag": "DIV",
+      "className": "relative mx-auto h-full flex",
+      "rect": {
+        "x": 10,
+        "y": 0,
+        "width": 370,
+        "height": 844
+      },
+      "display": "flex",
+      "visibility": "visible",
+      "overflow": "visible",
+      "minHeight": "0px"
+    }
+  ],
+  "inputs": [
+    {
+      "placeholder": "",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 302,
+        "y": 34,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "请输入租户名称",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 77,
+        "y": 200.3125,
+        "width": 258,
+        "height": 38
+      }
+    },
+    {
+      "placeholder": "请输入用户名",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 77,
+        "y": 262.3125,
+        "width": 258,
+        "height": 38
+      }
+    },
+    {
+      "placeholder": "请输入密码",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 77,
+        "y": 324.3125,
+        "width": 258,
+        "height": 38
+      }
+    },
+    {
+      "placeholder": "",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 40,
+        "y": 378.3125,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "请输入租户名称",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "请输入手机号码",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "请输入验证码",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "租户名称",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "用户名",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "昵称",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "密码",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "确认密码",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "请输入租户名称",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "请输入手机号码",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "请输入验证码",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "请输入密码",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "placeholder": "确认密码",
+      "display": "block",
+      "visibility": "visible",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    }
+  ],
+  "loginText": "Yuheng Demo\n登录\n记住我\n忘记密码?\n登录\n手机登录\n二维码登录\n注册\n其他登录方式\n萌新必读\n📚开发指南\n🔥视频教程\n⚡面试手册\n🤝外包咨询"
+}

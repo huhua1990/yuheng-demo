@@ -1,0 +1,83 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "run_date": "2026-11-15",
+  "scenario": "Codegen delete rolls back the parent logical delete when column logical delete fails",
+  "runtime": {
+    "core_revision": "f4f3c1647a874130243183f1edbfd9baa93e2214",
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+    "mysql_container": "yh-t4-codegenupdate-mysql-20261115",
+    "mysql_port": 13333,
+    "schema": "yuheng_t4_codegenupdate_20261115",
+    "schema_scoped_account": "yh_cgu15",
+    "backend_port": 48165,
+    "redis_container": "yh-t4-codegenupdate-redis-20261115",
+    "redis_port": 16404,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "quartz_auto_startup": false,
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "parent": {
+      "table_id": 900020,
+      "table_name": "t4_codegen_delete_fail",
+      "deleted_before": 0
+    },
+    "columns": [
+      {"column_id": 900021, "column_name": "id", "deleted_before": 0},
+      {"column_id": 900022, "column_name": "name", "deleted_before": 0}
+    ],
+    "before_counts": {
+      "infra_codegen_table": 1,
+      "infra_codegen_column_for_parent": 2
+    }
+  },
+  "failure_injection": {
+    "trigger": "t4_codegen_delete_column_fail",
+    "event": "BEFORE UPDATE ON infra_codegen_column",
+    "sqlstate": "45000",
+    "marker": "T4_CODEGEN_DELETE_COLUMN_INJECTED",
+    "trigger_definition_queried_before_request": true,
+    "service_log_confirms_mapper_update_failure": true
+  },
+  "request": {
+    "method": "DELETE",
+    "path": "/admin-api/infra/codegen/delete?tableId=900020",
+    "http_status": 200,
+    "business_code": 500
+  },
+  "after_state": {
+    "parent": {"table_id": 900020, "deleted": 0},
+    "columns": [
+      {"column_id": 900021, "table_id": 900020, "deleted": 0},
+      {"column_id": 900022, "table_id": 900020, "deleted": 0}
+    ],
+    "counts_unchanged": true
+  },
+  "excluded_attempts": [
+    {
+      "attempt": "create-list positive control with plaintext datasource password",
+      "result": "Excluded: encrypted TypeHandler failed while loading config before any Codegen parent/column write."
+    },
+    {
+      "attempt": "create-list after encrypting the datasource password",
+      "result": "Excluded: MyBatis Generator opened its secondary JDBC connection without a password and failed before Codegen writes."
+    },
+    {
+      "attempt": "first delete fixture ID 900010",
+      "result": "Excluded as a positive-path setup check: the real endpoint successfully soft-deleted the parent and both columns before the failure trigger was installed."
+    }
+  ],
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "schema_dropped_and_verified_absent": true,
+    "schema_account_dropped_and_verified_absent": true,
+    "dedicated_mysql_and_redis_containers_removed": true,
+    "temporary_credentials_and_probe_outputs_removed": true,
+    "ports_48165_13333_16404_have_no_listeners": true,
+    "shared_mysql_and_redis_remain_running": true,
+    "shared_database_or_redis_modified": false,
+    "historical_passwords_read_or_modified": false
+  },
+  "conclusion": "The transaction around Codegen delete restored the parent table's earlier logical-delete update when the subsequent child-column logical delete failed."
+}

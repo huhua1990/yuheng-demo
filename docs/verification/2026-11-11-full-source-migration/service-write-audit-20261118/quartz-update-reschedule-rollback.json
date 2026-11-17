@@ -1,0 +1,85 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "run_date": "2026-11-15",
+  "runtime": {
+    "core_revision": "f4f3c1647a874130243183f1edbfd9baa93e2214",
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+    "backend_port": 48164,
+    "mysql_container": "yh-t4-qtzupdate-mysql-20261115",
+    "mysql_port": 13332,
+    "schema": "yuheng_t4_qtzupdate_20261115",
+    "schema_scoped_account": "yh_qtu15",
+    "redis_container": "yh-t4-qtzupdate-redis-20261115",
+    "redis_port": 16403,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "quartz_auto_startup": false,
+    "shared_database_or_redis_used": false
+  },
+  "precondition": {
+    "job_id": 33,
+    "handler_name": "demoJob",
+    "sync_endpoint": "POST /admin-api/infra/job/sync",
+    "sync_business_code": 0,
+    "enable_endpoint": "PUT /admin-api/infra/job/update-status?id=33&status=1",
+    "enable_business_code": 0,
+    "business_status_before_injected_update": 1,
+    "quartz_trigger_state_before_injected_update": "WAITING"
+  },
+  "injection": {
+    "trigger": "t4_qtz_update_fail",
+    "event": "BEFORE INSERT ON QRTZ_CRON_TRIGGERS",
+    "sqlstate": "45000",
+    "marker": "T4_QUARTZ_UPDATE_RESCHEDULE_INJECTED",
+    "trigger_definition_queried_before_request": true,
+    "service_log_marker_confirmed": true,
+    "reason_for_insert_injection": "Quartz reschedule deletes and recreates the cron-trigger row; the earlier UPDATE injection point did not target the actual write."
+  },
+  "request": {
+    "method": "PUT",
+    "path": "/admin-api/infra/job/update",
+    "job_id": 33,
+    "new_values": {
+      "name": "T4 demoJob updated",
+      "handler_param": "after-failure",
+      "cron_expression": "0 0/7 * * * ?",
+      "retry_count": 4,
+      "retry_interval": 2000,
+      "monitor_timeout": 0
+    },
+    "http_status": 200,
+    "business_code": 500
+  },
+  "database_after_failure": {
+    "infra_job": {
+      "id": 33,
+      "name": "demoJob",
+      "handler_name": "demoJob",
+      "handler_param": "",
+      "cron_expression": "0 * * * * ?",
+      "retry_count": 1,
+      "retry_interval": 1,
+      "monitor_timeout": 0,
+      "status": 1,
+      "deleted": 0
+    },
+    "quartz_job_name": "demoJob",
+    "quartz_trigger_state": "WAITING",
+    "quartz_previous_fire_time": -1,
+    "quartz_next_fire_time": 1794748560000,
+    "quartz_cron_expression": "0 * * * * ?",
+    "quartz_time_zone": "Asia/Shanghai"
+  },
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "schema_dropped_and_verified_absent": true,
+    "schema_account_dropped_and_verified_absent": true,
+    "dedicated_mysql_and_redis_containers_removed": true,
+    "temporary_credentials_and_logs_removed": true,
+    "ports_48164_13332_16403_have_no_listeners": true,
+    "shared_mysql_and_redis_remain_running": true,
+    "shared_database_or_redis_modified": false,
+    "historical_passwords_read_or_modified": false
+  },
+  "conclusion": "A Quartz cron-trigger insert failure during reschedule rolled back the preceding infra_job update and preserved the original Quartz job/trigger state."
+}

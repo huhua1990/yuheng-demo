@@ -1,0 +1,76 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t4_postlist_20261119",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "ports": {
+    "mysql": 13348,
+    "redis": 16428,
+    "app": 48183
+  },
+  "mock_auth": "isolated process only; random secret",
+  "cases": {
+    "anonymous_tenant_121": {
+      "http": 200,
+      "code": 401
+    },
+    "authenticated_without_role_or_permission_tenant_121": {
+      "http": 200,
+      "code": 0,
+      "returned_fixture_names": [
+        "Tenant 121 Post"
+      ],
+      "foreign_tenant_row_absent": true
+    },
+    "authenticated_without_role_or_permission_tenant_122": {
+      "http": 200,
+      "code": 0,
+      "returned_fixture_names": [
+        "Tenant 122 Post"
+      ],
+      "foreign_tenant_row_absent": true
+    },
+    "real_token_matching_tenant_header": {
+      "login_http": 200,
+      "login_code": 0,
+      "request_http": 200,
+      "request_code": 0,
+      "returned_fixture_names": [
+        "Tenant 121 Post"
+      ],
+      "foreign_tenant_row_absent": true
+    },
+    "real_token_forged_tenant_header": {
+      "token_tenant_id": 121,
+      "request_tenant_id": 122,
+      "http": 200,
+      "code": 403,
+      "denied": true
+    }
+  },
+  "changesets": 54,
+  "seed_active_post_counts": {
+    "tenant_121": 0,
+    "tenant_122": 0
+  },
+  "fixtures": {
+    "tenant_121_post_id": 990001,
+    "tenant_122_post_id": 990002
+  },
+  "sql_fixture_rows": "990001\t121\tTenant 121 Post\t0\t\u0000\n990002\t122\tTenant 122 Post\t0\t\u0000",
+  "tenant_fixture_adjustment": "Only disposable tenants 121 and 122 had status reset to enabled and expire_time extended one year; the schema and container are destroyed after the probe.",
+  "real_login_user": {
+    "id": 990011,
+    "tenant_id": 121,
+    "password_hash_recorded": false
+  },
+  "conclusion": "Anonymous access is rejected; an authenticated mock principal with no role can read the upstream-defined simple list; SQL results follow the active tenant context in both directions. A real token issued to a disposable tenant-121 user reads tenant-121 rows and is denied with code 403 when the request tenant header is changed to 122.",
+  "graceful_shutdown": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13348": false,
+      "16428": false,
+      "48183": false
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "port": 5193,
+  "lsofExitCode": 1,
+  "listeners": "",
+  "previewStopped": true,
+  "browserTabClosed": true,
+  "viewportReset": true,
+  "databaseResourcesCreated": false
+}

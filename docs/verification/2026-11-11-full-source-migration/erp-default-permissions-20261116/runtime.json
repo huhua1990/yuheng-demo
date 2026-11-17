@@ -1,0 +1,164 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "schema": "yh_default_probe",
+  "backend_port": 48192,
+  "mysql_container": "yh-t4-default-mysql-1116",
+  "redis_container": "yh-t4-default-redis-1116",
+  "authentication": "real password login",
+  "allowed_role_permissions": [
+    "erp:warehouse:update",
+    "erp:account:update"
+  ],
+  "seed_passwords_unchanged": true,
+  "results": {
+    "warehouse": {
+      "denied_before": {
+        "rows": 2,
+        "sha256": "41323bc24a7ff7976b905bdd9942be9299ed5d3b73b4d735020a34bdcb31ecf1"
+      },
+      "denied_after": {
+        "rows": 2,
+        "sha256": "41323bc24a7ff7976b905bdd9942be9299ed5d3b73b4d735020a34bdcb31ecf1"
+      },
+      "allowed_true_rows": [
+        [
+          990001,
+          0,
+          1,
+          0
+        ],
+        [
+          990002,
+          1,
+          1,
+          0
+        ]
+      ],
+      "allowed_false_rows": [
+        [
+          990001,
+          0,
+          1,
+          0
+        ],
+        [
+          990002,
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    "account": {
+      "denied_before": {
+        "rows": 2,
+        "sha256": "3bc3c3502c39cb08a7e5bba243311fa765e5a2643b80e28d59797920d4fdf91c"
+      },
+      "denied_after": {
+        "rows": 2,
+        "sha256": "3bc3c3502c39cb08a7e5bba243311fa765e5a2643b80e28d59797920d4fdf91c"
+      },
+      "allowed_true_rows": [
+        [
+          990011,
+          0,
+          1,
+          0
+        ],
+        [
+          990012,
+          1,
+          1,
+          0
+        ]
+      ],
+      "allowed_false_rows": [
+        [
+          990011,
+          0,
+          1,
+          0
+        ],
+        [
+          990012,
+          0,
+          1,
+          0
+        ]
+      ]
+    }
+  },
+  "events": [
+    {
+      "method": "POST",
+      "path": "/system/user/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/user/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/role/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/permission/assign-role-menu",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/permission/assign-user-role",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/warehouse/update-default-status?id=990002&defaultStatus=true",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/warehouse/update-default-status?id=990002&defaultStatus=true",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/warehouse/update-default-status?id=990002&defaultStatus=false",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/account/update-default-status?id=990012&defaultStatus=true",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/account/update-default-status?id=990012&defaultStatus=true",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/account/update-default-status?id=990012&defaultStatus=false",
+      "http": 200,
+      "code": 0
+    }
+  ],
+  "limits": [
+    "One tenant and two ordinary users; no cross-tenant or concurrency proof.",
+    "Permission and successful true/false writes only; no failure injection.",
+    "Packaged JAR provenance recorded in result.md; not full source-build equivalence."
+  ]
+}

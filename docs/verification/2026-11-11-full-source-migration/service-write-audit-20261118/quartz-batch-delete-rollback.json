@@ -1,0 +1,62 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "run_date": "2026-11-18",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "isolation": {
+    "mysql_image": "mysql:8.0.33",
+    "mysql_container": "yh-t4-quartz-batch-mysql-20261118",
+    "mysql_port": 13328,
+    "schema": "yuheng_t4_qtzbatch_20261118",
+    "schema_scoped_account": "yh_qtzba18",
+    "redis_image": "redis:7.2-alpine",
+    "redis_container": "yh-t4-quartz-batch-redis-20261118",
+    "redis_port": 16399,
+    "backend_port": 48160,
+    "profile": "dev",
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "quartz_auto_startup": false,
+    "jdbc_scheduler_initialized": true,
+    "mock_authentication_isolated_to_this_process": true,
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "successful_sync_job_count": 33,
+    "target_jobs": [
+      {"id": 27, "handler_name": "jobLogCleanJob", "status": 2},
+      {"id": 33, "handler_name": "demoJob", "status": 2}
+    ],
+    "verified_trigger": "t4_qtz_batch_fail BEFORE DELETE ON QRTZ_JOB_DETAILS, raising SQLSTATE 45000 with marker T4_QUARTZ_BATCH_DELETE_INJECTED",
+    "endpoint": "DELETE /admin-api/infra/job/delete-list?ids=27&ids=33",
+    "snapshot": "SHA-256 over ordered full-field rows from all infra_job rows, QRTZ_JOB_DETAILS, QRTZ_TRIGGERS, and QRTZ_CRON_TRIGGERS"
+  },
+  "result": {
+    "http_code": 200,
+    "business_code": 500,
+    "mysql_exception_marker_confirmed_in_server_log": "T4_QUARTZ_BATCH_DELETE_INJECTED",
+    "snapshot_before_sha256": "0ea71dc3dfabded4dda73beb7a2371fd98f3e7dd018fe387f25f1876bc431eec",
+    "snapshot_after_sha256": "0ea71dc3dfabded4dda73beb7a2371fd98f3e7dd018fe387f25f1876bc431eec",
+    "target_business_rows_after": [
+      {"id": 27, "deleted": false},
+      {"id": 33, "deleted": false}
+    ],
+    "target_quartz_job_details_after": [
+      {"handler_name": "jobLogCleanJob", "present": true},
+      {"handler_name": "demoJob", "present": true}
+    ],
+    "target_quartz_triggers_after": [
+      {"handler_name": "jobLogCleanJob", "state": "PAUSED"},
+      {"handler_name": "demoJob", "state": "PAUSED"}
+    ],
+    "transaction_rolled_back": true
+  },
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "dedicated_schema_dropped_and_verified_absent": true,
+    "schema_scoped_account_dropped_and_verified_absent": true,
+    "dedicated_mysql_and_redis_containers_removed": true,
+    "temporary_credentials_removed": true,
+    "ports_48160_13328_16399_no_listener": true,
+    "shared_mysql_redis_and_historical_passwords_modified": false
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_taxbounds_20261114",
+  "port": 48105,
+  "time": "2026-11-14T14:25:22.693227+08:00",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/supplier/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:税率不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/supplier/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:税率不能大于 100"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/customer/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:税率不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/customer/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:税率不能大于 100"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:基础重量不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:采购价格不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:销售价格不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:最低价格不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:税率不能大于 100"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:税率不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:税率不能大于 100"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:税率不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:税率不能大于 100"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:税率不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-check/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:产品单价不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-in/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:产品单价不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-out/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:产品单价不能小于 0"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-move/create",
+      "http": 200,
+      "code": 400,
+      "message": "请求参数不正确:产品单价不能小于 0"
+    }
+  ],
+  "assertions": {
+    "rejected_requests_without_erp_writes": 18,
+    "tax_defaults_and_six_document_line_types": true,
+    "product_and_stock_reference_prices": true
+  }
+}

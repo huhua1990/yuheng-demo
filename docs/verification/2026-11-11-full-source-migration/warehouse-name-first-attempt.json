@@ -1,0 +1,33 @@
+{
+  "result": "FAIL",
+  "schema": "yuheng_t4_wh_20261114",
+  "port": 48089,
+  "time": "2026-11-14T09:54:09.631800+08:00",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0,
+      "msg": "",
+      "name_length": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 0,
+      "msg": "",
+      "name_length": 20
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 400,
+      "msg": "请求参数不正确:仓库名称长度不能超过 20 个字符",
+      "name_length": 21
+    }
+  ],
+  "coverage": "ASCII/BMP 20 accepted; 21/empty/null/omitted rejected on create/update; rejected writes preserve rows"
+}

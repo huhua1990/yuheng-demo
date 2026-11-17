@@ -1,0 +1,66 @@
+- main:
+  - heading "Yuheng 表单隔离验收" [level=1]
+  - paragraph: 真实 Core 组件；请求由内存适配器模拟，未连接数据库。
+  - paragraph: 模拟写请求 0；成功事件 0；异常 0
+  - button "打开公告新增"
+  - button "打开岗位新增"
+  - checkbox "模拟请求失败"
+  - text: 模拟请求失败
+  - dialog:
+    - text: 新增
+    - generic: ×
+    - generic: ×
+    - generic: "* 公告标题"
+    - textbox "* 公告标题":
+      - /placeholder: 请输入公告标题
+    - generic: 公告标题不能为空
+    - group "* 公告内容":
+      - generic: "* 公告内容"
+      - button "正文":
+        - text: 正文
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button "默认字号":
+        - text: 默认字号
+      - button "默认字体":
+        - text: 默认字体
+      - button "默认行高":
+        - text: 默认行高
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - button:
+      - paragraph
+      - generic: 请输入内容...
+      - generic: 公告内容不能为空
+    - generic: "* 公告类型"
+    - combobox "* 公告类型"
+    - generic: 请选择公告类型
+    - generic: 公告类型不能为空
+    - generic: "* 状态"
+    - combobox "* 状态"
+    - generic: 开启
+    - generic: 备注
+    - textbox "备注":
+      - /placeholder: 请输备注
+    - button "确 定" [active]:
+      - generic: 确 定
+    - button "取 消":
+      - generic: 取 消

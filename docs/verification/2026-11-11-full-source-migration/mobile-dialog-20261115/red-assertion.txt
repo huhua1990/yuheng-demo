@@ -1,0 +1,2 @@
+AssertionError [ERR_ASSERTION]: Visible .el-dialog and footer must fit the viewport
+{"bottom":803.59375,"boxSizing":"border-box","clientWidth":800,"cssWidth":"800px","height":677,"left":0,"maxWidth":"none","right":800,"scrollWidth":800,"top":126.59375,"width":800}

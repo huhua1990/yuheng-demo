@@ -1,0 +1,269 @@
+- link "Yuheng Demo":
+  - /url: /
+  - generic: Yuheng Demo
+- menubar:
+  - menuitem "首页":
+    - generic: 首页
+  - menuitem "作者动态":
+    - generic: 作者动态
+  - menuitem "Boot 开发文档":
+    - generic: Boot 开发文档
+  - menuitem "Cloud 开发文档":
+    - generic: Cloud 开发文档
+  - menuitem "系统管理" [expanded]:
+    - generic: 系统管理
+    - menu:
+      - menuitem "租户管理":
+        - generic: 租户管理
+      - menuitem "用户管理":
+        - generic: 用户管理
+      - menuitem "角色管理":
+        - generic: 角色管理
+      - menuitem "菜单管理":
+        - generic: 菜单管理
+      - menuitem "部门管理":
+        - generic: 部门管理
+      - menuitem "岗位管理":
+        - generic: 岗位管理
+      - menuitem "字典管理":
+        - generic: 字典管理
+      - menuitem "消息中心":
+        - generic: 消息中心
+      - menuitem "审计日志":
+        - generic: 审计日志
+      - menuitem "OAuth 2.0":
+        - generic: OAuth 2.0
+      - menuitem "三方登录":
+        - generic: 三方登录
+      - menuitem "地区管理":
+        - generic: 地区管理
+  - menuitem "基础设施":
+    - generic: 基础设施
+  - menuitem "支付管理":
+    - generic: 支付管理
+  - menuitem "报表管理":
+    - generic: 报表管理
+  - menuitem "工作流程":
+    - generic: 工作流程
+  - menuitem "会员中心":
+    - generic: 会员中心
+  - menuitem "MALL 商城系统":
+    - generic: MALL 商城系统
+  - menuitem "EAM 资产管理":
+    - generic: EAM 资产管理
+  - menuitem "CRM 系统":
+    - generic: CRM 系统
+  - menuitem "ERP 系统":
+    - generic: ERP 系统
+  - menuitem "WMS 系统":
+    - generic: WMS 系统
+  - menuitem "MES 系统":
+    - generic: MES 系统
+  - menuitem "OA 办公协同":
+    - generic: OA 办公协同
+  - menuitem "HRM 人力资源":
+    - generic: HRM 人力资源
+  - menuitem "FMS 财务管理":
+    - generic: FMS 财务管理
+  - menuitem "PMS 项目管理":
+    - generic: PMS 项目管理
+  - menuitem "AI 大模型":
+    - generic: AI 大模型
+  - menuitem "IoT 物联网":
+    - generic: IoT 物联网
+  - menuitem "IM 即时通讯":
+    - generic: IM 即时通讯
+  - menuitem "MP 公众号管理":
+    - generic: MP 公众号管理
+  - menuitem "CMS 内容管理":
+    - generic: CMS 内容管理
+- navigation "面包屑":
+  - link "系统管理":
+    - text: 系统管理
+  - text: /
+  - link "岗位管理":
+    - text: 岗位管理
+- combobox
+- generic: 请选择租户
+- generic "项目配置":
+- combobox
+- generic: 请输入菜单内容
+- button:
+- button:
+- superscript
+- button "芋道源码":
+  - generic: 芋道源码
+- button "首页":
+  - text: 首页
+- button "通知公告":
+  - text: 通知公告
+- button "岗位管理":
+  - text: 岗位管理
+- button:
+- generic: 岗位名称
+- textbox "岗位名称":
+  - /placeholder: 请输入岗位名称
+- generic: 岗位编码
+- textbox "岗位编码":
+  - /placeholder: 请输入岗位编码
+- generic: 状态
+- combobox "状态"
+- generic: 请选择状态
+- button "搜索":
+  - text: 搜索
+- button "重置":
+  - text: 重置
+- button "新增":
+  - text: 新增
+- button "导出":
+  - text: 导出
+- button "批量删除" [disabled]:
+  - text: 批量删除
+- table:
+  - rowgroup:
+    - row "选择所有行 岗位编号 岗位名称 岗位编码 岗位顺序 岗位备注 状态 创建时间 操作":
+      - columnheader "选择所有行":
+        - generic "选择所有行":
+          - checkbox "选择所有行"
+      - columnheader "岗位编号":
+        - generic: 岗位编号
+      - columnheader "岗位名称":
+        - generic: 岗位名称
+      - columnheader "岗位编码":
+        - generic: 岗位编码
+      - columnheader "岗位顺序":
+        - generic: 岗位顺序
+      - columnheader "岗位备注":
+        - generic: 岗位备注
+      - columnheader "状态":
+        - generic: 状态
+      - columnheader "创建时间":
+        - generic: 创建时间
+      - columnheader "操作":
+        - generic: 操作
+- table:
+  - rowgroup:
+    - row "选择当前行 9 T3隔离验收岗位已改 yh_t3_mobile15 98 本轮隔离数据 开启 2026-11-15 09:07:50 编辑 删除":
+      - cell "选择当前行":
+        - generic "选择当前行":
+          - checkbox "选择当前行"
+      - cell "9":
+        - generic: "9"
+      - cell "T3隔离验收岗位已改":
+        - generic: T3隔离验收岗位已改
+      - cell "yh_t3_mobile15":
+        - generic: yh_t3_mobile15
+      - cell "98":
+        - generic: "98"
+      - cell "本轮隔离数据":
+        - generic: 本轮隔离数据
+      - cell "开启":
+        - generic: 开启
+      - cell "2026-11-15 09:07:50":
+        - generic: 2026-11-15 09:07:50
+      - cell "编辑 删除":
+        - button "编辑":
+          - generic: 编辑
+        - button "删除":
+          - generic: 删除
+    - row "选择当前行 7 测试 test 10 开启 2025-09-02 08:45:57 编辑 删除":
+      - cell "选择当前行":
+        - generic "选择当前行":
+          - checkbox "选择当前行"
+      - cell "7":
+        - generic: "7"
+      - cell "测试":
+        - generic: 测试
+      - cell "test":
+        - generic: test
+      - cell "10":
+        - generic: "10"
+      - cell
+      - cell "开启":
+        - generic: 开启
+      - cell "2025-09-02 08:45:57":
+        - generic: 2025-09-02 08:45:57
+      - cell "编辑 删除":
+        - button "编辑":
+          - generic: 编辑
+        - button "删除":
+          - generic: 删除
+    - 'row "选择当前行 5 人力资源 HR 5 ` 开启 2024-03-24 20:45:40 编辑 删除"':
+      - cell "选择当前行":
+        - generic "选择当前行":
+          - checkbox "选择当前行"
+      - cell "5":
+        - generic: "5"
+      - cell "人力资源":
+        - generic: 人力资源
+      - cell "HR":
+        - generic: HR
+      - cell "5":
+        - generic: "5"
+      - 'cell "`"':
+        - generic: "`"
+      - cell "开启":
+        - generic: 开启
+      - cell "2024-03-24 20:45:40":
+        - generic: 2024-03-24 20:45:40
+      - cell "编辑 删除":
+        - button "编辑":
+          - generic: 编辑
+        - button "删除":
+          - generic: 删除
+    - row "选择当前行 4 普通员工 user 4 111222 开启 2021-01-05 17:03:48 编辑 删除":
+      - cell "选择当前行":
+        - generic "选择当前行":
+          - checkbox "选择当前行"
+      - cell "4":
+        - generic: "4"
+      - cell "普通员工":
+        - generic: 普通员工
+      - cell "user":
+        - generic: user
+      - cell "4":
+        - generic: "4"
+      - cell "111222":
+        - generic: "111222"
+      - cell "开启":
+        - generic: 开启
+      - cell "2021-01-05 17:03:48":
+        - generic: 2021-01-05 17:03:48
+      - cell "编辑 删除":
+        - button "编辑":
+          - generic: 编辑
+        - button "删除":
+          - generic: 删除
+    - row "选择当前行 2 项目经理 se 2 开启 2021-01-05 17:03:48 编辑 删除":
+      - cell "选择当前行":
+        - generic "选择当前行":
+          - checkbox "选择当前行"
+      - cell "2":
+        - generic: "2"
+      - cell "项目经理":
+        - generic: 项目经理
+      - cell "se":
+        - generic: se
+      - cell "2":
+        - generic: "2"
+      - cell
+      - cell "开启":
+        - generic: 开启
+      - cell "2021-01-05 17:03:48":
+        - generic: 2021-01-05 17:03:48
+      - cell "编辑 删除":
+        - button "编辑":
+          - generic: 编辑
+        - button "删除":
+          - generic: 删除
+- generic: 共 5 条
+- combobox
+- generic: 10条/页
+- button "上一页" [disabled]:
+- list:
+  - listitem "第 1 页": "1"
+- button "下一页" [disabled]:
+- generic: 前往
+- spinbutton "页": "1"
+- generic: 页
+- generic: Copyright ©2026 Yuheng Demo

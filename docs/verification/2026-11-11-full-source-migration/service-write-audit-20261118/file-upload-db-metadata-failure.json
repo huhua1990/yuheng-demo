@@ -1,0 +1,38 @@
+{
+  "run_date": "2026-11-15",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "isolation": {
+    "mysql_container": "yh-t4-file-mysql-20261115",
+    "schema": "yuheng_t4_file_20261115",
+    "redis_container": "yh-t4-file-redis-20261115",
+    "backend_port": 48151,
+    "mysql_port": 13317,
+    "redis_port": 16388,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "file_client_config_id": 4,
+    "storage": "database",
+    "metadata_trigger": "BEFORE INSERT ON infra_file raises SQLSTATE 45000",
+    "upload_endpoint": "POST /admin-api/infra/file/upload",
+    "test_content_sha256": "1a851e5d169c2fadd9f34a225e402aba14cf48b45760586a175732b51237b00d",
+    "test_content_bytes": 37
+  },
+  "result": {
+    "http_code": 200,
+    "business_code": 500,
+    "infra_file_rows_after": 0,
+    "infra_file_content_rows_after": 1,
+    "infra_file_content_bytes_after": 37,
+    "orphaned_content_path": "20261115/yh-t4-file-probe.txt"
+  },
+  "conclusion": "The file content insert committed before the metadata insert failed. The API returned a generic error while leaving one content row without a corresponding file metadata row.",
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "only_disposable_mysql_and_redis_containers_removed": true,
+    "shared_database_or_redis_modified": false,
+    "historical_passwords_read_or_modified": false
+  }
+}

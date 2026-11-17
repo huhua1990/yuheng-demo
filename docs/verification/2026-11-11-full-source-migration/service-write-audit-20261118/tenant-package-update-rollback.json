@@ -1,0 +1,79 @@
+{
+  "result": "PASS",
+  "work_id": "YH-20261111-full-source-migration",
+  "area": "T4 tenant-package update across tenant role menus",
+  "artifact": {
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+    "core_system_jar_sha256": "55115b0639ef5491567c360ce04b09e8829007be4348323ec63b2395a84c4b72"
+  },
+  "isolation": {
+    "mysql_version": "8.0.33",
+    "schema": "yuheng_t4_pkgupd_20261119",
+    "liquibase_changesets": 54,
+    "tables": 150,
+    "redis_version": "7.2.17",
+    "backend_port": 48179,
+    "mysql_host_port": 13346,
+    "redis_host_port": 16425,
+    "mock_authentication": "isolated process only",
+    "seeded_passwords_read_or_changed": false,
+    "shared_database_or_redis_used": false
+  },
+  "baseline": {
+    "package_id": 111,
+    "package_name": "普通套餐",
+    "package_remark": "小功能",
+    "menu_ids": "original seeded menu set",
+    "tenants": [121, 122],
+    "roles": [
+      {"role_id": 109, "code": "tenant_admin", "tenant_id": 121, "active_role_menu_rows": 292},
+      {"role_id": 111, "code": "tenant_admin", "tenant_id": 122, "active_role_menu_rows": 257}
+    ],
+    "role_menu_combined_snapshot": {
+      "row_count": 549,
+      "active_rows": 549,
+      "sha256": "9586f3f4d6d2c9ab3b8685c6a59fa9f1a65ce3513b8c01353bd94792ef7c64cc"
+    }
+  },
+  "failure_injection": {
+    "table": "system_role_menu",
+    "trigger_tenant_boundary": "BEFORE UPDATE where OLD.role_id=111",
+    "trigger_exists_queried_before_request": true,
+    "failure_marker": "T4_PACKAGE_UPDATE_TENANT2_INJECTED"
+  },
+  "failure_request": {
+    "method": "PUT",
+    "path": "/admin-api/system/tenant-package/update",
+    "body": {"id": 111, "name": "普通套餐", "status": 0, "remark": "T4 update transaction probe", "menuIds": [1, 2, 3]},
+    "http_status": 200,
+    "business_code": 500
+  },
+  "failure_snapshot_after": {
+    "package_remark": "小功能",
+    "package_menu_ids": "original seeded menu set",
+    "role_menu_combined_snapshot": {
+      "row_count": 549,
+      "active_rows": 549,
+      "sha256": "9586f3f4d6d2c9ab3b8685c6a59fa9f1a65ce3513b8c01353bd94792ef7c64cc"
+    },
+    "all_prior_package_and_first_tenant_writes_rolled_back": true
+  },
+  "success_control_after_trigger_removal": {
+    "request_menu_ids": [1, 2, 3],
+    "http_status": 200,
+    "business_code": 0,
+    "package_menu_ids": [1, 2, 3],
+    "tenant_121_admin_role_active_rows": 3,
+    "tenant_122_admin_role_active_rows": 3,
+    "active_out_of_package_menu_rows": 0
+  },
+  "cleanup": {
+    "application_graceful_shutdown": true,
+    "schema_and_user_dropped": true,
+    "dedicated_containers_removed": true,
+    "ports_unbound": [48179, 13346, 16425],
+    "shared_demo_processes_unchanged": [23945, 39370],
+    "shared_mysql_and_redis_unchanged": true
+  },
+  "conclusion": "A real package update traversed tenants 121 then 122. Failure injected on tenant 122 role-menu cleanup returned business code 500 and restored the package row plus all role-menu rows to the exact combined snapshot. With the trigger removed, the same update completed and both tenant administrator roles matched the new three-menu package. This verifies the tested local transaction in one sequential two-tenant case; concurrency and external cache visibility remain unverified."
+}

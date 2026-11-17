@@ -1,0 +1,71 @@
+{
+  "result": "PASS_WITH_DISPOSABLE_SUCCESS_CONTROL",
+  "work_id": "YH-20261111-full-source-migration",
+  "area": "T4 batch role deletion cascade transaction",
+  "artifact": {
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+    "core_system_jar_sha256": "55115b0639ef5491567c360ce04b09e8829007be4348323ec63b2395a84c4b72"
+  },
+  "isolation": {
+    "mysql_version": "8.0.33",
+    "schema": "yuheng_t4_rolebatch_20261119",
+    "liquibase_changesets": 54,
+    "tables": 150,
+    "redis_version": "7.2.17",
+    "backend_port": 48177,
+    "mysql_host_port": 13344,
+    "redis_host_port": 16423,
+    "mock_authentication": "isolated process only",
+    "seeded_passwords_read_or_changed": false,
+    "shared_database_or_redis_used": false
+  },
+  "successful_control": {
+    "request": "DELETE /admin-api/system/role/delete-list?ids=155&ids=162",
+    "http_status": 200,
+    "business_code": 0,
+    "roles_155_and_162_deleted": true,
+    "user_role_active_rows_after": 0,
+    "role_menu_active_rows_after": 0,
+    "scope": "Disposable seeded data only; this is the positive transaction control, not part of the subsequent rollback snapshot."
+  },
+  "failure_injection": "schema-local BEFORE UPDATE ON system_role_menu raising SQLSTATE 45000; trigger existence queried before the request",
+  "fixture": {
+    "roles": [
+      {"id": 900101, "tenant_id": 1, "deleted_before": false},
+      {"id": 900102, "tenant_id": 1, "deleted_before": false}
+    ],
+    "user_role_relations": [
+      {"id": 900101, "user_id": 90001, "role_id": 900101, "tenant_id": 1, "deleted_before": false},
+      {"id": 900102, "user_id": 90002, "role_id": 900101, "tenant_id": 1, "deleted_before": false},
+      {"id": 900103, "user_id": 90003, "role_id": 900102, "tenant_id": 1, "deleted_before": false}
+    ],
+    "role_menu_relations": [
+      {"id": 900101, "role_id": 900101, "menu_id": 1, "tenant_id": 1, "deleted_before": false},
+      {"id": 900102, "role_id": 900101, "menu_id": 2, "tenant_id": 1, "deleted_before": false},
+      {"id": 900103, "role_id": 900102, "menu_id": 1, "tenant_id": 1, "deleted_before": false}
+    ]
+  },
+  "failure_request": {
+    "method": "DELETE",
+    "path": "/admin-api/system/role/delete-list?ids=900101&ids=900102",
+    "tenant_id": 1,
+    "http_status": 200,
+    "business_code": 500
+  },
+  "snapshot_after": {
+    "active_roles": [900101, 900102],
+    "active_user_role_relation_ids": [900101, 900102, 900103],
+    "active_role_menu_relation_ids": [900101, 900102, 900103],
+    "all_fixture_rows_match_before_values": true
+  },
+  "rollback_verified": true,
+  "cleanup": {
+    "application_graceful_shutdown": true,
+    "schema_and_user_dropped": true,
+    "dedicated_containers_removed": true,
+    "ports_unbound": [48177, 13344, 16423],
+    "shared_demo_processes_unchanged": [23945, 39370],
+    "shared_mysql_and_redis_unchanged": true
+  },
+  "conclusion": "The delete-list endpoint successfully handles a two-role cascade in the disposable success control. On a separate pair of purpose-built role fixtures, failure during role-menu cleanup returned business code 500 while both roles, all three user-role rows, and all three role-menu rows remained active and unchanged. This proves atomic rollback for the tested batch/failure point only."
+}

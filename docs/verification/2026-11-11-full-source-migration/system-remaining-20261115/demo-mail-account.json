@@ -1,0 +1,39 @@
+{
+  "buttons": [
+    "搜索",
+    "重置",
+    "新增",
+    "批量删除",
+    "编辑",
+    "删除",
+    "编辑",
+    "删除"
+  ],
+  "headers": [
+    "",
+    "编号",
+    "邮箱",
+    "用户名",
+    "SMTP 服务器域名",
+    "SMTP 服务器端口",
+    "是否开启 SSL",
+    "是否开启 STARTTLS",
+    "创建时间",
+    "操作"
+  ],
+  "labels": [
+    "邮箱",
+    "用户名",
+    "创建时间"
+  ],
+  "totals": [
+    "共 2 条"
+  ],
+  "url": "/system/messages/mail/mail-account",
+  "viewport": {
+    "height": 805,
+    "scrollWidth": 1512,
+    "width": 1512
+  },
+  "visibleRows": 2
+}

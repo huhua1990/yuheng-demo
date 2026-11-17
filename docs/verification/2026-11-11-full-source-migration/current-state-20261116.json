@@ -1,0 +1,55 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "checked_at": "2026-11-16T16:53:00+08:00",
+  "T3_shared_runtime_read_only": {
+    "ui_url": "http://127.0.0.1:5173/login",
+    "ui_http_status": 200,
+    "ui_pid": 39370,
+    "backend_port": 48080,
+    "backend_process_pid": 23945,
+    "backend_permission_api_probe": "unauthenticated GET /admin-api/system/auth/get-permission-info timed out after 6 seconds",
+    "backend_unauthed_health_probe": "GET /actuator/health returned 404 in 0.09 seconds",
+    "backend_log_evidence": "lifecycle/backend.log shows repeated NoClassDefFoundError: ch/qos/logback/classic/spi/ThrowableProxy after unauthenticated probes; older requests to /admin-api/system/tenant/get-by-website completed after about 60 seconds; current health probe completed in about 53ms",
+    "packaged_logback_jars_present": ["logback-classic-1.5.34.jar", "logback-core-1.5.34.jar"],
+    "running_process_loaded_artifact": "target/yuheng-demo.jar, SHA-256 e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f; the ThrowableProxy class failure is in the running process and is not explained by absence of those jars from the current artifact",
+    "chrome_extension_automation": "not available; visibility capability error and tab inventory unchanged; existing Chrome tabs left untouched",
+    "isolated_in_app_browser": {
+      "url": "http://127.0.0.1:5173/login",
+      "rendered": true,
+      "observed_form": "tenant 芋道源码; username admin; password empty; login/mobile/QR/register actions",
+      "action": "clicked primary login with empty password; stayed on /login; no credentials submitted",
+      "scope": "render-only and empty-credential client-state observation; no successful login or backend auth claim"
+    },
+    "backend_process_restarted_or_stopped": false,
+    "login_or_business_write_requests_sent": false
+  },
+  "T3_isolated_browser_probe": {
+    "schema": "yuheng_t3_20261116",
+    "backend_port": 48173,
+    "ui_port": 5174,
+    "mysql_port": 13373,
+    "redis_port": 16473,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "seed_users": 21,
+    "seed_users_with_empty_password": 0,
+    "operate_log_success_column_count": 0,
+    "tenant_websites_adjustment": "added 127.0.0.1:5174 only in disposable schema",
+    "admin_credential": "adjusted only in disposable schema for this run; exact value omitted; disposable schema/container destroyed",
+    "real_login": "success in isolated backend; credential/token omitted",
+    "pages": {
+      "/index": "rendered; shows 21 authorized modules and 506 accessible entries",
+      "/system/user": "rendered; 15 rows, department tree, filters, pagination and actions visible; read-only"
+    },
+    "api": "login/permission load and GET /admin-api/system/user/page returned 200 in isolated UI proxy log",
+    "browser_capture_limits": "no screenshot, performance/resource API, or console capture available from wrapper",
+    "cleanup": "backend gracefully stopped; UI stopped; dedicated MySQL/Redis containers removed; dedicated ports closed; shared services and processes retained",
+    "site_storage_cleanup": "clear API unavailable; isolated tab remains at /login with isolated services/data destroyed"
+  },
+  "shared_containers": {
+    "mysql8": "running, healthy",
+    "redis": "running, healthy"
+  },
+  "shared_database_redis_or_historical_passwords_modified": false,
+  "conclusion": "Shared backend API remains unresponsive in this probe. The isolated current Demo artifact successfully cold-started, authenticated and rendered its home and user-management pages with real API data; only the listed pages and read-only controls were checked. Browser console capture, screenshots, responsive comparisons, other pages and write workflows remain open, so T3 is not complete."
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "check": "yuheng-core diff --check",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "check": "yuheng-demo diff --check",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "check": "new test and preview trailing whitespace",
+    "issues": []
+  }
+]

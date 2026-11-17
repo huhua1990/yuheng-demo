@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "core_commit": "f4f3c1647a874130243183f1edbfd9baa93e2214",
+  "upstream_commit": "128a0e3bd3847d11b7f2f9e169dd36fce3b0b581",
+  "upstream_worktree_clean": true,
+  "normalization": [
+    "package names com.yuheng.platform and cn.iocoder.yudao",
+    "jakarta and javax namespace imports",
+    "comments",
+    "whitespace"
+  ],
+  "method_results": {
+    "OAuth2TokenServiceImpl.createAccessToken": "MATCH",
+    "OAuth2TokenServiceImpl.refreshAccessToken": "MATCH",
+    "OAuth2TokenServiceImpl.getAccessToken": "MATCH",
+    "OAuth2TokenServiceImpl.checkAccessToken": "MATCH",
+    "OAuth2TokenServiceImpl.removeAccessToken(String)": "MATCH",
+    "OAuth2TokenServiceImpl.removeAccessToken(Long,Integer)": "MATCH",
+    "OAuth2TokenServiceImpl.getAccessTokenPage": "MATCH",
+    "AdminUserServiceImpl.updateUserStatus": "MATCH"
+  },
+  "redis_acl_refresh_failure_probe": {
+    "result": "EXCLUDED",
+    "reason": "Repeated ACL mutation interacted with the long-lived Redisson connection pool, and the same refresh token was retried and later successfully refreshed; a clean single-request state transition could not be attributed.",
+    "confirmed_observation": "A NOPERM denial for DEL occurred at OAuth2AccessTokenRedisDAO.deleteList.",
+    "pass_claimed": false
+  },
+  "cleanup": {
+    "isolated_application_graceful_shutdown": true,
+    "dedicated_containers_removed": true,
+    "schema_account_and_cache_disposed": true,
+    "dedicated_ports_closed": true,
+    "shared_services_and_historical_passwords_untouched": true
+  }
+}

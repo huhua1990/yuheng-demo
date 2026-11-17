@@ -1,0 +1,54 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t4_deptlist_20261120",
+  "jar_sha256": "5e632e65db0af402c43c2e8823601c11a03cfe60b01d738af52dd042384283ef",
+  "ports": {
+    "mysql": 13358,
+    "redis": 16438,
+    "app": 48195
+  },
+  "cases": {
+    "anonymous": {
+      "http": 200,
+      "code": 401
+    },
+    "real_token_matching_tenant_header": {
+      "login_code": 0,
+      "http": 200,
+      "code": 0,
+      "returned_fixture_names": [
+        "T4 Tenant 121 Dept"
+      ],
+      "foreign_tenant_row_absent": true
+    },
+    "real_token_forged_tenant_header": {
+      "token_tenant_id": 121,
+      "request_tenant_id": 122,
+      "http": 200,
+      "code": 403,
+      "denied": true
+    }
+  },
+  "sql_snapshot": {
+    "before": "100\tE88A8BE98193E6BA90E7A081\t0\t0\t0\t0\t1\n101\tE6B7B1E59CB3E680BBE585ACE58FB8\t100\t1\t0\t0\t1\n102\tE995BFE6B299E58886E585ACE58FB8\t100\t2\t0\t0\t1\n103\tE7A094E58F91E983A8E997A8\t101\t1\t0\t0\t1\n104\tE5B882E59CBAE983A8E997A8\t101\t2\t0\t0\t1\n105\tE6B58BE8AF95E983A8E997A8\t101\t3\t0\t0\t1\n106\tE8B4A2E58AA1E983A8E997A8\t101\t4\t0\t0\t1\n107\tE8BF90E7BBB4E983A8E997A8\t101\t5\t0\t0\t1\n108\tE5B882E59CBAE983A8E997A8\t102\t1\t0\t0\t1\n109\tE8B4A2E58AA1E983A8E997A8\t102\t2\t0\t0\t1\n110\tE696B0E983A8E997A8\t0\t1\t0\t0\t121\n111\tE9A1B6E7BAA7E983A8E997A8\t0\t1\t0\t0\t122\n112\tE4BAA7E59381E983A8E997A8\t101\t100\t1\t0\t1\n113\tE694AFE68C81E983A8E997A8\t102\t3\t1\t0\t1\n116\tE69F90E4B8AAE5AD90E983A8E997A8\t0\t1\t0\t0\t1\n117\tE69F90E4B8AAE5AD90E983A8E997A82032\t0\t2\t0\t0\t1\n990501\t54342054656E616E74203132312044657074\t0\t1\t0\t0\t121\n990502\t54342054656E616E74203132322044657074\t0\t1\t0\t0\t122",
+    "after": "100\tE88A8BE98193E6BA90E7A081\t0\t0\t0\t0\t1\n101\tE6B7B1E59CB3E680BBE585ACE58FB8\t100\t1\t0\t0\t1\n102\tE995BFE6B299E58886E585ACE58FB8\t100\t2\t0\t0\t1\n103\tE7A094E58F91E983A8E997A8\t101\t1\t0\t0\t1\n104\tE5B882E59CBAE983A8E997A8\t101\t2\t0\t0\t1\n105\tE6B58BE8AF95E983A8E997A8\t101\t3\t0\t0\t1\n106\tE8B4A2E58AA1E983A8E997A8\t101\t4\t0\t0\t1\n107\tE8BF90E7BBB4E983A8E997A8\t101\t5\t0\t0\t1\n108\tE5B882E59CBAE983A8E997A8\t102\t1\t0\t0\t1\n109\tE8B4A2E58AA1E983A8E997A8\t102\t2\t0\t0\t1\n110\tE696B0E983A8E997A8\t0\t1\t0\t0\t121\n111\tE9A1B6E7BAA7E983A8E997A8\t0\t1\t0\t0\t122\n112\tE4BAA7E59381E983A8E997A8\t101\t100\t1\t0\t1\n113\tE694AFE68C81E983A8E997A8\t102\t3\t1\t0\t1\n116\tE69F90E4B8AAE5AD90E983A8E997A8\t0\t1\t0\t0\t1\n117\tE69F90E4B8AAE5AD90E983A8E997A82032\t0\t2\t0\t0\t1\n990501\t54342054656E616E74203132312044657074\t0\t1\t0\t0\t121\n990502\t54342054656E616E74203132322044657074\t0\t1\t0\t0\t122",
+    "unchanged": true
+  },
+  "fixture": {
+    "tenant_121_dept_id": 990501,
+    "tenant_122_dept_id": 990502,
+    "user_id": 990503,
+    "password_hash_recorded": false
+  },
+  "changesets": 56,
+  "conclusion": "Anonymous department simple-list access was rejected. A real token for tenant 121 returned only enabled tenant-121 departments, while changing the tenant header to 122 was rejected; the department table snapshot remained unchanged.",
+  "graceful_shutdown": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13358": false,
+      "16438": false,
+      "48195": false
+    }
+  }
+}

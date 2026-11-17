@@ -1,0 +1,47 @@
+[
+  {
+    "name": "core-tests-final",
+    "command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "typecheck-final",
+    "command": [
+      "node",
+      "node_modules/vue-tsc/bin/vue-tsc.js",
+      "--noEmit"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "boundary-final",
+    "command": [
+      "node",
+      "scripts/check-boundary.mjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "build-final",
+    "command": [
+      "node",
+      "node_modules/vite/bin/vite.js",
+      "build"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "declarations-final",
+    "command": [
+      "node",
+      "node_modules/vue-tsc/bin/vue-tsc.js",
+      "-p",
+      "tsconfig.build.json"
+    ],
+    "exitCode": 0
+  }
+]

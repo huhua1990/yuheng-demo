@@ -1,0 +1,443 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t3_role_page_20261120",
+  "jar_sha256": "5e632e65db0af402c43c2e8823601c11a03cfe60b01d738af52dd042384283ef",
+  "ui_source": "current yuheng-demo-ui production build using Core compat source link",
+  "ports": {
+    "mysql": 13364,
+    "redis": 16445,
+    "app": 48201,
+    "ui": 5201
+  },
+  "credentials_recorded": false,
+  "browser": {
+    "base": "http://127.0.0.1:5201",
+    "viewports": {
+      "desktop-1440x900": {
+        "initial": {
+          "viewport": 1440,
+          "document": {
+            "clientWidth": 1440,
+            "scrollWidth": 1440
+          },
+          "rows": 5,
+          "visibleText": true
+        },
+        "beforeClick": {
+          "button": {
+            "left": 757,
+            "right": 838,
+            "top": 270,
+            "bottom": 302
+          },
+          "point": {
+            "x": 797.5,
+            "y": 286
+          },
+          "hit": {
+            "tag": "SPAN",
+            "className": "",
+            "text": "新增"
+          },
+          "menu": {
+            "left": 0,
+            "right": 200,
+            "width": 200
+          },
+          "overlayVisible": false
+        },
+        "dialog": {
+          "dialog": {
+            "left": 432,
+            "right": 1008,
+            "width": 576,
+            "scrollWidth": 576
+          },
+          "input": {
+            "left": 554,
+            "right": 966,
+            "width": 412
+          },
+          "footer": {
+            "left": 448,
+            "right": 992
+          },
+          "viewport": 1440
+        },
+        "cancelWrites": 0
+      },
+      "mobile-320x844": {
+        "initial": {
+          "viewport": 320,
+          "document": {
+            "clientWidth": 320,
+            "scrollWidth": 320
+          },
+          "rows": 5,
+          "visibleText": true
+        },
+        "beforeClick": {
+          "button": {
+            "left": 43,
+            "right": 124,
+            "top": 548,
+            "bottom": 580
+          },
+          "point": {
+            "x": 83.5,
+            "y": 564
+          },
+          "hit": {
+            "tag": "SPAN",
+            "className": "",
+            "text": "新增"
+          },
+          "menu": {
+            "left": 0,
+            "right": 0,
+            "width": 0
+          },
+          "overlayVisible": false
+        },
+        "dialog": {
+          "dialog": {
+            "left": 0,
+            "right": 320,
+            "width": 320,
+            "scrollWidth": 320
+          },
+          "input": {
+            "left": 122,
+            "right": 278,
+            "width": 156
+          },
+          "footer": {
+            "left": 16,
+            "right": 304
+          },
+          "viewport": 320
+        },
+        "cancelWrites": 0
+      }
+    },
+    "consoleErrors": [
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Failed to load resource: net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "message": "Error: Unable to preload CSS for http://127.0.0.1:5201/assets/css-CAyAwfWz.css\n    at HTMLLinkElement.<anonymous> (http://127.0.0.1:5201/assets/preload-helper-Czpn1I53.js:1:906)"
+      }
+    ],
+    "pageErrors": [],
+    "requestFailed": [
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/css-CAyAwfWz.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/css-C_5fjRmq.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/IconSelect-BWrhfG4V.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/css-BeIfAqTO.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/LocaleDropdown-CzfG7N7P.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/Verify-B0vjumsq.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/LoginForm-CKVuXdEN.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/RegisterForm-DVRS29Gx.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/css-Dq8WDDkr.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/css-BAyktVMS.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/QrCodeForm-CfVWXyWs.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/InputPassword-BKO6YmZu.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/ForgetPasswordForm-CSzn51h4.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/Login-CwXNcgJ8.css",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/css-BzPyzB_v.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/css-J3h74cDb.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/css-BhNvAJQi.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/logo-DxinYd_B.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/login-box-bg-B_bCwd_O.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/LoginFormTitle-LWW9Y0mh.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/LoginForm-B3dW2OoT.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/permission-H7Ghh_CN.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/Verify-CNVaxEap.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/__vite-browser-external-SwrSgYTf.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/login-D7phWHR-.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/formRules-3y0SfcFV.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/MobileForm-DK-hJH2W.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/RegisterForm-Dg7YkVwg.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/QrCodeForm-4sgUySZj.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/css-Czf2F6Bx2.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/css-6GQ5o4Al2.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/SSOLogin-DFHXFq-N.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      },
+      {
+        "label": "mobile-390x844",
+        "path": "/assets/InputPassword-myewmfTv.js",
+        "failure": "net::ERR_CONNECTION_RESET"
+      }
+    ],
+    "writes": [],
+    "errors": {
+      "mobile-390x844": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder=\"请输入用户名\"]') to be visible\u001b[22m\n\n    at inspectViewport (/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/role_page_browser_probe.js:28:16)\n    at async /Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/role_page_browser_probe.js:108:13"
+    }
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13364": false,
+      "16445": false,
+      "48201": false,
+      "5201": false
+    }
+  }
+}

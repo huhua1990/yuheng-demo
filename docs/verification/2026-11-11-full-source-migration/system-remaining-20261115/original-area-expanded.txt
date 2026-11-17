@@ -1,0 +1,248 @@
+- link "芋道管理系统":
+  - /url: /
+  - generic: 芋道管理系统
+- menubar:
+  - menuitem "首页":
+    - generic: 首页
+  - menuitem "作者动态":
+    - generic: 作者动态
+  - menuitem "Boot 开发文档":
+    - generic: Boot 开发文档
+  - menuitem "Cloud 开发文档":
+    - generic: Cloud 开发文档
+  - menuitem "系统管理" [expanded]:
+    - generic: 系统管理
+    - menu:
+      - menuitem "租户管理":
+        - generic: 租户管理
+      - menuitem "用户管理":
+        - generic: 用户管理
+      - menuitem "角色管理":
+        - generic: 角色管理
+      - menuitem "菜单管理":
+        - generic: 菜单管理
+      - menuitem "部门管理":
+        - generic: 部门管理
+      - menuitem "岗位管理":
+        - generic: 岗位管理
+      - menuitem "字典管理":
+        - generic: 字典管理
+      - menuitem "消息中心":
+        - generic: 消息中心
+      - menuitem "审计日志":
+        - generic: 审计日志
+      - menuitem "OAuth 2.0":
+        - generic: OAuth 2.0
+      - menuitem "三方登录":
+        - generic: 三方登录
+      - menuitem "地区管理":
+        - generic: 地区管理
+  - menuitem "基础设施":
+    - generic: 基础设施
+  - menuitem "支付管理":
+    - generic: 支付管理
+  - menuitem "报表管理":
+    - generic: 报表管理
+  - menuitem "工作流程":
+    - generic: 工作流程
+  - menuitem "会员中心":
+    - generic: 会员中心
+  - menuitem "MALL 商城系统":
+    - generic: MALL 商城系统
+  - menuitem "EAM 资产管理":
+    - generic: EAM 资产管理
+  - menuitem "CRM 系统":
+    - generic: CRM 系统
+  - menuitem "ERP 系统":
+    - generic: ERP 系统
+  - menuitem "WMS 系统":
+    - generic: WMS 系统
+  - menuitem "MES 系统":
+    - generic: MES 系统
+  - menuitem "OA 办公协同":
+    - generic: OA 办公协同
+  - menuitem "HRM 人力资源":
+    - generic: HRM 人力资源
+  - menuitem "FMS 财务管理":
+    - generic: FMS 财务管理
+  - menuitem "PMS 项目管理":
+    - generic: PMS 项目管理
+  - menuitem "AI 大模型":
+    - generic: AI 大模型
+  - menuitem "IoT 物联网":
+    - generic: IoT 物联网
+  - menuitem "IM 即时通讯":
+    - generic: IM 即时通讯
+  - menuitem "MP 公众号管理":
+    - generic: MP 公众号管理
+  - menuitem "CMS 内容管理":
+    - generic: CMS 内容管理
+- navigation "面包屑":
+  - link "系统管理":
+    - text: 系统管理
+  - text: /
+  - link "地区管理":
+    - text: 地区管理
+- combobox
+- generic: 请选择租户
+- generic "项目配置":
+- combobox
+- generic: 请输入菜单内容
+- button:
+- button:
+- superscript
+- button "芋道源码":
+  - generic: 芋道源码
+- button "首页":
+  - text: 首页
+- button "通知公告":
+  - text: 通知公告
+- button "短信渠道":
+  - text: 短信渠道
+- button "短信模板":
+  - text: 短信模板
+- button "短信日志":
+  - text: 短信日志
+- button "邮箱账号":
+  - text: 邮箱账号
+- button "邮件模版":
+  - text: 邮件模版
+- button "邮件记录":
+  - text: 邮件记录
+- button "模板管理":
+  - text: 模板管理
+- button "消息记录":
+  - text: 消息记录
+- button "应用管理":
+  - text: 应用管理
+- button "令牌管理":
+  - text: 令牌管理
+- button "三方应用":
+  - text: 三方应用
+- button "三方用户":
+  - text: 三方用户
+- button "地区管理":
+  - text: 地区管理
+- button:
+- alert:
+  - generic: 【地区 & IP】文档地址：https://doc.iocoder.cn/area-and-ip/
+- button "IP 查询":
+  - text: IP 查询
+- table:
+  - rowgroup:
+    - row "北京市":
+      - cell "北京市":
+        - generic "北京市"
+    - row "北京市":
+      - cell "北京市":
+        - generic "北京市"
+    - row "天津市":
+      - cell "天津市":
+        - generic "天津市"
+    - row "河北省":
+      - cell "河北省":
+        - generic "河北省"
+    - row "山西省":
+      - cell "山西省":
+        - generic "山西省"
+    - row "内蒙古自治区":
+      - cell "内蒙古自治区":
+        - generic "内蒙古自治区"
+    - row "辽宁省":
+      - cell "辽宁省":
+        - generic "辽宁省"
+    - row "吉林省":
+      - cell "吉林省":
+        - generic "吉林省"
+    - row "黑龙江省":
+      - cell "黑龙江省":
+        - generic "黑龙江省"
+    - row "上海市":
+      - cell "上海市":
+        - generic "上海市"
+    - row "江苏省":
+      - cell "江苏省":
+        - generic "江苏省"
+    - row "浙江省":
+      - cell "浙江省":
+        - generic "浙江省"
+    - row "安徽省":
+      - cell "安徽省":
+        - generic "安徽省"
+    - row "福建省":
+      - cell "福建省":
+        - generic "福建省"
+    - row "江西省":
+      - cell "江西省":
+        - generic "江西省"
+  - rowgroup:
+    - row "地名":
+      - columnheader "地名":
+        - generic "地名"
+- table:
+  - rowgroup:
+    - row "收起当前行 110000":
+      - cell "收起当前行 110000":
+        - button "收起当前行" [expanded] [active]:
+        - generic "110000"
+    - row "展开当前行 110100":
+      - cell "展开当前行 110100":
+        - button "展开当前行":
+        - generic "110100"
+    - row "展开当前行 120000":
+      - cell "展开当前行 120000":
+        - button "展开当前行":
+        - generic "120000"
+    - row "展开当前行 130000":
+      - cell "展开当前行 130000":
+        - button "展开当前行":
+        - generic "130000"
+    - row "展开当前行 140000":
+      - cell "展开当前行 140000":
+        - button "展开当前行":
+        - generic "140000"
+    - row "展开当前行 150000":
+      - cell "展开当前行 150000":
+        - button "展开当前行":
+        - generic "150000"
+    - row "展开当前行 210000":
+      - cell "展开当前行 210000":
+        - button "展开当前行":
+        - generic "210000"
+    - row "展开当前行 220000":
+      - cell "展开当前行 220000":
+        - button "展开当前行":
+        - generic "220000"
+    - row "展开当前行 230000":
+      - cell "展开当前行 230000":
+        - button "展开当前行":
+        - generic "230000"
+    - row "展开当前行 310000":
+      - cell "展开当前行 310000":
+        - button "展开当前行":
+        - generic "310000"
+    - row "展开当前行 320000":
+      - cell "展开当前行 320000":
+        - button "展开当前行":
+        - generic "320000"
+    - row "展开当前行 330000":
+      - cell "展开当前行 330000":
+        - button "展开当前行":
+        - generic "330000"
+    - row "展开当前行 340000":
+      - cell "展开当前行 340000":
+        - button "展开当前行":
+        - generic "340000"
+    - row "展开当前行 350000":
+      - cell "展开当前行 350000":
+        - button "展开当前行":
+        - generic "350000"
+    - row "展开当前行 360000":
+      - cell "展开当前行 360000":
+        - button "展开当前行":
+        - generic "360000"
+  - rowgroup:
+    - row "编号":
+      - columnheader "编号":
+        - generic "编号"
+- generic: Copyright ©2026 芋道管理系统

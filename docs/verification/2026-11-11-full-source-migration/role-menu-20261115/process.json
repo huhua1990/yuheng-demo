@@ -1,0 +1,9 @@
+{
+  "port": 48128,
+  "schema": "yuheng_t3_role_menu_20261115",
+  "mysqlUser": "yh_t3_role_menu15",
+  "redisDb": 1,
+  "startedAt": "2026-11-15T10:19:26+0800",
+  "failedAttemptPid": 73036,
+  "failedAttempt": "exec child exited before application logging; no schema tables were created; no listener remained"
+}

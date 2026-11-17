@@ -1,0 +1,47 @@
+{
+  "result": "PASS",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "schema": "yuheng_t4_oauthorder_20261118",
+  "changesets": 54,
+  "tables": 150,
+  "backend_port": 48168,
+  "mysql_container": "yh-t4-oauth-order-mysql-20261118",
+  "redis_container": "yh-t4-oauth-order-redis-20261118",
+  "redis_port": 16407,
+  "redis_db": 0,
+  "redis_initial_keys": 0,
+  "oauth_grant": "client_credentials",
+  "tenant_id": 1,
+  "api": {
+    "method": "DELETE",
+    "path": "/admin-api/system/oauth2/token",
+    "http_status": 200,
+    "business_code": 500,
+    "failure_marker": "T4_OAUTH_REFRESH_DELETE_INJECTED"
+  },
+  "keys_before_revoke": {
+    "access_token_key_exists": true,
+    "refresh_token_key_exists": true
+  },
+  "database_after_revoke_failure": {
+    "access_token_row_active": true,
+    "refresh_token_row_active": true
+  },
+  "keys_after_revoke_failure": {
+    "access_token_key_exists": false,
+    "refresh_token_key_exists": false
+  },
+  "first_attempt": {
+    "excluded": true,
+    "reason": "Placeholder Redis values were not valid OAuth token JSON, so revoke failed during token lookup before reaching the injected refresh-row failure."
+  },
+  "cleanup": {
+    "application_graceful_shutdown": true,
+    "schema_and_account_disposed_with_dedicated_mysql_container": true,
+    "dedicated_containers_removed": true,
+    "dedicated_ports_closed": true,
+    "shared_schema_preserved": true,
+    "shared_mysql_redis_and_services_untouched": true,
+    "historical_passwords_untouched": true
+  }
+}

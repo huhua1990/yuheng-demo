@@ -1,0 +1,56 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t4_postpage_20261120",
+  "permission": "system:post:query",
+  "permission_menu_id": 43,
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "ports": {
+    "mysql": 13350,
+    "redis": 16430,
+    "app": 48185
+  },
+  "cases": {
+    "anonymous": {
+      "http": 200,
+      "code": 401
+    },
+    "real_login_without_permission": {
+      "http": 200,
+      "code": 403,
+      "post_snapshot_unchanged": true
+    },
+    "real_login_with_query_permission": {
+      "http": 200,
+      "code": 0,
+      "returned_rows": 4,
+      "total": 4
+    }
+  },
+  "post_snapshot": {
+    "before": "2\t7365\tE9A1B9E79BAEE7BB8FE79086\t2\t0\t0\t1\n4\t75736572\tE699AEE9809AE59198E5B7A5\t4\t0\t0\t1\n5\t4852\tE4BABAE58A9BE8B584E6BA90\t5\t0\t0\t1\n7\t74657374\tE6B58BE8AF95\t10\t0\t0\t1",
+    "after_denied": "2\t7365\tE9A1B9E79BAEE7BB8FE79086\t2\t0\t0\t1\n4\t75736572\tE699AEE9809AE59198E5B7A5\t4\t0\t0\t1\n5\t4852\tE4BABAE58A9BE8B584E6BA90\t5\t0\t0\t1\n7\t74657374\tE6B58BE8AF95\t10\t0\t0\t1",
+    "unchanged_after_denied_request": true
+  },
+  "users": {
+    "denied": {
+      "id": 990041,
+      "tenant_id": 1,
+      "password_hash_recorded": false
+    },
+    "allowed": {
+      "id": 990043,
+      "tenant_id": 1,
+      "password_hash_recorded": false
+    }
+  },
+  "conclusion": "Anonymous requests are rejected, an ordinary real-login user without system:post:query is forbidden, and a user granted only that query permission can read the post page. The denied request does not mutate post rows.",
+  "graceful_shutdown": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13350": false,
+      "16430": false,
+      "48185": false
+    }
+  }
+}

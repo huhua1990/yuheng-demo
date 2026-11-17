@@ -1,0 +1,100 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t4_oauthconcurrency_20261120",
+  "jar_sha256": "5e632e65db0af402c43c2e8823601c11a03cfe60b01d738af52dd042384283ef",
+  "ports": {
+    "mysql": 13357,
+    "redis": 16437,
+    "app": 48194
+  },
+  "concurrency": {
+    "requests": 8,
+    "events": [
+      {
+        "http": 200,
+        "code": 0,
+        "grant_type": "authorization_code"
+      },
+      {
+        "http": 200,
+        "code": 1002022000,
+        "grant_type": "authorization_code"
+      },
+      {
+        "http": 200,
+        "code": 1002022000,
+        "grant_type": "authorization_code"
+      },
+      {
+        "http": 200,
+        "code": 1002022000,
+        "grant_type": "authorization_code"
+      },
+      {
+        "http": 200,
+        "code": 1002022000,
+        "grant_type": "authorization_code"
+      },
+      {
+        "http": 200,
+        "code": 1002022000,
+        "grant_type": "authorization_code"
+      },
+      {
+        "http": 200,
+        "code": 1002022000,
+        "grant_type": "authorization_code"
+      },
+      {
+        "http": 200,
+        "code": 1002022000,
+        "grant_type": "authorization_code"
+      }
+    ],
+    "success_count": 1,
+    "failure_count": 7,
+    "active_rows_after": {
+      "access": 1,
+      "refresh": 1,
+      "code": 0
+    },
+    "code_row_remaining": 0,
+    "single_consumer_assertion": true
+  },
+  "rejected_binding": {
+    "event": {
+      "http": 200,
+      "code": 1002021001,
+      "grant_type": "authorization_code"
+    },
+    "active_rows_before": {
+      "access": 1,
+      "refresh": 1,
+      "code": 1
+    },
+    "active_rows_after": {
+      "access": 1,
+      "refresh": 1,
+      "code": 1
+    },
+    "code_row_remaining": 1,
+    "token_creation_blocked": true
+  },
+  "changesets": 56,
+  "fixture": {
+    "user_id": 990302,
+    "client_id": "t4-grant-concurrency-a0cd710bf5fb",
+    "password_hash_recorded": false,
+    "secret_recorded": false
+  },
+  "conclusion": "Eight concurrent exchanges of one authorization code produced exactly one token pair; the other seven requests were rejected and no duplicate active token rows were created. A wrong redirect binding rejected a second code without consuming it or creating tokens.",
+  "graceful_shutdown": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13357": false,
+      "16437": false,
+      "48194": false
+    }
+  }
+}

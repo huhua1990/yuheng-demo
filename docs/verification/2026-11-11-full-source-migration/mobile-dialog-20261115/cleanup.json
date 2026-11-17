@@ -1,0 +1,23 @@
+{
+  "ports": [
+    {
+      "port": 5193,
+      "exitCode": 1,
+      "listeners": "",
+      "closed": true
+    },
+    {
+      "port": 5194,
+      "exitCode": 1,
+      "listeners": "",
+      "closed": true
+    }
+  ],
+  "previewExitCodes": [
+    0,
+    0
+  ],
+  "browserTabClosed": true,
+  "viewportReset": true,
+  "databaseResourcesCreated": false
+}

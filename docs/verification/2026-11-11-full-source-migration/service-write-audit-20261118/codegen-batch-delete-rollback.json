@@ -1,0 +1,72 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "run_date": "2026-11-15",
+  "scenario": "Codegen batch delete restores all parent rows when child batch logical delete fails",
+  "runtime": {
+    "core_revision": "f4f3c1647a874130243183f1edbfd9baa93e2214",
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+    "mysql_container": "yh-t4-codegenbatch-mysql-20261115",
+    "mysql_port": 13335,
+    "schema": "yuheng_t4_codegenbatch_20261115",
+    "schema_scoped_account": "yh_cgb15",
+    "backend_port": 48167,
+    "redis_container": "yh-t4-codegenbatch-redis-20261115",
+    "redis_port": 16406,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "quartz_auto_startup": false,
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "parents": [
+      {"id": 920020, "table_name": "t4_codegen_batch_a", "table_comment": "Batch A", "deleted_before": 0},
+      {"id": 920030, "table_name": "t4_codegen_batch_b", "table_comment": "Batch B", "deleted_before": 0}
+    ],
+    "columns": [
+      {"id": 920021, "table_id": 920020, "column_name": "id", "deleted_before": 0},
+      {"id": 920022, "table_id": 920020, "column_name": "name", "deleted_before": 0},
+      {"id": 920031, "table_id": 920030, "column_name": "id", "deleted_before": 0},
+      {"id": 920032, "table_id": 920030, "column_name": "name", "deleted_before": 0}
+    ],
+    "before_counts": {"infra_codegen_table": 2, "infra_codegen_column": 4}
+  },
+  "failure_injection": {
+    "trigger": "t4_codegen_batch_delete_fail",
+    "event": "BEFORE UPDATE ON infra_codegen_column",
+    "sqlstate": "45000",
+    "marker": "T4_CODEGEN_BATCH_DELETE_INJECTED",
+    "trigger_definition_queried_before_request": true,
+    "service_log_confirms_child_mapper_failure": true
+  },
+  "request": {
+    "method": "DELETE",
+    "path": "/admin-api/infra/codegen/delete-list?tableIds=920020&tableIds=920030",
+    "http_status": 200,
+    "business_code": 500
+  },
+  "after_state": {
+    "parents": [
+      {"id": 920020, "table_name": "t4_codegen_batch_a", "table_comment": "Batch A", "deleted": 0},
+      {"id": 920030, "table_name": "t4_codegen_batch_b", "table_comment": "Batch B", "deleted": 0}
+    ],
+    "columns": [
+      {"id": 920021, "table_id": 920020, "column_name": "id", "deleted": 0},
+      {"id": 920022, "table_id": 920020, "column_name": "name", "deleted": 0},
+      {"id": 920031, "table_id": 920030, "column_name": "id", "deleted": 0},
+      {"id": 920032, "table_id": 920030, "column_name": "name", "deleted": 0}
+    ],
+    "counts_unchanged": true
+  },
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "schema_dropped_and_verified_absent": true,
+    "schema_account_dropped_and_verified_absent": true,
+    "dedicated_mysql_and_redis_containers_removed": true,
+    "temporary_credentials_and_request_outputs_removed": true,
+    "ports_48167_13335_16406_have_no_listeners": true,
+    "shared_mysql_and_redis_remain_running": true,
+    "shared_database_or_redis_modified": false,
+    "historical_passwords_read_or_modified": false
+  },
+  "conclusion": "Codegen delete-list rolled back both parent logical-delete rows when the later child-column logical delete failed; all two parent and four child rows remained active."
+}

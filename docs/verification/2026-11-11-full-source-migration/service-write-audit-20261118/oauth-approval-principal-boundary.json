@@ -1,0 +1,43 @@
+{
+  "schema": "yuheng_t4_oauthprincipal_20261118",
+  "changesets": 54,
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "core_system_sha256": "55115b0639ef5491567c360ce04b09e8829007be4348323ec63b2395a84c4b72",
+  "backend_port": 48149,
+  "client_id": "yh-principal-20261118",
+  "tenant_id": 1,
+  "subjects": {
+    "1003": {
+      "before": {
+        "probe.read": false
+      },
+      "approval_response_code": 0,
+      "after": {
+        "probe.read": true
+      }
+    },
+    "1004": {
+      "before": {
+        "probe.read": false
+      },
+      "denial_response_code": 0,
+      "after": {
+        "probe.read": false
+      }
+    }
+  },
+  "approval_rows_for_test_subjects": [
+    "1003:2:yh-principal-20261118:probe.read:1:1:0",
+    "1004:2:yh-principal-20261118:probe.read:0:1:0"
+  ],
+  "subject_isolation_confirmed": true,
+  "authorization_state_values_retained": false,
+  "cleanup": {
+    "dedicated_redis_keys_before_remove": 1,
+    "schema_count_after_cleanup": 0,
+    "account_count_after_cleanup": 0,
+    "shared_schema_count_after_cleanup": 1,
+    "backend_port_closed": true,
+    "redis_container_removed": true
+  }
+}

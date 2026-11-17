@@ -1,0 +1,697 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_item_update_20261114_tenant",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-category/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-unit/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/supplier/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/customer/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/account/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update",
+      "http": 200,
+      "code": 1030101011
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update",
+      "http": 200,
+      "code": 1020201011
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=3",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=3&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=4",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=4&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=3",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=3&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=4",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=4&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=3",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update",
+      "http": 200,
+      "code": 1030102009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update",
+      "http": 200,
+      "code": 1030102009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update",
+      "http": 200,
+      "code": 1030102009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update",
+      "http": 200,
+      "code": 1030102009
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update",
+      "http": 200,
+      "code": 1030103009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update",
+      "http": 200,
+      "code": 1030103009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update",
+      "http": 200,
+      "code": 1030103009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update",
+      "http": 200,
+      "code": 1030103009
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=3",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update",
+      "http": 200,
+      "code": 1020202009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update",
+      "http": 200,
+      "code": 1020202009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update",
+      "http": 200,
+      "code": 1020202009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update",
+      "http": 200,
+      "code": 1020202009
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update",
+      "http": 200,
+      "code": 1020203009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update",
+      "http": 200,
+      "code": 1020203009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update",
+      "http": 200,
+      "code": 1020203009
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update",
+      "http": 200,
+      "code": 1020203009
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-in/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-in/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update",
+      "http": 200,
+      "code": 1030401099
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update",
+      "http": 200,
+      "code": 1030401099
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update",
+      "http": 200,
+      "code": 1030401099
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update",
+      "http": 200,
+      "code": 1030401099
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-out/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-out/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update",
+      "http": 200,
+      "code": 1030402099
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update",
+      "http": 200,
+      "code": 1030402099
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update",
+      "http": 200,
+      "code": 1030402099
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update",
+      "http": 200,
+      "code": 1030402099
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-check/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-check/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update",
+      "http": 200,
+      "code": 1030410000
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update",
+      "http": 200,
+      "code": 1030410000
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update",
+      "http": 200,
+      "code": 1030410000
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update",
+      "http": 200,
+      "code": 1030410000
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-move/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-move/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update",
+      "http": 200,
+      "code": 1030410001
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update",
+      "http": 200,
+      "code": 1030410001
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update",
+      "http": 200,
+      "code": 1030410001
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update",
+      "http": 200,
+      "code": 1030410001
+    }
+  ],
+  "cases": [
+    {
+      "resource": "purchase-order",
+      "id": 1,
+      "ownItemId": 1,
+      "foreignItemId": 2,
+      "errorCode": 1030101011
+    },
+    {
+      "resource": "sale-order",
+      "id": 1,
+      "ownItemId": 1,
+      "foreignItemId": 2,
+      "errorCode": 1020201011
+    },
+    {
+      "resource": "purchase-in",
+      "firstId": 2,
+      "firstItemId": 2,
+      "foreignItemId": 3,
+      "missingItemId": 987654321,
+      "duplicateItemId": 2,
+      "crossTenantItemId": 987654042,
+      "errorCode": 1030102009
+    },
+    {
+      "resource": "purchase-return",
+      "firstId": 1,
+      "firstItemId": 1,
+      "foreignItemId": 2,
+      "missingItemId": 987654321,
+      "duplicateItemId": 1,
+      "crossTenantItemId": 987654050,
+      "errorCode": 1030103009
+    },
+    {
+      "resource": "sale-out",
+      "firstId": 2,
+      "firstItemId": 2,
+      "foreignItemId": 3,
+      "missingItemId": 987654321,
+      "duplicateItemId": 2,
+      "crossTenantItemId": 987654058,
+      "errorCode": 1020202009
+    },
+    {
+      "resource": "sale-return",
+      "firstId": 1,
+      "firstItemId": 1,
+      "foreignItemId": 2,
+      "missingItemId": 987654321,
+      "duplicateItemId": 1,
+      "crossTenantItemId": 987654066,
+      "errorCode": 1020203009
+    },
+    {
+      "resource": "stock-in",
+      "firstId": 1,
+      "firstItemId": 1,
+      "foreignItemId": 2,
+      "missingItemId": 987654321,
+      "duplicateItemId": 1,
+      "crossTenantItemId": 987654074,
+      "errorCode": 1030401099
+    },
+    {
+      "resource": "stock-out",
+      "firstId": 1,
+      "firstItemId": 1,
+      "foreignItemId": 2,
+      "missingItemId": 987654321,
+      "duplicateItemId": 1,
+      "crossTenantItemId": 987654082,
+      "errorCode": 1030402099
+    },
+    {
+      "resource": "stock-check",
+      "firstId": 1,
+      "firstItemId": 1,
+      "foreignItemId": 2,
+      "missingItemId": 987654321,
+      "duplicateItemId": 1,
+      "crossTenantItemId": 987654090,
+      "errorCode": 1030410000
+    },
+    {
+      "resource": "stock-move",
+      "firstId": 1,
+      "firstItemId": 1,
+      "foreignItemId": 2,
+      "missingItemId": 987654321,
+      "duplicateItemId": 1,
+      "crossTenantItemId": 987654098,
+      "errorCode": 1030410001
+    }
+  ],
+  "scope": "real HTTP foreign, missing, duplicate and SQL-created tenant-999 item ID updates for ten document endpoints; full row snapshots unchanged"
+}

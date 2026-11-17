@@ -1,0 +1,627 @@
+{
+  "desktop": {
+    "initial": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "document": {
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "rows": 4,
+      "contentVisible": true,
+      "layout": {
+        "menu": {
+          "className": "absolute top-0 left-0 h-full layout-border__right",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 200,
+            "height": 900
+          }
+        },
+        "overlay": null,
+        "candidates": [
+          {
+            "className": "",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            }
+          },
+          {
+            "className": "v-layout v-layout__sidebar-nav v-layout__classic w-[100%] h-[100%] relative",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            }
+          },
+          {
+            "className": "absolute top-0 left-0 h-full layout-border__right",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 200,
+              "height": 900
+            }
+          },
+          {
+            "className": "bg-[var(--left-menu-bg-color)] relative w-[var(--left-menu-max-width)]",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 200,
+              "height": 50
+            }
+          },
+          {
+            "className": "router-link-active v-logo flex !h-[var(--logo-height)] items-center cursor-pointer pl-8px relative decoration-none overflow-hidden",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 200,
+              "height": 50
+            }
+          },
+          {
+            "className": "h-[calc(var(--logo-height)-10px)] w-[calc(var(--logo-height)-10px)]",
+            "rect": {
+              "x": 8,
+              "y": 5,
+              "width": 40,
+              "height": 40
+            }
+          },
+          {
+            "className": "ml-10px text-16px font-700 text-[var(--logo-title-text-color)]",
+            "rect": {
+              "x": 58,
+              "y": 14,
+              "width": 107.265625,
+              "height": 22
+            }
+          },
+          {
+            "className": "v-menu v-menu__vertical v-menu--menu h-[100%] overflow-hidden flex-col bg-[var(--left-menu-bg-color)] w-[var(--left-menu-max-width)] !h-[calc(100%-var(--logo-height))]",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 200,
+              "height": 850
+            }
+          },
+          {
+            "className": "el-scrollbar",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 200,
+              "height": 850
+            }
+          },
+          {
+            "className": "el-scrollbar__wrap el-scrollbar__wrap--hidden-default",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 200,
+              "height": 850
+            }
+          },
+          {
+            "className": "el-scrollbar__view",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 200,
+              "height": 2030
+            }
+          },
+          {
+            "className": "el-menu el-menu--vertical",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 200,
+              "height": 2030
+            }
+          },
+          {
+            "className": "el-menu-item",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 200,
+              "height": 56
+            }
+          },
+          {
+            "className": "el-icon v-icon",
+            "rect": {
+              "x": 20,
+              "y": 70,
+              "width": 24,
+              "height": 16
+            }
+          },
+          {
+            "className": "[object SVGAnimatedString]",
+            "rect": {
+              "x": 24,
+              "y": 70,
+              "width": 16,
+              "height": 16
+            }
+          },
+          {
+            "className": "[object SVGAnimatedString]",
+            "rect": {
+              "x": 26,
+              "y": 72,
+              "width": 12,
+              "height": 12
+            }
+          },
+          {
+            "className": "v-menu__title overflow-hidden overflow-ellipsis whitespace-nowrap",
+            "rect": {
+              "x": 49,
+              "y": 50,
+              "width": 28,
+              "height": 56
+            }
+          },
+          {
+            "className": "el-menu-item",
+            "rect": {
+              "x": 0,
+              "y": 106,
+              "width": 200,
+              "height": 56
+            }
+          },
+          {
+            "className": "el-icon v-icon",
+            "rect": {
+              "x": 20,
+              "y": 126,
+              "width": 24,
+              "height": 16
+            }
+          },
+          {
+            "className": "[object SVGAnimatedString]",
+            "rect": {
+              "x": 24,
+              "y": 126,
+              "width": 16,
+              "height": 16
+            }
+          },
+          {
+            "className": "[object SVGAnimatedString]",
+            "rect": {
+              "x": 25.5,
+              "y": 127.5,
+              "width": 13,
+              "height": 13
+            }
+          },
+          {
+            "className": "v-menu__title overflow-hidden overflow-ellipsis whitespace-nowrap",
+            "rect": {
+              "x": 49,
+              "y": 106,
+              "width": 56,
+              "height": 56
+            }
+          },
+          {
+            "className": "el-menu-item",
+            "rect": {
+              "x": 0,
+              "y": 162,
+              "width": 200,
+              "height": 56
+            }
+          },
+          {
+            "className": "el-icon v-icon",
+            "rect": {
+              "x": 20,
+              "y": 182,
+              "width": 24,
+              "height": 16
+            }
+          }
+        ]
+      }
+    },
+    "noMatchRows": 0,
+    "restoredRows": 4,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (File not found)"
+    ],
+    "failed": [],
+    "api": [
+      {
+        "path": "/admin-api/system/tenant/get-by-website",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/tenant/get-by-website",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/tenant/get-id-by-name",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/auth/login",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/auth/get-permission-info",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/dict-data/simple-list",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/auth/get-permission-info",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/dict-data/simple-list",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/tenant/simple-list",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/notify-message/get-unread-count",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/post/page",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/post/page",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/post/page",
+        "status": 200
+      }
+    ]
+  },
+  "mobile": {
+    "initial": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "rows": 4,
+      "contentVisible": true,
+      "layout": {
+        "menu": {
+          "className": "absolute top-0 left-0 h-full layout-border__right !fixed z-3000",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 844
+          }
+        },
+        "overlay": null,
+        "candidates": [
+          {
+            "className": "",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 844
+            }
+          },
+          {
+            "className": "v-layout v-layout__sidebar-nav v-layout__classic w-[100%] h-[100%] relative",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 844
+            }
+          },
+          {
+            "className": "absolute top-0 left-0 h-full layout-border__right !fixed z-3000",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 844
+            }
+          },
+          {
+            "className": "bg-[var(--left-menu-bg-color)] relative !pl-0 w-[var(--left-menu-min-width)]",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 50
+            }
+          },
+          {
+            "className": "router-link-active v-logo flex !h-[var(--logo-height)] items-center cursor-pointer pl-8px relative decoration-none overflow-hidden",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 8,
+              "height": 50
+            }
+          },
+          {
+            "className": "h-[calc(var(--logo-height)-10px)] w-[calc(var(--logo-height)-10px)]",
+            "rect": {
+              "x": 8,
+              "y": 5,
+              "width": 40,
+              "height": 40
+            }
+          },
+          {
+            "className": "v-menu v-menu__vertical v-menu--menu h-[100%] overflow-hidden flex-col bg-[var(--left-menu-bg-color)] w-[var(--left-menu-min-width)] !h-[calc(100%-var(--logo-height))]",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 0,
+              "height": 794
+            }
+          },
+          {
+            "className": "el-scrollbar",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 0,
+              "height": 794
+            }
+          },
+          {
+            "className": "el-scrollbar__wrap el-scrollbar__wrap--hidden-default",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 0,
+              "height": 794
+            }
+          },
+          {
+            "className": "el-scrollbar__view",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 0,
+              "height": 1400
+            }
+          },
+          {
+            "className": "el-menu el-menu--vertical el-menu--collapse",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 0,
+              "height": 1400
+            }
+          },
+          {
+            "className": "el-menu-item",
+            "rect": {
+              "x": 0,
+              "y": 50,
+              "width": 20,
+              "height": 56
+            }
+          },
+          {
+            "className": "el-icon v-icon",
+            "rect": {
+              "x": 20,
+              "y": 70,
+              "width": 24,
+              "height": 16
+            }
+          },
+          {
+            "className": "[object SVGAnimatedString]",
+            "rect": {
+              "x": 24,
+              "y": 70,
+              "width": 16,
+              "height": 16
+            }
+          },
+          {
+            "className": "[object SVGAnimatedString]",
+            "rect": {
+              "x": 26,
+              "y": 72,
+              "width": 12,
+              "height": 12
+            }
+          },
+          {
+            "className": "v-menu__title overflow-hidden overflow-ellipsis whitespace-nowrap",
+            "rect": {
+              "x": 44,
+              "y": 78,
+              "width": 0,
+              "height": 0
+            }
+          },
+          {
+            "className": "el-menu-item",
+            "rect": {
+              "x": 0,
+              "y": 106,
+              "width": 20,
+              "height": 56
+            }
+          },
+          {
+            "className": "el-icon v-icon",
+            "rect": {
+              "x": 20,
+              "y": 126,
+              "width": 24,
+              "height": 16
+            }
+          },
+          {
+            "className": "[object SVGAnimatedString]",
+            "rect": {
+              "x": 24,
+              "y": 126,
+              "width": 16,
+              "height": 16
+            }
+          },
+          {
+            "className": "[object SVGAnimatedString]",
+            "rect": {
+              "x": 25.5,
+              "y": 127.5,
+              "width": 13,
+              "height": 13
+            }
+          },
+          {
+            "className": "v-menu__title overflow-hidden overflow-ellipsis whitespace-nowrap",
+            "rect": {
+              "x": 44,
+              "y": 134,
+              "width": 0,
+              "height": 0
+            }
+          },
+          {
+            "className": "el-menu-item",
+            "rect": {
+              "x": 0,
+              "y": 162,
+              "width": 20,
+              "height": 56
+            }
+          },
+          {
+            "className": "el-icon v-icon",
+            "rect": {
+              "x": 20,
+              "y": 182,
+              "width": 24,
+              "height": 16
+            }
+          },
+          {
+            "className": "[object SVGAnimatedString]",
+            "rect": {
+              "x": 24,
+              "y": 182,
+              "width": 16,
+              "height": 16
+            }
+          }
+        ]
+      }
+    },
+    "hamburgerCount": 1,
+    "afterHamburger": {
+      "menu": {
+        "className": "absolute top-0 left-0 h-full layout-border__right !fixed z-3000",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 200,
+          "height": 844
+        }
+      },
+      "overlay": {
+        "className": "absolute left-0 top-0 z-99 h-full w-full bg-[var(--el-color-black)] opacity-30",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "display": "block"
+      },
+      "rows": 4
+    },
+    "afterOverlay": {
+      "overlayVisible": false,
+      "rows": 4
+    },
+    "errors": [],
+    "failed": [],
+    "api": [
+      {
+        "path": "/admin-api/system/tenant/get-by-website",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/tenant/get-by-website",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/tenant/get-id-by-name",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/auth/login",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/auth/get-permission-info",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/dict-data/simple-list",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/auth/get-permission-info",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/dict-data/simple-list",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/notify-message/get-unread-count",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/tenant/simple-list",
+        "status": 200
+      },
+      {
+        "path": "/admin-api/system/post/page",
+        "status": 200
+      }
+    ]
+  }
+}

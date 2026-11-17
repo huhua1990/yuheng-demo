@@ -1,0 +1,36 @@
+{
+  "run_date": "2026-11-15",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "isolation": {
+    "mysql_container": "yh-t4-quartz-mysql-20261115",
+    "schema": "yuheng_t4_quartz_20261115",
+    "redis_container": "yh-t4-quartz-redis-20261115",
+    "backend_port": 48155,
+    "mysql_port": 13321,
+    "redis_port": 16392,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "shared_database_or_redis_used": false,
+    "quartz_auto_startup": false
+  },
+  "fixture": {
+    "handler_name": "demoJob",
+    "database_trigger": "Verified BEFORE INSERT ON QRTZ_JOB_DETAILS raises SQLSTATE 45000",
+    "create_endpoint": "POST /admin-api/infra/job/create"
+  },
+  "result": {
+    "http_code": 200,
+    "business_code": 500,
+    "infra_job_rows_after": 0,
+    "qrtz_job_details_rows_after": 0,
+    "qrtz_triggers_rows_after": 0
+  },
+  "conclusion": "The job service inserted infra_job before Quartz scheduling. A failure on the Quartz job-detail insert returned an error and the infra_job insert was rolled back; no Quartz job or trigger row remained.",
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "quartz_scheduler_never_started": true,
+    "only_disposable_mysql_and_redis_containers_removed": true,
+    "shared_database_or_redis_modified": false,
+    "historical_passwords_read_or_modified": false
+  }
+}

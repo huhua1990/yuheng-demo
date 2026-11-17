@@ -1,0 +1,27 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_role_menu_20261115",
+  "liquibase_changesets": 56,
+  "role_id": 2,
+  "attempted_new_menu_id": 566,
+  "failure_point": "logical deletion of old role-menu relations",
+  "trigger_verified_before_request": true,
+  "snapshot_before": {
+    "sha256": "feb737488c053c4bba1cf65d60258c2d724d30a74b4ac12ab79df2d50513271c",
+    "row_count": 1552
+  },
+  "snapshot_after": {
+    "sha256": "feb737488c053c4bba1cf65d60258c2d724d30a74b4ac12ab79df2d50513271c",
+    "row_count": 1552
+  },
+  "new_relation_absent_after_rollback": true,
+  "transaction_rolled_back": true,
+  "events": [
+    {
+      "method": "POST",
+      "path": "/system/permission/assign-role-menu",
+      "http": 200,
+      "code": 500
+    }
+  ]
+}

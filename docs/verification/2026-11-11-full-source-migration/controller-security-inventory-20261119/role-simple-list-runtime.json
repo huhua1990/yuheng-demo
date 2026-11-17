@@ -1,0 +1,64 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t4_rolelist_20261120",
+  "jar_sha256": "5e632e65db0af402c43c2e8823601c11a03cfe60b01d738af52dd042384283ef",
+  "ports": {
+    "mysql": 13360,
+    "redis": 16440,
+    "app": 48197
+  },
+  "cases": {
+    "anonymous": {
+      "http": 200,
+      "code": 401
+    },
+    "real_token_enabled_roles_tenant_filtered": {
+      "login_code": 0,
+      "http": 200,
+      "code": 0,
+      "returned_fixture_names": [
+        "T4 Role List Tenant 121",
+        "T4 Role List Login Scope"
+      ],
+      "foreign_tenant_row_absent": true,
+      "disabled_row_absent": true
+    },
+    "real_token_forged_tenant_header": {
+      "token_tenant_id": 121,
+      "request_tenant_id": 122,
+      "http": 200,
+      "code": 403,
+      "denied": true
+    }
+  },
+  "sql_snapshot": {
+    "before": "1\tE8B685E7BAA7E7AEA1E79086E59198\tsuper_admin\t1\t0\t1\t\t0\t1\n2\tE699AEE9809AE8A792E889B2\tcommon\t2\t0\t1\t\t0\t1\n3\t43524D20E7AEA1E79086E59198\tcrm_admin\t2\t0\t1\t\t0\t1\n109\tE7A79FE688B7E7AEA1E79086E59198\ttenant_admin\t0\t0\t1\t\t0\t121\n111\tE7A79FE688B7E7AEA1E79086E59198\ttenant_admin\t0\t0\t1\t\t0\t122\n155\tE6B58BE8AF95E695B0E68DAEE69D83E999903132\ttest-dp\t4\t0\t2\t5B3131322C3130302C3130322C3130332C3130342C3130352C3130372C3130385D\t0\t1\n162\t48524DE59BA2E9989FE8B49FE8B4A3E4BABA\thrm_team_leader\t50\t0\t2\t\t0\t1\n990701\t543420526F6C65204C6973742054656E616E7420313231\tt4_role_list_121\t1\t0\t1\t\t0\t121\n990702\t543420526F6C65204C6973742054656E616E7420313232\tt4_role_list_122\t1\t0\t1\t\t0\t122\n990703\t543420526F6C65204C6973742044697361626C656420313231\tt4_role_list_disabled\t1\t1\t1\t\t0\t121\n990704\t543420526F6C65204C697374204C6F67696E2053636F7065\tt4_role_list_scope\t1\t0\t1\t\t0\t121",
+    "after": "1\tE8B685E7BAA7E7AEA1E79086E59198\tsuper_admin\t1\t0\t1\t\t0\t1\n2\tE699AEE9809AE8A792E889B2\tcommon\t2\t0\t1\t\t0\t1\n3\t43524D20E7AEA1E79086E59198\tcrm_admin\t2\t0\t1\t\t0\t1\n109\tE7A79FE688B7E7AEA1E79086E59198\ttenant_admin\t0\t0\t1\t\t0\t121\n111\tE7A79FE688B7E7AEA1E79086E59198\ttenant_admin\t0\t0\t1\t\t0\t122\n155\tE6B58BE8AF95E695B0E68DAEE69D83E999903132\ttest-dp\t4\t0\t2\t5B3131322C3130302C3130322C3130332C3130342C3130352C3130372C3130385D\t0\t1\n162\t48524DE59BA2E9989FE8B49FE8B4A3E4BABA\thrm_team_leader\t50\t0\t2\t\t0\t1\n990701\t543420526F6C65204C6973742054656E616E7420313231\tt4_role_list_121\t1\t0\t1\t\t0\t121\n990702\t543420526F6C65204C6973742054656E616E7420313232\tt4_role_list_122\t1\t0\t1\t\t0\t122\n990703\t543420526F6C65204C6973742044697361626C656420313231\tt4_role_list_disabled\t1\t1\t1\t\t0\t121\n990704\t543420526F6C65204C697374204C6F67696E2053636F7065\tt4_role_list_scope\t1\t0\t1\t\t0\t121",
+    "unchanged": true
+  },
+  "sql_log": {
+    "role_query_lines_containing_tenant_filter": [
+      "2026-11-17 11:37:29.596 [http-nio-48197-exec-5] \u001b[39mDEBUG\u001b[0;39m \u001b[36mc.y.p.m.s.d.mysql.permission.RoleMapper.selectList:135\u001b[0;39m - ==>  Preparing: SELECT id, name, code, sort, status, type, remark, data_scope, data_scope_dept_ids, tenant_id, create_time, update_time, creator, updater, deleted FROM system_role WHERE deleted = 0 AND (status IN (?)) AND tenant_id = 121"
+    ],
+    "tenant_121_filter_observed": true
+  },
+  "fixture": {
+    "tenant_121_enabled_role_id": 990701,
+    "tenant_122_enabled_role_id": 990702,
+    "tenant_121_disabled_role_id": 990703,
+    "login_scope_role_id": 990704,
+    "login_user_id": 990705,
+    "password_hash_recorded": false
+  },
+  "changesets": 56,
+  "conclusion": "Anonymous role simple-list access was rejected. A tenant-121 real token returned only enabled tenant-121 roles, excluded the disabled role and tenant-122 role, and changing the tenant header to 122 was rejected; the role table snapshot was unchanged and the application SQL log showed the tenant-121 predicate.",
+  "graceful_shutdown": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13360": false,
+      "16440": false,
+      "48197": false
+    }
+  }
+}

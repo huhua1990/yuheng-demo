@@ -1,0 +1,62 @@
+{
+  "result": "PASS_WITH_EXCLUDED_INITIAL_ATTEMPT",
+  "work_id": "YH-20261111-full-source-migration",
+  "area": "T4 role deletion cascade rollback",
+  "artifact": {
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+    "core_system_jar_sha256": "55115b0639ef5491567c360ce04b09e8829007be4348323ec63b2395a84c4b72"
+  },
+  "isolation": {
+    "mysql_version": "8.0.33",
+    "schema": "yuheng_t4_roledel_20261119",
+    "liquibase_changesets": 54,
+    "tables": 150,
+    "redis_version": "7.2.17",
+    "backend_port": 48176,
+    "mysql_host_port": 13343,
+    "redis_host_port": 16422,
+    "mock_authentication": "isolated process only",
+    "seeded_passwords_read_or_changed": false,
+    "shared_database_or_redis_used": false
+  },
+  "excluded_attempt": {
+    "role_id": 155,
+    "reason": "The first delete request was sent before installing the failure trigger and successfully deleted this disposable custom-role fixture. It is not rollback evidence."
+  },
+  "verified_attempt": {
+    "role_id": 162,
+    "role_type": 2,
+    "tenant_id": 1,
+    "active_before": true,
+    "active_user_role_relations_before": [
+      {"id": 82, "user_id": 104, "role_id": 162, "tenant_id": 1, "deleted": false},
+      {"id": 83, "user_id": 240, "role_id": 162, "tenant_id": 1, "deleted": false}
+    ],
+    "active_role_menu_relations_before": 3,
+    "failure_injection": "schema-local BEFORE UPDATE ON system_role_menu raising SQLSTATE 45000; trigger existence verified before request",
+    "request": {
+      "method": "DELETE",
+      "path": "/admin-api/system/role/delete?id=162",
+      "tenant_id": 1,
+      "authorization": "isolated mock admin"
+    },
+    "http_status": 200,
+    "business_code": 500,
+    "role_after": {"id": 162, "tenant_id": 1, "deleted": false},
+    "active_user_role_relations_after": [
+      {"id": 82, "user_id": 104, "role_id": 162, "tenant_id": 1, "deleted": false},
+      {"id": 83, "user_id": 240, "role_id": 162, "tenant_id": 1, "deleted": false}
+    ],
+    "active_role_menu_relations_after": 3,
+    "previous_writes_rolled_back": true
+  },
+  "cleanup": {
+    "application_graceful_shutdown": true,
+    "schema_and_user_dropped": true,
+    "dedicated_containers_removed": true,
+    "ports_unbound": [48176, 13343, 16422],
+    "shared_demo_processes_unchanged": [23945, 39370],
+    "shared_mysql_and_redis_unchanged": true
+  },
+  "conclusion": "The role delete flow soft-deletes the role and user-role rows before role-menu cleanup. With failure injected at role-menu logical deletion, the real API returned business code 500 and all three table states remained active, proving rollback for this role and failure point. This does not close all role-delete, tenant, concurrency, or T4 transaction cases."
+}

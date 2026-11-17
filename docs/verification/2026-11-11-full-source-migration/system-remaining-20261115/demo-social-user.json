@@ -1,0 +1,32 @@
+{
+  "buttons": [
+    "搜索",
+    "重置"
+  ],
+  "empty": "暂无数据",
+  "headers": [
+    "社交平台",
+    "社交 openid",
+    "用户昵称",
+    "用户头像",
+    "创建时间",
+    "更新时间",
+    "操作"
+  ],
+  "labels": [
+    "社交平台",
+    "用户昵称",
+    "社交 openid",
+    "创建时间"
+  ],
+  "totals": [
+    "共 0 条"
+  ],
+  "url": "/system/social/user",
+  "viewport": {
+    "height": 805,
+    "scrollWidth": 1512,
+    "width": 1512
+  },
+  "visibleRows": 0
+}

@@ -1,0 +1,10 @@
+{
+  "stock/ErpWarehouseServiceImpl": {
+    "matches_current_target": true,
+    "sha256": "f98361e876b12c235cccea7b9ab17e57c1294249111f40b98e3344aa56302298"
+  },
+  "finance/ErpAccountServiceImpl": {
+    "matches_current_target": true,
+    "sha256": "8a97493b2180003d0b023209f87ea0962653fdfce173b9d5adc55cd163442c76"
+  }
+}

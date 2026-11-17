@@ -1,0 +1,56 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t4_oauthrefreshredisfail_20261120",
+  "jar_sha256": "5e632e65db0af402c43c2e8823601c11a03cfe60b01d738af52dd042384283ef",
+  "ports": {
+    "mysql": 13363,
+    "redis": 16443,
+    "proxy": 16444,
+    "app": 48200
+  },
+  "client_id_recorded": true,
+  "secret_recorded": false,
+  "cases": {
+    "refresh_redis_delete_failure": {
+      "request": {
+        "http": 200,
+        "code": 500,
+        "grant_type": "refresh_token"
+      },
+      "before": {
+        "active_rows": {
+          "access": 1,
+          "refresh": 1
+        },
+        "access_key": true,
+        "refresh_key": true
+      },
+      "after": {
+        "active_rows": {
+          "access": 1,
+          "refresh": 1
+        },
+        "access_key": true,
+        "refresh_key": true
+      },
+      "proxy": {
+        "injected": true,
+        "command": [
+          "DEL",
+          "oauth2_access_token:f9e57f1947624b8eb0822083669e9872"
+        ]
+      }
+    }
+  },
+  "conclusion": "A one-shot Redis DEL failure during refresh returned an application error; the MySQL token rows remained active after transaction rollback and both pre-existing Redis keys remained present.",
+  "graceful_shutdown": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13363": false,
+      "16443": false,
+      "16444": false,
+      "48200": false
+    }
+  }
+}

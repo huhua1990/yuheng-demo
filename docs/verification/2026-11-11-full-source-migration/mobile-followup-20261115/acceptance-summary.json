@@ -1,0 +1,14 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "browser_manual_exit_code": "N/A",
+  "notice_collapsed_mobile_comparison": "PASS at 390x844, matching menu state and no overlay",
+  "notice_form_mobile_visual": "NOT_PASSED: saved screenshots contain menu popovers; both dialog scrollWidth=800",
+  "notice_create_edit_cancel": "PASS UI + API + MySQL; deletion tested via HTTP only",
+  "post_create_edit": "PASS UI + API; deletion tested via HTTP only",
+  "no_role_permission_and_header_boundaries": "PASS for explicitly listed endpoints",
+  "console_demo": "1 opaque Object error at required-validation submission; not claimed clean",
+  "console_original": "30 warnings / 10 errors, including failed dev configuration; no blanket clean-console claim",
+  "fresh_migration_009": "NOT_APPLIED: immutable consumer JAR contains existing 54 changesets",
+  "runtime_code_changed_this_continuation": false,
+  "top_level_goal_complete": false
+}

@@ -1,0 +1,1044 @@
+[
+  {
+    "label": "demo",
+    "page": "sms-channel",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除",
+      "查看全部"
+    ],
+    "headers": [
+      "",
+      "编号",
+      "短信签名",
+      "渠道编码",
+      "启用状态",
+      "备注",
+      "短信 API 的账号",
+      "短信 API 的密钥",
+      "短信发送回调 URL",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "短信签名",
+      "启用状态",
+      "创建时间"
+    ],
+    "totals": [
+      "共 3 条"
+    ],
+    "url": "/system/messages/sms/sms-channel",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 3
+  },
+  {
+    "label": "demo",
+    "page": "sms-template",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除",
+      "导出",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "查看全部"
+    ],
+    "headers": [
+      "",
+      "模板编码",
+      "模板名称",
+      "模板内容",
+      "短信类型",
+      "状态",
+      "备注",
+      "短信 API 的模板编号",
+      "短信渠道",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "短信类型",
+      "开启状态",
+      "模板编码",
+      "短信 API 的模板编号",
+      "短信渠道",
+      "创建时间"
+    ],
+    "totals": [
+      "共 16 条"
+    ],
+    "url": "/system/messages/sms/sms-template",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 10
+  },
+  {
+    "label": "demo",
+    "page": "sms-log",
+    "buttons": [
+      "搜索",
+      "重置",
+      "导出"
+    ],
+    "empty": "暂无数据",
+    "headers": [
+      "编号",
+      "创建时间",
+      "手机号",
+      "短信内容",
+      "发送状态",
+      "接收状态",
+      "短信渠道",
+      "模板编号",
+      "短信类型",
+      "操作"
+    ],
+    "labels": [
+      "手机号",
+      "短信渠道",
+      "模板编号",
+      "发送状态",
+      "发送时间",
+      "接收状态",
+      "接收时间"
+    ],
+    "totals": [
+      "共 0 条"
+    ],
+    "url": "/system/messages/sms/sms-log",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 0
+  },
+  {
+    "label": "original",
+    "page": "sms-channel",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除"
+    ],
+    "headers": [
+      "",
+      "编号",
+      "短信签名",
+      "渠道编码",
+      "启用状态",
+      "备注",
+      "短信 API 的账号",
+      "短信 API 的密钥",
+      "短信发送回调 URL",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "短信签名",
+      "启用状态",
+      "创建时间"
+    ],
+    "totals": [
+      "共 3 条"
+    ],
+    "url": "/system/messages/sms/sms-channel",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 3
+  },
+  {
+    "label": "original",
+    "page": "sms-template",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除",
+      "导出",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除"
+    ],
+    "headers": [
+      "",
+      "模板编码",
+      "模板名称",
+      "模板内容",
+      "短信类型",
+      "状态",
+      "备注",
+      "短信 API 的模板编号",
+      "短信渠道",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "短信类型",
+      "开启状态",
+      "模板编码",
+      "短信 API 的模板编号",
+      "短信渠道",
+      "创建时间"
+    ],
+    "totals": [
+      "共 16 条"
+    ],
+    "url": "/system/messages/sms/sms-template",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 10
+  },
+  {
+    "label": "original",
+    "page": "sms-log",
+    "buttons": [
+      "搜索",
+      "重置",
+      "导出"
+    ],
+    "empty": "暂无数据",
+    "headers": [
+      "编号",
+      "创建时间",
+      "手机号",
+      "短信内容",
+      "发送状态",
+      "接收状态",
+      "短信渠道",
+      "模板编号",
+      "短信类型",
+      "操作"
+    ],
+    "labels": [
+      "手机号",
+      "短信渠道",
+      "模板编号",
+      "发送状态",
+      "发送时间",
+      "接收状态",
+      "接收时间"
+    ],
+    "totals": [
+      "共 0 条"
+    ],
+    "url": "/system/messages/sms/sms-log",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 0
+  },
+  {
+    "label": "demo",
+    "page": "mail-account",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除"
+    ],
+    "headers": [
+      "",
+      "编号",
+      "邮箱",
+      "用户名",
+      "SMTP 服务器域名",
+      "SMTP 服务器端口",
+      "是否开启 SSL",
+      "是否开启 STARTTLS",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "邮箱",
+      "用户名",
+      "创建时间"
+    ],
+    "totals": [
+      "共 2 条"
+    ],
+    "url": "/system/messages/mail/mail-account",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 2
+  },
+  {
+    "label": "demo",
+    "page": "mail-template",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除"
+    ],
+    "headers": [
+      "",
+      "模板编码",
+      "模板名称",
+      "模板标题",
+      "模板内容",
+      "邮箱账号",
+      "发送人名称",
+      "开启状态",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "模板编码",
+      "模板名称",
+      "邮箱账号",
+      "开启状态",
+      "创建时间"
+    ],
+    "totals": [
+      "共 2 条"
+    ],
+    "url": "/system/messages/mail/mail-template",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 2
+  },
+  {
+    "label": "demo",
+    "page": "mail-log",
+    "buttons": [
+      "搜索",
+      "重置"
+    ],
+    "empty": "暂无数据",
+    "headers": [
+      "编号",
+      "发送时间",
+      "接收用户",
+      "接收信息",
+      "邮件标题",
+      "发送状态",
+      "邮箱账号",
+      "模板编号",
+      "操作"
+    ],
+    "labels": [
+      "接收邮箱",
+      "邮箱账号",
+      "模板编号",
+      "发送状态",
+      "用户编号",
+      "用户类型",
+      "发送时间"
+    ],
+    "totals": [
+      "共 0 条"
+    ],
+    "url": "/system/messages/mail/mail-log",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 0
+  },
+  {
+    "label": "original",
+    "page": "mail-account",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除"
+    ],
+    "headers": [
+      "",
+      "编号",
+      "邮箱",
+      "用户名",
+      "SMTP 服务器域名",
+      "SMTP 服务器端口",
+      "是否开启 SSL",
+      "是否开启 STARTTLS",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "邮箱",
+      "用户名",
+      "创建时间"
+    ],
+    "totals": [
+      "共 2 条"
+    ],
+    "url": "/system/messages/mail/mail-account",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 2
+  },
+  {
+    "label": "original",
+    "page": "mail-template",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除",
+      "修改",
+      "测试",
+      "删除",
+      "修改",
+      "测试",
+      "删除"
+    ],
+    "headers": [
+      "",
+      "模板编码",
+      "模板名称",
+      "模板标题",
+      "模板内容",
+      "邮箱账号",
+      "发送人名称",
+      "开启状态",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "模板编码",
+      "模板名称",
+      "邮箱账号",
+      "开启状态",
+      "创建时间"
+    ],
+    "totals": [
+      "共 2 条"
+    ],
+    "url": "/system/messages/mail/mail-template",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 2
+  },
+  {
+    "label": "original",
+    "page": "mail-log",
+    "buttons": [
+      "搜索",
+      "重置"
+    ],
+    "empty": "暂无数据",
+    "headers": [
+      "编号",
+      "发送时间",
+      "接收用户",
+      "接收信息",
+      "邮件标题",
+      "发送状态",
+      "邮箱账号",
+      "模板编号",
+      "操作"
+    ],
+    "labels": [
+      "接收邮箱",
+      "邮箱账号",
+      "模板编号",
+      "发送状态",
+      "用户编号",
+      "用户类型",
+      "发送时间"
+    ],
+    "totals": [
+      "共 0 条"
+    ],
+    "url": "/system/messages/mail/mail-log",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 0
+  },
+  {
+    "label": "demo",
+    "page": "notify-template",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除"
+    ],
+    "empty": "暂无数据",
+    "headers": [
+      "",
+      "模板编码",
+      "模板名称",
+      "类型",
+      "发送人名称",
+      "模板内容",
+      "开启状态",
+      "备注",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "模板名称",
+      "模板编号",
+      "状态",
+      "创建时间"
+    ],
+    "totals": [
+      "共 0 条"
+    ],
+    "url": "/system/messages/notify/notify-template",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 0
+  },
+  {
+    "label": "original",
+    "page": "notify-template",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除"
+    ],
+    "empty": "暂无数据",
+    "headers": [
+      "",
+      "模板编码",
+      "模板名称",
+      "类型",
+      "发送人名称",
+      "模板内容",
+      "开启状态",
+      "备注",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "模板名称",
+      "模板编号",
+      "状态",
+      "创建时间"
+    ],
+    "totals": [
+      "共 0 条"
+    ],
+    "url": "/system/messages/notify/notify-template",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 0
+  },
+  {
+    "label": "demo",
+    "page": "notify-message",
+    "buttons": [
+      "搜索",
+      "重置",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情"
+    ],
+    "headers": [
+      "编号",
+      "用户类型",
+      "用户编号",
+      "模板编码",
+      "发送人名称",
+      "模版内容",
+      "模版参数",
+      "模版类型",
+      "是否已读",
+      "阅读时间",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "用户编号",
+      "用户类型",
+      "模板编码",
+      "模版类型",
+      "创建时间"
+    ],
+    "totals": [
+      "共 95 条"
+    ],
+    "url": "/system/messages/notify/notify-message",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 10
+  },
+  {
+    "label": "original",
+    "page": "notify-message",
+    "buttons": [
+      "搜索",
+      "重置",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情",
+      "详情"
+    ],
+    "headers": [
+      "编号",
+      "用户类型",
+      "用户编号",
+      "模板编码",
+      "发送人名称",
+      "模版内容",
+      "模版参数",
+      "模版类型",
+      "是否已读",
+      "阅读时间",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "用户编号",
+      "用户类型",
+      "模板编码",
+      "模版类型",
+      "创建时间"
+    ],
+    "totals": [
+      "共 95 条"
+    ],
+    "url": "/system/messages/notify/notify-message",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 10
+  },
+  {
+    "label": "demo",
+    "page": "oauth-client",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除"
+    ],
+    "headers": [
+      "",
+      "客户端编号",
+      "客户端密钥",
+      "应用名",
+      "应用图标",
+      "状态",
+      "访问令牌的有效期",
+      "刷新令牌的有效期",
+      "授权类型",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "应用名",
+      "状态"
+    ],
+    "totals": [
+      "共 4 条"
+    ],
+    "url": "/system/oauth2/oauth2/application",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 4
+  },
+  {
+    "label": "demo",
+    "page": "oauth-token",
+    "buttons": [
+      "搜索",
+      "重置",
+      "强退",
+      "强退"
+    ],
+    "headers": [
+      "访问令牌",
+      "刷新令牌",
+      "用户编号",
+      "用户类型",
+      "过期时间",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "用户编号",
+      "用户类型",
+      "客户端编号"
+    ],
+    "totals": [
+      "共 2 条"
+    ],
+    "url": "/system/oauth2/token",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 2
+  },
+  {
+    "label": "original",
+    "page": "oauth-client",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增",
+      "批量删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除",
+      "编辑",
+      "删除"
+    ],
+    "headers": [
+      "",
+      "客户端编号",
+      "客户端密钥",
+      "应用名",
+      "应用图标",
+      "状态",
+      "访问令牌的有效期",
+      "刷新令牌的有效期",
+      "授权类型",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "应用名",
+      "状态"
+    ],
+    "totals": [
+      "共 4 条"
+    ],
+    "url": "/system/oauth2/oauth2/application",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 4
+  },
+  {
+    "label": "original",
+    "page": "oauth-token",
+    "buttons": [
+      "搜索",
+      "重置",
+      "强退",
+      "强退"
+    ],
+    "headers": [
+      "访问令牌",
+      "刷新令牌",
+      "用户编号",
+      "用户类型",
+      "过期时间",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "用户编号",
+      "用户类型",
+      "客户端编号"
+    ],
+    "totals": [
+      "共 2 条"
+    ],
+    "url": "/system/oauth2/token",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 2
+  },
+  {
+    "label": "demo",
+    "page": "social-client",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增"
+    ],
+    "empty": "暂无数据",
+    "headers": [
+      "编号",
+      "应用名",
+      "社交平台",
+      "用户类型",
+      "客户端编号",
+      "状态",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "应用名",
+      "社交平台",
+      "用户类型",
+      "客户端编号",
+      "状态"
+    ],
+    "totals": [
+      "共 0 条"
+    ],
+    "url": "/system/social/client",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 0
+  },
+  {
+    "label": "demo",
+    "page": "social-user",
+    "buttons": [
+      "搜索",
+      "重置"
+    ],
+    "empty": "暂无数据",
+    "headers": [
+      "社交平台",
+      "社交 openid",
+      "用户昵称",
+      "用户头像",
+      "创建时间",
+      "更新时间",
+      "操作"
+    ],
+    "labels": [
+      "社交平台",
+      "用户昵称",
+      "社交 openid",
+      "创建时间"
+    ],
+    "totals": [
+      "共 0 条"
+    ],
+    "url": "/system/social/user",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 0
+  },
+  {
+    "label": "original",
+    "page": "social-client",
+    "buttons": [
+      "搜索",
+      "重置",
+      "新增"
+    ],
+    "empty": "暂无数据",
+    "headers": [
+      "编号",
+      "应用名",
+      "社交平台",
+      "用户类型",
+      "客户端编号",
+      "状态",
+      "创建时间",
+      "操作"
+    ],
+    "labels": [
+      "应用名",
+      "社交平台",
+      "用户类型",
+      "客户端编号",
+      "状态"
+    ],
+    "totals": [
+      "共 0 条"
+    ],
+    "url": "/system/social/client",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 0
+  },
+  {
+    "label": "original",
+    "page": "social-user",
+    "buttons": [
+      "搜索",
+      "重置"
+    ],
+    "empty": "暂无数据",
+    "headers": [
+      "社交平台",
+      "社交 openid",
+      "用户昵称",
+      "用户头像",
+      "创建时间",
+      "更新时间",
+      "操作"
+    ],
+    "labels": [
+      "社交平台",
+      "用户昵称",
+      "社交 openid",
+      "创建时间"
+    ],
+    "totals": [
+      "共 0 条"
+    ],
+    "url": "/system/social/user",
+    "viewport": {
+      "height": 805,
+      "scrollWidth": 1512,
+      "width": 1512
+    },
+    "visibleRows": 0
+  }
+]

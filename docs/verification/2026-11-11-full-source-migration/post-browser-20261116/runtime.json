@@ -1,0 +1,21 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t3_postbrowser_20261116",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "ports": [
+    13351,
+    16431,
+    48186,
+    5199
+  ],
+  "browser_completed": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13351": false,
+      "16431": false,
+      "48186": false,
+      "5199": false
+    }
+  }
+}

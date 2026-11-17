@@ -1,0 +1,33 @@
+- main:
+  - heading "Yuheng 表单隔离验收" [level=1]
+  - paragraph: 真实 Core 组件；请求由内存适配器模拟，未连接数据库。
+  - paragraph: 模拟写请求 1；成功事件 1；异常 0
+  - button "打开公告新增"
+  - button "打开岗位新增"
+  - checkbox "模拟请求失败"
+  - text: 模拟请求失败
+  - dialog:
+    - text: 新增
+    - generic: ×
+    - generic: ×
+    - generic: "* 岗位标题"
+    - textbox "* 岗位标题":
+      - /placeholder: 请输入岗位标题
+    - generic: 岗位标题不能为空
+    - generic: "* 岗位编码"
+    - textbox "* 岗位编码":
+      - /placeholder: 请输入岗位编码
+    - generic: 岗位编码不能为空
+    - generic: 岗位顺序
+    - textbox "岗位顺序":
+      - /placeholder: 请输入岗位顺序
+    - generic: "* 状态"
+    - combobox "* 状态"
+    - generic: 开启
+    - generic: 备注
+    - textbox "备注":
+      - /placeholder: 请输备注
+    - button "确 定" [active]:
+      - generic: 确 定
+    - button "取 消":
+      - generic: 取 消

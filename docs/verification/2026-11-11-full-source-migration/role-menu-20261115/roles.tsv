@@ -1,0 +1,7 @@
+1	超级管理员	super_admin	1	1	0
+2	普通角色	common	1	1	0
+3	CRM 管理员	crm_admin	1	1	0
+109	租户管理员	tenant_admin	121	1	0
+111	租户管理员	tenant_admin	122	1	0
+155	测试数据权限12	test-dp	1	2	0
+162	HRM团队负责人	hrm_team_leader	1	2	0

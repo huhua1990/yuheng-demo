@@ -1,0 +1,27 @@
+{
+  "dialog": [
+    {
+      "scrollWidth": 800,
+      "width": 390
+    },
+    {
+      "scrollWidth": 0,
+      "width": 0
+    }
+  ],
+  "document": {
+    "clientWidth": 390,
+    "scrollWidth": 390
+  },
+  "editor": [
+    {
+      "scrollWidth": 656,
+      "width": 656
+    }
+  ],
+  "overlays": 0,
+  "viewport": {
+    "height": 844,
+    "width": 390
+  }
+}

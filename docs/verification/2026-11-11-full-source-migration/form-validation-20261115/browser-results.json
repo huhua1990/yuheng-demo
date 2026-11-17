@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-15",
+  "scope": "Core source component preview; simulated requests; no backend/database",
+  "noticeEmpty": {
+    "requiredMessages": 3,
+    "writes": 0,
+    "successEvents": 0,
+    "errors": 0
+  },
+  "noticeCreate": {
+    "writes": 1,
+    "successEvents": 1,
+    "errors": 0,
+    "realRichText": true
+  },
+  "postEmpty": {
+    "requiredMessages": 2,
+    "writes": 1,
+    "successEvents": 1,
+    "errors": 0
+  },
+  "postCreate": {
+    "writes": 2,
+    "successEvents": 2,
+    "errors": 0
+  },
+  "injectedPostError": {
+    "writes": 3,
+    "successEvents": 2,
+    "errors": 1,
+    "dialogRemainedOpen": true,
+    "submitEnabledEvidence": "Post-error DOM snapshot shows non-disabled submit; direct isEnabled check was collected later on the mobile notice form and is excluded."
+  },
+  "mobile": {
+    "dialog": [
+      {
+        "scrollWidth": 800,
+        "width": 390
+      },
+      {
+        "scrollWidth": 0,
+        "width": 0
+      }
+    ],
+    "document": {
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    "editor": [
+      {
+        "scrollWidth": 656,
+        "width": 656
+      }
+    ],
+    "overlays": 0,
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  "limitations": [
+    "No full Demo integration or backend requests",
+    "No business data was created",
+    "Mobile form overflow still fails",
+    "Icon provider replaced with local span"
+  ]
+}

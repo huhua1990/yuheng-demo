@@ -1,0 +1,76 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t4_oauthtoken_20261120",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "ports": {
+    "mysql": 13349,
+    "redis": 16429,
+    "app": 48184
+  },
+  "client_id_recorded": true,
+  "secret_recorded": false,
+  "cases": {
+    "wrong_client_secret": {
+      "http": 200,
+      "code": 1002020006,
+      "grant_type": "client_credentials"
+    },
+    "client_credentials": {
+      "http": 200,
+      "code": 0,
+      "grant_type": "client_credentials",
+      "active_rows": {
+        "access": 1,
+        "refresh": 1
+      },
+      "redis_access_key": true,
+      "check_token": {
+        "http": 200,
+        "code": 0
+      }
+    },
+    "refresh_token": {
+      "http": 200,
+      "code": 0,
+      "grant_type": "refresh_token",
+      "same_refresh_token": true,
+      "old_access_rejected": {
+        "http": 200,
+        "code": 401
+      },
+      "new_access_accepted": {
+        "http": 200,
+        "code": 0
+      },
+      "active_rows": {
+        "access": 1,
+        "refresh": 1
+      },
+      "old_redis_access_key": false,
+      "new_redis_access_key": true
+    },
+    "revoke": {
+      "http": 200,
+      "code": 0,
+      "active_rows": {
+        "access": 0,
+        "refresh": 0
+      },
+      "redis_access_key": false,
+      "post_revoke_check": {
+        "http": 200,
+        "code": 401
+      }
+    }
+  },
+  "conclusion": "An isolated client-credentials token was issued and checked, refreshed with the same refresh token, then revoked; old and revoked access tokens were rejected and MySQL/Redis active state matched each lifecycle transition.",
+  "graceful_shutdown": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13349": false,
+      "16429": false,
+      "48184": false
+    }
+  }
+}

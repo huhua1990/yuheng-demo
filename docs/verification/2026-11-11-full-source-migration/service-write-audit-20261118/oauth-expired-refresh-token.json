@@ -1,0 +1,49 @@
+{
+  "result": "PASS",
+  "run_date": "2026-11-15",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "isolation": {
+    "schema": "yuheng_t4_oauthexp_20261115",
+    "mysql_container": "yh-t4-oauth-exp-mysql-20261115",
+    "mysql_port": 13337,
+    "redis_container": "yh-t4-oauth-exp-redis-20261115",
+    "redis_port": 16408,
+    "backend_port": 48169,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "redis_initial_keys": 0,
+    "shared_services_used": false
+  },
+  "client": "t4-exp-20261115",
+  "grant_sequence": [
+    "client_credentials token pair created through real API",
+    "refresh token expiry moved into the past in disposable schema",
+    "valid token JSON loaded into both Redis keys through real check-token API"
+  ],
+  "refresh_request": {
+    "method": "POST",
+    "path": "/admin-api/system/oauth2/token",
+    "grant_type": "refresh_token",
+    "http_status": 200,
+    "business_code": 401,
+    "message": "刷新令牌已过期"
+  },
+  "state_after_request": {
+    "access_token_row_active": false,
+    "refresh_token_row_active": false,
+    "access_token_redis_key_exists": false,
+    "refresh_token_redis_key_exists": false
+  },
+  "excluded_setup_attempts": [
+    "Default seeded OAuth client secret is empty and rejected by request credential parsing.",
+    "Changing the seeded default client's secret did not invalidate its already cached client record; a separate disposable client was used instead."
+  ],
+  "cleanup": {
+    "application_graceful_shutdown": true,
+    "dedicated_containers_removed": true,
+    "schema_account_and_fixture_disposed": true,
+    "dedicated_ports_closed": true,
+    "shared_database_redis_and_services_untouched": true,
+    "historical_passwords_untouched": true
+  }
+}

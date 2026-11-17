@@ -1,0 +1,166 @@
+{
+  "status": "PASS",
+  "no_role_permissions_empty": true,
+  "no_role_role_links": 0,
+  "no_role_endpoint_checks": 10,
+  "cross_tenant_header_checks": 2,
+  "anonymous_checks": 2,
+  "notice_post_full_snapshots_unchanged": true,
+  "row_level_tenant_isolation": "not covered by header mismatch checks",
+  "events": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 0,
+      "expected": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/user/create",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 0,
+      "expected": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 0,
+      "expected": 0
+    },
+    {
+      "method": "GET",
+      "path": "/system/auth/get-permission-info",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 0,
+      "expected": 0
+    },
+    {
+      "method": "GET",
+      "path": "/system/notice/page?pageNo=1&pageSize=10",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "GET",
+      "path": "/system/notice/get?id=1",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "POST",
+      "path": "/system/notice/create",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "PUT",
+      "path": "/system/notice/update",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "DELETE",
+      "path": "/system/notice/delete?id=1",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "GET",
+      "path": "/system/notice/page?pageNo=1&pageSize=10",
+      "tenant": "121",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "GET",
+      "path": "/system/notice/page?pageNo=1&pageSize=10",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 401,
+      "expected": 401
+    },
+    {
+      "method": "GET",
+      "path": "/system/post/page?pageNo=1&pageSize=10",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "GET",
+      "path": "/system/post/get?id=2",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "POST",
+      "path": "/system/post/create",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "PUT",
+      "path": "/system/post/update",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "DELETE",
+      "path": "/system/post/delete?id=2",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "GET",
+      "path": "/system/post/page?pageNo=1&pageSize=10",
+      "tenant": "121",
+      "http": 200,
+      "business_code": 403,
+      "expected": 403
+    },
+    {
+      "method": "GET",
+      "path": "/system/post/page?pageNo=1&pageSize=10",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 401,
+      "expected": 401
+    },
+    {
+      "method": "DELETE",
+      "path": "/system/user/delete?id=249",
+      "tenant": "1",
+      "http": 200,
+      "business_code": 0,
+      "expected": 0
+    }
+  ],
+  "temporary_user_deleted": true,
+  "temporary_user_active_rows": 0
+}

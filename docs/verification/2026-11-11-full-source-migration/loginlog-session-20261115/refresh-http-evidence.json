@@ -1,0 +1,17 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "scenario": "expired access token refresh and login log query replay",
+  "proxy": "http://127.0.0.1:5179",
+  "backend": "http://127.0.0.1:48124",
+  "requests": [
+    { "method": "GET", "path": "/admin-api/system/login-log/page", "result": "401 expired access token" },
+    { "method": "POST", "path": "/admin-api/system/auth/refresh-token?refreshToken=[REDACTED]", "result": "200 token pair issued" },
+    { "method": "GET", "path": "/admin-api/system/login-log/page", "result": "200 four rows after replay" }
+  ],
+  "database": {
+    "expiredAccessTokenId": 128764,
+    "replacementAccessTokenId": 128765,
+    "tokenValuesRecorded": false,
+    "scope": "isolated schema yuheng_t3_loginlog_20261115"
+  }
+}

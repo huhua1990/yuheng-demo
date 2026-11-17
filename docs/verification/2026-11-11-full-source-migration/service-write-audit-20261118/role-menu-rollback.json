@@ -1,0 +1,71 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "date": "2026-11-18",
+  "scenario": "Role-menu replacement rolls back deletion when inserting a new relation fails",
+  "artifact": {
+    "demoJar": "yuheng-demo-server/yuheng-demo-server-bootstrap/target/yuheng-demo.jar",
+    "coreSystemModuleSha256": "55115b0639ef5491567c360ce04b09e8829007be4348323ec63b2395a84c4b72",
+    "coreSystemModuleMatchesCurrentCoreTarget": true,
+    "entryPoint": "PermissionController.assignRoleMenu -> PermissionServiceImpl.assignRoleMenu",
+    "transaction": "@DSTransactional"
+  },
+  "isolation": {
+    "schema": "yuheng_t4_perm_20261118",
+    "schemaAccount": "yh_perm18",
+    "backendPort": 48142,
+    "redisContainer": "yh-t4-perm-redis-20261118",
+    "redisPort": 16380,
+    "redisKeysBeforeStartup": 0,
+    "liquibaseChangesets": 54,
+    "schemaTablesAfterStartup": 150,
+    "coreSeedActiveRole2RelationsBeforeFixture": 655
+  },
+  "fixture": {
+    "isolatedParentMenuId": 199900001,
+    "isolatedActionMenuId": 199900002,
+    "roleId": 2,
+    "preexistingFixtureParentRelation": true,
+    "injectedRelation": 199900002
+  },
+  "failureInjection": {
+    "object": "system_role_menu",
+    "type": "schema-local BEFORE INSERT trigger",
+    "sqlState": "45000",
+    "marker": "T4_ROLE_MENU_INSERT_INJECTED_FAILURE",
+    "request": {
+      "method": "POST",
+      "path": "/admin-api/system/permission/assign-role-menu",
+      "httpStatus": 200,
+      "businessCode": 500,
+      "businessMessage": "系统异常",
+      "attemptedExistingRelationRemoval": 2
+    }
+  },
+  "snapshots": {
+    "beforeRows": 656,
+    "afterRows": 656,
+    "beforeSha256": "ad9c0e9a4fe17cd54b1e223c906ac500e1ee91449845ce8c96ec5074bf111f51",
+    "afterSha256": "ad9c0e9a4fe17cd54b1e223c906ac500e1ee91449845ce8c96ec5074bf111f51",
+    "identical": true,
+    "fixtureParentRelationAfterFailureActive": true,
+    "injectedRelationAfterFailureActive": false
+  },
+  "cleanup": {
+    "pending": false,
+    "applicationShutdown": "graceful",
+    "schemaCount": 0,
+    "accountCount": 0,
+    "schemaGrantCount": 0,
+    "redisKeysBeforeStartup": 0,
+    "redisKeysBeforeContainerRemoval": 5,
+    "redisContainerRemoved": true,
+    "backendPortListener": false,
+    "redisPortListener": false,
+    "sharedSchemaTablesAfterCleanup": 150
+  },
+  "limits": [
+    "This proves the isolated role-menu assignment rollback path only.",
+    "A prior discarded probe used menu 565, which is absent from the current isolated Core seed; that probe was excluded from the evidence.",
+    "No shared schema, shared Redis service, historical password, or long-lived process was modified."
+  ]
+}

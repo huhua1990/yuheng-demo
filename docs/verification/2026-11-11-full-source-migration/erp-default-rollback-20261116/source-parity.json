@@ -1,0 +1,18 @@
+{
+  "account": {
+    "normalized_full_service_sha256": {
+      "upstream": "171f1e469a53d5b295afe5dbaf2febee1010cbcee448b2d0a10e7e5bf2057a2d",
+      "template": "171f1e469a53d5b295afe5dbaf2febee1010cbcee448b2d0a10e7e5bf2057a2d",
+      "demo": "171f1e469a53d5b295afe5dbaf2febee1010cbcee448b2d0a10e7e5bf2057a2d"
+    },
+    "all_equal": true
+  },
+  "warehouse": {
+    "normalized_full_service_sha256": {
+      "upstream": "ea96296f71965b193e7a2185f3c12f50c1a42df1575be11169823ec23f24a27e",
+      "template": "ea96296f71965b193e7a2185f3c12f50c1a42df1575be11169823ec23f24a27e",
+      "demo": "ea96296f71965b193e7a2185f3c12f50c1a42df1575be11169823ec23f24a27e"
+    },
+    "all_equal": true
+  }
+}

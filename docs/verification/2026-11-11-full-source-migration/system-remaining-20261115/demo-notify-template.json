@@ -1,0 +1,37 @@
+{
+  "buttons": [
+    "搜索",
+    "重置",
+    "新增",
+    "批量删除"
+  ],
+  "empty": "暂无数据",
+  "headers": [
+    "",
+    "模板编码",
+    "模板名称",
+    "类型",
+    "发送人名称",
+    "模板内容",
+    "开启状态",
+    "备注",
+    "创建时间",
+    "操作"
+  ],
+  "labels": [
+    "模板名称",
+    "模板编号",
+    "状态",
+    "创建时间"
+  ],
+  "totals": [
+    "共 0 条"
+  ],
+  "url": "/system/messages/notify/notify-template",
+  "viewport": {
+    "height": 805,
+    "scrollWidth": 1512,
+    "width": 1512
+  },
+  "visibleRows": 0
+}

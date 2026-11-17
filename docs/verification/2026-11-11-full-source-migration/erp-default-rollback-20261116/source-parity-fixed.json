@@ -1,0 +1,9 @@
+{
+  "normalized_service_sha256": {
+    "template": "64c22ad1c1cc8b01a287aecc8f92fad8262b249338bdc8a544c19a50fdae1a37",
+    "demo": "64c22ad1c1cc8b01a287aecc8f92fad8262b249338bdc8a544c19a50fdae1a37",
+    "upstream": "171f1e469a53d5b295afe5dbaf2febee1010cbcee448b2d0a10e7e5bf2057a2d"
+  },
+  "template_demo_equal": true,
+  "upstream_diff_intentional": true
+}

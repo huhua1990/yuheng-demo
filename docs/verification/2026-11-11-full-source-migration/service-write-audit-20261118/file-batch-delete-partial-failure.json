@@ -1,0 +1,63 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "run_date": "2026-11-15",
+  "runtime": {
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+    "backend_port": 48163,
+    "mysql_container": "yh-t4-file-batch2-mysql-20261118",
+    "mysql_port": 13331,
+    "schema": "yuheng_t4_filebatch2_20261118",
+    "schema_scoped_account": "yh_fb2_18",
+    "redis_container": "yh-t4-file-batch2-redis-20261118",
+    "redis_port": 16402,
+    "local_storage_root": "/tmp/yh-t4-file-batch2-store-20261118",
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "valid_file": {
+      "id": 2332,
+      "config_id": 29,
+      "path": "t4-batch-first-20261118/20261115/hosts.txt",
+      "bytes": 341,
+      "sha256_before": "5ded57e79c3addb883ea2587e4268f08aa3811b6050f98139f3ada265804b36d",
+      "deleted_before": 0
+    },
+    "invalid_client_file": {
+      "id": 2333,
+      "config_id": 999999,
+      "path": "t4-invalid-20261118/invalid-client.txt",
+      "deleted_before": 0,
+      "client_config_exists": false
+    },
+    "query_order": "infra_file.selectByIds returned the selected IDs in ascending order: 2332, 2333"
+  },
+  "request": {
+    "method": "DELETE",
+    "path": "/admin-api/infra/file/delete-list?ids=2332&ids=2333",
+    "http_status": 200,
+    "business_code": 500,
+    "message": "系统异常"
+  },
+  "result": {
+    "valid_file_object_exists_after": false,
+    "valid_file_deleted_flag_after": 0,
+    "invalid_client_file_deleted_flag_after": 0,
+    "files_logically_deleted": 0,
+    "interpretation": "The first local object was deleted. Resolving the second file's nonexistent client then failed before the bulk metadata logical-delete call, leaving both metadata rows active and the first row pointing to a missing object."
+  },
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "schema_dropped_and_verified_absent": true,
+    "schema_account_dropped_and_verified_absent": true,
+    "dedicated_mysql_and_redis_containers_removed": true,
+    "local_storage_root_removed": true,
+    "temporary_credentials_and_probe_outputs_removed": true,
+    "ports_48163_13331_16402_have_no_listeners": true,
+    "shared_mysql_and_redis_remain_running": true,
+    "shared_database_or_redis_modified": false,
+    "historical_passwords_read_or_modified": false
+  },
+  "conclusion": "This verifies a partial external-object deletion during deleteFileList failure. The endpoint returns failure and retains all active metadata, even though an earlier object's bytes have already been removed."
+}

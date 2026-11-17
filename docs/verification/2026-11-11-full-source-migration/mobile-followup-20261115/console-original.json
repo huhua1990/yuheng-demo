@@ -1,0 +1,242 @@
+[
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T00:56:50.996Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "error",
+    "message": "AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2108:16)\n    at Axios$1.request (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2784:37)\n    at async Object.postOriginal (http://127.0.0.1:5192/src/config/axios/index.ts:30:15)\n    at async getPictrue (http://127.0.0.1:5192/src/components/Verifition/src/Verify/VerifySlide.vue:296:15)",
+    "timestamp": "2026-11-15T00:56:51.185Z",
+    "url": "http://127.0.0.1:5192/src/components/Verifition/src/Verify/VerifySlide.vue"
+  },
+  {
+    "level": "error",
+    "message": "AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2108:16)\n    at Axios$1.request (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2784:37)\n    at async Object.get (http://127.0.0.1:5192/src/config/axios/index.ts:16:15)\n    at async getTenantByWebsite (http://127.0.0.1:5192/src/views/Login/components/LoginForm.vue:118:17)",
+    "timestamp": "2026-11-15T00:56:51.185Z",
+    "url": "http://127.0.0.1:5192/src/views/Login/components/LoginForm.vue"
+  },
+  {
+    "level": "error",
+    "message": "AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2108:16)\n    at Axios$1.request (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2784:37)\n    at async Object.postOriginal (http://127.0.0.1:5192/src/config/axios/index.ts:30:15)\n    at async getPictrue (http://127.0.0.1:5192/src/components/Verifition/src/Verify/VerifySlide.vue:296:15)",
+    "timestamp": "2026-11-15T00:56:51.185Z",
+    "url": "http://127.0.0.1:5192/src/components/Verifition/src/Verify/VerifySlide.vue"
+  },
+  {
+    "level": "error",
+    "message": "AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2108:16)\n    at Axios$1.request (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2784:37)\n    at async Object.postOriginal (http://127.0.0.1:5192/src/config/axios/index.ts:30:15)\n    at async getPictrue (http://127.0.0.1:5192/src/components/Verifition/src/Verify/VerifySlide.vue:296:15)",
+    "timestamp": "2026-11-15T00:56:51.193Z",
+    "url": "http://127.0.0.1:5192/src/components/Verifition/src/Verify/VerifySlide.vue"
+  },
+  {
+    "level": "error",
+    "message": "AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2108:16)\n    at Axios$1.request (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2784:37)\n    at async Object.get (http://127.0.0.1:5192/src/config/axios/index.ts:16:15)\n    at async getTenantByWebsite (http://127.0.0.1:5192/src/views/Login/components/RegisterForm.vue:183:17)",
+    "timestamp": "2026-11-15T00:56:51.193Z",
+    "url": "http://127.0.0.1:5192/src/views/Login/components/RegisterForm.vue"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T00:57:34.121Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "error",
+    "message": "AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2108:16)\n    at Axios$1.request (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2784:37)\n    at async Object.get (http://127.0.0.1:5192/src/config/axios/index.ts:16:15)\n    at async getTenantByWebsite (http://127.0.0.1:5192/src/views/Login/components/LoginForm.vue:118:17)",
+    "timestamp": "2026-11-15T00:57:34.381Z",
+    "url": "http://127.0.0.1:5192/src/views/Login/components/LoginForm.vue"
+  },
+  {
+    "level": "error",
+    "message": "AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2108:16)\n    at Axios$1.request (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2784:37)\n    at async Object.get (http://127.0.0.1:5192/src/config/axios/index.ts:16:15)\n    at async getTenantByWebsite (http://127.0.0.1:5192/src/views/Login/components/RegisterForm.vue:183:17)",
+    "timestamp": "2026-11-15T00:57:34.381Z",
+    "url": "http://127.0.0.1:5192/src/views/Login/components/RegisterForm.vue"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T00:57:41.951Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "error",
+    "message": "AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2108:16)\n    at Axios$1.request (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2784:37)\n    at async Object.get (http://127.0.0.1:5192/src/config/axios/index.ts:16:15)\n    at async getTenantByWebsite (http://127.0.0.1:5192/src/views/Login/components/LoginForm.vue:118:17)",
+    "timestamp": "2026-11-15T00:57:42.043Z",
+    "url": "http://127.0.0.1:5192/src/views/Login/components/LoginForm.vue"
+  },
+  {
+    "level": "error",
+    "message": "AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2108:16)\n    at Axios$1.request (http://127.0.0.1:5192/node_modules/.vite/deps/axios.js?v=71aa919f:2784:37)\n    at async Object.get (http://127.0.0.1:5192/src/config/axios/index.ts:16:15)\n    at async getTenantByWebsite (http://127.0.0.1:5192/src/views/Login/components/RegisterForm.vue:183:17)",
+    "timestamp": "2026-11-15T00:57:42.043Z",
+    "url": "http://127.0.0.1:5192/src/views/Login/components/RegisterForm.vue"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue warn]: Unhandled error during execution of component event handler \n  at <ElButton loading=false class=\"w-full\" type=\"primary\"  ... > \n  at <ElFormItem> \n  at <ElCol span=24 class=\"px-10px\" > \n  at <ElRow class=\"mx-[-10px]\" > \n  at <ElForm ref=\"formLogin\" model= Object rules= Object  ... > \n  at <LoginForm class=\"m-auto h-auto p-20px lt-xl:(rounded-3xl light:bg-white)\" > \n  at <BaseTransition appear=true persisted=false mode=undefined  ... > \n  at <Transition appear=\"\" enter-active-class=\"animate__animated animate__bounceInRight\" > \n  at <Login class=\"\" onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > \n  at <RouterView class=\"\" > \n  at <ElConfigProvider namespace=\"el\" locale= Object message= Object  ... > \n  at <ConfigGlobal size=\"default\" > \n  at <APP>",
+    "timestamp": "2026-11-15T00:57:56.962Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "error",
+    "message": "TypeError: Cannot read properties of undefined (reading 'close')\n    at handleLogin (http://127.0.0.1:5192/src/views/Login/components/LoginForm.vue:163:19)\n    at async Proxy.getCode (http://127.0.0.1:5192/src/views/Login/components/LoginForm.vue:87:5)",
+    "timestamp": "2026-11-15T00:57:56.962Z",
+    "url": "http://127.0.0.1:5192/src/views/Login/components/LoginForm.vue"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T00:58:51.939Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T00:59:00.197Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T00:59:10.302Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T00:59:10.302Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "ElementPlusError: [el-link] [API] The underline option (boolean) is about to be deprecated in version 3.0.0, please use 'always' | 'hover' | 'never' instead.\nFor more detail, please visit: https://element-plus.org/en-US/component/link.html#underline\n\n    at debugWarn (http://127.0.0.1:5192/node_modules/.vite/deps/error-DIM62Cr7.js?v=71aa919f:71:35)\n    at watch.immediate (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:522:12)\n    at callWithErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2085:17)\n    at callWithAsyncErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2092:15)\n    at baseWatchOptions.call (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2538:46)\n    at job (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1251:13)\n    at watch$1 (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1272:25)\n    at doWatch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2560:22)\n    at watch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2512:9)\n    at useDeprecated (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:521:2)",
+    "timestamp": "2026-11-15T00:59:11.260Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "ElementPlusError: [el-link] [API] The underline option (boolean) is about to be deprecated in version 3.0.0, please use 'always' | 'hover' | 'never' instead.\nFor more detail, please visit: https://element-plus.org/en-US/component/link.html#underline\n\n    at debugWarn (http://127.0.0.1:5192/node_modules/.vite/deps/error-DIM62Cr7.js?v=71aa919f:71:35)\n    at watch.immediate (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:522:12)\n    at callWithErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2085:17)\n    at callWithAsyncErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2092:15)\n    at baseWatchOptions.call (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2538:46)\n    at job (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1251:13)\n    at watch$1 (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1272:25)\n    at doWatch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2560:22)\n    at watch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2512:9)\n    at useDeprecated (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:521:2)",
+    "timestamp": "2026-11-15T00:59:11.260Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "ElementPlusError: [el-link] [API] The underline option (boolean) is about to be deprecated in version 3.0.0, please use 'always' | 'hover' | 'never' instead.\nFor more detail, please visit: https://element-plus.org/en-US/component/link.html#underline\n\n    at debugWarn (http://127.0.0.1:5192/node_modules/.vite/deps/error-DIM62Cr7.js?v=71aa919f:71:35)\n    at watch.immediate (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:522:12)\n    at callWithErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2085:17)\n    at callWithAsyncErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2092:15)\n    at baseWatchOptions.call (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2538:46)\n    at job (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1251:13)\n    at watch$1 (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1272:25)\n    at doWatch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2560:22)\n    at watch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2512:9)\n    at useDeprecated (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:521:2)",
+    "timestamp": "2026-11-15T00:59:11.434Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "ElementPlusError: [el-link] [API] The underline option (boolean) is about to be deprecated in version 3.0.0, please use 'always' | 'hover' | 'never' instead.\nFor more detail, please visit: https://element-plus.org/en-US/component/link.html#underline\n\n    at debugWarn (http://127.0.0.1:5192/node_modules/.vite/deps/error-DIM62Cr7.js?v=71aa919f:71:35)\n    at watch.immediate (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:522:12)\n    at callWithErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2085:17)\n    at callWithAsyncErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2092:15)\n    at baseWatchOptions.call (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2538:46)\n    at job (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1251:13)\n    at watch$1 (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1272:25)\n    at doWatch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2560:22)\n    at watch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2512:9)\n    at useDeprecated (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:521:2)",
+    "timestamp": "2026-11-15T00:59:11.434Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "ElementPlusError: [el-link] [API] The underline option (boolean) is about to be deprecated in version 3.0.0, please use 'always' | 'hover' | 'never' instead.\nFor more detail, please visit: https://element-plus.org/en-US/component/link.html#underline\n\n    at debugWarn (http://127.0.0.1:5192/node_modules/.vite/deps/error-DIM62Cr7.js?v=71aa919f:71:35)\n    at watch.immediate (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:522:12)\n    at callWithErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2085:17)\n    at callWithAsyncErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2092:15)\n    at baseWatchOptions.call (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2538:46)\n    at job (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1251:13)\n    at watch$1 (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1272:25)\n    at doWatch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2560:22)\n    at watch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2512:9)\n    at useDeprecated (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:521:2)",
+    "timestamp": "2026-11-15T00:59:11.435Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "ElementPlusError: [el-link] [API] The underline option (boolean) is about to be deprecated in version 3.0.0, please use 'always' | 'hover' | 'never' instead.\nFor more detail, please visit: https://element-plus.org/en-US/component/link.html#underline\n\n    at debugWarn (http://127.0.0.1:5192/node_modules/.vite/deps/error-DIM62Cr7.js?v=71aa919f:71:35)\n    at watch.immediate (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:522:12)\n    at callWithErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2085:17)\n    at callWithAsyncErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2092:15)\n    at baseWatchOptions.call (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2538:46)\n    at job (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1251:13)\n    at watch$1 (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1272:25)\n    at doWatch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2560:22)\n    at watch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2512:9)\n    at useDeprecated (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:521:2)",
+    "timestamp": "2026-11-15T00:59:11.435Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "ElementPlusError: [el-link] [API] The underline option (boolean) is about to be deprecated in version 3.0.0, please use 'always' | 'hover' | 'never' instead.\nFor more detail, please visit: https://element-plus.org/en-US/component/link.html#underline\n\n    at debugWarn (http://127.0.0.1:5192/node_modules/.vite/deps/error-DIM62Cr7.js?v=71aa919f:71:35)\n    at watch.immediate (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:522:12)\n    at callWithErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2085:17)\n    at callWithAsyncErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2092:15)\n    at baseWatchOptions.call (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2538:46)\n    at job (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1251:13)\n    at watch$1 (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1272:25)\n    at doWatch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2560:22)\n    at watch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2512:9)\n    at useDeprecated (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:521:2)",
+    "timestamp": "2026-11-15T00:59:11.435Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "ElementPlusError: [el-link] [API] The underline option (boolean) is about to be deprecated in version 3.0.0, please use 'always' | 'hover' | 'never' instead.\nFor more detail, please visit: https://element-plus.org/en-US/component/link.html#underline\n\n    at debugWarn (http://127.0.0.1:5192/node_modules/.vite/deps/error-DIM62Cr7.js?v=71aa919f:71:35)\n    at watch.immediate (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:522:12)\n    at callWithErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2085:17)\n    at callWithAsyncErrorHandling (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2092:15)\n    at baseWatchOptions.call (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2538:46)\n    at job (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1251:13)\n    at watch$1 (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:1272:25)\n    at doWatch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2560:22)\n    at watch (http://127.0.0.1:5192/node_modules/.vite/deps/runtime-dom.esm-bundler-Bn3HPRgA.js?v=71aa919f:2512:9)\n    at useDeprecated (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:521:2)",
+    "timestamp": "2026-11-15T00:59:11.435Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T00:59:39.388Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T00:59:39.388Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Menu] Failed to open submenu \"/system\" TypeError: Cannot destructure property 'indexPath' of 'subMenus.value[index]' as it is undefined.\n    at Proxy.open (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:28094:13)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:213:18\n    at Array.forEach (<anonymous>)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:211:21",
+    "timestamp": "2026-11-15T01:00:16.421Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Menu] Failed to open submenu \"/system/messages\" TypeError: Cannot destructure property 'indexPath' of 'subMenus.value[index]' as it is undefined.\n    at Proxy.open (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:28094:13)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:213:18\n    at Array.forEach (<anonymous>)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:211:21",
+    "timestamp": "2026-11-15T01:00:16.421Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T01:01:41.005Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T01:01:41.006Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Menu] Failed to open submenu \"/system\" TypeError: Cannot destructure property 'indexPath' of 'subMenus.value[index]' as it is undefined.\n    at Proxy.open (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:28094:13)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:213:18\n    at Array.forEach (<anonymous>)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:211:21",
+    "timestamp": "2026-11-15T01:02:03.214Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Menu] Failed to open submenu \"/system/messages\" TypeError: Cannot destructure property 'indexPath' of 'subMenus.value[index]' as it is undefined.\n    at Proxy.open (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:28094:13)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:213:18\n    at Array.forEach (<anonymous>)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:211:21",
+    "timestamp": "2026-11-15T01:02:03.214Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Menu] Failed to open submenu \"/system\" TypeError: Cannot destructure property 'indexPath' of 'subMenus.value[index]' as it is undefined.\n    at Proxy.open (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:28094:13)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:213:18\n    at Array.forEach (<anonymous>)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:211:21",
+    "timestamp": "2026-11-15T01:02:03.427Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Menu] Failed to open submenu \"/system/messages\" TypeError: Cannot destructure property 'indexPath' of 'subMenus.value[index]' as it is undefined.\n    at Proxy.open (http://127.0.0.1:5192/node_modules/.vite/deps/es-CyYRbE07.js?v=71aa919f:28094:13)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:213:18\n    at Array.forEach (<anonymous>)\n    at http://127.0.0.1:5192/src/layout/components/Menu/src/Menu.vue?vue&type=script&lang.tsx:211:21",
+    "timestamp": "2026-11-15T01:02:03.427Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T01:05:34.953Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T01:05:34.955Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T01:08:14.199Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "[Vue Router warn]: The `next()` callback in navigation guards is deprecated. Return the value instead of calling `next(value)`.",
+    "timestamp": "2026-11-15T01:08:14.199Z",
+    "url": "http://127.0.0.1:5192/@vite/client"
+  }
+]

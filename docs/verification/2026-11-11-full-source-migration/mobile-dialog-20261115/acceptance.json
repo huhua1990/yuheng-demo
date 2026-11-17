@@ -1,0 +1,71 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "subtask": "T3-DIALOG-MOBILE-WIDTH",
+  "date": "2026-11-15",
+  "scope": "real Core source component preview; memory request adapter; no full Demo/backend integration",
+  "red": {
+    "visiblePanelWidth": 800,
+    "viewportWidth": 390,
+    "submitRight": 708.109375,
+    "cancelRight": 784,
+    "assertionFailed": true
+  },
+  "matrix": [
+    {
+      "viewport": {
+        "height": 844,
+        "width": 320
+      },
+      "panelWidth": 320,
+      "panelScrollWidth": 320,
+      "footerRight": 304
+    },
+    {
+      "viewport": {
+        "height": 844,
+        "width": 390
+      },
+      "panelWidth": 390,
+      "panelScrollWidth": 390,
+      "footerRight": 374
+    },
+    {
+      "viewport": {
+        "height": 900,
+        "width": 768
+      },
+      "panelWidth": 768,
+      "panelScrollWidth": 768,
+      "footerRight": 752
+    },
+    {
+      "viewport": {
+        "height": 861,
+        "width": 1512
+      },
+      "panelWidth": 800,
+      "panelScrollWidth": 800,
+      "footerRight": 1140
+    }
+  ],
+  "compatibility": {
+    "percentDesktop": 907.1953125,
+    "percentMobile": 234,
+    "percentFullscreen": 390,
+    "percentRestored": 234,
+    "defaultFullscreen": 390
+  },
+  "mobileInteractions": [
+    "empty submit: 3 required messages, no request or Vue error",
+    "valid notice create: one simulated request and one success event",
+    "post cancel at390: no write",
+    "notice cancel at320: no write"
+  ],
+  "consoleWarnErrorCount": 0,
+  "automatedCoreUITests": 121,
+  "limitations": [
+    "full consumer upgrade and full application mobile matrix remain open",
+    "Editor upload and toolbar popover paths not tested",
+    "Local Icon rendering uses accessible buttons instead of provider"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t4_configperm_20261120",
+  "permission": "infra:config",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "ports": {
+    "mysql": 13355,
+    "redis": 16435,
+    "app": 48190
+  },
+  "cases": {
+    "denied_create": {
+      "http": 200,
+      "code": 403,
+      "snapshot_unchanged": true,
+      "required_permission": "infra:config:create"
+    },
+    "denied_update": {
+      "http": 200,
+      "code": 403,
+      "snapshot_unchanged": true,
+      "required_permission": "infra:config:update"
+    },
+    "denied_delete": {
+      "http": 200,
+      "code": 403,
+      "snapshot_unchanged": true,
+      "required_permission": "infra:config:delete"
+    },
+    "denied_batch_delete": {
+      "http": 200,
+      "code": 403,
+      "snapshot_unchanged": true,
+      "required_permission": "infra:config:delete"
+    },
+    "denied_export": {
+      "http": 200,
+      "code": 403,
+      "snapshot_unchanged": true,
+      "required_permission": "infra:config:export"
+    },
+    "allowed_query": {
+      "http": 200,
+      "code": 0,
+      "total": 28
+    },
+    "allowed_create": {
+      "http": 200,
+      "code": 0,
+      "ids": [
+        36,
+        37,
+        38
+      ]
+    },
+    "allowed_update": {
+      "http": 200,
+      "code": 0,
+      "value_persisted": true
+    },
+    "allowed_export": {
+      "http": 200,
+      "binary_size": 6465,
+      "content_type": ""
+    },
+    "allowed_delete": {
+      "http": 200,
+      "code": 0
+    },
+    "allowed_batch_delete": {
+      "http": 200,
+      "code": 0
+    }
+  },
+  "config_snapshot": {
+    "before_sha256": "ab2c52ab60b7a4cb6ee41db60dad90a94ef05ae186f7a599fce36e8ad92be259",
+    "after_denied_sha256": "ab2c52ab60b7a4cb6ee41db60dad90a94ef05ae186f7a599fce36e8ad92be259",
+    "denied_requests_unchanged": true
+  },
+  "users": {
+    "denied": {
+      "id": 990041,
+      "tenant_id": 1,
+      "password_hash_recorded": false
+    },
+    "allowed": {
+      "id": 990043,
+      "tenant_id": 1,
+      "password_hash_recorded": false
+    }
+  },
+  "conclusion": "A real authenticated user with no role is forbidden from infra config create, update, single delete, batch delete and export, with the entire config snapshot unchanged after every denied request. A user granted the five config permissions can query, create, update, delete and export.",
+  "graceful_shutdown": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13355": false,
+      "16435": false,
+      "48190": false
+    }
+  }
+}

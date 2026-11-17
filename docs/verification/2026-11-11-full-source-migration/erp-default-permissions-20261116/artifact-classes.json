@@ -1,0 +1,18 @@
+{
+  "controller/admin/stock/ErpWarehouseController": {
+    "packed_equals_current_target": true,
+    "sha256": "f5d4c2496bf3a5e68bbd688e3da0b4ebe7e66ec6601f52ce5578e54938c62b75"
+  },
+  "controller/admin/finance/ErpAccountController": {
+    "packed_equals_current_target": true,
+    "sha256": "b42adbd0e462969911afb56cc879335c9f59f1dc018918674d94e3bd320fd493"
+  },
+  "service/stock/ErpWarehouseServiceImpl": {
+    "packed_equals_current_target": true,
+    "sha256": "f98361e876b12c235cccea7b9ab17e57c1294249111f40b98e3344aa56302298"
+  },
+  "service/finance/ErpAccountServiceImpl": {
+    "packed_equals_current_target": true,
+    "sha256": "8a97493b2180003d0b023209f87ea0962653fdfce173b9d5adc55cd163442c76"
+  }
+}

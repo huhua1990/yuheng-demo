@@ -1,0 +1,58 @@
+{
+  "run_date": "2026-11-15",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "isolation": {
+    "mysql_container": "yh-t4-disable-mysql-20261115",
+    "schema": "yuheng_t4_disable_20261115",
+    "redis_container": "yh-t4-disable-redis-20261115",
+    "backend_port": 48150,
+    "mysql_port": 13316,
+    "redis_port": 16387,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "user_id": 100,
+    "tenant_id": 1,
+    "user_type": 2,
+    "access_token_ids": [900001, 900002],
+    "refresh_token_ids": [900001, 900002],
+    "redis_keys": [
+      "oauth2_access_token:T4-ACCESS-A",
+      "oauth2_access_token:T4-REFRESH-A",
+      "oauth2_access_token:T4-ACCESS-B",
+      "oauth2_access_token:T4-REFRESH-B"
+    ]
+  },
+  "normal_disable_control": {
+    "http_code": 200,
+    "business_code": 0,
+    "user_status_after": 1,
+    "access_token_deleted_flags_after": [1, 1],
+    "refresh_token_deleted_flags_after": [1, 1],
+    "redis_key_count_after": 0
+  },
+  "injected_redis_del_failure": {
+    "injection": "ACL SETUSER default -del on disposable Redis only",
+    "http_code": 200,
+    "business_code": 500,
+    "user_status_after": 1,
+    "access_token_deleted_flags_after": [1, 0],
+    "refresh_token_deleted_flags_after": [0, 0],
+    "redis_key_count_after": 4,
+    "redis_keys_after": [
+      "oauth2_access_token:T4-ACCESS-A",
+      "oauth2_access_token:T4-REFRESH-A",
+      "oauth2_access_token:T4-ACCESS-B",
+      "oauth2_access_token:T4-REFRESH-B"
+    ]
+  },
+  "conclusion": "The user disable and token revocation call chain is not atomic across MySQL and Redis. A Redis DEL failure after the first access-token row update leaves the user disabled, one access-token row logically deleted, the corresponding refresh-token row active, the second token pair active, and all four Redis keys present.",
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "only_disposable_mysql_and_redis_containers_removed": true,
+    "shared_database_or_redis_modified": false,
+    "historical_passwords_read_or_modified": false
+  }
+}

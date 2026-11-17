@@ -1,0 +1,39 @@
+{
+  "run_date": "2026-11-15",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "isolation": {
+    "mysql_container": "yh-t4-filelocal-mysql-20261115",
+    "schema": "yuheng_t4_filelocal_20261115",
+    "redis_container": "yh-t4-filelocal-redis-20261115",
+    "storage_directory": "/tmp/yh-t4-filelocal-storage-20261115",
+    "backend_port": 48152,
+    "mysql_port": 13318,
+    "redis_port": 16389,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "file_client_config_id": 29,
+    "storage": "local filesystem",
+    "metadata_trigger": "BEFORE INSERT ON infra_file raises SQLSTATE 45000",
+    "upload_endpoint": "POST /admin-api/infra/file/upload",
+    "test_content_bytes": 34
+  },
+  "result": {
+    "http_code": 200,
+    "business_code": 500,
+    "infra_file_rows_after": 0,
+    "orphaned_file_path": "20261115/yh-t4-local-probe.txt",
+    "orphaned_file_bytes": 34,
+    "orphaned_file_sha256": "25503219d4d3d37f251edb134d61efa67c7ce834bc77930347226a667b904590"
+  },
+  "conclusion": "The local file client completed the filesystem write before the file metadata insert failed, leaving an external file without an infra_file row.",
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "exact_temporary_storage_directory_removed": true,
+    "only_disposable_mysql_and_redis_containers_removed": true,
+    "shared_database_or_redis_modified": false,
+    "historical_passwords_read_or_modified": false
+  }
+}

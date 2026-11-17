@@ -1,0 +1,18 @@
+{
+  "create_via_demo_ui": true,
+  "edit_via_demo_ui": true,
+  "readback_via_original_ui": true,
+  "cancelled_edit_not_saved": true,
+  "id": 5,
+  "title": "YH-T3-公告-20261115-已编辑",
+  "type": 2,
+  "status": 1,
+  "content_verified": true,
+  "historical_notice_rows_unchanged": true,
+  "user_passwords_unchanged": true,
+  "delete_via_http_method": "DELETE",
+  "delete_business_code": 0,
+  "fixture_query_total_after_delete": 0,
+  "tenant1_notice_total_after_delete": 2,
+  "scope": "No push/notification sent; delete verified by HTTP, not UI."
+}

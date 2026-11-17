@@ -1,0 +1,10 @@
+{
+  "schema": "yuheng_t3_mobile_20261115",
+  "db_user": "yh_t3_mobile15",
+  "redis_db": 15,
+  "redis_keys_immediately_before_start": 0,
+  "backend_port": 48127,
+  "demo_port": 5191,
+  "original_port": 5192,
+  "jar_sha256": "4bc65f4f34047dcdb44e6cf7d5bd989dd0412ea3063d6db469fb27bc6294767e"
+}

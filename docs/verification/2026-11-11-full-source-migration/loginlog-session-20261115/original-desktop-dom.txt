@@ -1,0 +1,213 @@
+- link "芋道管理系统":
+  - /url: /
+  - generic: 芋道管理系统
+- menubar:
+  - menuitem "首页":
+    - generic: 首页
+  - menuitem "作者动态":
+    - generic: 作者动态
+  - menuitem "Boot 开发文档":
+    - generic: Boot 开发文档
+  - menuitem "Cloud 开发文档":
+    - generic: Cloud 开发文档
+  - menuitem "系统管理" [expanded]:
+    - generic: 系统管理
+    - menu:
+      - menuitem "租户管理":
+        - generic: 租户管理
+      - menuitem "用户管理":
+        - generic: 用户管理
+      - menuitem "角色管理":
+        - generic: 角色管理
+      - menuitem "菜单管理":
+        - generic: 菜单管理
+      - menuitem "部门管理":
+        - generic: 部门管理
+      - menuitem "岗位管理":
+        - generic: 岗位管理
+      - menuitem "字典管理":
+        - generic: 字典管理
+      - menuitem "消息中心":
+        - generic: 消息中心
+      - menuitem "审计日志" [expanded]:
+        - generic: 审计日志
+        - menu:
+          - menuitem "操作日志":
+            - generic: 操作日志
+          - menuitem "登录日志":
+            - generic: 登录日志
+      - menuitem "OAuth 2.0":
+        - generic: OAuth 2.0
+      - menuitem "三方登录":
+        - generic: 三方登录
+      - menuitem "地区管理":
+        - generic: 地区管理
+  - menuitem "基础设施":
+    - generic: 基础设施
+  - menuitem "支付管理":
+    - generic: 支付管理
+  - menuitem "报表管理":
+    - generic: 报表管理
+  - menuitem "工作流程":
+    - generic: 工作流程
+  - menuitem "会员中心":
+    - generic: 会员中心
+  - menuitem "MALL 商城系统":
+    - generic: MALL 商城系统
+  - menuitem "EAM 资产管理":
+    - generic: EAM 资产管理
+  - menuitem "CRM 系统":
+    - generic: CRM 系统
+  - menuitem "ERP 系统":
+    - generic: ERP 系统
+  - menuitem "WMS 系统":
+    - generic: WMS 系统
+  - menuitem "MES 系统":
+    - generic: MES 系统
+  - menuitem "OA 办公协同":
+    - generic: OA 办公协同
+  - menuitem "HRM 人力资源":
+    - generic: HRM 人力资源
+  - menuitem "FMS 财务管理":
+    - generic: FMS 财务管理
+  - menuitem "PMS 项目管理":
+    - generic: PMS 项目管理
+  - menuitem "AI 大模型":
+    - generic: AI 大模型
+  - menuitem "IoT 物联网":
+    - generic: IoT 物联网
+  - menuitem "IM 即时通讯":
+    - generic: IM 即时通讯
+  - menuitem "MP 公众号管理":
+    - generic: MP 公众号管理
+  - menuitem "CMS 内容管理":
+    - generic: CMS 内容管理
+- navigation "面包屑":
+  - link "系统管理":
+    - text: 系统管理
+  - text: /
+  - link "审计日志":
+    - text: 审计日志
+  - text: /
+  - link "登录日志":
+    - text: 登录日志
+- combobox
+- generic: 请选择租户
+- generic "项目配置":
+- combobox
+- generic: 请输入菜单内容
+- button:
+- button:
+- superscript
+- button "芋道源码":
+  - generic: 芋道源码
+- button "首页":
+  - text: 首页
+- button "登录日志":
+  - text: 登录日志
+- button:
+- alert:
+  - generic: 【系统日志】文档地址：https://doc.iocoder.cn/system-log/
+- generic: 用户名称
+- textbox "用户名称":
+  - /placeholder: 请输入用户名称
+  - text: admin
+- generic: 登录地址
+- textbox "登录地址":
+  - /placeholder: 请输入登录地址
+- generic: 登录日期
+- combobox "登录日期"
+- generic: "-"
+- combobox "结束日期"
+- button "搜索" [active]:
+  - text: 搜索
+- button "重置":
+  - text: 重置
+- button "导出":
+  - text: 导出
+- table:
+  - rowgroup:
+    - row "日志编号 登录类型 用户名称 登录地址 浏览器 登陆结果 登录日期 操作":
+      - columnheader "日志编号":
+        - generic: 日志编号
+      - columnheader "登录类型":
+        - generic: 登录类型
+      - columnheader "用户名称":
+        - generic: 用户名称
+      - columnheader "登录地址":
+        - generic: 登录地址
+      - columnheader "浏览器":
+        - generic: 浏览器
+      - columnheader "登陆结果":
+        - generic: 登陆结果
+      - columnheader "登录日期":
+        - generic: 登录日期
+      - columnheader "操作":
+        - generic: 操作
+- table:
+  - rowgroup:
+    - row "7943 账号登录 admin 127.0.0.1 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 成功 2026-11-15 04:59:34 详情":
+      - cell "7943":
+        - generic: "7943"
+      - cell "账号登录":
+        - generic: 账号登录
+      - cell "admin":
+        - generic: admin
+      - cell "127.0.0.1":
+        - generic: 127.0.0.1
+      - cell "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36":
+        - generic: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36
+      - cell "成功":
+        - generic: 成功
+      - cell "2026-11-15 04:59:34":
+        - generic: 2026-11-15 04:59:34
+      - cell "详情":
+        - button "详情":
+          - generic: 详情
+    - row "7942 账号登录 admin 127.0.0.1 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 成功 2026-11-15 04:59:04 详情":
+      - cell "7942":
+        - generic: "7942"
+      - cell "账号登录":
+        - generic: 账号登录
+      - cell "admin":
+        - generic: admin
+      - cell "127.0.0.1":
+        - generic: 127.0.0.1
+      - cell "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36":
+        - generic: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36
+      - cell "成功":
+        - generic: 成功
+      - cell "2026-11-15 04:59:04":
+        - generic: 2026-11-15 04:59:04
+      - cell "详情":
+        - button "详情":
+          - generic: 详情
+    - row "7941 账号登录 admin 127.0.0.1 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 成功 2026-11-15 03:42:43 详情":
+      - cell "7941":
+        - generic: "7941"
+      - cell "账号登录":
+        - generic: 账号登录
+      - cell "admin":
+        - generic: admin
+      - cell "127.0.0.1":
+        - generic: 127.0.0.1
+      - cell "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36":
+        - generic: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36
+      - cell "成功":
+        - generic: 成功
+      - cell "2026-11-15 03:42:43":
+        - generic: 2026-11-15 03:42:43
+      - cell "详情":
+        - button "详情":
+          - generic: 详情
+- generic: 共 3 条
+- combobox
+- generic: 10条/页
+- button "上一页" [disabled]:
+- list:
+  - listitem "第 1 页": "1"
+- button "下一页" [disabled]:
+- generic: 前往
+- spinbutton "页": "1"
+- generic: 页
+- generic: Copyright ©2026 芋道管理系统

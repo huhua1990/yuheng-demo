@@ -1,0 +1,87 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "date": "2026-11-19",
+  "scope": "T4 system department parent tenant boundary",
+  "runtime": {
+    "artifact": "existing isolated Demo JAR",
+    "port": 48180,
+    "schema": "yuheng_t4_deptparent_20261119",
+    "liquibaseExecutedChangesets": 53,
+    "dedicatedRedisPort": 16426,
+    "mockAuthentication": "enabled only for isolated process",
+    "sharedServicesUsed": false
+  },
+  "fixtures": {
+    "foreignParent": {
+      "id": 900199,
+      "tenantId": 999,
+      "active": true
+    },
+    "sameTenantParentIds": [100, 101],
+    "tenantId": 1
+  },
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/admin-api/system/dept/create",
+      "case": "same-tenant parent positive control",
+      "parentId": 100,
+      "businessCode": 0,
+      "createdId": 900200,
+      "result": "PASS"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/system/dept/create",
+      "case": "foreign-tenant parent rejected",
+      "parentId": 900199,
+      "businessCode": 1002004001,
+      "message": "父级部门不存在",
+      "result": "PASS"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/system/dept/update",
+      "case": "same-tenant reparent positive control",
+      "id": 900200,
+      "parentId": 101,
+      "businessCode": 0,
+      "result": "PASS"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/system/dept/update",
+      "case": "foreign-tenant parent rejected without row mutation",
+      "id": 900200,
+      "parentId": 900199,
+      "businessCode": 1002004001,
+      "message": "父级部门不存在",
+      "result": "PASS"
+    }
+  ],
+  "sqlAfterRequests": [
+    {
+      "id": 900199,
+      "name": "FOREIGN-PARENT",
+      "parentId": 0,
+      "sort": 0,
+      "status": 0,
+      "tenantId": 999,
+      "deleted": false
+    },
+    {
+      "id": 900200,
+      "name": "T4DP-POS",
+      "parentId": 101,
+      "sort": 900,
+      "status": 0,
+      "tenantId": 1,
+      "deleted": false
+    }
+  ],
+  "conclusion": "Creation and update reject a foreign-tenant parent under tenant 1; same-tenant controls succeed, and rejected requests leave the existing child unchanged.",
+  "limitations": [
+    "Covers one active foreign parent fixture and one tenant-1 principal.",
+    "Does not cover disabled parents, cycles, deleted rows, all tenant combinations, or the full department permission matrix."
+  ]
+}

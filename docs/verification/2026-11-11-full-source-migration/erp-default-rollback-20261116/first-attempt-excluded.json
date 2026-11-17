@@ -1,0 +1,22 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "containers": [
+    "yh-defrollback-mysql-7486b98a",
+    "yh-defrollback-redis-7486b98a"
+  ],
+  "schema": "yuheng_t4_default_rollback",
+  "backend_port": 48193,
+  "mock_authentication": false,
+  "cases": {},
+  "changesets": 54,
+  "graceful_shutdown_observed": true,
+  "cleanup": {
+    "ports_listening": {
+      "13371": false,
+      "16471": false,
+      "48193": false
+    },
+    "containers_absent": true
+  }
+}

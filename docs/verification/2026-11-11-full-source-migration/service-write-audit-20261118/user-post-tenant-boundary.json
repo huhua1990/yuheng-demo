@@ -1,0 +1,65 @@
+{
+  "schema": "yuheng_t4_postupdate_20261118",
+  "changesets": 54,
+  "initial_users": 21,
+  "control": {
+    "created_user_id": 249,
+    "tenant_id": 1,
+    "dept_id": 100,
+    "post_id": 2,
+    "relation_count": 1
+  },
+  "foreign_post": {
+    "tenant_id": 999,
+    "id": 107,
+    "response_code": 1002005000,
+    "user_and_relation_snapshot_unchanged": true,
+    "users_snapshot": [
+      "a264eecafa547620ea36430aec104092c6cd6fc0bf4dd275c76fe716a0641e51",
+      22
+    ],
+    "user_posts_snapshot": [
+      "37cb46cac6242b44c2bd426efa4d2531a296267352109dada1b30cb2c2a788ce",
+      12
+    ]
+  },
+  "foreign_post_update": {
+    "user_id": 1,
+    "response_code": 1002005000,
+    "user_and_relation_snapshot_unchanged": true,
+    "users_snapshot": [
+      "a264eecafa547620ea36430aec104092c6cd6fc0bf4dd275c76fe716a0641e51",
+      22
+    ],
+    "user_posts_snapshot": [
+      "37cb46cac6242b44c2bd426efa4d2531a296267352109dada1b30cb2c2a788ce",
+      12
+    ]
+  },
+  "events": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/user/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/user/create",
+      "http": 200,
+      "code": 1002005000
+    },
+    {
+      "method": "PUT",
+      "path": "/system/user/update",
+      "http": 200,
+      "code": 1002005000
+    }
+  ]
+}

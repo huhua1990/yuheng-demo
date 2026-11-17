@@ -1,0 +1,13 @@
+{
+  "historical_files_unchanged": true,
+  "historical_checksums_unchanged": true,
+  "changelog_count": 55,
+  "added_changeset": "yuheng-mysql-009-fix-platform-plan-labels\tyuheng\tdb/changelog/yuheng-core/mysql/009-fix-platform-plan-labels.yaml\t9:5a3ef8011085bb31b675cfe1230eff76",
+  "sample_labels": [
+    "511\t回款计划",
+    "8220\t计划管理",
+    "12947\t巡检计划",
+    "12948\t保养计划",
+    "13347\t盘点计划"
+  ]
+}

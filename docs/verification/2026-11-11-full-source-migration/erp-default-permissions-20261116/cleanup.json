@@ -1,0 +1,12 @@
+{
+  "ports_listening": {
+    "48192": false,
+    "13370": false,
+    "16470": false
+  },
+  "probe_containers_absent": true,
+  "shared_containers_still_running": [
+    "redis",
+    "mysql8"
+  ]
+}

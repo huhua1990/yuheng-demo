@@ -1,0 +1,10 @@
+{
+  "redisDb": 1,
+  "redisKeysBeforeUi": 0,
+  "dbUser": "yh_t3_role_menu15",
+  "schema": "yuheng_t3_role_menu_20261115",
+  "backendPort": 48128,
+  "uiPort": 5196,
+  "backendPid": 73160,
+  "jarSha256": "4bc65f4f34047dcdb44e6cf7d5bd989dd0412ea3063d6db469fb27bc6294767e"
+}

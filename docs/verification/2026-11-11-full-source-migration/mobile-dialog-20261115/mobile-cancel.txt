@@ -1,0 +1,10 @@
+- main:
+  - heading "Yuheng 表单隔离验收" [level=1]
+  - paragraph: 真实 Core 组件；请求由内存适配器模拟，未连接数据库。
+  - paragraph: 模拟写请求 1；成功事件 1；异常 0
+  - button "打开公告新增" [active]
+  - button "打开岗位新增"
+  - checkbox "模拟请求失败"
+  - text: 模拟请求失败
+  - button "打开百分比弹窗"
+  - button "打开默认全屏"

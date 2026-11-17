@@ -1,0 +1,32 @@
+{
+  "schema": "yuheng_t4_userrole_20261118",
+  "user_id": 2,
+  "old_roles": [
+    2
+  ],
+  "requested_role": 362,
+  "failure_point": "delete old user-role relations",
+  "snapshot_before": {
+    "sha256": "13dd30040092cabe756d07fb7ec766265ba769dcec5d130e6e681cceb2f558a4",
+    "row_count": 23
+  },
+  "snapshot_after": {
+    "sha256": "13dd30040092cabe756d07fb7ec766265ba769dcec5d130e6e681cceb2f558a4",
+    "row_count": 23
+  },
+  "transaction_rolled_back": true,
+  "events": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/permission/assign-user-role",
+      "http": 200,
+      "code": 500
+    }
+  ]
+}

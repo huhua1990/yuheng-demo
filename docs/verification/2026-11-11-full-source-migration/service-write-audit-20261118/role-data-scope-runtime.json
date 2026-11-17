@@ -1,0 +1,105 @@
+{
+  "result": "PARTIAL_WITH_BOUNDARY_FINDING",
+  "work_id": "YH-20261111-full-source-migration",
+  "area": "T4 role data-scope assignment",
+  "artifact": {
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+    "core_system_jar_sha256": "55115b0639ef5491567c360ce04b09e8829007be4348323ec63b2395a84c4b72"
+  },
+  "isolation": {
+    "mysql_version": "8.0.33",
+    "schema": "yuheng_t4_dscope_20261119",
+    "liquibase_changesets": 54,
+    "tables": 150,
+    "redis_version": "7.2.17",
+    "backend_port": 48174,
+    "mysql_host_port": 13341,
+    "redis_host_port": 16420,
+    "mock_authentication": "isolated process only",
+    "seeded_passwords_read_or_changed": false,
+    "shared_database_or_redis_used": false
+  },
+  "checks": [
+    {
+      "case": "valid_custom_department_set",
+      "request": {
+        "method": "POST",
+        "path": "/admin-api/system/permission/assign-role-data-scope",
+        "tenant_id": 1,
+        "role_id": 155,
+        "data_scope": 2,
+        "department_ids": [100, 102, 103]
+      },
+      "response_code": 0,
+      "database_value": [100, 102, 103],
+      "role_readback_matches": true
+    },
+    {
+      "case": "database_update_failure",
+      "failure_injection": "schema-local BEFORE UPDATE trigger on system_role; trigger existence queried before request",
+      "request": {
+        "method": "POST",
+        "path": "/admin-api/system/permission/assign-role-data-scope",
+        "tenant_id": 1,
+        "role_id": 155,
+        "data_scope": 1,
+        "department_ids": []
+      },
+      "response_code": 500,
+      "role_row_before": {
+        "data_scope": 2,
+        "data_scope_dept_ids": [100, 102, 103],
+        "tenant_id": 1,
+        "deleted": false
+      },
+      "role_row_after": {
+        "data_scope": 2,
+        "data_scope_dept_ids": [100, 102, 103],
+        "tenant_id": 1,
+        "deleted": false
+      },
+      "row_unchanged": true
+    },
+    {
+      "case": "foreign_and_missing_department_ids",
+      "fixture": {
+        "foreign_department_id": 110,
+        "foreign_department_tenant_id": 121,
+        "missing_department_id": 999999,
+        "role_id": 155,
+        "role_tenant_id": 1
+      },
+      "request": {
+        "method": "POST",
+        "path": "/admin-api/system/permission/assign-role-data-scope",
+        "tenant_id": 1,
+        "role_id": 155,
+        "data_scope": 2,
+        "department_ids": [110, 999999]
+      },
+      "response_code": 0,
+      "stored_department_ids": [999999, 110],
+      "accepted_foreign_tenant_and_missing_ids": true
+    }
+  ],
+  "cache": {
+    "source_annotation": "RoleServiceImpl.updateRoleDataScope has @CacheEvict(value=role, key=#id)",
+    "runtime_hit_and_eviction_proven": false,
+    "reason": "The isolated mock principal did not create a role:1:155 cache entry through the exercised request path; do not count source annotation alone as runtime cache evidence."
+  },
+  "upstream_parity": {
+    "source": "ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/permission/RoleServiceImpl.java",
+    "method": "updateRoleDataScope",
+    "normalized_method_body_and_annotations_match": true,
+    "scope": "This comparison covers this method body/annotations only, not the entire module or runtime contract."
+  },
+  "cleanup": {
+    "application_graceful_shutdown": true,
+    "schema_and_user_dropped": true,
+    "dedicated_containers_removed": true,
+    "ports_unbound": [48174, 13341, 16420],
+    "shared_demo_processes_unchanged": [23945, 39370],
+    "shared_mysql_and_redis_unchanged": true
+  },
+  "conclusion": "The valid update, JSON persistence/readback, and unchanged row under injected SQL failure were verified. The endpoint also accepts foreign-tenant and nonexistent department IDs for a tenant-1 role. The matching upstream method has the same implementation, so this boundary behavior is inherited in the compared method and is not identified as a migration divergence. Runtime cache eviction remains unverified."
+}

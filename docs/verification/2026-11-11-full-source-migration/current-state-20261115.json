@@ -1,0 +1,27 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "checked_at": "2026-11-15T21:17:00+08:00",
+  "T1_fixed_package": {
+    "package": "yuheng-ui@0.1.0-SNAPSHOT",
+    "configured_registry": "http://172.26.0.19:8081/repository/npm-group/",
+    "configured_registry_result": "404 Not Found",
+    "public_registry_result": "404 Not Found",
+    "published": false,
+    "fixed_coordinate_install_verified": false
+  },
+  "T3_shared_runtime_read_only": {
+    "ui_url": "http://127.0.0.1:5173/",
+    "ui_http_status": 200,
+    "ui_pid": 39370,
+    "backend_port": 48080,
+    "backend_process_pid": 23945,
+    "backend_permission_api_probe": "timed out after 3 seconds",
+    "backend_process_restarted_or_stopped": false,
+    "business_write_requests_sent": false
+  },
+  "shared_containers": {
+    "mysql8": "running, healthy",
+    "redis": "running, healthy"
+  },
+  "conclusion": "T1 fixed-coordinate install remains blocked by unavailable registry artifact. T3 shared UI is serving, but its backend API is still unresponsive; the live process and its data source were left untouched."
+}

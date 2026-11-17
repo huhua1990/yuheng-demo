@@ -1,0 +1,68 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "date": "2026-11-18",
+  "scenario": "Codegen create-list rolls back the table row when column batch insert fails",
+  "artifact": {
+    "path": "yuheng-demo-server/yuheng-demo-server-bootstrap/target/yuheng-demo.jar",
+    "buildCommand": "mvn -o -Dexec.skip=true -DskipTests package",
+    "buildResult": "BUILD SUCCESS",
+    "packagedInfraService": "BOOT-INF/lib/yuheng-module-infra-0.1.0-SNAPSHOT.jar",
+    "transactionMetadataInspected": [
+      "createCodegenList",
+      "updateCodegen",
+      "syncCodegenFromDB",
+      "deleteCodegen",
+      "deleteCodegenList"
+    ]
+  },
+  "isolation": {
+    "schema": "yuheng_t4_codegen_20261118",
+    "schemaAccount": "yh_codegen18",
+    "backendPort": 48141,
+    "redisContainer": "yh-t4-codegen-redis-20261118",
+    "redisPort": 16379,
+    "redisKeysBeforeStartup": 0,
+    "liquibaseChangesets": 54,
+    "schemaTablesAfterStartup": 150,
+    "sharedSchemaTablesAfterCleanup": 150
+  },
+  "failureInjection": {
+    "object": "infra_codegen_column",
+    "type": "schema-local BEFORE INSERT trigger",
+    "sqlState": "45000",
+    "marker": "T4_CODEGEN_INJECTED_FAILURE",
+    "request": {
+      "method": "POST",
+      "path": "/admin-api/infra/codegen/create-list",
+      "httpStatus": 200,
+      "businessCode": 500,
+      "businessMessage": "系统异常"
+    }
+  },
+  "rows": {
+    "before": {
+      "infra_codegen_table": 0,
+      "infra_codegen_column": 0
+    },
+    "after": {
+      "infra_codegen_table": 0,
+      "infra_codegen_column": 0,
+      "targetTableDefinition": 0
+    }
+  },
+  "cleanup": {
+    "applicationShutdown": "graceful",
+    "schemaCount": 0,
+    "accountCount": 0,
+    "schemaGrantCount": 0,
+    "redisContainerRemoved": true,
+    "redisPortListener": false,
+    "backendPortListener": false
+  },
+  "limits": [
+    "This proves the isolated create-list parent/child transaction rollback path only.",
+    "The generic HTTP response did not reveal the SQL marker; the trigger definition and zero-row SQL snapshots identify the injected scenario and outcome.",
+    "Update, sync, and delete transaction paths were not fault-injected in this run.",
+    "The test-only security mock token was restricted to the isolated local process and was not stored in this evidence file."
+  ]
+}

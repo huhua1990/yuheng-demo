@@ -1,0 +1,21 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t3_configcrud_20261117",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "ports": [
+    13353,
+    16433,
+    48188,
+    5300
+  ],
+  "config_snapshot_before_sha256": "ed0f8edd3bf723f4e5c4608d1c241ad2dfc5be5f87f8f2c93bcb896a0b8bca84",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13353": false,
+      "16433": false,
+      "48188": false,
+      "5300": false
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "package": "yuheng-ui@0.1.0-SNAPSHOT",
+  "tarball": "/tmp/yuheng-ui-0.1.0-SNAPSHOT.tgz",
+  "tarballSha256": "1840c0433a51502796da817b7ba88d9abac858408752e624d2c903e0f559a72c",
+  "coreEntrySha256": "9a52da06117c7a95eb459d1008beb3d93b58df4903a9734bc37f14dded07e04e",
+  "consumerInstalledEntrySha256": "9a52da06117c7a95eb459d1008beb3d93b58df4903a9734bc37f14dded07e04e",
+  "consumerInstallLocation": "/tmp/yuheng-ui-current-verify.62XHyr/consumer/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+tmp+yuheng-ui-0.1.0-SNAPSHOT.tgz_debug@4.4.3_element-plus@2._41cd0a273cefe994375ccff643152a0b/node_modules/yuheng-ui",
+  "verification": {
+    "coreReleaseTests": "10/10 passed",
+    "coreBoundary": "PASS",
+    "corePackageBuild": "PASS; Vite 1466 modules and declaration build",
+    "manifest": "PASS",
+    "bundle": "PASS",
+    "consumerContractTests": "12/12 passed",
+    "consumerRouteProbe": "1/1 passed; System user/role and Infra config/file/job routes exported",
+    "consumerTypecheck": "PASS",
+    "consumerProductionBuild": "PASS; 3544 modules",
+    "publicEntryImport": "PASS; YuhengShell, installYuhengUi, registerPlatformRoutes",
+    "registry": {
+      "private": "401 Unauthorized",
+      "public": "404 Not Found"
+    }
+  },
+  "limitations": [
+    "The normal Demo workspace node_modules/yuheng-ui is a symlink to the Core source tree; only the external temporary consumer is counted as package-consumption evidence.",
+    "Full consumer tests on a file: manifest had two failures: a test expecting the fixed version string and an AutoImport transform assertion that applies to the Core symlink. After restoring the isolated manifest to 0.1.0-SNAPSHOT, the 12 package/consumer contract tests passed; the standalone package consumer typecheck and production build passed.",
+    "The Core development-only vue-tsc --noEmit command reports existing compat-wide errors. The supported package build command (Vite plus vue-tsc -p tsconfig.build.json) and packaged consumer typecheck pass.",
+    "The fixed registry coordinate cannot be installed while the configured private registry returns 401 and public npm returns 404. No package was published."
+  ],
+  "sharedDatabaseOrRuntimeModified": false
+}

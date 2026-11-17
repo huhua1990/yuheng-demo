@@ -1,0 +1,120 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_po_20261114_green",
+  "port": 48095,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-category/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-unit/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/supplier/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update",
+      "http": 200,
+      "code": 1030101011,
+      "msg": "采购订单明细编号无效或重复"
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update",
+      "http": 200,
+      "code": 1030101011,
+      "msg": "采购订单明细编号无效或重复"
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update",
+      "http": 200,
+      "code": 1030101011,
+      "msg": "采购订单明细编号无效或重复"
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update",
+      "http": 200,
+      "code": 1030101011,
+      "msg": "采购订单明细编号无效或重复"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 1030101011,
+      "msg": "采购订单明细编号无效或重复"
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    }
+  ],
+  "scope": "purchase order foreign, missing, duplicate, SQL other-tenant and create-time IDs; valid update"
+}

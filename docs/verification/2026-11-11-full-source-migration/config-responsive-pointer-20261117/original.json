@@ -1,0 +1,96 @@
+{
+  "base": "http://127.0.0.1:5199",
+  "viewports": {
+    "mobile-390x844": {
+      "list": {
+        "document": {
+          "clientWidth": 390,
+          "scrollWidth": 390,
+          "clientHeight": 844,
+          "scrollHeight": 844
+        },
+        "content": {
+          "left": 0,
+          "right": 390,
+          "top": 0,
+          "bottom": 844,
+          "width": 390,
+          "height": 844
+        },
+        "table": {
+          "left": 31,
+          "right": 359,
+          "top": 496,
+          "bottom": 3466.5,
+          "width": 328,
+          "height": 2970.5
+        },
+        "filter": {
+          "left": 31,
+          "right": 359,
+          "top": 192,
+          "bottom": 474,
+          "width": 328,
+          "height": 282
+        },
+        "visibleMenuItems": 36,
+        "visibleRows": 10,
+        "rowHeights": [
+          293,
+          293,
+          293
+        ],
+        "searchButton": {
+          "left": 31,
+          "right": 112,
+          "top": 392,
+          "bottom": 424,
+          "width": 81,
+          "height": 32
+        },
+        "sidebar": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 844,
+          "width": 0,
+          "height": 844
+        },
+        "overlayCount": 0,
+        "visiblePoppers": []
+      },
+      "rowTexts": [
+        "\t\n35\n\t\neam\n\t\nEAM 资产转移业务编号\n\t\neam.businessCode.assetTransfer\n\t\n${string_fix,BO}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源资产转移创建实际复用资产借用 BO 编号规则\n\t\n2026-09-26 17:59:37\n\t\n编辑\n删除",
+        "\t\n34\n\t\neam\n\t\nEAM 保养任务编号\n\t\neam.businessCode.maintainTask\n\t\n${string_fix,MT}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源 eam_asset_maintain_task 业务编号规则\n\t\n2026-09-25 05:27:56\n\t\n编辑\n删除",
+        "\t\n33\n\t\neam\n\t\nEAM 软件维保业务编号\n\t\neam.businessCode.assetSoftwareMaintenance\n\t\n${string_fix,ASWB}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源 eam_asset_software_maintenance 业务编号规则\n\t\n2026-09-25 04:04:17\n\t\n编辑\n删除",
+        "\t\n32\n\t\neam\n\t\nEAM 软件变更业务编号\n\t\neam.businessCode.assetSoftwareChange\n\t\n${string_fix,ASC}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源 eam_asset_software_change 业务编号规则\n\t\n2026-09-25 03:42:43\n\t\n编辑\n删除",
+        "\t\n31\n\t\neam\n\t\nEAM 软件分发业务编号\n\t\neam.businessCode.assetSoftwareDistribute\n\t\n${string_fix,ASD}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源 eam_asset_software_distribute 业务编号规则\n\t\n2026-09-25 03:24:09\n\t\n编辑\n删除",
+        "\t\n30\n\t\neam\n\t\nEAM 软件资产登记业务编号\n\t\neam.businessCode.assetSoftware\n\t\n${string_fix,SW}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源 eam_asset_software_insert 业务编号规则\n\t\n2026-09-25 02:51:00\n\t\n编辑\n删除",
+        "\t\n29\n\t\neam\n\t\nEAM 资产借用业务编号\n\t\neam.businessCode.assetBorrow\n\t\n${string_fix,BO}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源 eam_asset_borrow 业务编号规则\n\t\n2026-09-25 01:33:11\n\t\n编辑\n删除",
+        "\t\n28\n\t\neam\n\t\nEAM 资产借用归还业务编号\n\t\neam.businessCode.assetBorrowReturn\n\t\n${string_fix,BR}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源 eam_asset_borrow_return 业务编号规则\n\t\n2026-09-25 00:52:42\n\t\n编辑\n删除",
+        "\t\n27\n\t\neam\n\t\nEAM 资产盘点业务编号\n\t\neam.businessCode.assetInventory\n\t\n${string_fix,ASI}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源 eam_asset_inventory 业务编号规则\n\t\n2026-09-24 22:58:25\n\t\n编辑\n删除",
+        "\t\n26\n\t\neam\n\t\nEAM 耗材入库业务编号\n\t\neam.businessCode.consumablesGoodsIn\n\t\n${string_fix,HCI}${time,yyyy}${time,mm}${time,dd}${time,hh}${time,mm}${number_rand,3}\n\t\n否\n\t\n自定义\n\t\n源 eam_asset_consumables_stock_in 业务编号规则\n\t\n2026-09-24 16:31:46\n\t\n编辑\n删除"
+      ],
+      "searchHitTarget": {
+        "tag": "svg",
+        "className": "[object SVGAnimatedString]",
+        "withinButton": false
+      }
+    }
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailed": [],
+  "responses": [
+    {
+      "label": "mobile-390x844",
+      "method": "GET",
+      "path": "/admin-api/infra/config/page",
+      "status": 200
+    }
+  ],
+  "errors": {
+    "desktop-1440x900": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:5199/login\", waiting until \"domcontentloaded\"\u001b[22m\n\n    at inspectViewport (/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/config_page_responsive_probe.js:27:16)\n    at async /Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/config_page_responsive_probe.js:128:13",
+    "mobile-390x844": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /搜索/ })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-disabled=\"false\" class=\"el-button el-button--default\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <svg role=\"img\" width=\"1em\" height=\"1em\" aria-hidden=\"true\" viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\" class=\"iconify iconify--ep iconify\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">…</svg> from <div id=\"el-popper-container-5557\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <li tabindex=\"-1\" role=\"menuitem\" data-v-c3357e93=\"\" class=\"el-menu-item\">…</li> from <div id=\"el-popper-container-5557\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    6 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <li tabindex=\"-1\" role=\"menuitem\" data-v-c3357e93=\"\" class=\"el-menu-item\">…</li> from <div id=\"el-popper-container-5557\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <svg role=\"img\" width=\"1em\" height=\"1em\" aria-hidden=\"true\" viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\" class=\"iconify iconify--ep iconify\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">…</svg> from <div id=\"el-popper-container-5557\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <li tabindex=\"-1\" role=\"menuitem\" data-v-c3357e93=\"\" class=\"el-menu-item\">…</li> from <div id=\"el-popper-container-5557\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <li tabindex=\"-1\" role=\"menuitem\" data-v-c3357e93=\"\" class=\"el-menu-item\">…</li> from <div id=\"el-popper-container-5557\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <li tabindex=\"-1\" role=\"menuitem\" data-v-c3357e93=\"\" class=\"el-menu-item\">…</li> from <div id=\"el-popper-container-5557\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <svg role=\"img\" width=\"1em\" height=\"1em\" aria-hidden=\"true\" viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\" class=\"iconify iconify--ep iconify\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">…</svg> from <div id=\"el-popper-container-5557\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <li tabindex=\"-1\" role=\"menuitem\" data-v-c3357e93=\"\" class=\"el-menu-item\">…</li> from <div id=\"el-popper-container-5557\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n    at inspectViewport (/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/config_page_responsive_probe.js:92:52)\n    at async /Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/config_page_responsive_probe.js:128:13"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "isolated_processes_stopped": [
+    65712,
+    65758,
+    66003
+  ],
+  "ports_closed": [
+    48127,
+    5191,
+    5192
+  ],
+  "schema_count": 0,
+  "dedicated_user_count": 0,
+  "shared_schema_exists": true,
+  "shared_account_exists": true,
+  "redis_db": 15,
+  "redis_keys_before_start": 0,
+  "redis_keys_after_verification": 34,
+  "redis_keys_after_cleanup": 0,
+  "redis_other_dbs_untouched": true,
+  "historical_seed_passwords_match_all_21": true,
+  "temporary_jar_and_private_files_removed": true,
+  "other_recorded_pids_running": {
+    "23945": true,
+    "39370": true,
+    "88324": true,
+    "88411": true
+  }
+}

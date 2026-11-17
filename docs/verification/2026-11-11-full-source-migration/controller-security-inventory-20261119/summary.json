@@ -1,0 +1,14 @@
+{
+  "scope": "Core System and Infra admin Controller route annotations",
+  "controllers": 47,
+  "routes": 322,
+  "routes_with_method_or_class_permission": 251,
+  "permit_all_routes": 22,
+  "tenant_ignore_routes": 10,
+  "global_auth_only_routes": 49,
+  "limitations": [
+    "Static annotations only; does not evaluate Spring Security runtime matchers or custom expression outcomes.",
+    "Does not infer SQL tenant filtering from Mapper/DO relationships or execute requests.",
+    "Routes using computed mapping expressions require manual interpretation."
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "run_date": "2026-11-18",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "isolation": {
+    "mysql_image": "mysql:8.0.33",
+    "mysql_container": "yh-t4-quartz-delete-mysql-20261118",
+    "mysql_port": 13324,
+    "schema": "yuheng_t4_qtzdel_20261118",
+    "schema_scoped_account": "yh_qtzdel18",
+    "redis_image": "redis:7.2-alpine",
+    "redis_container": "yh-t4-quartz-delete-redis-20261118",
+    "redis_port": 16395,
+    "backend_port": 48156,
+    "profile": "dev",
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "quartz_auto_startup": false,
+    "scheduler_started_for_jdbc_job_store": true,
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "job_id": 33,
+    "handler_name": "demoJob",
+    "precondition": "After successful sync, infra_job id 33 was active and matching Quartz JobDetail and trigger rows existed.",
+    "verified_trigger": "t4_qtz_delete_fail BEFORE DELETE ON QRTZ_JOB_DETAILS, raising SQLSTATE 45000 with marker T4_QUARTZ_DELETE_INJECTED",
+    "endpoint": "DELETE /admin-api/infra/job/delete?id=33",
+    "snapshot": "SHA-256 over ordered full-field rows from infra_job, QRTZ_JOB_DETAILS, QRTZ_TRIGGERS, and QRTZ_CRON_TRIGGERS"
+  },
+  "result": {
+    "http_code": 200,
+    "business_code": 500,
+    "mysql_exception_marker_confirmed_in_server_log": "T4_QUARTZ_DELETE_INJECTED",
+    "snapshot_before_sha256": "32aba5390b42b26c155e021a7e1217e226fa1f4c36b0ba070bf78aec56c363e1",
+    "snapshot_after_sha256": "32aba5390b42b26c155e021a7e1217e226fa1f4c36b0ba070bf78aec56c363e1",
+    "infra_job_id_33_status": 2,
+    "infra_job_id_33_deleted": false,
+    "matching_qrtz_job_details_rows": 1,
+    "matching_qrtz_trigger_rows": 1,
+    "transaction_rolled_back": true
+  },
+  "conclusion": "The real delete endpoint logically deleted the infra_job row before Quartz deletion failed. The API returned an error; the business row remained active and both Quartz job and trigger remained present. Complete ordered business/Quartz row snapshots were identical before and after.",
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "dedicated_schema_dropped_and_verified_absent": true,
+    "schema_scoped_account_dropped_and_verified_absent": true,
+    "dedicated_mysql_and_redis_containers_removed": true,
+    "temporary_credentials_removed": true,
+    "ports_48156_13324_16395_no_listener": true,
+    "shared_mysql_redis_and_historical_passwords_modified": false
+  }
+}

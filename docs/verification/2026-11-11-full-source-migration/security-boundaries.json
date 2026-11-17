@@ -1,0 +1,231 @@
+{
+  "result": "PASS",
+  "time": "2026-11-14T09:43:08.091081+08:00",
+  "schema": "yuheng_t4_flows_20261114_retry",
+  "requests": [
+    {
+      "method": "PUT",
+      "path": "/system/notify-message/update-read?ids=1",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "PUT",
+      "path": "/system/notify-message/update-all-read",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "POST",
+      "path": "/system/oauth2/authorize?response_type=code&client_id=probe&redirect_uri=http%3A%2F%2F127.0.0.1%2Fprobe&auto_approve=false",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "PUT",
+      "path": "/system/user/profile/update",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "PUT",
+      "path": "/system/user/profile/update-password",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "POST",
+      "path": "/system/social-user/bind",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "DELETE",
+      "path": "/system/social-user/unbind",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "POST",
+      "path": "/infra/file/create",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "POST",
+      "path": "/infra/file/upload",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=10",
+      "tenant": 121,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 403
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "tenant": 121,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 403
+    },
+    {
+      "method": "POST",
+      "path": "/system/tenant-package/create",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/tenant/create",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": 164,
+      "visit": null,
+      "authenticated": false,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/system/auth/get-permission-info",
+      "tenant": 164,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=10",
+      "tenant": 164,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/get?id=1",
+      "tenant": 164,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/warehouse/update",
+      "tenant": 164,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 1030400000
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=10",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 403
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=10",
+      "tenant": 164,
+      "visit": 1,
+      "authenticated": true,
+      "http": 200,
+      "code": 403
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "tenant": 164,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=10",
+      "tenant": 1,
+      "visit": 164,
+      "authenticated": true,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=10",
+      "tenant": 1,
+      "visit": null,
+      "authenticated": true,
+      "http": 200,
+      "code": 0
+    }
+  ],
+  "assertions": {
+    "anonymous_core_write_routes": 9,
+    "forged_tenant_headers_denied": true,
+    "tenant_entity_read_and_update_isolated": true,
+    "unauthorized_visit_denied": true,
+    "authorized_visit_and_context_restore": true,
+    "original_21_password_hashes_unchanged": true
+  }
+}

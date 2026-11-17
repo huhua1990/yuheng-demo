@@ -1,0 +1,67 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "execution_date": "2026-11-15 Asia/Shanghai",
+  "area": "T4 role data-scope cache eviction",
+  "artifact": {
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f"
+  },
+  "isolation": {
+    "schema": "yuheng_t4_rolecache_20261119",
+    "backend_port": 48181,
+    "mysql_port": 13350,
+    "redis_port": 16430,
+    "liquibase_changesets": 54,
+    "tables": 150,
+    "mock_authentication": "isolated process only",
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "tenant_id": 1,
+    "role_id": 155,
+    "profile_user_id": 100,
+    "user_has_role": true,
+    "cache_key": "role:1:155"
+  },
+  "checks": [
+    {
+      "case": "populate_cache_via_user_profile",
+      "method": "GET",
+      "path": "/admin-api/system/user/profile/get",
+      "business_code": 0,
+      "role_in_response": true,
+      "cached_data_scope": 2,
+      "cached_department_ids": [112, 100, 102, 103, 104, 105, 107, 108]
+    },
+    {
+      "case": "update_data_scope",
+      "method": "POST",
+      "path": "/admin-api/system/permission/assign-role-data-scope",
+      "business_code": 0,
+      "requested_department_ids": [100, 102, 103],
+      "cache_key_exists_immediately_after": false,
+      "database_department_ids": [100, 102, 103]
+    },
+    {
+      "case": "reload_cache_via_user_profile",
+      "method": "GET",
+      "path": "/admin-api/system/user/profile/get",
+      "business_code": 0,
+      "role_in_response": true,
+      "cached_data_scope": 2,
+      "cached_department_ids": [100, 102, 103]
+    }
+  ],
+  "excluded_attempts": [
+    "The initial background launch left no process or log and created no database tables; the foreground launch succeeded.",
+    "An initial login without a tenant header returned code 400 and was not used for the cache assertions.",
+    "The role detail endpoint directly reads the database and did not populate the role cache; user profile was used instead."
+  ],
+  "cleanup": {
+    "application_graceful_shutdown": true,
+    "schema_and_user_counts_after_drop": 0,
+    "dedicated_containers_removed": true,
+    "ports_unbound": [48181, 13350, 16430],
+    "shared_services_unchanged": true
+  },
+  "conclusion": "A real cached role:1:155 entry containing the old data-scope department set was evicted immediately by assign-role-data-scope. The next user-profile read reloaded the updated set from MySQL into Redis. This verifies sequential cache invalidation for one tenant, role, user, and process; it does not cover concurrent requests, Redis failure, other keys, or the complete T4 matrix."
+}

@@ -1,0 +1,79 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_t4_oauthgrants_20261120",
+  "jar_sha256": "5e632e65db0af402c43c2e8823601c11a03cfe60b01d738af52dd042384283ef",
+  "ports": {
+    "mysql": 13356,
+    "redis": 16436,
+    "app": 48191
+  },
+  "cases": {
+    "password_grant": {
+      "http": 200,
+      "code": 0,
+      "grant_type": "password",
+      "user_id": 990202,
+      "token_user_id": 990202,
+      "active_rows": {
+        "access": 1,
+        "refresh": 1,
+        "code": 0
+      }
+    },
+    "authorization_request": {
+      "http": 200,
+      "code": 0,
+      "state_round_trip": true,
+      "code_row_created": true
+    },
+    "wrong_redirect_uri": {
+      "http": 200,
+      "code": 1002021001,
+      "grant_type": "authorization_code",
+      "code_row_remaining": 1,
+      "code_rejected": true
+    },
+    "wrong_state": {
+      "http": 200,
+      "code": 1002021002,
+      "grant_type": "authorization_code",
+      "code_row_remaining": 1,
+      "code_rejected": true
+    },
+    "authorization_code_exchange": {
+      "http": 200,
+      "code": 0,
+      "grant_type": "authorization_code",
+      "user_id": 990202,
+      "token_user_id": 990202,
+      "active_rows": {
+        "access": 2,
+        "refresh": 2,
+        "code": 2
+      }
+    },
+    "authorization_code_replay": {
+      "http": 200,
+      "code": 1002022000,
+      "grant_type": "authorization_code",
+      "rejected": true
+    }
+  },
+  "fixture": {
+    "user_id": 990202,
+    "client_id": "t4-grants-ce6217b66ad9",
+    "password_hash_recorded": false,
+    "secret_recorded": false
+  },
+  "changesets": 56,
+  "conclusion": "Password grant and authorization-code issuance/exchange were exercised with a disposable user. The authorization code was rejected on replay; redirect/state rejection outcomes and whether the code remained available after rejection are recorded explicitly.",
+  "graceful_shutdown": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13356": false,
+      "16436": false,
+      "48191": false
+    }
+  }
+}

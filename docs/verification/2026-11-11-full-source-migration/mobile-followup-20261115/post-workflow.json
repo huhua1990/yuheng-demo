@@ -1,0 +1,14 @@
+{
+  "create_via_demo_ui": true,
+  "edit_via_demo_ui": true,
+  "readback_via_original_ui": true,
+  "id": 9,
+  "name": "T3隔离验收岗位已改",
+  "code": "yh_t3_mobile15",
+  "sort": 98,
+  "remark_persisted": true,
+  "delete_via_http_method": "DELETE",
+  "delete_business_code": 0,
+  "fixture_query_total_after_delete": 0,
+  "tenant1_post_total_after_delete": 4
+}

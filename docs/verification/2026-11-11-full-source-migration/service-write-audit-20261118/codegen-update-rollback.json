@@ -1,0 +1,79 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "run_date": "2026-11-15",
+  "scenario": "Codegen update rolls back the table update when a column update fails",
+  "runtime": {
+    "core_revision": "f4f3c1647a874130243183f1edbfd9baa93e2214",
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+    "mysql_container": "yh-t4-codegenupdate2-mysql-20261115",
+    "mysql_port": 13334,
+    "schema": "yuheng_t4_codegenupdate2_20261115",
+    "schema_scoped_account": "yh_cgu2_15",
+    "backend_port": 48166,
+    "redis_container": "yh-t4-codegenupdate2-redis-20261115",
+    "redis_port": 16405,
+    "liquibase_changesets": 54,
+    "table_count": 150,
+    "quartz_auto_startup": false,
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "parent_id": 910020,
+    "table_name": "t4_codegen_update_probe",
+    "before_parent": {
+      "table_comment": "Original table comment",
+      "remark": null,
+      "class_comment": "Original class comment",
+      "author": "Codex",
+      "deleted": 0
+    },
+    "columns": [
+      {"id": 910021, "column_name": "id", "column_comment": "Original id", "ordinal_position": 1, "deleted": 0},
+      {"id": 910022, "column_name": "name", "column_comment": "Original name", "ordinal_position": 2, "deleted": 0}
+    ]
+  },
+  "failure_injection": {
+    "trigger": "t4_codegen_update_column_fail",
+    "event": "BEFORE UPDATE ON infra_codegen_column",
+    "sqlstate": "45000",
+    "marker": "T4_CODEGEN_UPDATE_COLUMN_INJECTED",
+    "trigger_definition_queried_before_request": true,
+    "service_log_confirms_updateById_failure": true
+  },
+  "request": {
+    "method": "PUT",
+    "path": "/admin-api/infra/codegen/update",
+    "http_status": 200,
+    "business_code": 500,
+    "requested_table_comment": "Changed table comment",
+    "requested_remark": "Changed remark",
+    "requested_class_comment": "Changed class comment",
+    "requested_column_comments": ["Changed id", "Changed name"]
+  },
+  "after_state": {
+    "parent": {
+      "table_comment": "Original table comment",
+      "remark": null,
+      "class_comment": "Original class comment",
+      "author": "Codex",
+      "deleted": 0
+    },
+    "columns": [
+      {"id": 910021, "column_name": "id", "column_comment": "Original id", "ordinal_position": 1, "deleted": 0},
+      {"id": 910022, "column_name": "name", "column_comment": "Original name", "ordinal_position": 2, "deleted": 0}
+    ],
+    "all_target_values_match_before_request": true
+  },
+  "cleanup": {
+    "backend_stopped_gracefully": true,
+    "schema_dropped_and_verified_absent": true,
+    "schema_account_dropped_and_verified_absent": true,
+    "dedicated_mysql_and_redis_containers_removed": true,
+    "temporary_credentials_and_request_outputs_removed": true,
+    "ports_48166_13334_16405_have_no_listeners": true,
+    "shared_mysql_and_redis_remain_running": true,
+    "shared_database_or_redis_modified": false,
+    "historical_passwords_read_or_modified": false
+  },
+  "conclusion": "A failure in the first Codegen column update rolled back the preceding Codegen table update; both the parent and all child rows retained their complete pre-request target values."
+}

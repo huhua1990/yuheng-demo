@@ -1,0 +1,189 @@
+source_file_from_yuheng_core,method,source_line,mapper_or_dao_writes,transaction_annotation
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dept/DeptServiceImpl.java,createDept,52,deptMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dept/DeptServiceImpl.java,updateDept,70,deptMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dept/DeptServiceImpl.java,deleteDept,89,deptMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dept/DeptServiceImpl.java,deleteDeptList,103,deptMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dept/PostServiceImpl.java,createPost,35,postMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dept/PostServiceImpl.java,updatePost,46,postMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dept/PostServiceImpl.java,deletePost,56,postMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dept/PostServiceImpl.java,deletePostList,64,postMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dict/DictDataServiceImpl.java,createDictData,64,dictDataMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dict/DictDataServiceImpl.java,updateDictData,77,dictDataMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dict/DictDataServiceImpl.java,deleteDictData,91,dictDataMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dict/DictDataServiceImpl.java,deleteDictDataList,100,dictDataMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dict/DictTypeServiceImpl.java,createDictType,49,dictTypeMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dict/DictTypeServiceImpl.java,updateDictType,63,dictTypeMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dict/DictTypeServiceImpl.java,deleteDictType,77,dictTypeMapper.updateToDelete,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/dict/DictTypeServiceImpl.java,deleteDictTypeList,89,dictTypeMapper.updateToDelete,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/logger/LoginLogServiceImpl.java,createLoginLog,33,loginLogMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/logger/OperateLogServiceImpl.java,createOperateLog,27,operateLogMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/mail/MailAccountServiceImpl.java,createMailAccount,39,mailAccountMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/mail/MailAccountServiceImpl.java,updateMailAccount,46,mailAccountMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/mail/MailAccountServiceImpl.java,deleteMailAccount,57,mailAccountMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/mail/MailAccountServiceImpl.java,deleteMailAccountList,75,mailAccountMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/mail/MailLogServiceImpl.java,createMailLog,42,mailLogMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/mail/MailLogServiceImpl.java,updateMailSendResult,65,mailLogMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/mail/MailTemplateServiceImpl.java,createMailTemplate,50,mailTemplateMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/mail/MailTemplateServiceImpl.java,updateMailTemplate,66,mailTemplateMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/mail/MailTemplateServiceImpl.java,deleteMailTemplate,94,mailTemplateMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/mail/MailTemplateServiceImpl.java,deleteMailTemplateList,105,mailTemplateMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notice/NoticeServiceImpl.java,createNotice,28,noticeMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notice/NoticeServiceImpl.java,updateNotice,35,noticeMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notice/NoticeServiceImpl.java,deleteNotice,44,noticeMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notice/NoticeServiceImpl.java,deleteNoticeList,52,noticeMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notify/NotifyMessageServiceImpl.java,createNotifyMessage,28,notifyMessageMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notify/NotifyMessageServiceImpl.java,updateNotifyMessageRead,64,notifyMessageMapper.updateListRead,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notify/NotifyMessageServiceImpl.java,updateAllNotifyMessageRead,69,notifyMessageMapper.updateListRead,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notify/NotifyTemplateServiceImpl.java,createNotifyTemplate,45,notifyTemplateMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notify/NotifyTemplateServiceImpl.java,updateNotifyTemplate,61,notifyTemplateMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notify/NotifyTemplateServiceImpl.java,deleteNotifyTemplate,81,notifyTemplateMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/notify/NotifyTemplateServiceImpl.java,deleteNotifyTemplateList,91,notifyTemplateMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2ClientServiceImpl.java,createOAuth2Client,42,oauth2ClientMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2ClientServiceImpl.java,updateOAuth2Client,55,oauth2ClientMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2ClientServiceImpl.java,deleteOAuth2Client,69,oauth2ClientMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2ClientServiceImpl.java,deleteOAuth2ClientList,79,oauth2ClientMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2CodeServiceImpl.java,createAuthorizationCode,34,oauth2CodeMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2CodeServiceImpl.java,consumeAuthorizationCode,46,oauth2CodeMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2TokenServiceImpl.java,refreshAccessToken,70,oauth2AccessTokenMapper.deleteByIds;oauth2AccessTokenRedisDAO.deleteList;oauth2RefreshTokenMapper.deleteById,@Transactional(noRollbackFor = ServiceException.class)
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2TokenServiceImpl.java,removeAccessToken,141,oauth2AccessTokenMapper.deleteById;oauth2AccessTokenRedisDAO.delete;oauth2RefreshTokenMapper.deleteByRefreshToken,@Transactional(rollbackFor = Exception.class)
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2TokenServiceImpl.java,removeAccessToken,157,oauth2AccessTokenMapper.deleteById;oauth2AccessTokenRedisDAO.delete;oauth2RefreshTokenMapper.deleteByRefreshToken,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2TokenServiceImpl.java,createOAuth2AccessToken,178,oauth2AccessTokenMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2TokenServiceImpl.java,createOAuth2RefreshToken,198,oauth2RefreshTokenMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2TokenServiceImpl.java,cleanRefreshToken,245,oauth2RefreshTokenMapper.deleteByExpiresTimeLt,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/oauth2/OAuth2TokenServiceImpl.java,cleanAccessToken,261,oauth2AccessTokenMapper.deleteByExpiresTimeLt,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/MenuServiceImpl.java,createMenu,53,menuMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/MenuServiceImpl.java,updateMenu,71,menuMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/MenuServiceImpl.java,deleteMenu,92,menuMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/MenuServiceImpl.java,deleteMenuList,111,menuMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/PermissionServiceImpl.java,assignRoleMenu,141,roleMenuMapper.deleteListByRoleIdAndMenuIds;roleMenuMapper.insertBatch,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/PermissionServiceImpl.java,processRoleDeleted,170,roleMenuMapper.deleteListByRoleId;userRoleMapper.deleteListByRoleId,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/PermissionServiceImpl.java,processMenuDeleted,176,roleMenuMapper.deleteListByMenuId,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/PermissionServiceImpl.java,assignUserRole,207,userRoleMapper.deleteListByUserIdAndRoleIdIds;userRoleMapper.insertBatch,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/PermissionServiceImpl.java,processUserDeleted,229,userRoleMapper.deleteListByUserId,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/RoleServiceImpl.java,createRole,58,roleMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/RoleServiceImpl.java,updateRole,78,roleMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/RoleServiceImpl.java,updateRoleDataScope,92,roleMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/RoleServiceImpl.java,deleteRole,112,roleMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/permission/RoleServiceImpl.java,deleteRoleList,124,roleMapper.deleteByIds,@Transactional(rollbackFor = Exception.class)
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsChannelServiceImpl.java,createSmsChannel,39,smsChannelMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsChannelServiceImpl.java,updateSmsChannel,46,smsChannelMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsChannelServiceImpl.java,deleteSmsChannel,55,smsChannelMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsChannelServiceImpl.java,deleteSmsChannelList,67,smsChannelMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsCodeServiceImpl.java,createSmsCode,52,smsCodeMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsCodeServiceImpl.java,useSmsCode,78,smsCodeMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsLogServiceImpl.java,createSmsLog,30,smsLogMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsLogServiceImpl.java,updateSmsSendResult,54,smsLogMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsLogServiceImpl.java,updateSmsReceiveResult,65,smsLogMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsTemplateServiceImpl.java,createSmsTemplate,54,smsTemplateMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsTemplateServiceImpl.java,updateSmsTemplate,76,smsTemplateMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsTemplateServiceImpl.java,deleteSmsTemplate,96,smsTemplateMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/sms/SmsTemplateServiceImpl.java,deleteSmsTemplateList,106,smsTemplateMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/social/SocialClientServiceImpl.java,createSocialClient,470,socialClientMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/social/SocialClientServiceImpl.java,updateSocialClient,481,socialClientMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/social/SocialClientServiceImpl.java,deleteSocialClient,493,socialClientMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/social/SocialClientServiceImpl.java,deleteSocialClientList,501,socialClientMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/social/SocialUserServiceImpl.java,bindSocialUser,59,socialUserBindMapper.deleteByUserTypeAndSocialUserId;socialUserBindMapper.deleteByUserTypeAndUserIdAndSocialType;socialUserBindMapper.insert,@Transactional(rollbackFor = Exception.class)
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/social/SocialUserServiceImpl.java,unbindSocialUser,82,socialUserBindMapper.deleteByUserTypeAndUserIdAndSocialType,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/social/SocialUserServiceImpl.java,authSocialUser,132,socialUserMapper.insert;socialUserMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/tenant/TenantPackageServiceImpl.java,createTenantPackage,40,tenantPackageMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/tenant/TenantPackageServiceImpl.java,updateTenantPackage,54,tenantPackageMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/tenant/TenantPackageServiceImpl.java,deleteTenantPackage,68,tenantPackageMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/tenant/TenantPackageServiceImpl.java,deleteTenantPackageList,78,tenantPackageMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/tenant/TenantServiceImpl.java,createTenant,100,tenantMapper.insert;tenantMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/tenant/TenantServiceImpl.java,updateTenant,144,tenantMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/tenant/TenantServiceImpl.java,deleteTenant,216,tenantMapper.deleteById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/tenant/TenantServiceImpl.java,deleteTenantList,224,tenantMapper.deleteByIds,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,createUser,106,userMapper.insert;userPostMapper.insertBatch,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,registerUser,132,userMapper.insert,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,updateUser,161,userMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,updateUserPost,179,userPostMapper.deleteByUserIdAndPostId;userPostMapper.insertBatch,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,updateUserLogin,196,userMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,updateUserProfile,201,userMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,updateUserPassword,229,userMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,updateUserPassword,243,userMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,updateUserStatus,257,userMapper.updateById,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,deleteUser,283,userMapper.deleteById;userPostMapper.deleteByUserId,none
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,deleteUserList,299,userMapper.deleteByIds;userPostMapper.deleteByUserId,@Transactional(rollbackFor = Exception.class)
+yuheng-module-system/src/main/java/com/yuheng/platform/module/system/service/user/AdminUserServiceImpl.java,importUserList,548,userMapper.insert;userMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/codegen/CodegenServiceImpl.java,createCodegen0,83,codegenColumnMapper.insertBatch;codegenTableMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/codegen/CodegenServiceImpl.java,updateCodegen,128,codegenColumnMapper.updateById;codegenTableMapper.updateById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/codegen/CodegenServiceImpl.java,syncCodegen0,168,codegenColumnMapper.deleteByIds;codegenColumnMapper.insertBatch,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/codegen/CodegenServiceImpl.java,deleteCodegen,216,codegenColumnMapper.deleteListByTableId;codegenTableMapper.deleteById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/codegen/CodegenServiceImpl.java,deleteCodegenList,230,codegenColumnMapper.deleteListByTableId;codegenTableMapper.deleteByIds,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/config/ConfigServiceImpl.java,createConfig,31,configMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/config/ConfigServiceImpl.java,updateConfig,43,configMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/config/ConfigServiceImpl.java,deleteConfig,55,configMapper.deleteById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/config/ConfigServiceImpl.java,deleteConfigList,67,configMapper.deleteByIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/db/DataSourceConfigServiceImpl.java,createDataSourceConfig,35,dataSourceConfigMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/db/DataSourceConfigServiceImpl.java,updateDataSourceConfig,46,dataSourceConfigMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/db/DataSourceConfigServiceImpl.java,deleteDataSourceConfig,57,dataSourceConfigMapper.deleteById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/db/DataSourceConfigServiceImpl.java,deleteDataSourceConfigList,65,dataSourceConfigMapper.deleteByIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo01/Demo01ContactServiceImpl.java,createDemo01Contact,30,demo01ContactMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo01/Demo01ContactServiceImpl.java,updateDemo01Contact,39,demo01ContactMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo01/Demo01ContactServiceImpl.java,deleteDemo01Contact,48,demo01ContactMapper.deleteById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo01/Demo01ContactServiceImpl.java,deleteDemo0iContactList,56,demo01ContactMapper.deleteByIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo02/Demo02CategoryServiceImpl.java,createDemo02Category,29,demo02CategoryMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo02/Demo02CategoryServiceImpl.java,updateDemo02Category,43,demo02CategoryMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo02/Demo02CategoryServiceImpl.java,deleteDemo02Category,57,demo02CategoryMapper.deleteById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,createDemo03Student,40,demo03StudentErpMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,updateDemo03Student,49,demo03StudentErpMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,deleteDemo03Student,58,demo03StudentErpMapper.deleteById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,deleteDemo03StudentList,71,demo03StudentErpMapper.deleteByIds,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,createDemo03Course,114,demo03CourseErpMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,updateDemo03Course,120,demo03CourseErpMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,deleteDemo03Course,129,demo03CourseErpMapper.deleteById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,deleteDemo03CourseList,135,demo03CourseErpMapper.deleteByIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,deleteDemo03CourseByStudentId,152,demo03CourseErpMapper.deleteByStudentId,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,deleteDemo03CourseByStudentIds,156,demo03CourseErpMapper.deleteByStudentIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,createDemo03Grade,167,demo03GradeErpMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,updateDemo03Grade,178,demo03GradeErpMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,deleteDemo03Grade,187,demo03GradeErpMapper.deleteById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,deleteDemo03GradeList,193,demo03GradeErpMapper.deleteByIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,deleteDemo03GradeByStudentId,210,demo03GradeErpMapper.deleteByStudentId,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/erp/Demo03StudentErpServiceImpl.java,deleteDemo03GradeByStudentIds,214,demo03GradeErpMapper.deleteByStudentIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,createDemo03Student,42,demo03StudentInnerMapper.insert,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,updateDemo03Student,56,demo03StudentInnerMapper.updateById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,deleteDemo03Student,70,demo03StudentInnerMapper.deleteById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,deleteDemo03StudentList,83,demo03StudentInnerMapper.deleteByIds,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,createDemo03CourseList,126,demo03CourseInnerMapper.insertBatch,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,updateDemo03CourseList,131,demo03CourseInnerMapper.deleteByIds;demo03CourseInnerMapper.insertBatch;demo03CourseInnerMapper.updateBatch,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,deleteDemo03CourseByStudentId,154,demo03CourseInnerMapper.deleteByStudentId,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,deleteDemo03CourseByStudentIds,158,demo03CourseInnerMapper.deleteByStudentIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,createDemo03Grade,169,demo03GradeInnerMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,updateDemo03Grade,177,demo03GradeInnerMapper.insertOrUpdate,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,deleteDemo03GradeByStudentId,185,demo03GradeInnerMapper.deleteByStudentId,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/inner/Demo03StudentInnerServiceImpl.java,deleteDemo03GradeByStudentIds,189,demo03GradeInnerMapper.deleteByStudentIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,createDemo03Student,42,demo03StudentNormalMapper.insert,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,updateDemo03Student,56,demo03StudentNormalMapper.updateById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,deleteDemo03Student,70,demo03StudentNormalMapper.deleteById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,deleteDemo03StudentList,83,demo03StudentNormalMapper.deleteByIds,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,createDemo03CourseList,126,demo03CourseNormalMapper.insertBatch,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,updateDemo03CourseList,131,demo03CourseNormalMapper.deleteByIds;demo03CourseNormalMapper.insertBatch;demo03CourseNormalMapper.updateBatch,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,deleteDemo03CourseByStudentId,154,demo03CourseNormalMapper.deleteByStudentId,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,deleteDemo03CourseByStudentIds,158,demo03CourseNormalMapper.deleteByStudentIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,createDemo03Grade,169,demo03GradeNormalMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,updateDemo03Grade,177,demo03GradeNormalMapper.insertOrUpdate,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,deleteDemo03GradeByStudentId,185,demo03GradeNormalMapper.deleteByStudentId,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/demo/demo03/normal/Demo03StudentNormalServiceImpl.java,deleteDemo03GradeByStudentIds,189,demo03GradeNormalMapper.deleteByStudentIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/file/FileConfigServiceImpl.java,createFileConfig,77,fileConfigMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/file/FileConfigServiceImpl.java,updateFileConfig,86,fileConfigMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/file/FileConfigServiceImpl.java,updateFileConfigMaster,99,fileConfigMapper.updateBatch;fileConfigMapper.updateById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/file/FileConfigServiceImpl.java,deleteFileConfig,124,fileConfigMapper.deleteById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/file/FileConfigServiceImpl.java,deleteFileConfigList,138,fileConfigMapper.deleteByIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/file/FileServiceImpl.java,createFile,96,fileMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/file/FileServiceImpl.java,createFile,201,fileMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/file/FileServiceImpl.java,deleteFile,234,fileMapper.deleteById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/file/FileServiceImpl.java,deleteFileList,250,fileMapper.deleteByIds,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/job/JobLogServiceImpl.java,createJobLog,28,jobLogMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/job/JobLogServiceImpl.java,updateJobLogResultAsync,38,jobLogMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/job/JobLogServiceImpl.java,cleanJobLog,52,jobLogMapper.deleteByCreateTimeLt,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/job/JobServiceImpl.java,createJob,44,jobMapper.insert;jobMapper.updateById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/job/JobServiceImpl.java,updateJob,70,jobMapper.updateById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/job/JobServiceImpl.java,updateJobStatus,105,jobMapper.updateById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/job/JobServiceImpl.java,deleteJob,159,jobMapper.deleteById,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/job/JobServiceImpl.java,deleteJobList,171,jobMapper.deleteByIds,@Transactional(rollbackFor = Exception.class)
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/logger/ApiAccessLogServiceImpl.java,createApiAccessLog,34,apiAccessLogMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/logger/ApiAccessLogServiceImpl.java,cleanAccessLog,57,apiAccessLogMapper.deleteByCreateTimeLt,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/logger/ApiErrorLogServiceImpl.java,createApiErrorLog,37,apiErrorLogMapper.insert,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/logger/ApiErrorLogServiceImpl.java,updateApiErrorLogProcess,65,apiErrorLogMapper.updateById,none
+yuheng-module-infra/src/main/java/com/yuheng/platform/module/infra/service/logger/ApiErrorLogServiceImpl.java,cleanErrorLog,79,apiErrorLogMapper.deleteByCreateTimeLt,none

@@ -1,0 +1,30 @@
+{
+  "isolated_processes_stopped": [
+    63612,
+    63644,
+    63660
+  ],
+  "isolated_ports_closed": [
+    48126,
+    5189,
+    5190
+  ],
+  "schema_count": 0,
+  "schema_grant_count": 0,
+  "shared_schema_exists": true,
+  "shared_account_exists": true,
+  "redis_db": 14,
+  "redis_immediate_prestart_baseline_available": false,
+  "redis_cleanup_basis": "No remaining DB14 clients; all 32 observed keys match verification permissions, menu/role IDs or isolated access tokens. Exact observed keys deleted, no FLUSHDB.",
+  "redis_keys_before": 32,
+  "redis_keys_deleted": 32,
+  "redis_keys_after": 0,
+  "temporary_jar_removed": true,
+  "prior_temporary_jar_removed": true,
+  "other_recorded_pids_running": {
+    "23945": true,
+    "39370": true,
+    "88324": true,
+    "88411": true
+  }
+}

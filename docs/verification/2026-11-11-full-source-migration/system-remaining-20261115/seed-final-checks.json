@@ -1,0 +1,33 @@
+[
+  {
+    "command": [
+      "python3",
+      "tools/governance/sync_agent_assets.py",
+      "--check"
+    ],
+    "exit": 0,
+    "stdout": "PASS: 0 asset link(s) need updating\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "tools/governance/verify_bundle.py",
+      ".",
+      "--json"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"status\": \"PASS\",\n  \"issues\": [],\n  \"warnings\": [],\n  \"waivers\": [],\n  \"evidence\": [\n    \"/Users/huhua/study/ai/yuheng/yuheng-core\"\n  ],\n  \"versions\": {\n    \"codeVersion\": \"0.1.0-SNAPSHOT\",\n    \"governanceVersion\": \"0.2.0\",\n    \"knowledgeVersion\": \"0.1.0\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

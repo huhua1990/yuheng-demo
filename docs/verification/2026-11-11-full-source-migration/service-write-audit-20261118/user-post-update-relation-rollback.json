@@ -1,0 +1,55 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "execution_date": "2026-11-16 Asia/Shanghai",
+  "area": "T4 user update post relation rollback",
+  "artifact": {
+    "demo_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+    "core_system_jar_sha256": "55115b0639ef5491567c360ce04b09e8829007be4348323ec63b2395a84c4b72"
+  },
+  "isolation": {
+    "schema": "yuheng_t4_userpostupd_20261116",
+    "backend_port": 48182,
+    "mysql_port": 13351,
+    "redis_port": 16431,
+    "liquibase_changesets": 54,
+    "tables": 150,
+    "mock_authentication": "isolated process only",
+    "shared_database_or_redis_used": false
+  },
+  "fixture": {
+    "user_id": 1,
+    "before_nickname": "T4PreTrigger",
+    "before_post_ids": [2],
+    "requested_nickname": "T4PostRollback",
+    "requested_post_ids": [4],
+    "requested_remark": "rollback-probe"
+  },
+  "failure_injection": {
+    "table": "system_user_post",
+    "trigger": "t4_userpost_update_fail",
+    "timing": "BEFORE UPDATE",
+    "confirmed_before_request": true,
+    "count_after_removal": 0
+  },
+  "request": {
+    "method": "PUT",
+    "path": "/admin-api/system/user/update",
+    "business_code": 500
+  },
+  "snapshot": {
+    "scope": "relevant user fields and complete user 1 post relations",
+    "before_sha256": "4906044249d093eb00b573d15b8a92b39271914679ca34f8511e0ad08a187303",
+    "after_sha256": "4906044249d093eb00b573d15b8a92b39271914679ca34f8511e0ad08a187303",
+    "nickname_after": "T4PreTrigger",
+    "active_post_ids_after": [2],
+    "post_4_active_after": false
+  },
+  "cleanup": {
+    "application_graceful_shutdown": true,
+    "schema_count_after_drop": 0,
+    "user_count_after_drop": 0,
+    "dedicated_containers_removed": true,
+    "ports_unbound": [48182, 13351, 16431]
+  },
+  "conclusion": "The injected post relation update failure rolled back the preceding user-field changes and preserved the original relations for this one replacement scenario. Other update, concurrency, and failure paths remain open."
+}

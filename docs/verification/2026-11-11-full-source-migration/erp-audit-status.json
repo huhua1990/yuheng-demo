@@ -1,0 +1,90 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_status_20261114",
+  "port": 48106,
+  "time": "2026-11-14T17:16:44.161826+08:00",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=1&status=99",
+      "http": 200,
+      "code": 400
+    }
+  ],
+  "assertions": {
+    "unsupported_status_rejected_for_all_resources": 12,
+    "erp_full_row_snapshot_unchanged_after_each_request": true
+  }
+}

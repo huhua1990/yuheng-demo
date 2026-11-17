@@ -1,0 +1,106 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "containers": [
+    "yh-defrollback-mysql-7bc3a146",
+    "yh-defrollback-redis-7bc3a146"
+  ],
+  "schema": "yuheng_t4_default_rollback",
+  "backend_port": 48193,
+  "mock_authentication": false,
+  "cases": {
+    "warehouse": {
+      "path": "/erp/warehouse/update-default-status?id=990002&defaultStatus=true",
+      "positive_control_code": 0,
+      "failure_code": 500,
+      "verified_trigger": "t4_default_warehouse",
+      "log_marker": "T4_DEFAULT_WAREHOUSE_INJECTED",
+      "log_marker_observed": true,
+      "before": {
+        "rows": 2,
+        "sha256": "3156118dd281a1bf773c545f700b0f9ed036baf6a89d8d488786b7d5d6dac15d"
+      },
+      "after": {
+        "rows": 2,
+        "sha256": "3156118dd281a1bf773c545f700b0f9ed036baf6a89d8d488786b7d5d6dac15d"
+      },
+      "before_rows": [
+        [
+          990001,
+          1,
+          1
+        ],
+        [
+          990002,
+          0,
+          1
+        ]
+      ],
+      "after_rows": [
+        [
+          990001,
+          1,
+          1
+        ],
+        [
+          990002,
+          0,
+          1
+        ]
+      ],
+      "full_snapshot_unchanged": true
+    },
+    "account": {
+      "path": "/erp/account/update-default-status?id=990002&defaultStatus=true",
+      "positive_control_code": 0,
+      "failure_code": 500,
+      "verified_trigger": "t4_default_account",
+      "log_marker": "T4_DEFAULT_ACCOUNT_INJECTED",
+      "log_marker_observed": true,
+      "before": {
+        "rows": 2,
+        "sha256": "0736796a3a2a07ba749399868ebb23f108a85fc85ed3405886518d6f76df27f8"
+      },
+      "after": {
+        "rows": 2,
+        "sha256": "d90cd0f94927802287814abb89b81c171b87985ca8986900bfc215180bc37b4d"
+      },
+      "before_rows": [
+        [
+          990001,
+          1,
+          1
+        ],
+        [
+          990002,
+          0,
+          1
+        ]
+      ],
+      "after_rows": [
+        [
+          990001,
+          0,
+          1
+        ],
+        [
+          990002,
+          0,
+          1
+        ]
+      ],
+      "full_snapshot_unchanged": false
+    }
+  },
+  "changesets": 54,
+  "seed_passwords_unchanged": true,
+  "graceful_shutdown_observed": true,
+  "cleanup": {
+    "ports_listening": {
+      "13371": false,
+      "16471": false,
+      "48193": false
+    },
+    "containers_absent": true
+  }
+}

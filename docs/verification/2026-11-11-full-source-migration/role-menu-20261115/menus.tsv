@@ -1,0 +1,2543 @@
+1	0	系统管理		NULL	1
+2	0	基础设施		NULL	1
+3	148	OA 示例		NULL	1
+4	1	用户管理	system:user:list	system/user/index	2
+5	1	角色管理		system/role/index	2
+6	1	菜单管理		system/menu/index	2
+7	1	部门管理		system/dept/index	2
+8	1	岗位管理		system/post/index	2
+9	1	字典管理		system/dict/index	2
+10	2	配置管理		infra/config/index	2
+11	772	通知公告		system/notice/index	2
+12	1	审计日志			1
+13	201	令牌管理		system/oauth2/token/index	2
+14	2	定时任务		infra/job/index	2
+15	773	MySQL 监控		infra/druid/index	2
+16	773	Java 监控		infra/server/index	2
+17	773	Redis 监控		infra/redis/index	2
+18	2	表单构建	infra:build:list	infra/build/index	2
+19	2	代码生成	infra:codegen:query	infra/codegen/index	2
+20	2	API 接口	infra:swagger:list	infra/swagger/index	2
+21	12	操作日志		system/operatelog/index	2
+22	12	登录日志		system/loginlog/index	2
+23	4	用户查询	system:user:query		3
+24	4	用户新增	system:user:create		3
+25	4	用户修改	system:user:update		3
+26	4	用户删除	system:user:delete		3
+27	4	用户导出	system:user:export		3
+28	4	用户导入	system:user:import		3
+29	4	重置密码	system:user:update-password		3
+30	5	角色查询	system:role:query		3
+31	5	角色新增	system:role:create		3
+32	5	角色修改	system:role:update		3
+33	5	角色删除	system:role:delete		3
+34	5	角色导出	system:role:export		3
+35	6	菜单查询	system:menu:query		3
+36	6	菜单新增	system:menu:create		3
+37	6	菜单修改	system:menu:update		3
+38	6	菜单删除	system:menu:delete		3
+39	7	部门查询	system:dept:query		3
+40	7	部门新增	system:dept:create		3
+41	7	部门修改	system:dept:update		3
+42	7	部门删除	system:dept:delete		3
+43	8	岗位查询	system:post:query		3
+44	8	岗位新增	system:post:create		3
+45	8	岗位修改	system:post:update		3
+46	8	岗位删除	system:post:delete		3
+47	8	岗位导出	system:post:export		3
+48	9	字典查询	system:dict:query		3
+49	9	字典新增	system:dict:create		3
+50	9	字典修改	system:dict:update		3
+51	9	字典删除	system:dict:delete		3
+52	9	字典导出	system:dict:export		3
+53	10	配置查询	infra:config:query		3
+54	10	配置新增	infra:config:create		3
+55	10	配置修改	infra:config:update		3
+56	10	配置删除	infra:config:delete		3
+57	10	配置导出	infra:config:export		3
+58	11	公告查询	system:notice:query		3
+59	11	公告新增	system:notice:create		3
+60	11	公告修改	system:notice:update		3
+61	11	公告删除	system:notice:delete		3
+62	21	操作查询	system:operate-log:query		3
+63	21	日志导出	system:operate-log:export		3
+64	22	登录查询	system:login-log:query		3
+65	22	日志导出	system:login-log:export		3
+66	13	令牌列表	system:oauth2-token:page		3
+67	13	令牌删除	system:oauth2-token:delete		3
+68	14	任务新增	infra:job:create		3
+69	14	任务修改	infra:job:update		3
+70	14	任务删除	infra:job:delete		3
+71	14	状态修改	infra:job:update		3
+72	14	任务导出	infra:job:export		3
+73	19	生成修改	infra:codegen:update		3
+74	19	生成删除	infra:codegen:delete		3
+75	19	导入代码	infra:codegen:create		3
+76	19	预览代码	infra:codegen:preview		3
+77	19	生成代码	infra:codegen:download		3
+78	5	设置角色菜单权限	system:permission:assign-role-menu		3
+79	5	设置角色数据权限	system:permission:assign-role-data-scope		3
+80	5	设置用户角色	system:permission:assign-user-role		3
+81	17	获得 Redis 监控信息	infra:redis:get-monitor-info		3
+82	17	获得 Redis Key 列表	infra:redis:get-key-list		3
+83	2	代码生成案例		infra/testDemo/index	1
+84	14	任务触发	infra:job:trigger		3
+85	773	链路追踪		infra/skywalking/index	2
+86	88	访问日志		infra/apiAccessLog/index	2
+87	86	日志导出	infra:api-access-log:export		3
+88	2	API 日志		NULL	2
+89	88	错误日志	infra:api-error-log:query	infra/apiErrorLog/index	2
+90	89	日志处理	infra:api-error-log:update-status		3
+91	89	日志导出	infra:api-error-log:export		3
+92	14	任务查询	infra:job:query		3
+93	86	日志查询	infra:api-access-log:query		3
+94	89	日志查询	infra:api-error-log:query		3
+95	193	文件列表		infra/file/index	2
+96	95	文件查询	infra:file:query		3
+97	95	文件删除	infra:file:delete		3
+98	772	短信管理		NULL	1
+99	98	短信渠道		system/sms/channel/index	2
+100	99	短信渠道查询	system:sms-channel:query		3
+101	99	短信渠道创建	system:sms-channel:create		3
+102	99	短信渠道更新	system:sms-channel:update		3
+103	99	短信渠道删除	system:sms-channel:delete		3
+104	98	短信模板		system/sms/template/index	2
+105	104	短信模板查询	system:sms-template:query		3
+106	104	短信模板创建	system:sms-template:create		3
+107	104	短信模板更新	system:sms-template:update		3
+108	104	短信模板删除	system:sms-template:delete		3
+109	104	短信模板导出	system:sms-template:export		3
+110	104	发送测试短信	system:sms-template:send-sms		3
+111	98	短信日志		system/sms/log/index	2
+112	111	短信日志查询	system:sms-log:query		3
+113	111	短信日志导出	system:sms-log:export		3
+114	0	支付管理		NULL	1
+115	3	请假查询		bpm/oa/leave/index	2
+116	115	请假申请查询	bpm:oa-leave:query		3
+117	115	请假申请创建	bpm:oa-leave:create		3
+118	114	应用信息		pay/app/index	2
+119	118	支付应用信息查询	pay:app:query		3
+120	118	支付应用信息创建	pay:app:create		3
+121	118	支付应用信息更新	pay:app:update		3
+122	118	支付应用信息删除	pay:app:delete		3
+123	121	秘钥解析	pay:channel:parsing		3
+124	123	支付商户信息查询	pay:merchant:query		3
+125	123	支付商户信息创建	pay:merchant:create		3
+126	123	支付商户信息更新	pay:merchant:update		3
+127	123	支付商户信息删除	pay:merchant:delete		3
+128	123	支付商户信息导出	pay:merchant:export		3
+129	181	租户列表		system/tenant/index	2
+130	129	租户查询	system:tenant:query		3
+131	129	租户创建	system:tenant:create		3
+132	129	租户更新	system:tenant:update		3
+133	129	租户删除	system:tenant:delete		3
+134	129	租户导出	system:tenant:export		3
+135	121	秘钥解析			3
+136	114	退款订单		pay/refund/index	2
+137	136	退款订单查询	pay:refund:query		3
+141	136	退款订单导出	pay:refund:export		3
+142	114	支付订单		pay/order/index	2
+143	142	支付订单查询	pay:order:query		3
+147	142	支付订单导出	pay:order:export		3
+148	0	工作流程		NULL	1
+149	148	流程管理		NULL	1
+150	149	流程表单		bpm/form/index	2
+151	150	表单查询	bpm:form:query		3
+152	150	表单创建	bpm:form:create		3
+153	150	表单更新	bpm:form:update		3
+154	150	表单删除	bpm:form:delete		3
+155	150	表单导出	bpm:form:export		3
+156	149	流程模型		bpm/model/index	2
+157	156	模型查询	bpm:model:query		3
+158	156	模型创建	bpm:model:create		3
+160	156	模型更新	bpm:model:update		3
+161	156	模型删除	bpm:model:delete		3
+162	156	模型发布	bpm:model:deploy		3
+163	148	审批中心		NULL	2
+164	163	我的流程		bpm/processInstance/index	2
+165	164	流程实例的查询	bpm:process-instance:query		3
+166	163	待办任务		bpm/task/todo/index	2
+167	163	已办任务		bpm/task/done/index	2
+168	149	用户分组		bpm/group/index	2
+169	168	用户组查询	bpm:user-group:query		3
+170	168	用户组创建	bpm:user-group:create		3
+171	168	用户组更新	bpm:user-group:update		3
+172	168	用户组删除	bpm:user-group:delete		3
+173	156	流程定义查询	bpm:process-definition:query		3
+174	156	流程任务分配规则查询	bpm:task-assign-rule:query		3
+175	156	流程任务分配规则创建	bpm:task-assign-rule:create		3
+176	156	流程任务分配规则更新	bpm:task-assign-rule:update		3
+177	164	流程实例的创建	bpm:process-instance:create		3
+178	164	流程实例的取消	bpm:process-instance:cancel		3
+179	166	流程任务的查询	bpm:task:query		3
+180	166	流程任务的更新	bpm:task:update		3
+181	1	租户管理		NULL	2
+182	181	租户套餐		system/tenantPackage/index	2
+183	182	租户套餐查询	system:tenant-package:query		3
+184	182	租户套餐创建	system:tenant-package:create		3
+185	182	租户套餐更新	system:tenant-package:update		3
+186	182	租户套餐删除	system:tenant-package:delete		3
+187	193	文件配置		infra/fileConfig/index	2
+188	187	文件配置查询	infra:file-config:query		3
+189	187	文件配置创建	infra:file-config:create		3
+190	187	文件配置更新	infra:file-config:update		3
+191	187	文件配置删除	infra:file-config:delete		3
+192	187	文件配置导出	infra:file-config:export		3
+193	2	文件管理		NULL	2
+194	0	作者动态		NULL	1
+195	2	数据源配置		infra/dataSourceConfig/index	2
+196	195	数据源配置查询	infra:data-source-config:query		3
+197	195	数据源配置创建	infra:data-source-config:create		3
+198	195	数据源配置更新	infra:data-source-config:update		3
+199	195	数据源配置删除	infra:data-source-config:delete		3
+200	195	数据源配置导出	infra:data-source-config:export		3
+201	1	OAuth 2.0		NULL	2
+202	201	应用管理		system/oauth2/client/index	2
+203	202	客户端查询	system:oauth2-client:query		3
+204	202	客户端创建	system:oauth2-client:create		3
+205	202	客户端更新	system:oauth2-client:update		3
+206	202	客户端删除	system:oauth2-client:delete		3
+207	0	报表管理		NULL	2
+208	207	报表设计器		report/jmreport/index	2
+209	449	商品中心		NULL	1
+210	209	商品分类		mall/product/category/index	2
+211	210	分类查询	product:category:query		3
+212	210	分类创建	product:category:create		3
+213	210	分类更新	product:category:update		3
+214	210	分类删除	product:category:delete		3
+215	209	商品品牌		mall/product/brand/index	2
+216	215	品牌查询	product:brand:query		3
+217	215	品牌创建	product:brand:create		3
+218	215	品牌更新	product:brand:update		3
+219	215	品牌删除	product:brand:delete		3
+220	209	商品列表		mall/product/spu/index	2
+221	220	商品查询	product:spu:query		3
+222	220	商品创建	product:spu:create		3
+223	220	商品更新	product:spu:update		3
+224	220	商品删除	product:spu:delete		3
+225	209	商品属性		mall/product/property/index	2
+226	225	规格查询	product:property:query		3
+227	225	规格创建	product:property:create		3
+228	225	规格更新	product:property:update		3
+229	225	规格删除	product:property:delete		3
+230	470	Banner		mall/promotion/banner/index	2
+231	230	Banner查询	promotion:banner:query		3
+232	230	Banner创建	promotion:banner:create		3
+233	230	Banner更新	promotion:banner:update		3
+234	230	Banner删除	promotion:banner:delete		3
+235	449	营销中心		NULL	1
+236	452	优惠劵列表		mall/promotion/coupon/template/index	2
+237	236	优惠劵模板查询	promotion:coupon-template:query		3
+238	236	优惠劵模板创建	promotion:coupon-template:create		3
+239	236	优惠劵模板更新	promotion:coupon-template:update		3
+240	236	优惠劵模板删除	promotion:coupon-template:delete		3
+241	452	领取记录		mall/promotion/coupon/index	2
+242	241	优惠劵查询	promotion:coupon:query		3
+243	241	优惠劵删除	promotion:coupon:delete		3
+244	473	满减送		mall/promotion/rewardActivity/index	2
+245	244	满减送活动查询	promotion:reward-activity:query		3
+246	244	满减送活动创建	promotion:reward-activity:create		3
+247	244	满减送活动更新	promotion:reward-activity:update		3
+248	244	满减送活动删除	promotion:reward-activity:delete		3
+249	244	满减送活动关闭	promotion:reward-activity:close		3
+250	473	限时折扣		mall/promotion/discountActivity/index	2
+251	250	限时折扣活动查询	promotion:discount-activity:query		3
+252	250	限时折扣活动创建	promotion:discount-activity:create		3
+253	250	限时折扣活动更新	promotion:discount-activity:update		3
+254	250	限时折扣活动删除	promotion:discount-activity:delete		3
+255	250	限时折扣活动关闭	promotion:discount-activity:close		3
+256	372	秒杀商品		mall/promotion/seckill/activity/index	2
+257	256	秒杀活动查询	promotion:seckill-activity:query		3
+258	256	秒杀活动创建	promotion:seckill-activity:create		3
+259	256	秒杀活动更新	promotion:seckill-activity:update		3
+260	256	秒杀活动删除	promotion:seckill-activity:delete		3
+261	372	秒杀时段		mall/promotion/seckill/config/index	2
+262	261	秒杀时段查询	promotion:seckill-config:query		3
+263	261	秒杀时段创建	promotion:seckill-config:create		3
+264	261	秒杀时段更新	promotion:seckill-config:update		3
+265	261	秒杀时段删除	promotion:seckill-config:delete		3
+266	449	订单中心		NULL	1
+267	266	售后退款		mall/trade/afterSale/index	2
+268	267	售后查询	trade:after-sale:query		3
+269	256	秒杀活动关闭	promotion:seckill-activity:close		3
+270	266	订单列表		mall/trade/order/index	2
+271	1	地区管理		system/area/index	2
+272	0	MP 公众号管理		NULL	1
+273	272	账号管理		mp/account/index	2
+274	273	新增账号	mp:account:create		3
+275	273	修改账号	mp:account:update		3
+276	273	查询账号	mp:account:query		3
+277	273	删除账号	mp:account:delete		3
+278	273	生成二维码	mp:account:qr-code		3
+279	273	清空 API 配额	mp:account:clear-quota		3
+280	272	数据统计	mp:statistics:query	mp/statistics/index	2
+281	272	标签管理		mp/tag/index	2
+282	281	查询标签	mp:tag:query		3
+283	281	新增标签	mp:tag:create		3
+284	281	修改标签	mp:tag:update		3
+285	281	删除标签	mp:tag:delete		3
+286	281	同步标签	mp:tag:sync		3
+287	272	粉丝管理		mp/user/index	2
+288	287	查询粉丝	mp:user:query		3
+289	287	修改粉丝	mp:user:update		3
+290	287	同步粉丝	mp:user:sync		3
+291	272	消息管理		mp/message/index	2
+292	272	图文发表记录		mp/freePublish/index	2
+293	292	查询发布列表	mp:free-publish:query		3
+294	292	发布草稿	mp:free-publish:submit		3
+295	292	删除发布记录	mp:free-publish:delete		3
+296	272	图文草稿箱		mp/draft/index	2
+297	296	新建草稿	mp:draft:create		3
+298	296	修改草稿	mp:draft:update		3
+299	296	查询草稿	mp:draft:query		3
+300	296	删除草稿	mp:draft:delete		3
+301	272	素材管理		mp/material/index	2
+302	301	上传临时素材	mp:material:upload-temporary		3
+303	301	上传永久素材	mp:material:upload-permanent		3
+304	301	删除素材	mp:material:delete		3
+305	301	上传图文图片	mp:material:upload-news-image		3
+306	301	查询素材	mp:material:query		3
+307	272	菜单管理		mp/menu/index	2
+308	272	自动回复		mp/autoReply/index	2
+309	308	查询回复	mp:auto-reply:query		3
+310	308	新增回复	mp:auto-reply:create		3
+311	308	修改回复	mp:auto-reply:update		3
+312	308	删除回复	mp:auto-reply:delete		3
+313	307	查询菜单	mp:menu:query		3
+314	307	保存菜单	mp:menu:save		3
+315	307	删除菜单	mp:menu:delete		3
+316	291	查询消息	mp:message:query		3
+317	291	发送消息	mp:message:send		3
+318	772	邮箱管理		NULL	2
+319	318	邮箱账号		system/mail/account/index	2
+320	319	账号查询	system:mail-account:query		3
+321	319	账号创建	system:mail-account:create		3
+322	319	账号更新	system:mail-account:update		3
+323	319	账号删除	system:mail-account:delete		3
+324	318	邮件模版		system/mail/template/index	2
+325	324	模版查询	system:mail-template:query		3
+326	324	模版创建	system:mail-template:create		3
+327	324	模版更新	system:mail-template:update		3
+328	324	模版删除	system:mail-template:delete		3
+329	318	邮件记录		system/mail/log/index	2
+330	329	日志查询	system:mail-log:query		3
+331	324	发送测试邮件	system:mail-template:send-mail		3
+332	772	站内信管理		NULL	1
+333	332	模板管理		system/notify/template/index	2
+334	333	站内信模板查询	system:notify-template:query		3
+335	333	站内信模板创建	system:notify-template:create		3
+336	333	站内信模板更新	system:notify-template:update		3
+337	333	站内信模板删除	system:notify-template:delete		3
+338	333	发送测试站内信	system:notify-template:send-notify		3
+339	332	消息记录		system/notify/message/index	2
+340	339	站内信消息查询	system:notify-message:query		3
+341	207	大屏设计器		report/goview/index	2
+342	341	创建项目	report:go-view-project:create		3
+343	341	更新项目	report:go-view-project:update		3
+344	341	查询项目	report:go-view-project:query		3
+345	341	使用 SQL 查询数据	report:go-view-data:get-by-sql		3
+346	341	使用 HTTP 查询数据	report:go-view-data:get-by-http		3
+347	0	Boot 开发文档		NULL	1
+348	0	Cloud 开发文档		NULL	1
+349	114	接入示例		pay/demo/index	1
+350	220	商品导出	product:spu:export		3
+351	266	配送管理			1
+352	351	快递发货			1
+353	351	门店自提			1
+354	352	快递公司		mall/trade/delivery/express/index	2
+355	354	快递公司查询	trade:delivery:express:query		3
+356	354	快递公司创建	trade:delivery:express:create		3
+357	354	快递公司更新	trade:delivery:express:update		3
+358	354	快递公司删除	trade:delivery:express:delete		3
+359	354	快递公司导出	trade:delivery:express:export		3
+360	352	运费模版	trade:delivery:express-template:query	mall/trade/delivery/expressTemplate/index	2
+361	360	快递运费模板查询	trade:delivery:express-template:query		3
+362	360	快递运费模板创建	trade:delivery:express-template:create		3
+363	360	快递运费模板更新	trade:delivery:express-template:update		3
+364	360	快递运费模板删除	trade:delivery:express-template:delete		3
+365	360	快递运费模板导出	trade:delivery:express-template:export		3
+366	353	门店管理		mall/trade/delivery/pickUpStore/index	2
+367	366	自提门店查询	trade:delivery:pick-up-store:query		3
+368	366	自提门店创建	trade:delivery:pick-up-store:create		3
+369	366	自提门店更新	trade:delivery:pick-up-store:update		3
+370	366	自提门店删除	trade:delivery:pick-up-store:delete		3
+371	366	自提门店导出	trade:delivery:pick-up-store:export		3
+372	235	秒杀活动			2
+373	0	会员中心		NULL	1
+374	373	会员配置		member/config/index	2
+375	374	会员配置查询	member:config:query		3
+376	374	会员配置保存	member:config:save		3
+377	387	签到配置		member/signin/config/index	2
+378	377	积分签到规则查询	point:sign-in-config:query		3
+379	377	积分签到规则创建	point:sign-in-config:create		3
+380	377	积分签到规则更新	point:sign-in-config:update		3
+381	377	积分签到规则删除	point:sign-in-config:delete		3
+382	373	会员积分		member/point/record/index	2
+383	382	用户积分记录查询	point:record:query		3
+384	387	签到记录		member/signin/record/index	2
+385	384	用户签到积分查询	point:sign-in-record:query		3
+386	384	用户签到积分删除	point:sign-in-record:delete		3
+387	373	会员签到			1
+388	114	回调通知		pay/notify/index	2
+389	388	支付通知查询	pay:notify:query		3
+390	235	拼团活动			2
+391	390	拼团商品		mall/promotion/combination/activity/index	2
+392	391	拼团活动查询	promotion:combination-activity:query		3
+393	391	拼团活动创建	promotion:combination-activity:create		3
+394	391	拼团活动更新	promotion:combination-activity:update		3
+395	391	拼团活动删除	promotion:combination-activity:delete		3
+396	391	拼团活动关闭	promotion:combination-activity:close		3
+397	235	砍价活动			2
+398	397	砍价商品		mall/promotion/bargain/activity/index	2
+399	398	砍价活动查询	promotion:bargain-activity:query		3
+400	398	砍价活动创建	promotion:bargain-activity:create		3
+401	398	砍价活动更新	promotion:bargain-activity:update		3
+402	398	砍价活动删除	promotion:bargain-activity:delete		3
+403	398	砍价活动关闭	promotion:bargain-activity:close		3
+404	373	会员管理		member/user/index	2
+405	404	会员用户查询	member:user:query		3
+406	404	会员用户更新	member:user:update		3
+407	373	会员标签		member/tag/index	2
+408	407	会员标签查询	member:tag:query		3
+409	407	会员标签创建	member:tag:create		3
+410	407	会员标签更新	member:tag:update		3
+411	407	会员标签删除	member:tag:delete		3
+412	373	会员等级		member/level/index	2
+413	412	会员等级查询	member:level:query		3
+414	412	会员等级创建	member:level:create		3
+415	412	会员等级更新	member:level:update		3
+416	412	会员等级删除	member:level:delete		3
+417	373	会员分组		member/group/index	2
+418	417	用户分组查询	member:group:query		3
+419	417	用户分组创建	member:group:create		3
+420	417	用户分组更新	member:group:update		3
+421	417	用户分组删除	member:group:delete		3
+422	404	用户等级修改	member:user:update-level		3
+423	209	商品评论		mall/product/comment/index	2
+424	423	评论查询	product:comment:query		3
+425	423	添加自评	product:comment:create		3
+426	423	商家回复	product:comment:update		3
+427	423	显隐评论	product:comment:update		3
+428	241	优惠劵发送	promotion:coupon:send		3
+429	266	交易配置		mall/trade/config/index	2
+430	429	交易中心配置查询	trade:config:query		3
+431	429	交易中心配置保存	trade:config:save		3
+432	266	分销管理			1
+433	432	分销用户		mall/trade/brokerage/user/index	2
+434	433	分销用户查询	trade:brokerage-user:query		3
+435	433	分销用户推广人查询	trade:brokerage-user:user-query		3
+436	433	分销用户推广订单查询	trade:brokerage-user:order-query		3
+437	433	分销用户修改推广资格	trade:brokerage-user:update-brokerage-enable		3
+438	433	修改推广员	trade:brokerage-user:update-bind-user		3
+439	433	清除推广员	trade:brokerage-user:clear-bind-user		3
+440	432	佣金记录		mall/trade/brokerage/record/index	2
+441	440	佣金记录查询	trade:brokerage-record:query		3
+442	432	佣金提现		mall/trade/brokerage/withdraw/index	2
+443	442	佣金提现查询	trade:brokerage-withdraw:query		3
+444	442	佣金提现审核	trade:brokerage-withdraw:audit		3
+445	449	统计中心			1
+446	445	交易统计		mall/statistics/trade/index	2
+447	446	交易统计查询	statistics:trade:query		3
+448	446	交易统计导出	statistics:trade:export		3
+449	0	MALL 商城系统			1
+450	404	用户积分修改	member:user:update-point		3
+451	404	用户余额修改	pay:wallet:update-balance		3
+452	235	优惠劵			1
+453	397	砍价记录		mall/promotion/bargain/record/index	2
+454	453	砍价记录查询	promotion:bargain-record:query		3
+455	453	助力记录查询	promotion:bargain-help:query		3
+456	390	拼团记录	promotion:combination-record:query	mall/promotion/combination/record/index.vue	2
+457	445	会员统计		mall/statistics/member/index	2
+458	457	会员统计查询	statistics:member:query		3
+459	270	订单核销	trade:order:pick-up		3
+460	470	文章分类		mall/promotion/article/category/index	2
+461	460	分类查询	promotion:article-category:query		3
+462	460	分类创建	promotion:article-category:create		3
+463	460	分类更新	promotion:article-category:update		3
+464	460	分类删除	promotion:article-category:delete		3
+465	470	文章列表		mall/promotion/article/index	2
+466	465	文章管理查询	promotion:article:query		3
+467	465	文章管理创建	promotion:article:create		3
+468	465	文章管理更新	promotion:article:update		3
+469	465	文章管理删除	promotion:article:delete		3
+470	235	内容管理			1
+471	449	商城首页		mall/home/index	2
+472	353	核销订单		mall/trade/delivery/pickUpOrder/index	2
+473	235	优惠活动			1
+474	480	客户管理		crm/customer/index	2
+475	474	客户查询	crm:customer:query		3
+476	474	客户创建	crm:customer:create		3
+477	474	客户更新	crm:customer:update		3
+478	474	客户删除	crm:customer:delete		3
+479	474	客户导出	crm:customer:export		3
+480	0	CRM 系统			1
+481	480	合同管理		crm/contract/index	2
+482	481	合同查询	crm:contract:query		3
+483	481	合同创建	crm:contract:create		3
+484	481	合同更新	crm:contract:update		3
+485	481	合同删除	crm:contract:delete		3
+486	481	合同导出	crm:contract:export		3
+487	480	线索管理		crm/clue/index	2
+488	487	线索查询	crm:clue:query		3
+489	487	线索创建	crm:clue:create		3
+490	487	线索更新	crm:clue:update		3
+491	487	线索删除	crm:clue:delete		3
+492	487	线索导出	crm:clue:export		3
+493	480	商机管理		crm/business/index	2
+494	493	商机查询	crm:business:query		3
+495	493	商机创建	crm:business:create		3
+496	493	商机更新	crm:business:update		3
+497	493	商机删除	crm:business:delete		3
+498	493	商机导出	crm:business:export		3
+499	480	联系人管理		crm/contact/index	2
+500	499	联系人查询	crm:contact:query		3
+501	499	联系人创建	crm:contact:create		3
+502	499	联系人更新	crm:contact:update		3
+503	499	联系人删除	crm:contact:delete		3
+504	499	联系人导出	crm:contact:export		3
+505	480	回款管理		crm/receivable/index	2
+506	505	回款管理查询	crm:receivable:query		3
+507	505	回款管理创建	crm:receivable:create		3
+508	505	回款管理更新	crm:receivable:update		3
+509	505	回款管理删除	crm:receivable:delete		3
+510	505	回款管理导出	crm:receivable:export		3
+511	480	回款è®¡åˆ’		crm/receivable/plan/index	2
+512	511	回款è®¡åˆ’查询	crm:receivable-plan:query		3
+513	511	回款è®¡åˆ’创建	crm:receivable-plan:create		3
+514	511	回款è®¡åˆ’更新	crm:receivable-plan:update		3
+515	511	回款è®¡åˆ’删除	crm:receivable-plan:delete		3
+516	511	回款è®¡åˆ’导出	crm:receivable-plan:export		3
+517	235	商城装修		mall/promotion/diy/template/index	2
+518	517	装修模板		mall/promotion/diy/template/index	2
+519	518	装修模板查询	promotion:diy-template:query		3
+520	518	装修模板创建	promotion:diy-template:create		3
+521	518	装修模板更新	promotion:diy-template:update		3
+522	518	装修模板删除	promotion:diy-template:delete		3
+523	518	装修模板使用	promotion:diy-template:use		3
+524	517	装修页面		mall/promotion/diy/page/index	2
+525	524	装修页面查询	promotion:diy-page:query		3
+526	524	装修页面创建	promotion:diy-page:create		3
+527	524	装修页面更新	promotion:diy-page:update		3
+528	524	装修页面删除	promotion:diy-page:delete		3
+529	1	三方登录			1
+530	529	三方应用		system/social/client/index.vue	2
+531	530	三方应用查询	system:social-client:query		3
+532	530	三方应用创建	system:social-client:create		3
+533	530	三方应用更新	system:social-client:update		3
+534	530	三方应用删除	system:social-client:delete		3
+535	529	三方用户	system:social-user:query	system/social/user/index.vue	2
+536	83	主子表（内嵌）		infra/demo/demo03/inner/index	2
+537	83	单表（增删改查）		infra/demo/demo01/index	2
+538	537	示例联系人查询	infra:demo01-contact:query		3
+539	537	示例联系人创建	infra:demo01-contact:create		3
+540	537	示例联系人更新	infra:demo01-contact:update		3
+541	537	示例联系人删除	infra:demo01-contact:delete		3
+542	537	示例联系人导出	infra:demo01-contact:export		3
+543	83	树表（增删改查）		infra/demo/demo02/index	2
+544	543	示例分类查询	infra:demo02-category:query		3
+545	543	示例分类创建	infra:demo02-category:create		3
+546	543	示例分类更新	infra:demo02-category:update		3
+547	543	示例分类删除	infra:demo02-category:delete		3
+548	543	示例分类导出	infra:demo02-category:export		3
+549	83	主子表（标准）		infra/demo/demo03/normal/index	2
+550	549	学生查询	infra:demo03-student:query		3
+551	549	学生创建	infra:demo03-student:create		3
+552	549	学生更新	infra:demo03-student:update		3
+553	549	学生删除	infra:demo03-student:delete		3
+554	549	学生导出	infra:demo03-student:export		3
+555	83	主子表（ERP）		infra/demo/demo03/erp/index	2
+556	564	客户公海配置		crm/customer/poolConfig/index	2
+557	556	客户公海配置保存	crm:customer-pool-config:update		3
+558	564	客户限制配置		crm/customer/limitConfig/index	2
+559	558	客户限制配置查询	crm:customer-limit-config:query		3
+560	558	客户限制配置创建	crm:customer-limit-config:create		3
+561	558	客户限制配置更新	crm:customer-limit-config:update		3
+562	558	客户限制配置删除	crm:customer-limit-config:delete		3
+563	558	客户限制配置导出	crm:customer-limit-config:export		3
+564	480	系统配置			1
+565	2	WebSocket		infra/webSocket/index	2
+566	480	产品管理		crm/product/index	2
+567	566	产品查询	crm:product:query		3
+568	566	产品创建	crm:product:create		3
+569	566	产品更新	crm:product:update		3
+570	566	产品删除	crm:product:delete		3
+571	566	产品导出	crm:product:export		3
+572	564	产品分类配置		crm/product/category/index	2
+573	572	产品分类查询	crm:product-category:query		3
+574	572	产品分类创建	crm:product-category:create		3
+575	572	产品分类更新	crm:product-category:update		3
+576	572	产品分类删除	crm:product-category:delete		3
+577	499	关联商机	crm:contact:create-business		3
+578	499	取关商机	crm:contact:delete-business		3
+579	445	商品统计		mall/statistics/product/index	2
+580	480	客户公海		crm/customer/pool/index	2
+581	270	订单查询	trade:order:query		3
+582	270	订单更新	trade:order:update		3
+583	349	支付&退款案例		pay/demo/order/index	2
+584	349	提现转账案例		pay/demo/withdraw/index	2
+585	114	钱包管理			1
+586	585	充值套餐		pay/wallet/rechargePackage/index	2
+587	586	钱包充值套餐查询	pay:wallet-recharge-package:query		3
+588	586	钱包充值套餐创建	pay:wallet-recharge-package:create		3
+589	586	钱包充值套餐更新	pay:wallet-recharge-package:update		3
+590	586	钱包充值套餐删除	pay:wallet-recharge-package:delete		3
+591	585	钱包余额		pay/wallet/balance/index	2
+592	591	钱包余额查询	pay:wallet:query		3
+593	114	转账订单		pay/transfer/index	2
+594	480	数据统计			1
+595	594	排行榜	crm:statistics-rank:query	crm/statistics/rank/index	2
+596	474	客户导入	crm:customer:import		3
+597	0	ERP 系统			1
+598	597	产品管理			1
+599	598	产品信息		erp/product/product/index	2
+600	599	产品查询	erp:product:query		3
+601	599	产品创建	erp:product:create		3
+602	599	产品更新	erp:product:update		3
+603	599	产品删除	erp:product:delete		3
+604	599	产品导出	erp:product:export		3
+605	598	产品分类		erp/product/category/index	2
+606	605	分类查询	erp:product-category:query		3
+607	605	分类创建	erp:product-category:create		3
+608	605	分类更新	erp:product-category:update		3
+609	605	分类删除	erp:product-category:delete		3
+610	605	分类导出	erp:product-category:export		3
+611	598	产品单位		erp/product/unit/index	2
+612	611	单位查询	erp:product-unit:query		3
+613	611	单位创建	erp:product-unit:create		3
+614	611	单位更新	erp:product-unit:update		3
+615	611	单位删除	erp:product-unit:delete		3
+616	611	单位导出	erp:product-unit:export		3
+617	597	库存管理			1
+618	617	仓库信息		erp/stock/warehouse/index	2
+619	618	仓库查询	erp:warehouse:query		3
+620	618	仓库创建	erp:warehouse:create		3
+621	618	仓库更新	erp:warehouse:update		3
+622	618	仓库删除	erp:warehouse:delete		3
+623	618	仓库导出	erp:warehouse:export		3
+624	617	产品库存		erp/stock/stock/index	2
+625	624	库存查询	erp:stock:query		3
+626	624	库存导出	erp:stock:export		3
+627	617	出入库明细		erp/stock/record/index	2
+628	627	库存明细查询	erp:stock-record:query		3
+629	627	库存明细导出	erp:stock-record:export		3
+630	617	其它入库		erp/stock/in/index	2
+631	630	其它入库单查询	erp:stock-in:query		3
+632	630	其它入库单创建	erp:stock-in:create		3
+633	630	其它入库单更新	erp:stock-in:update		3
+634	630	其它入库单删除	erp:stock-in:delete		3
+635	630	其它入库单导出	erp:stock-in:export		3
+636	597	采购管理			1
+637	636	供应商信息		erp/purchase/supplier/index	2
+638	637	供应商查询	erp:supplier:query		3
+639	637	供应商创建	erp:supplier:create		3
+640	637	供应商更新	erp:supplier:update		3
+641	637	供应商删除	erp:supplier:delete		3
+642	637	供应商导出	erp:supplier:export		3
+643	630	其它入库单审批	erp:stock-in:update-status		3
+644	617	其它出库		erp/stock/out/index	2
+645	644	其它出库单查询	erp:stock-out:query		3
+646	644	其它出库单创建	erp:stock-out:create		3
+647	644	其它出库单更新	erp:stock-out:update		3
+648	644	其它出库单删除	erp:stock-out:delete		3
+649	644	其它出库单导出	erp:stock-out:export		3
+650	644	其它出库单审批	erp:stock-out:update-status		3
+651	597	销售管理			1
+652	651	客户信息		erp/sale/customer/index	2
+653	652	客户查询	erp:customer:query		3
+654	652	客户创建	erp:customer:create		3
+655	652	客户更新	erp:customer:update		3
+656	652	客户删除	erp:customer:delete		3
+657	652	客户导出	erp:customer:export		3
+658	617	库存调拨		erp/stock/move/index	2
+659	658	库存调度单查询	erp:stock-move:query		3
+660	658	库存调度单创建	erp:stock-move:create		3
+661	658	库存调度单更新	erp:stock-move:update		3
+662	658	库存调度单删除	erp:stock-move:delete		3
+663	658	库存调度单导出	erp:stock-move:export		3
+664	658	库存调度单审批	erp:stock-move:update-status		3
+665	617	库存盘点		erp/stock/check/index	2
+666	665	库存盘点单查询	erp:stock-check:query		3
+667	665	库存盘点单创建	erp:stock-check:create		3
+668	665	库存盘点单更新	erp:stock-check:update		3
+669	665	库存盘点单删除	erp:stock-check:delete		3
+670	665	库存盘点单导出	erp:stock-check:export		3
+671	665	库存盘点单审批	erp:stock-check:update-status		3
+672	651	销售订单		erp/sale/order/index	2
+673	672	销售订单查询	erp:sale-order:query		3
+674	672	销售订单创建	erp:sale-order:create		3
+675	672	销售订单更新	erp:sale-order:update		3
+676	672	销售订单删除	erp:sale-order:delete		3
+677	672	销售订单导出	erp:sale-order:export		3
+678	672	销售订单审批	erp:sale-order:update-status		3
+679	597	财务管理			1
+680	679	结算账户		erp/finance/account/index	2
+681	680	结算账户查询	erp:account:query		3
+682	680	结算账户创建	erp:account:create		3
+683	680	结算账户更新	erp:account:update		3
+684	680	结算账户删除	erp:account:delete		3
+685	680	结算账户导出	erp:account:export		3
+686	651	销售出库		erp/sale/out/index	2
+687	686	销售出库查询	erp:sale-out:query		3
+688	686	销售出库创建	erp:sale-out:create		3
+689	686	销售出库更新	erp:sale-out:update		3
+690	686	销售出库删除	erp:sale-out:delete		3
+691	686	销售出库导出	erp:sale-out:export		3
+692	686	销售出库审批	erp:sale-out:update-status		3
+693	651	销售退货		erp/sale/return/index	2
+694	693	销售退货查询	erp:sale-return:query		3
+695	693	销售退货创建	erp:sale-return:create		3
+696	693	销售退货更新	erp:sale-return:update		3
+697	693	销售退货删除	erp:sale-return:delete		3
+698	693	销售退货导出	erp:sale-return:export		3
+699	693	销售退货审批	erp:sale-return:update-status		3
+700	636	采购订单		erp/purchase/order/index	2
+701	700	采购订单查询	erp:purchase-order:query		3
+702	700	采购订单创建	erp:purchase-order:create		3
+703	700	采购订单更新	erp:purchase-order:update		3
+704	700	采购订单删除	erp:purchase-order:delete		3
+705	700	采购订单导出	erp:purchase-order:export		3
+706	700	采购订单审批	erp:purchase-order:update-status		3
+707	636	采购入库		erp/purchase/in/index	2
+708	707	采购入库查询	erp:purchase-in:query		3
+709	707	采购入库创建	erp:purchase-in:create		3
+710	707	采购入库更新	erp:purchase-in:update		3
+711	707	采购入库删除	erp:purchase-in:delete		3
+712	707	采购入库导出	erp:purchase-in:export		3
+713	707	采购入库审批	erp:purchase-in:update-status		3
+714	636	采购退货		erp/purchase/return/index	2
+715	714	采购退货查询	erp:purchase-return:query		3
+716	714	采购退货创建	erp:purchase-return:create		3
+717	714	采购退货更新	erp:purchase-return:update		3
+718	714	采购退货删除	erp:purchase-return:delete		3
+719	714	采购退货导出	erp:purchase-return:export		3
+720	714	采购退货审批	erp:purchase-return:update-status		3
+721	679	付款单		erp/finance/payment/index	2
+722	721	付款单查询	erp:finance-payment:query		3
+723	721	付款单创建	erp:finance-payment:create		3
+724	721	付款单更新	erp:finance-payment:update		3
+725	721	付款单删除	erp:finance-payment:delete		3
+726	721	付款单导出	erp:finance-payment:export		3
+727	721	付款单审批	erp:finance-payment:update-status		3
+728	679	收款单		erp/finance/receipt/index	2
+729	728	收款单查询	erp:finance-receipt:query		3
+730	728	收款单创建	erp:finance-receipt:create		3
+731	728	收款单更新	erp:finance-receipt:update		3
+732	728	收款单删除	erp:finance-receipt:delete		3
+733	728	收款单导出	erp:finance-receipt:export		3
+734	728	收款单审批	erp:finance-receipt:update-status		3
+735	480	待办事项		crm/backlog/index	2
+736	597	ERP 首页	erp:statistics:query	erp/home/index.vue	2
+737	564	商机状态配置		crm/business/status/index	2
+738	737	商机状态查询	crm:business-status:query		3
+739	737	商机状态创建	crm:business-status:create		3
+740	737	商机状态更新	crm:business-status:update		3
+741	737	商机状态删除	crm:business-status:delete		3
+742	564	合同配置		crm/contract/config/index	2
+743	556	客户公海配置查询	crm:customer-pool-config:query		3
+744	742	合同配置更新	crm:contract-config:update		3
+745	742	合同配置查询	crm:contract-config:query		3
+746	594	客户分析	crm:statistics-customer:query	crm/statistics/customer/index.vue	2
+747	163	抄送我的	bpm:process-instance-cc:query	bpm/task/copy/index	2
+748	149	流程分类		bpm/category/index	2
+749	748	分类查询	bpm:category:query		3
+750	748	分类创建	bpm:category:create		3
+751	748	分类更新	bpm:category:update		3
+752	748	分类删除	bpm:category:delete		3
+753	163	发起流程		bpm/processInstance/create/index	2
+754	149	流程实例		bpm/processInstance/manager/index	2
+755	754	流程实例的查询（管理员）	bpm:process-instance:manager-query		3
+756	754	流程实例的取消（管理员）	bpm:process-instance:cancel-by-admin		3
+757	149	流程任务		bpm/task/manager/index	2
+758	757	流程任务的查询（管理员）	bpm:task:manager-query		3
+759	149	流程监听器		bpm/processListener/index	2
+760	759	流程监听器查询	bpm:process-listener:query		3
+761	759	流程监听器创建	bpm:process-listener:create		3
+762	759	流程监听器更新	bpm:process-listener:update		3
+763	759	流程监听器删除	bpm:process-listener:delete		3
+764	149	流程表达式		bpm/processExpression/index	2
+765	764	流程表达式查询	bpm:process-expression:query		3
+766	764	流程表达式创建	bpm:process-expression:create		3
+767	764	流程表达式更新	bpm:process-expression:update		3
+768	764	流程表达式删除	bpm:process-expression:delete		3
+769	594	员工业绩	crm:statistics-performance:query	crm/statistics/performance/index	2
+770	594	客户画像	crm:statistics-portrait:query	crm/statistics/portrait/index	2
+771	594	销售漏斗	crm:statistics-funnel:query	crm/statistics/funnel/index	2
+772	1	消息中心			1
+773	2	监控中心			1
+774	580	领取公海客户	crm:customer:receive		3
+775	580	分配公海客户	crm:customer:distribute		3
+776	579	商品统计查询	statistics:product:query		3
+777	579	商品统计导出	statistics:product:export		3
+778	118	支付渠道查询	pay:channel:query		3
+779	118	支付渠道创建	pay:channel:create		3
+780	118	支付渠道更新	pay:channel:update		3
+781	118	支付渠道删除	pay:channel:delete		3
+782	220	商品收藏查询	product:favorite:query		3
+783	220	商品浏览查询	product:browse-history:query		3
+784	267	售后同意	trade:after-sale:agree		3
+785	267	售后不同意	trade:after-sale:disagree		3
+786	267	售后确认退货	trade:after-sale:receive		3
+787	267	售后确认退款	trade:after-sale:refund		3
+788	341	删除项目	report:go-view-project:delete		3
+789	412	会员等级记录查询	member:level-record:query		3
+790	412	会员经验记录查询	member:experience-record:query		3
+791	0	AI 大模型			1
+792	791	AI 对话		ai/chat/index/index.vue	2
+793	791	控制台			1
+794	793	API 密钥		ai/model/apiKey/index.vue	2
+795	794	API 密钥查询	ai:api-key:query		3
+796	794	API 密钥创建	ai:api-key:create		3
+797	794	API 密钥更新	ai:api-key:update		3
+798	794	API 密钥删除	ai:api-key:delete		3
+800	793	模型配置		ai/model/model/index.vue	2
+801	800	聊天模型查询	ai:model:query		3
+802	800	聊天模型创建	ai:model:create		3
+803	800	聊天模型更新	ai:model:update		3
+804	800	聊天模型删除	ai:model:delete		3
+806	793	聊天角色		ai/model/chatRole/index.vue	2
+807	806	聊天角色查询	ai:chat-role:query		3
+808	806	聊天角色创建	ai:chat-role:create		3
+809	806	聊天角色更新	ai:chat-role:update		3
+810	806	聊天角色删除	ai:chat-role:delete		3
+811	793	聊天管理		ai/chat/manager/index.vue	2
+812	811	会话查询	ai:chat-conversation:query		3
+813	811	会话删除	ai:chat-conversation:delete		3
+814	811	消息查询	ai:chat-message:query		3
+815	811	消息删除	ai:chat-message:delete		3
+816	791	AI 绘画		ai/image/index/index.vue	2
+817	793	绘画管理		ai/image/manager/index.vue	2
+818	817	绘画查询	ai:image:query		3
+819	817	绘画删除	ai:image:delete		3
+820	817	绘图更新	ai:image:update		3
+821	793	音乐管理		ai/music/manager/index.vue	2
+822	821	音乐查询	ai:music:query		3
+823	821	音乐更新	ai:music:update		3
+824	821	音乐删除	ai:music:delete		3
+825	791	AI 写作		ai/write/index/index.vue	2
+826	793	写作管理		ai/write/manager/index.vue	2
+827	826	AI 写作查询	ai:write:query		3
+828	826	AI 写作删除	ai:write:delete		3
+829	791	AI 音乐		ai/music/index/index.vue	2
+830	449	客服中心		mall/promotion/kefu/index	2
+831	791	AI 思维导图		ai/mindmap/index/index.vue	2
+832	793	导图管理		ai/mindmap/manager/index	2
+833	832	思维导图查询	ai:mind-map:query		3
+834	832	思维导图删除	ai:mind-map:delete		3
+835	830	会话查询	promotion:kefu-conversation:query		3
+836	830	会话更新	promotion:kefu-conversation:update		3
+837	830	消息查询	promotion:kefu-message:query		3
+838	830	会话删除	promotion:kefu-conversation:delete		3
+839	830	消息发送	promotion:kefu-message:send		3
+840	830	消息更新	promotion:kefu-message:update		3
+841	235	积分商城		mall/promotion/point/activity/index	2
+842	841	积分商城活动查询	promotion:point-activity:query		3
+843	841	积分商城活动创建	promotion:point-activity:create		3
+844	841	积分商城活动更新	promotion:point-activity:update		3
+845	841	积分商城活动删除	promotion:point-activity:delete		3
+846	841	积分商城活动导出	promotion:point-activity:export		3
+847	433	创建推广员	trade:brokerage-user:create		3
+848	156	流程清理	bpm:model:clean		3
+849	841	积分商城活动关闭	promotion:point-activity:close		3
+850	791	AI 知识库		ai/knowledge/knowledge/index	2
+851	850	AI 知识库查询	ai:knowledge:query		3
+852	850	AI 知识库创建	ai:knowledge:create		3
+853	850	AI 知识库更新	ai:knowledge:update		3
+854	850	AI 知识库删除	ai:knowledge:delete		3
+855	793	工具管理		ai/model/tool/index.vue	2
+856	855	工具查询	ai:tool:query		3
+857	855	工具创建	ai:tool:create		3
+858	855	工具更新	ai:tool:update		3
+859	855	工具删除	ai:tool:delete		3
+860	0	IoT 物联网			1
+861	860	设备接入			1
+862	861	产品管理		iot/product/product/index	2
+863	862	产品查询	iot:product:query		3
+864	862	产品创建	iot:product:create		3
+865	862	产品更新	iot:product:update		3
+866	862	产品删除	iot:product:delete		3
+867	862	产品导出	iot:product:export		3
+868	861	设备管理		iot/device/device/index	2
+869	868	设备查询	iot:device:query		3
+870	868	设备创建	iot:device:create		3
+871	868	设备更新	iot:device:update		3
+872	868	设备删除	iot:device:delete		3
+873	868	设备导出	iot:device:export		3
+874	861	产品分类		iot/product/category/index	2
+875	874	产品分类查询	iot:product-category:query		3
+876	874	产品分类创建	iot:product-category:create		3
+877	874	产品分类更新	iot:product-category:update		3
+878	874	产品分类删除	iot:product-category:delete		3
+885	861	设备分组		iot/device/group/index	2
+886	885	设备分组查询	iot:device-group:query		3
+887	885	设备分组创建	iot:device-group:create		3
+888	885	设备分组更新	iot:device-group:update		3
+889	885	设备分组删除	iot:device-group:delete		3
+890	868	设备导入	iot:device:import		3
+891	861	产品物模型		iot/thingmodel/index	2
+892	891	产品物模型功能查询	iot:thing-model:query		3
+893	891	产品物模型功能创建	iot:thing-model:create		3
+894	891	产品物模型功能更新	iot:thing-model:update		3
+895	891	产品物模型功能删除	iot:thing-model:delete		3
+896	891	产品物模型功能导出	iot:thing-model:export		3
+897	868	设备消息发送	iot:device:message-send		3
+898	868	设备属性查询	iot:device:property-query		3
+899	868	设备消息查询	iot:device:message-query		3
+901	860	运维管理			1
+902	860	规则引擎			1
+903	902	场景联动		iot/rule/scene/index	2
+904	860	IoT 首页		iot/home/index	2
+905	902	数据流转		iot/rule/data/index	2
+906	905	数据流转规则查询	iot:data-rule:query		3
+907	905	数据流转规则创建	iot:data-rule:create		3
+908	905	数据流转规则更新	iot:data-rule:update		3
+909	905	数据流转规则删除	iot:data-rule:delete		3
+911	791	AI 工作流		ai/workflow/index.vue	2
+912	911	AI 工作流查询	ai:workflow:query		3
+913	911	AI 工作流创建	ai:workflow:create		3
+914	911	AI 工作流更新	ai:workflow:update		3
+915	911	AI 工作流删除	ai:workflow:delete		3
+916	911	AI 工作流测试	ai:workflow:test		3
+919	207	仪表盘设计器		report/jmreport/bi	2
+920	129	租户切换	system:tenant:visit		3
+921	593	转账订单查询	pay:transfer:query		3
+922	593	转账订单导出	pay:transfer:export		3
+923	903	场景联动查询	iot:rule-scene:query		3
+924	903	场景联动创建	iot:rule-scene:create		3
+925	903	场景联动更新	iot:rule-scene:update		3
+926	903	场景联动删除	iot:rule-scene:delete		3
+927	903	场景联动导出	iot:rule-scene:export		3
+928	905	数据流转目的查询	iot:data-sink:query		3
+929	905	数据流转目的创建	iot:data-sink:create		3
+930	905	数据流转目的更新	iot:data-sink:update		3
+931	905	数据流转目的删除	iot:data-sink:delete		3
+932	938	告警配置		iot/alert/config/index	2
+933	932	告警配置查询	iot:alert-config:query		3
+934	932	告警配置创建	iot:alert-config:create		3
+935	932	告警配置更新	iot:alert-config:update		3
+936	932	告警配置删除	iot:alert-config:delete		3
+938	860	告警中心			1
+939	938	告警记录		iot/alert/record/index	2
+940	939	告警记录查询	iot:alert-record:query		3
+941	939	告警记录处理	iot:alert-record:process		3
+942	901	OTA 固件		iot/ota/firmware/index	2
+943	942	OTA 固件查询	iot:ota-firmware:query		3
+944	942	OTA 固件创建	iot:ota-firmware:create		3
+945	942	OTA 固件更新	iot:ota-firmware:update		3
+946	942	OTA 固件删除	iot:ota-firmware:delete		3
+947	942	OTA 升级任务查询	iot:ota-task:query		3
+948	942	OTA 升级任务取消	iot:ota-task:cancel		3
+949	942	OTA 升级任务创建	iot:ota-task:create		3
+950	942	OTA 升级记录查询	iot:ota-task-record:query		3
+951	942	OTA 升级记录取消	iot:ota-task-record:cancel		3
+952	272	模版消息		mp/messageTemplate/index	2
+953	952	查询模版消息	mp:message-template:query		3
+954	952	删除模版消息	mp:message-template:delete		3
+955	952	同步公众号模板	mp:message-template:sync		3
+956	952	给粉丝发送模版消息	mp:message-template:send		3
+959	0	MES 系统			1
+960	959	基础数据			1
+961	960	物料产品分类		mes/md/item/type/index	2
+962	961	分类查询	mes:md-item-type:query		3
+963	961	分类创建	mes:md-item-type:create		3
+964	961	分类更新	mes:md-item-type:update		3
+965	961	分类删除	mes:md-item-type:delete		3
+967	960	物料产品管理		mes/md/item/index	2
+968	967	物料查询	mes:md-item:query		3
+969	967	物料创建	mes:md-item:create		3
+970	967	物料更新	mes:md-item:update		3
+971	967	物料删除	mes:md-item:delete		3
+972	967	物料导出	mes:md-item:export		3
+973	967	物料导入	mes:md-item:import		3
+974	960	计量单位		mes/md/unitmeasure/index	2
+975	974	单位查询	mes:md-unit-measure:query		3
+976	974	单位创建	mes:md-unit-measure:create		3
+977	974	单位更新	mes:md-unit-measure:update		3
+978	974	单位删除	mes:md-unit-measure:delete		3
+979	974	单位导出	mes:md-unit-measure:export		3
+980	960	客户管理		mes/md/client/index	2
+981	980	客户查询	mes:md-client:query		3
+982	980	客户创建	mes:md-client:create		3
+983	980	客户更新	mes:md-client:update		3
+984	980	客户删除	mes:md-client:delete		3
+985	980	客户导出	mes:md-client:export		3
+986	980	客户导入	mes:md-client:import		3
+987	960	供应商管理		mes/md/vendor/index	2
+988	987	供应商查询	mes:md-vendor:query		3
+989	987	供应商创建	mes:md-vendor:create		3
+990	987	供应商更新	mes:md-vendor:update		3
+991	987	供应商删除	mes:md-vendor:delete		3
+992	987	供应商导出	mes:md-vendor:export		3
+993	987	供应商导入	mes:md-vendor:import		3
+994	960	车间设置		mes/md/workstation/workshop/index	2
+995	994	车间查询	mes:md-workshop:query		3
+996	994	车间创建	mes:md-workshop:create		3
+997	994	车间更新	mes:md-workshop:update		3
+998	994	车间删除	mes:md-workshop:delete		3
+1000	960	工作站设置		mes/md/workstation/index	2
+1001	1000	工位查询	mes:md-workstation:query		3
+1002	1000	工位创建	mes:md-workstation:create		3
+1003	1000	工位更新	mes:md-workstation:update		3
+1004	1000	工位删除	mes:md-workstation:delete		3
+1005	1000	工位导出	mes:md-workstation:export		3
+1006	960	编码规则		mes/md/autocode/index	2
+1007	1006	编码规则查询	mes:auto-code-rule:query		3
+1008	1006	编码规则创建	mes:auto-code-rule:create		3
+1009	1006	编码规则更新	mes:auto-code-rule:update		3
+1010	1006	编码规则删除	mes:auto-code-rule:delete		3
+1011	1006	编码规则导出	mes:auto-code-rule:export		3
+1012	959	排班管理			1
+1013	1012	班组设置		mes/cal/team/index	2
+1014	1013	班组查询	mes:cal-team:query		3
+1015	1013	班组创建	mes:cal-team:create		3
+1016	1013	班组更新	mes:cal-team:update		3
+1017	1013	班组删除	mes:cal-team:delete		3
+1018	1013	班组导出	mes:cal-team:export		3
+1019	1012	排班è®¡åˆ’		mes/cal/plan/index	2
+1020	1019	排班è®¡åˆ’查询	mes:cal-plan:query		3
+1021	1019	排班è®¡åˆ’创建	mes:cal-plan:create		3
+1022	1019	排班è®¡åˆ’更新	mes:cal-plan:update		3
+1023	1019	排班è®¡åˆ’删除	mes:cal-plan:delete		3
+1024	1019	排班è®¡åˆ’导出	mes:cal-plan:export		3
+1025	1012	节假日设置		mes/cal/holiday/index	2
+1026	1025	假期查询	mes:cal-holiday:query		3
+1027	1025	假期创建	mes:cal-holiday:create		3
+1028	1025	假期更新	mes:cal-holiday:update		3
+1029	1025	假期删除	mes:cal-holiday:delete		3
+1030	1025	假期导出	mes:cal-holiday:export		3
+1031	1012	排班日历		mes/cal/calendar/index	2
+1032	1031	排班日历查询	mes:cal-team-shift:query		3
+1033	959	设备管理			1
+1034	1033	设备类型		mes/dv/machinery/type/index	2
+1035	1034	类型查询	mes:dv-machinery-type:query		3
+1036	1034	类型创建	mes:dv-machinery-type:create		3
+1037	1034	类型更新	mes:dv-machinery-type:update		3
+1038	1034	类型删除	mes:dv-machinery-type:delete		3
+1039	1034	类型导出	mes:dv-machinery-type:export		3
+1040	1033	设备台账		mes/dv/machinery/index	2
+1041	1040	设备查询	mes:dv-machinery:query		3
+1042	1040	设备创建	mes:dv-machinery:create		3
+1043	1040	设备更新	mes:dv-machinery:update		3
+1044	1040	设备删除	mes:dv-machinery:delete		3
+1045	1040	设备导出	mes:dv-machinery:export		3
+1046	1040	设备导入	mes:dv-machinery:import		3
+1047	1033	点检保养项目		mes/dv/subject/index	2
+1048	1047	项目查询	mes:dv-subject:query		3
+1049	1047	项目创建	mes:dv-subject:create		3
+1050	1047	项目更新	mes:dv-subject:update		3
+1051	1047	项目删除	mes:dv-subject:delete		3
+1052	1047	项目导出	mes:dv-subject:export		3
+1053	1033	保养记录		mes/dv/maintenrecord/index	2
+1054	1053	保养记录查询	mes:dv-mainten-record:query		3
+1055	1053	保养记录创建	mes:dv-mainten-record:create		3
+1056	1053	保养记录更新	mes:dv-mainten-record:update		3
+1057	1053	保养记录删除	mes:dv-mainten-record:delete		3
+1058	1053	保养记录导出	mes:dv-mainten-record:export		3
+1059	1033	点检保养方案		mes/dv/checkplan/index	2
+1060	1059	方案查询	mes:dv-check-plan:query		3
+1061	1059	方案创建	mes:dv-check-plan:create		3
+1062	1059	方案更新	mes:dv-check-plan:update		3
+1063	1059	方案删除	mes:dv-check-plan:delete		3
+1064	1059	方案导出	mes:dv-check-plan:export		3
+1065	1033	点检记录		mes/dv/checkrecord/index	2
+1066	1065	点检记录查询	mes:dv-check-record:query		3
+1067	1065	点检记录创建	mes:dv-check-record:create		3
+1068	1065	点检记录更新	mes:dv-check-record:update		3
+1069	1065	点检记录删除	mes:dv-check-record:delete		3
+1070	1065	点检记录导出	mes:dv-check-record:export		3
+1071	1065	工单导出	mes:dv-repair:export		3
+1072	1033	维修单		mes/dv/repair/index	2
+1073	1072	工单查询	mes:dv-repair:query		3
+1074	1072	工单创建	mes:dv-repair:create		3
+1075	1072	工单更新	mes:dv-repair:update		3
+1076	1072	工单删除	mes:dv-repair:delete		3
+1077	1072	工单导出	mes:dv-repair:export		3
+1078	959	工具管理			1
+1079	1078	工具类型设置		mes/tm/tool/type/index	2
+1080	1079	类型查询	mes:tm-tool-type:query		3
+1081	1079	类型创建	mes:tm-tool-type:create		3
+1082	1079	类型更新	mes:tm-tool-type:update		3
+1083	1079	类型删除	mes:tm-tool-type:delete		3
+1084	1079	类型导出	mes:tm-tool-type:export		3
+1085	1078	工装夹具台账		mes/tm/tool/index	2
+1086	1085	工具查询	mes:tm-tool:query		3
+1087	1085	工具创建	mes:tm-tool:create		3
+1088	1085	工具更新	mes:tm-tool:update		3
+1089	1085	工具删除	mes:tm-tool:delete		3
+1090	1085	工具导出	mes:tm-tool:export		3
+1091	959	质量管理			1
+1092	1091	常见缺陷		mes/qc/defect/index	2
+1093	1092	缺陷类型查询	mes:qc-defect:query		3
+1094	1092	缺陷类型创建	mes:qc-defect:create		3
+1095	1092	缺陷类型更新	mes:qc-defect:update		3
+1096	1092	缺陷类型删除	mes:qc-defect:delete		3
+1097	1092	缺陷类型导出	mes:qc-defect:export		3
+1098	1162	生产工单		mes/pro/workorder/index	2
+1099	1098	工单查询	mes:pro-work-order:query		3
+1100	1098	工单创建	mes:pro-work-order:create		3
+1101	1098	工单更新	mes:pro-work-order:update		3
+1102	1098	工单删除	mes:pro-work-order:delete		3
+1103	1098	工单导出	mes:pro-work-order:export		3
+1104	1162	生产排产		mes/pro/task/index	2
+1105	1104	排产查询	mes:pro-task:query		3
+1106	1104	排产创建	mes:pro-task:create		3
+1107	1104	排产更新	mes:pro-task:update		3
+1108	1104	排产删除	mes:pro-task:delete		3
+1109	1104	排产导出	mes:pro-task:export		3
+1110	1162	生产报工		mes/pro/feedback/index	2
+1111	1110	报工查询	mes:pro-feedback:query		3
+1112	1110	报工创建	mes:pro-feedback:create		3
+1113	1110	报工更新	mes:pro-feedback:update		3
+1114	1110	报工删除	mes:pro-feedback:delete		3
+1115	1110	报工导出	mes:pro-feedback:export		3
+1116	1162	工序流转		mes/pro/card/index	2
+1117	1116	流转卡查询	mes:pro-card:query		3
+1118	1116	流转卡创建	mes:pro-card:create		3
+1119	1116	流转卡更新	mes:pro-card:update		3
+1120	1116	流转卡删除	mes:pro-card:delete		3
+1121	1116	流转卡导出	mes:pro-card:export		3
+1122	1116	流转卡完成	mes:pro-card:finish		3
+1124	1091	检测项设置		mes/qc/indicator/index	2
+1125	1124	质检指标查询	mes:qc-indicator:query		3
+1126	1124	质检指标创建	mes:qc-indicator:create		3
+1127	1124	质检指标更新	mes:qc-indicator:update		3
+1128	1124	质检指标删除	mes:qc-indicator:delete		3
+1129	1124	质检指标导出	mes:qc-indicator:export		3
+1130	1091	质检方案		mes/qc/template/index	2
+1131	1130	质检方案查询	mes:qc-template:query		3
+1132	1130	质检方案创建	mes:qc-template:create		3
+1133	1130	质检方案更新	mes:qc-template:update		3
+1134	1130	质检方案删除	mes:qc-template:delete		3
+1135	1130	质检方案导出	mes:qc-template:export		3
+1136	1091	来料检验		mes/qc/iqc/index	2
+1137	1136	来料检验查询	mes:qc-iqc:query		3
+1138	1136	来料检验创建	mes:qc-iqc:create		3
+1139	1136	来料检验更新	mes:qc-iqc:update		3
+1140	1136	来料检验删除	mes:qc-iqc:delete		3
+1141	1136	来料检验导出	mes:qc-iqc:export		3
+1142	1091	过程检验		mes/qc/ipqc/index	2
+1143	1142	过程检验查询	mes:qc-ipqc:query		3
+1144	1142	过程检验创建	mes:qc-ipqc:create		3
+1145	1142	过程检验更新	mes:qc-ipqc:update		3
+1146	1142	过程检验删除	mes:qc-ipqc:delete		3
+1147	1142	过程检验导出	mes:qc-ipqc:export		3
+1148	1091	出货检验		mes/qc/oqc/index	2
+1149	1148	出货检验查询	mes:qc-oqc:query		3
+1150	1148	出货检验创建	mes:qc-oqc:create		3
+1151	1148	出货检验更新	mes:qc-oqc:update		3
+1152	1148	出货检验删除	mes:qc-oqc:delete		3
+1153	1148	出货检验导出	mes:qc-oqc:export		3
+1154	1091	退料检验		mes/qc/rqc/index	2
+1155	1154	退货检验查询	mes:qc-rqc:query		3
+1156	1154	退货检验创建	mes:qc-rqc:create		3
+1157	1154	退货检验更新	mes:qc-rqc:update		3
+1158	1154	退货检验删除	mes:qc-rqc:delete		3
+1159	1154	退货检验导出	mes:qc-rqc:export		3
+1160	1091	待检任务		mes/qc/pendinginspect/index	2
+1161	1160	待检任务查询	mes:qc-pending-inspect:query		3
+1162	959	生产管理			1
+1163	1162	工序设置		mes/pro/process/index	2
+1164	1163	工序查询	mes:pro-process:query		3
+1165	1163	工序创建	mes:pro-process:create		3
+1166	1163	工序更新	mes:pro-process:update		3
+1167	1163	工序删除	mes:pro-process:delete		3
+1168	1163	工序导出	mes:pro-process:export		3
+1169	1162	工艺流程		mes/pro/route/index	2
+1170	1169	工艺路线查询	mes:pro-route:query		3
+1171	1169	工艺路线创建	mes:pro-route:create		3
+1172	1169	工艺路线更新	mes:pro-route:update		3
+1173	1169	工艺路线删除	mes:pro-route:delete		3
+1174	1169	工艺路线导出	mes:pro-route:export		3
+1175	1162	安灯呼叫		mes/pro/andon/record/index	2
+1176	1175	安灯记录查询	mes:pro-andon-record:query		3
+1177	1175	安灯记录创建	mes:pro-andon-record:create		3
+1178	1175	安灯记录更新	mes:pro-andon-record:update		3
+1179	1175	安灯记录删除	mes:pro-andon-record:delete		3
+1180	1175	安灯记录导出	mes:pro-andon-record:export		3
+1181	1175	安灯配置查询	mes:pro-andon-config:query		3
+1182	1175	安灯配置创建	mes:pro-andon-config:create		3
+1183	1175	安灯配置更新	mes:pro-andon-config:update		3
+1184	1175	安灯配置删除	mes:pro-andon-config:delete		3
+1185	959	仓库管理			1
+1186	1185	仓库设置		mes/wm/warehouse/index	2
+1187	1186	仓库查询	mes:wm-warehouse:query		3
+1188	1186	仓库创建	mes:wm-warehouse:create		3
+1189	1186	仓库更新	mes:wm-warehouse:update		3
+1190	1186	仓库删除	mes:wm-warehouse:delete		3
+1191	1185	库存现有量		mes/wm/materialstock/index	2
+1192	1191	库存台账查询	mes:wm-material-stock:query		3
+1193	1191	库存台账创建	mes:wm-material-stock:create		3
+1194	1191	库存台账更新	mes:wm-material-stock:update		3
+1195	1191	库存台账删除	mes:wm-material-stock:delete		3
+1196	1191	库存台账导出	mes:wm-material-stock:export		3
+1197	1185	到货通知		mes/wm/arrivalnotice/index	2
+1198	1197	到货通知单查询	mes:wm-arrival-notice:query		3
+1199	1197	到货通知单创建	mes:wm-arrival-notice:create		3
+1200	1197	到货通知单更新	mes:wm-arrival-notice:update		3
+1201	1197	到货通知单删除	mes:wm-arrival-notice:delete		3
+1202	1197	到货通知单导出	mes:wm-arrival-notice:export		3
+1203	1185	采购入库		mes/wm/itemreceipt/index	2
+1204	1203	采购入库单查询	mes:wm-item-receipt:query		3
+1205	1203	采购入库单创建	mes:wm-item-receipt:create		3
+1206	1203	采购入库单更新	mes:wm-item-receipt:update		3
+1207	1203	采购入库单删除	mes:wm-item-receipt:delete		3
+1208	1203	采购入库单导出	mes:wm-item-receipt:export		3
+1209	1203	采购入库单完成	mes:wm-item-receipt:finish		3
+1210	1185	生产领料		mes/wm/productissue/index	2
+1211	1210	领料出库单查询	mes:wm-product-issue:query		3
+1212	1210	领料出库单新增	mes:wm-product-issue:create		3
+1213	1210	领料出库单修改	mes:wm-product-issue:update		3
+1214	1210	领料出库单删除	mes:wm-product-issue:delete		3
+1215	1210	领料出库单导出	mes:wm-product-issue:export		3
+1216	1210	领料出库单完成	mes:wm-product-issue:finish		3
+1217	1185	产品入库		mes/wm/productreceipt/index	2
+1218	1217	产品入库单查询	mes:wm-product-receipt:query		3
+1219	1217	产品入库单新增	mes:wm-product-receipt:create		3
+1220	1217	产品入库单修改	mes:wm-product-receipt:update		3
+1221	1217	产品入库单删除	mes:wm-product-receipt:delete		3
+1222	1217	产品入库单导出	mes:wm-product-receipt:export		3
+1223	1217	产品入库单完成	mes:wm-product-receipt:finish		3
+1224	1185	采购退货		mes/wm/returnvendor/index	2
+1225	1224	供应商退货单查询	mes:wm-return-vendor:query		3
+1226	1224	供应商退货单新增	mes:wm-return-vendor:create		3
+1227	1224	供应商退货单修改	mes:wm-return-vendor:update		3
+1228	1224	供应商退货单删除	mes:wm-return-vendor:delete		3
+1229	1224	供应商退货单导出	mes:wm-return-vendor:export		3
+1230	1224	供应商退货单状态变更	mes:wm-return-vendor:update-status		3
+1231	1185	生产退料		mes/wm/returnissue/index	2
+1232	1231	生产退料单查询	mes:wm-return-issue:query		3
+1233	1231	生产退料单新增	mes:wm-return-issue:create		3
+1234	1231	生产退料单修改	mes:wm-return-issue:update		3
+1235	1231	生产退料单删除	mes:wm-return-issue:delete		3
+1236	1231	生产退料单导出	mes:wm-return-issue:export		3
+1237	1231	生产退料单执行	mes:wm-return-issue:finish		3
+1238	1185	销售退货		mes/wm/returnsales/index	2
+1239	1238	销售退货单查询	mes:wm-return-sales:query		3
+1240	1238	销售退货单新增	mes:wm-return-sales:create		3
+1241	1238	销售退货单修改	mes:wm-return-sales:update		3
+1242	1238	销售退货单删除	mes:wm-return-sales:delete		3
+1243	1238	销售退货单导出	mes:wm-return-sales:export		3
+1244	1238	销售退货单提交	mes:wm-return-sales:submit		3
+1245	1238	销售退货单完成退货	mes:wm-return-sales:finish		3
+1246	1238	销售退货单执行上架	mes:wm-return-sales:stock		3
+1247	1238	销售退货单取消	mes:wm-return-sales:cancel		3
+1248	1185	杂项出库		mes/wm/miscissue/index	2
+1249	1248	杂项出库查询	mes:wm-misc-issue:query		3
+1250	1248	杂项出库新增	mes:wm-misc-issue:create		3
+1251	1248	杂项出库修改	mes:wm-misc-issue:update		3
+1252	1248	杂项出库删除	mes:wm-misc-issue:delete		3
+1253	1248	杂项出库导出	mes:wm-misc-issue:export		3
+1254	1248	杂项出库执行	mes:wm-misc-issue:finish		3
+1255	1185	发货通知		mes/wm/salesnotice/index	2
+1256	1255	查询发货通知	mes:wm-sales-notice:query		3
+1257	1255	创建发货通知	mes:wm-sales-notice:create		3
+1258	1255	更新发货通知	mes:wm-sales-notice:update		3
+1259	1255	删除发货通知	mes:wm-sales-notice:delete		3
+1260	1255	导出发货通知	mes:wm-sales-notice:export		3
+1261	1185	外协入库		mes/wm/outsourcereceipt/index	2
+1262	1261	外协入库单查询	mes:wm-outsource-receipt:query		3
+1263	1261	外协入库单新增	mes:wm-outsource-receipt:create		3
+1264	1261	外协入库单修改	mes:wm-outsource-receipt:update		3
+1265	1261	外协入库单删除	mes:wm-outsource-receipt:delete		3
+1266	1261	外协入库单导出	mes:wm-outsource-receipt:export		3
+1267	1261	外协入库单完成	mes:wm-outsource-receipt:finish		3
+1268	1185	外协发料		mes/wm/outsourceissue/index	2
+1269	1268	外协发料单查询	mes:wm-outsource-issue:query		3
+1270	1268	外协发料单新增	mes:wm-outsource-issue:create		3
+1271	1268	外协发料单修改	mes:wm-outsource-issue:update		3
+1272	1268	外协发料单删除	mes:wm-outsource-issue:delete		3
+1273	1268	外协发料单导出	mes:wm-outsource-issue:export		3
+1274	1268	外协发料单执行出库	mes:wm-outsource-issue:execute		3
+1275	1185	杂项入库		mes/wm/miscreceipt/index	2
+1276	1275	杂项入库查询	mes:wm:misc-receipt:query		3
+1277	1275	杂项入库创建	mes:wm:misc-receipt:create		3
+1278	1275	杂项入库更新	mes:wm:misc-receipt:update		3
+1279	1275	杂项入库删除	mes:wm:misc-receipt:delete		3
+1280	1275	杂项入库提交	mes:wm:misc-receipt:submit		3
+1281	1275	杂项入库执行	mes:wm:misc-receipt:finish		3
+1282	1275	杂项入库取消	mes:wm:misc-receipt:cancel		3
+1283	1275	杂项入库导出	mes:wm:misc-receipt:export		3
+1284	1185	SN 码		mes/wm/sn/index	2
+1285	1284	SN 码查询	mes:wm-sn:query		3
+1286	1284	SN 码生成	mes:wm-sn:create		3
+1287	1284	SN 码删除	mes:wm-sn:delete		3
+1288	1284	SN 码导出	mes:wm-sn:export		3
+1289	1185	条码配置		mes/wm/barcode/config/index	2
+1290	1289	条码配置查询	mes:wm-barcode-config:query		3
+1291	1289	条码配置创建	mes:wm-barcode-config:create		3
+1292	1289	条码配置更新	mes:wm-barcode-config:update		3
+1293	1289	条码配置删除	mes:wm-barcode-config:delete		3
+1294	1185	赋能管理		mes/wm/barcode/index	2
+1295	1294	条码清单查询	mes:wm-barcode:query		3
+1296	1294	条码清单创建	mes:wm-barcode:create		3
+1297	1294	条码清单更新	mes:wm-barcode:update		3
+1298	1294	条码清单删除	mes:wm-barcode:delete		3
+1299	1294	条码清单导出	mes:wm-barcode:export		3
+1300	1185	装箱管理		mes/wm/packages/index	2
+1301	1300	装箱管理查询	mes:wm-package:query		3
+1302	1300	装箱管理新增	mes:wm-package:create		3
+1303	1300	装箱管理修改	mes:wm-package:update		3
+1304	1300	装箱管理删除	mes:wm-package:delete		3
+1305	1185	转移调拨		mes/wm/transfer/index	2
+1306	1305	调拨单查询	mes:wm-transfer:query		3
+1307	1305	调拨单新增	mes:wm-transfer:create		3
+1308	1305	调拨单修改	mes:wm-transfer:update		3
+1309	1305	调拨单删除	mes:wm-transfer:delete		3
+1310	1305	调拨单导出	mes:wm-transfer:export		3
+1311	1305	调拨单提交	mes:wm-transfer:submit		3
+1312	1305	调拨单确认	mes:wm-transfer:confirm		3
+1313	1305	调拨单完成	mes:wm-transfer:finish		3
+1314	1305	调拨单取消	mes:wm-transfer:cancel		3
+1315	1185	库存盘点			1
+1316	1315	盘点方案		mes/wm/stocktaking/plan/index	2
+1317	1316	盘点方案查询	mes:wm-stock-taking-plan:query		3
+1318	1316	盘点方案创建	mes:wm-stock-taking-plan:create		3
+1319	1316	盘点方案更新	mes:wm-stock-taking-plan:update		3
+1320	1316	盘点方案删除	mes:wm-stock-taking-plan:delete		3
+1321	1316	盘点方案导出	mes:wm-stock-taking-plan:export		3
+1322	1315	盘点任务		mes/wm/stocktaking/task/index	2
+1323	1322	盘点任务查询	mes:wm-stock-taking-task:query		3
+1324	1322	盘点任务创建	mes:wm-stock-taking-task:create		3
+1325	1322	盘点任务更新	mes:wm-stock-taking-task:update		3
+1326	1322	盘点任务删除	mes:wm-stock-taking-task:delete		3
+1327	1322	盘点任务导出	mes:wm-stock-taking-task:export		3
+1328	1091	批次追溯		mes/qc/batchtrace/index	2
+1329	1328	批次追溯查询	mes:wm-batch:query		3
+1331	1110	报告审批	mes:pro-feedback:approve		3
+1332	1185	销售出库		mes/wm/productsales/index	2
+1333	1332	查询销售出库	mes:wm-product-sales:query		3
+1334	1332	创建销售出库	mes:wm-product-sales:create		3
+1335	1332	更新销售出库	mes:wm-product-sales:update		3
+1336	1332	删除销售出库	mes:wm-product-sales:delete		3
+1337	1332	导出销售出库	mes:wm-product-sales:export		3
+1338	1332	提交销售出库	mes:wm-product-sales:submit		3
+1339	1332	执行拣货	mes:wm-product-sales:stock		3
+1340	1332	填写运单	mes:wm-product-sales:shipping		3
+1341	1332	执行出库	mes:wm-product-sales:finish		3
+1342	1332	取消销售出库	mes:wm-product-sales:cancel		3
+1343	1162	工作记录		mes/pro/workrecord/index	2
+1344	1343	工作记录查询	mes:pro-workrecord:query		3
+1345	1343	工作记录导出	mes:pro-workrecord:export		3
+1346	1343	上工下工	mes:pro-workrecord:clock		3
+1347	959	MES 首页	mes:home:query	mes/home/index	2
+1348	0	WMS 系统			1
+1349	1348	基础数据			1
+1350	1349	仓库管理		wms/md/warehouse/index	2
+1351	1350	仓库查询	wms:warehouse:query		3
+1352	1350	仓库创建	wms:warehouse:create		3
+1353	1350	仓库更新	wms:warehouse:update		3
+1354	1350	仓库删除	wms:warehouse:delete		3
+1355	1349	商品品牌		wms/md/item/brand/index	2
+1356	1355	品牌查询	wms:item-brand:query		3
+1357	1355	品牌创建	wms:item-brand:create		3
+1358	1355	品牌更新	wms:item-brand:update		3
+1359	1355	品牌删除	wms:item-brand:delete		3
+1360	1355	品牌导出	wms:item-brand:export		3
+1361	1350	仓库导出	wms:warehouse:export		3
+1362	1349	商品分类		wms/md/item/category/index	2
+1363	1362	分类查询	wms:item-category:query		3
+1364	1362	分类创建	wms:item-category:create		3
+1365	1362	分类更新	wms:item-category:update		3
+1366	1362	分类删除	wms:item-category:delete		3
+1367	1349	商品管理		wms/md/item/index	2
+1368	1367	商品查询	wms:item:query		3
+1369	1367	商品创建	wms:item:create		3
+1370	1367	商品更新	wms:item:update		3
+1371	1367	商品删除	wms:item:delete		3
+1372	1367	商品导出	wms:item:export		3
+1373	1349	往来企业		wms/md/merchant/index	2
+1374	1373	往来企业查询	wms:merchant:query		3
+1375	1373	往来企业创建	wms:merchant:create		3
+1376	1373	往来企业更新	wms:merchant:update		3
+1377	1373	往来企业删除	wms:merchant:delete		3
+1378	1373	往来企业导出	wms:merchant:export		3
+1379	1348	库存管理			1
+1380	1379	库存统计		wms/inventory/index/index	2
+1381	1380	库存统计查询	wms:inventory:query		3
+1382	1379	库存流水		wms/inventory/history/index	2
+1383	1382	库存流水查询	wms:inventory-history:query		3
+1384	1348	入库管理		wms/order/receipt/index	2
+1385	1384	入库单查询	wms:receipt-order:query		3
+1386	1384	入库单创建	wms:receipt-order:create		3
+1387	1384	入库单更新	wms:receipt-order:update		3
+1388	1384	入库单删除	wms:receipt-order:delete		3
+1389	1384	入库单完成入库	wms:receipt-order:complete		3
+1390	1384	入库单作废	wms:receipt-order:cancel		3
+1391	1384	入库单导出	wms:receipt-order:export		3
+1393	1348	出库管理		wms/order/shipment/index	2
+1394	1393	出库单查询	wms:shipment-order:query		3
+1395	1393	出库单创建	wms:shipment-order:create		3
+1396	1393	出库单更新	wms:shipment-order:update		3
+1397	1393	出库单删除	wms:shipment-order:delete		3
+1398	1393	出库单完成出库	wms:shipment-order:complete		3
+1399	1393	出库单作废	wms:shipment-order:cancel		3
+1400	1393	出库单导出	wms:shipment-order:export		3
+1401	1348	移库管理		wms/order/movement/index	2
+1402	1401	移库单查询	wms:movement-order:query	NULL	3
+1403	1401	移库单创建	wms:movement-order:create	NULL	3
+1404	1401	移库单更新	wms:movement-order:update	NULL	3
+1405	1401	移库单删除	wms:movement-order:delete	NULL	3
+1406	1401	移库单完成移库	wms:movement-order:complete	NULL	3
+1407	1401	移库单作废	wms:movement-order:cancel	NULL	3
+1408	1401	移库单导出	wms:movement-order:export	NULL	3
+1409	1348	盘库管理		wms/order/check/index	2
+1410	1409	盘库单查询	wms:check-order:query	NULL	3
+1411	1409	盘库单创建	wms:check-order:create	NULL	3
+1412	1409	盘库单更新	wms:check-order:update	NULL	3
+1413	1409	盘库单删除	wms:check-order:delete	NULL	3
+1414	1409	盘库单完成盘库	wms:check-order:complete	NULL	3
+1415	1409	盘库单作废	wms:check-order:cancel	NULL	3
+1416	1409	盘库单导出	wms:check-order:export	NULL	3
+1417	1348	WMS 首页	wms:home:query	wms/home/index	2
+1418	0	IM 即时通讯		NULL	1
+1419	1418	数据统计	im:manager:statistics:query	im/manager/statistics/index	2
+1420	1456	好友申请	im:manager:friend-request:query	im/manager/friend/request/index	2
+1421	1456	好友列表	im:manager:friend:list	im/manager/friend/index	2
+1422	1421	好友查询	im:manager:friend:query	NULL	3
+1423	1456	好友消息	im:manager:message:private:list	im/manager/message/private/index	2
+1424	1423	私聊消息查询	im:manager:message:query	NULL	3
+1425	1457	群聊列表	im:manager:group:list	im/manager/group/index	2
+1426	1425	群组查询	im:manager:group:query	NULL	3
+1427	1425	群组封禁/解封	im:manager:group:ban	NULL	3
+1428	1457	群聊申请	im:manager:group-request:query	im/manager/group/request/index	2
+1429	1457	群聊消息	im:manager:message:group:list	im/manager/message/group/index	2
+1430	1429	群聊消息查询	im:manager:message:query	NULL	3
+1431	1418	敏感词管理	im:manager:sensitive-word:list	im/manager/sensitiveword/index	2
+1432	1431	敏感词查询	im:manager:sensitive-word:query	NULL	3
+1433	1431	敏感词新增	im:manager:sensitive-word:create	NULL	3
+1434	1431	敏感词修改	im:manager:sensitive-word:update	NULL	3
+1435	1431	敏感词删除	im:manager:sensitive-word:delete	NULL	3
+1436	1418	表情管理		NULL	1
+1437	1436	系统表情	im:manager:face-pack:list	im/manager/face/pack/index	2
+1438	1437	表情包查询	im:manager:face-pack:query		3
+1439	1437	表情包创建	im:manager:face-pack:create		3
+1440	1437	表情包修改	im:manager:face-pack:update		3
+1441	1437	表情包删除	im:manager:face-pack:delete		3
+1442	1437	表情图查询	im:manager:face-pack-item:query		3
+1443	1437	表情图创建	im:manager:face-pack-item:create		3
+1444	1437	表情图修改	im:manager:face-pack-item:update		3
+1445	1437	表情图删除	im:manager:face-pack-item:delete		3
+1446	1436	用户表情	im:manager:face-user-item:list	im/manager/face/userItem/index	2
+1447	1446	用户表情查询	im:manager:face-user-item:query		3
+1448	1446	用户表情删除	im:manager:face-user-item:delete		3
+1449	594	产品分析	crm:statistics-product:query	crm/statistics/product/index	2
+1450	594	业绩达成	crm:statistics-performance-target:query	crm/statistics/performanceTarget/index	2
+1451	564	业绩目标设置	crm:performance-config:query	crm/performance/config/index	2
+1452	1451	业绩目标查询	crm:performance-config:query		3
+1453	1451	业绩目标创建	crm:performance-config:create		3
+1454	1451	业绩目标更新	crm:performance-config:update		3
+1455	1451	业绩目标删除	crm:performance-config:delete		3
+1456	1418	私聊管理		NULL	1
+1457	1418	群聊管理		NULL	1
+1458	1418	通话记录		im/manager/rtc/index	2
+1459	1458	通话记录查询	im:manager:rtc:query	NULL	3
+1460	1418	频道管理		NULL	1
+1461	1460	频道列表		im/manager/channel/list/index	2
+1462	1461	频道查询	im:manager:channel:query		3
+1463	1461	频道创建	im:manager:channel:create		3
+1464	1461	频道修改	im:manager:channel:update		3
+1465	1461	频道删除	im:manager:channel:delete		3
+1466	1460	频道素材		im/manager/channel/material/index	2
+1467	1466	素材查询	im:manager:channel-material:query		3
+1468	1466	素材创建	im:manager:channel-material:create		3
+1469	1466	素材修改	im:manager:channel-material:update		3
+1470	1466	素材删除	im:manager:channel-material:delete		3
+1471	1460	频道消息		im/manager/channel/message/index	2
+1472	1471	消息查询	im:manager:channel-message:query		3
+1473	1471	立即推送	im:manager:channel-message:send		3
+1474	1471	消息删除	im:manager:channel-message:delete		3
+1475	1425	解散群	im:manager:group:dissolve		3
+1476	0	HRM 人力资源		NULL	1
+1477	1476	员工管理		NULL	1
+1478	1477	员工档案	hrm:employee:query	hrm/employee/index	2
+1479	1478	员工查询	hrm:employee:query	NULL	3
+1480	1478	员工新增	hrm:employee:create	NULL	3
+1481	1478	员工修改	hrm:employee:update	NULL	3
+1482	1478	员工删除	hrm:employee:delete	NULL	3
+1483	1478	员工导入	hrm:employee:import	NULL	3
+1484	1478	员工导出	hrm:employee:export	NULL	3
+1485	1477	员工设置	hrm:employee:config:query	hrm/employee/config/index	2
+1486	1476	招聘管理		NULL	1
+1487	1486	招聘职位	hrm:recruit:post:query	hrm/recruit/post/index	2
+1488	1487	职位查询	hrm:recruit:post:query	NULL	3
+1489	1487	职位新增	hrm:recruit:post:create	NULL	3
+1490	1487	职位修改	hrm:recruit:post:update	NULL	3
+1491	1486	候选人	hrm:recruit:candidate:query	hrm/recruit/candidate/index	2
+1492	1491	候选人查询	hrm:recruit:candidate:query	NULL	3
+1493	1491	候选人新增	hrm:recruit:candidate:create	NULL	3
+1494	1491	候选人修改	hrm:recruit:candidate:update	NULL	3
+1495	1491	候选人删除	hrm:recruit:candidate:delete	NULL	3
+1496	1505	招聘渠道	hrm:recruit:channel:query	hrm/recruit/channel/index	2
+1497	1496	渠道查询	hrm:recruit:channel:query	NULL	3
+1498	1496	渠道新增	hrm:recruit:channel:create	NULL	3
+1499	1496	渠道修改	hrm:recruit:channel:update	NULL	3
+1500	1496	渠道删除	hrm:recruit:channel:delete	NULL	3
+1501	1491	面试查询	hrm:recruit:interview:query	NULL	3
+1502	1491	面试新增	hrm:recruit:interview:create	NULL	3
+1503	1491	面试修改	hrm:recruit:interview:update	NULL	3
+1504	1491	面试删除	hrm:recruit:interview:delete	NULL	3
+1505	1486	招聘设置		NULL	1
+1506	1505	淘汰原因	hrm:recruit:config:query	hrm/recruit/setting/eliminate/index	2
+1507	1506	淘汰原因查询	hrm:recruit:config:query	NULL	3
+1508	1506	淘汰原因修改	hrm:recruit:config:update	NULL	3
+1509	1476	考勤管理		NULL	1
+1510	1509	打卡记录	hrm:attendance:clock:query	hrm/attendance/clock/index	2
+1511	1510	打卡查询	hrm:attendance:clock:query	NULL	3
+1512	1510	打卡新增	hrm:attendance:clock:create	NULL	3
+1513	1510	打卡修改	hrm:attendance:clock:update	NULL	3
+1514	1510	打卡删除	hrm:attendance:clock:delete	NULL	3
+1515	1520	考勤组设置	hrm:attendance:group:query	hrm/attendance/config/group/index	2
+1516	1515	考勤组查询	hrm:attendance:group:query	NULL	3
+1517	1515	考勤组新增	hrm:attendance:group:create	NULL	3
+1518	1515	考勤组修改	hrm:attendance:group:update	NULL	3
+1519	1515	考勤组删除	hrm:attendance:group:delete	NULL	3
+1520	1509	考勤设置		NULL	1
+1521	1509	请假记录	hrm:attendance:leave:query	hrm/attendance/leave/index	2
+1522	1521	请假记录查询	hrm:attendance:leave:query	NULL	3
+1523	1521	请假记录导出	hrm:attendance:leave:export	NULL	3
+1524	1509	月度汇总	hrm:attendance:statistics:query	hrm/attendance/month/index	2
+1525	1524	月度汇总查询	hrm:attendance:statistics:query	NULL	3
+1526	1524	月度汇总导出	hrm:attendance:statistics:export	NULL	3
+1527	1520	节假日设置	hrm:attendance:holiday:query	hrm/attendance/config/holiday/index	2
+1528	1527	节假日查询	hrm:attendance:holiday:query	NULL	3
+1529	1527	节假日新增	hrm:attendance:holiday:create	NULL	3
+1530	1527	节假日修改	hrm:attendance:holiday:update	NULL	3
+1531	1527	节假日删除	hrm:attendance:holiday:delete	NULL	3
+1532	1510	打卡导出	hrm:attendance:clock:export	NULL	3
+1533	1476	薪资管理		NULL	1
+1534	1533	月度工资表	hrm:salary:month-record:query	hrm/salary/month-record/index	2
+1535	1534	月度工资表查询	hrm:salary:month-record:query	NULL	3
+1536	1534	月度工资表新增	hrm:salary:month-record:create	NULL	3
+1537	1534	月度工资表修改	hrm:salary:month-record:update	NULL	3
+1538	1534	月度工资表删除	hrm:salary:month-record:delete	NULL	3
+1539	1534	月度工资表核算	hrm:salary:month-record:compute	NULL	3
+1540	1533	薪资档案	hrm:salary:employee-info:query	hrm/salary/employee-info/index	2
+1541	1540	薪资档案查询	hrm:salary:employee-info:query	NULL	3
+1542	1540	定薪调薪	hrm:salary:employee-info:update	NULL	3
+1543	1540	调薪记录删除	hrm:salary:change-record:delete	NULL	3
+1544	1533	发放记录	hrm:salary:slip:query	hrm/salary/slip/send-record/index	2
+1545	1544	工资条查询	hrm:salary:slip:query	NULL	3
+1546	1544	工资条发放	hrm:salary:slip:create	NULL	3
+1547	1544	工资条修改	hrm:salary:slip:update	NULL	3
+1548	1544	工资条删除	hrm:salary:slip:delete	NULL	3
+1549	1564	薪资组设置	hrm:salary:group:query	hrm/salary/config/group/index	2
+1550	1549	薪资组查询	hrm:salary:group:query	NULL	3
+1551	1549	薪资组新增	hrm:salary:group:create	NULL	3
+1552	1549	薪资组修改	hrm:salary:group:update	NULL	3
+1553	1549	薪资组删除	hrm:salary:group:delete	NULL	3
+1554	1564	工资表设置	hrm:salary:option:query	hrm/salary/config/option/index	2
+1555	1554	薪资项查询	hrm:salary:option:query	NULL	3
+1556	1554	薪资项新增	hrm:salary:option:create	NULL	3
+1557	1554	薪资项修改	hrm:salary:option:update	NULL	3
+1558	1554	薪资项删除	hrm:salary:option:delete	NULL	3
+1559	1564	计税规则	hrm:salary:tax-rule:query	hrm/salary/config/tax-rule/index	2
+1560	1559	计税规则查询	hrm:salary:tax-rule:query	NULL	3
+1561	1559	计税规则新增	hrm:salary:tax-rule:create	NULL	3
+1562	1559	计税规则修改	hrm:salary:tax-rule:update	NULL	3
+1563	1559	计税规则删除	hrm:salary:tax-rule:delete	NULL	3
+1564	1533	薪资设置		NULL	1
+1565	1570	薪资设置查询	hrm:salary:config:query	NULL	3
+1566	1570	薪资设置修改	hrm:salary:config:update	NULL	3
+1567	1533	历史工资表	hrm:salary:month-record:query	hrm/salary/month-record/history/index	2
+1568	1567	历史工资表查询	hrm:salary:month-record:query	NULL	3
+1569	1540	定薪调薪导入	hrm:salary:employee-info:import	NULL	3
+1570	1564	计薪设置	hrm:salary:config:query	hrm/salary/config/config/index	2
+1571	1476	社保管理		NULL	1
+1572	1571	社保表	hrm:insurance:month-record:query	hrm/insurance/month-record/index	2
+1573	1572	社保表查询	hrm:insurance:month-record:query	NULL	3
+1574	1572	社保表新增	hrm:insurance:month-record:create	NULL	3
+1575	1572	社保表修改	hrm:insurance:month-record:update	NULL	3
+1576	1572	社保表删除	hrm:insurance:month-record:delete	NULL	3
+1577	1478	员工社保资料查询	hrm:insurance:employee-info:query	NULL	3
+1578	1478	员工社保资料保存	hrm:insurance:employee-info:update	NULL	3
+1579	1584	社保方案	hrm:insurance:scheme:query	hrm/insurance/scheme/index	2
+1580	1579	社保方案查询	hrm:insurance:scheme:query	NULL	3
+1581	1579	社保方案新增	hrm:insurance:scheme:create	NULL	3
+1582	1579	社保方案修改	hrm:insurance:scheme:update	NULL	3
+1583	1579	社保方案删除	hrm:insurance:scheme:delete	NULL	3
+1584	1571	社保配置		NULL	1
+1585	1476	绩效管理		NULL	1
+1586	1585	KPI考核	hrm:performance:plan:query	hrm/performance/plan/index	2
+1587	1586	绩效è®¡åˆ’查询	hrm:performance:plan:query	NULL	3
+1588	1586	绩效è®¡åˆ’新增	hrm:performance:plan:create	NULL	3
+1589	1586	绩效è®¡åˆ’修改	hrm:performance:plan:update	NULL	3
+1590	1586	绩效è®¡åˆ’删除	hrm:performance:plan:delete	NULL	3
+1591	1585	KPI考核设置		NULL	1
+1592	1591	考核指标模板	hrm:performance:assessment-template:query	hrm/performance/config/assessment-template/index	2
+1593	1592	考核模板查询	hrm:performance:assessment-template:query	NULL	3
+1594	1592	考核模板新增	hrm:performance:assessment-template:create	NULL	3
+1595	1592	考核模板修改	hrm:performance:assessment-template:update	NULL	3
+1596	1592	考核模板删除	hrm:performance:assessment-template:delete	NULL	3
+1597	1591	考核结果设置	hrm:performance:result-template:query	hrm/performance/config/result-template/index	2
+1598	1597	结果模板查询	hrm:performance:result-template:query	NULL	3
+1599	1597	结果模板新增	hrm:performance:result-template:create	NULL	3
+1600	1597	结果模板修改	hrm:performance:result-template:update	NULL	3
+1601	1597	结果模板删除	hrm:performance:result-template:delete	NULL	3
+1602	1585	绩效档案	hrm:performance:archive:query	hrm/performance/assessment/index	2
+1603	1602	绩效档案查询	hrm:performance:archive:query	NULL	3
+1604	1602	绩效档案删除	hrm:performance:archive:delete	NULL	3
+1605	1478	档案附属资料查询	hrm:employee-lifecycle:query	NULL	3
+1606	1478	档案附属资料修改	hrm:employee-lifecycle:update	NULL	3
+1607	1478	档案附属资料删除	hrm:employee-lifecycle:delete	NULL	3
+1608	1485	员工设置查询	hrm:employee:config:query	NULL	3
+1609	1485	员工设置修改	hrm:employee:config:update	NULL	3
+1610	1476	HR 工作台	hrm:home:hr-query	hrm/home/hr/index	2
+1611	1610	HR 工作台查询	hrm:home:hr-query	NULL	3
+1612	1476	团队工作台	hrm:home:team-query	hrm/home/team/index	2
+1613	1612	团队工作台查询	hrm:home:team-query	NULL	3
+1614	1476	HRM 员工端		NULL	1
+1615	1614	我的档案	hrm:portal:query	hrm/portal/employee/index	2
+1616	1614	我的社保	hrm:portal:query	hrm/portal/insurance/record/index	2
+1617	1614	我的工资条	hrm:portal:query	hrm/portal/salary/slip/index	2
+1618	1614	考勤报表	hrm:portal:query	hrm/portal/attendance/report/index	2
+1619	1614	绩效管理		NULL	1
+1620	1615	员工档案修改	hrm:portal:employee:update	NULL	3
+1621	1618	员工请假申请	hrm:portal:attendance:leave	NULL	3
+1622	1619	KPI 考核	hrm:portal:query	hrm/portal/performance/assessment/index	2
+1623	1622	员工绩效操作	hrm:portal:performance:action	NULL	3
+1624	1614	个人工作台	hrm:portal:query	hrm/portal/home/index	2
+1625	1624	个人工作台查询	hrm:portal:query	NULL	3
+1626	1624	备忘新增	hrm:employee:personal-note:create	NULL	3
+1627	1624	备忘删除	hrm:employee:personal-note:delete	NULL	3
+1628	1618	我的流程查询	bpm:process-instance:query	NULL	3
+1629	1619	我的绩效档案	hrm:portal:query	hrm/portal/performance/assessment/history/index	2
+1630	1564	调薪模板	hrm:salary:change-template:query	hrm/salary/config/change-template/index	2
+1631	1630	调薪模板查询	hrm:salary:change-template:query	NULL	3
+1632	1630	调薪模板新增	hrm:salary:change-template:create	NULL	3
+1633	1630	调薪模板修改	hrm:salary:change-template:update	NULL	3
+1634	1630	调薪模板删除	hrm:salary:change-template:delete	NULL	3
+1635	1476	组织管理	hrm:employee:query	hrm/dept/index	2
+1636	1635	组织员工查询	hrm:employee:query	NULL	3
+1637	0	CMS 内容管理		NULL	1
+1638	1804	站点设置		cms/config/site/index	2
+1639	1638	站点查询	cms:site:query		3
+1640	1638	站点创建	cms:site:create		3
+1641	1638	站点更新	cms:site:update		3
+1642	1638	站点删除	cms:site:delete		3
+1643	1638	站点导出	cms:site:export		3
+1644	1801	栏目管理		cms/content/channel/index	2
+1645	1644	栏目查询	cms:channel:query		3
+1646	1644	栏目创建	cms:channel:create		3
+1647	1644	栏目更新	cms:channel:update		3
+1648	1644	栏目删除	cms:channel:delete		3
+1649	1644	栏目导出	cms:channel:export		3
+1650	1644	栏目整理树	cms:channel:tidy		3
+1651	1804	模型设置		cms/config/model/index	2
+1652	1651	模型查询	cms:model:query		3
+1653	1651	模型创建	cms:model:create		3
+1654	1651	模型更新	cms:model:update		3
+1655	1651	模型删除	cms:model:delete		3
+1656	1651	模型导出	cms:model:export		3
+1657	1651	模型字段查询	cms:model-field:query		3
+1658	1651	模型字段创建	cms:model-field:create		3
+1659	1651	模型字段更新	cms:model-field:update		3
+1660	1651	模型字段删除	cms:model-field:delete		3
+1661	1651	模型字段导出	cms:model-field:export		3
+1662	1801	文章管理		cms/content/article/index	2
+1663	1662	文章查询	cms:article:query		3
+1664	1662	文章创建	cms:article:create		3
+1665	1662	文章更新	cms:article:update		3
+1666	1662	文章删除	cms:article:delete		3
+1667	1662	文章导出	cms:article:export		3
+1668	1801	标签管理		cms/content/tag/index	2
+1669	1668	标签查询	cms:tag:query		3
+1670	1668	标签创建	cms:tag:create		3
+1671	1668	标签更新	cms:tag:update		3
+1672	1668	标签删除	cms:tag:delete		3
+1673	1668	标签导出	cms:tag:export		3
+1674	1801	区块管理		cms/content/block/item/index	2
+1675	1831	内容块查询	cms:block:query		3
+1676	1831	内容块创建	cms:block:create		3
+1677	1831	内容块更新	cms:block:update		3
+1678	1831	内容块删除	cms:block:delete		3
+1680	1674	内容块项查询	cms:block-item:query		3
+1681	1674	内容块项创建	cms:block-item:create		3
+1682	1674	内容块项更新	cms:block-item:update		3
+1683	1674	内容块项删除	cms:block-item:delete		3
+1685	1674	内容块项排序	cms:block-item:update-order		3
+1695	1801	生成管理		cms/content/statictask/index	2
+1696	1695	静态化任务查询	cms:static-task:query		3
+1699	1695	静态化任务删除	cms:static-task:delete		3
+1701	1695	静态化任务触发	cms:static-task:trigger		3
+1702	1695	静态化任务停止	cms:static-task:stop		3
+1705	1695	搜索索引重建	cms:search-index:rebuild		3
+1708	1801	表单管理		cms/interaction/form/index	2
+1709	1708	表单查询	cms:form:query		3
+1710	1708	表单创建	cms:form:create		3
+1711	1708	表单更新	cms:form:update		3
+1712	1708	表单删除	cms:form:delete		3
+1713	1708	表单导出	cms:form:export		3
+1714	1708	表单提交查询	cms:form-submission:query		3
+1715	1708	表单提交创建	cms:form-submission:create		3
+1716	1708	表单提交更新	cms:form-submission:update		3
+1717	1708	表单提交删除	cms:form-submission:delete		3
+1719	1802	调查问卷		cms/interaction/survey/index	2
+1720	1719	问卷查询	cms:survey:query		3
+1721	1719	问卷创建	cms:survey:create		3
+1722	1719	问卷更新	cms:survey:update		3
+1723	1719	问卷删除	cms:survey:delete		3
+1733	12153	问卷记录查询	cms:survey-record:query		3
+1735	12153	问卷记录删除	cms:survey-record:delete		3
+1736	1719	问卷反馈导出	cms:survey-feedback:export		3
+1737	1802	投票管理		cms/interaction/vote/index	2
+1738	1737	投票查询	cms:vote:query		3
+1739	1737	投票创建	cms:vote:create		3
+1740	1737	投票更新	cms:vote:update		3
+1741	1737	投票删除	cms:vote:delete		3
+1742	1737	投票导出	cms:vote:export		3
+1743	1737	投票记录查询	cms:vote-record:query		3
+1744	1737	投票记录创建	cms:vote-record:create		3
+1745	1737	投票记录删除	cms:vote-record:delete		3
+1746	1737	投票记录导出	cms:vote-record:export		3
+1747	1802	留言管理		cms/interaction/message-board/index	2
+1748	1747	留言查询	cms:message-board:query		3
+1749	1747	留言创建	cms:message-board:create		3
+1750	1747	留言更新	cms:message-board:update		3
+1751	1747	留言状态更新	cms:message-board:update-status		3
+1752	1747	留言删除	cms:message-board:delete		3
+1754	1855	留言类型查询	cms:message-board-type:query		3
+1755	1855	留言类型创建	cms:message-board-type:create		3
+1756	1855	留言类型更新	cms:message-board-type:update		3
+1757	1855	留言类型删除	cms:message-board-type:delete		3
+1758	1855	留言类型导出	cms:message-board-type:export		3
+1759	1808	访问分析		cms/statistics/visit/index	2
+1760	1759	访问统计查询	cms:visit:query		3
+1761	1759	访问统计导出	cms:visit:export		3
+1762	1759	访问日志查询	cms:visit-log:query		3
+1763	1759	访问日志创建	cms:visit-log:create		3
+1764	1759	访问日志删除	cms:visit-log:delete		3
+1765	1759	访问日志导出	cms:visit-log:export		3
+1766	1802	采集管理		cms/content/collection/index	2
+1767	1766	采集查询	cms:collection:query		3
+1768	1766	采集创建	cms:collection:create		3
+1769	1766	采集更新	cms:collection:update		3
+1770	1766	采集删除	cms:collection:delete		3
+1771	1766	采集启动	cms:collection:start		3
+1772	1766	采集暂停	cms:collection:pause		3
+1773	1766	采集停止	cms:collection:stop		3
+1774	1766	采集导出	cms:collection:export		3
+1779	1766	采集预览	cms:collection:preview		3
+1781	1804	安全词库		cms/config/word/index	2
+1782	1781	敏感词查询	cms:sensitive-word:query		3
+1783	1781	敏感词创建	cms:sensitive-word:create		3
+1784	1781	敏感词更新	cms:sensitive-word:update		3
+1785	1781	敏感词删除	cms:sensitive-word:delete		3
+1787	1781	易错词查询	cms:error-word:query		3
+1788	1781	易错词创建	cms:error-word:create		3
+1789	1781	易错词更新	cms:error-word:update		3
+1790	1781	易错词删除	cms:error-word:delete		3
+1798	1637	CMS 首页		cms/home/index	2
+1799	1798	首页查询	cms:workspace:query		3
+1800	1637	工作台		NULL	1
+1801	1637	内容管理		NULL	1
+1802	1637	互动管理		NULL	1
+1803	1637	文件管理		NULL	1
+1804	1637	配置管理		NULL	1
+1805	1804	全局设置		cms/config/global/index	2
+1806	1805	全局设置查询	cms:config:query		3
+1807	1805	全局设置更新	cms:config:update		3
+1808	1637	统计报表		NULL	1
+1810	1808	文章统计		cms/statistics/article/index	2
+1811	1810	文章统计查询	cms:article-stat:query		3
+1812	1810	文章统计导出	cms:article-stat:export		3
+1813	1808	绩效统计		cms/statistics/performance/index	2
+1814	1813	绩效统计查询	cms:performance-stat:query		3
+1815	1813	绩效统计导出	cms:performance-stat:export		3
+1816	1803	HTML 文件		cms/file/html/index	2
+1817	1816	HTML 文件查询	cms:html-file:query		3
+1818	1816	HTML 文件下载	cms:html-file:download		3
+1819	1816	HTML 文件删除	cms:html-file:delete		3
+1820	1816	HTML 文件更新	cms:html-file:update		3
+1821	1803	上传文件		cms/file/upload/index	2
+1822	1821	上传文件查询	cms:upload-file:query		3
+1823	1821	上传文件创建	cms:upload-file:create		3
+1824	1821	上传文件上传	cms:upload-file:upload		3
+1825	1821	上传文件下载	cms:upload-file:download		3
+1826	1821	上传文件删除	cms:upload-file:delete		3
+1827	1821	上传文件重命名	cms:upload-file:update		3
+1828	1821	上传文件复制	cms:upload-file:copy		3
+1829	1821	上传文件移动	cms:upload-file:move		3
+1830	1821	上传文件 ZIP	cms:upload-file:zip		3
+1831	1804	区块设置		cms/content/block/index	2
+1832	1662	文章提交	cms:article:submit		3
+1833	1662	文章归档	cms:article:archive		3
+1834	1662	文章下线	cms:article:offline		3
+1835	1662	文章彻底删除	cms:article:purge		3
+1836	1662	文章置顶	cms:article:sticky		3
+1837	1662	文章排序	cms:article:update-order		3
+1838	1801	文章审核		cms/content/article/audit/index	2
+1839	1838	文章审核查询	cms:article:audit		3
+1840	1838	文章审批详情	bpm:process-instance:query		3
+1841	1838	文章审批操作	bpm:task:update		3
+1848	1838	文章审批任务查询	bpm:task:query		3
+1855	1804	留言类型		cms/config/message-board-type/index	2
+1856	1855	留言类型排序	cms:message-board-type:update-order		3
+1858	1804	绩效类型		cms/config/performance-type/index	2
+1859	1858	绩效类型查询	cms:performance-type:query		3
+1860	1858	绩效类型创建	cms:performance-type:create		3
+1861	1858	绩效类型更新	cms:performance-type:update		3
+1862	1858	绩效类型删除	cms:performance-type:delete		3
+1863	1858	绩效类型导出	cms:performance-type:export		3
+1894	0	FMS 财务管理		NULL	1
+1895	1894	账簿管理		NULL	1
+1896	1951	账套管理		fms/config/account-set/index	2
+1897	1896	账套查询	fms:config:account-set:query		3
+1898	1896	账套创建	fms:config:account-set:create		3
+1899	1896	账套修改	fms:config:account-set:update		3
+1900	1896	账套初始化	fms:config:account-set:initialize		3
+1901	1896	账套授权	fms:config:account-set:authorize		3
+1902	1951	科目设置		fms/config/subject/index	2
+1903	1902	科目查询	fms:config:subject:query		3
+1904	1902	科目创建	fms:config:subject:create		3
+1905	1902	科目修改	fms:config:subject:update		3
+1906	1902	科目删除	fms:config:subject:delete		3
+1907	1910	辅助核算查询	fms:config:auxiliary:query		3
+1908	1902	科目导入	fms:config:subject:import		3
+1909	1902	科目导出	fms:config:subject:export		3
+1910	1951	辅助核算		fms/config/auxiliary/index	2
+1911	1910	辅助核算创建	fms:config:auxiliary:create		3
+1912	1910	辅助核算修改	fms:config:auxiliary:update		3
+1913	1910	辅助核算删除	fms:config:auxiliary:delete		3
+1914	1910	辅助核算导出	fms:config:auxiliary:export		3
+1915	1910	辅助核算导入	fms:config:auxiliary:import		3
+1916	1895	总账		fms/ledger/general/index	2
+1917	1916	总账查询	fms:ledger:general:query		3
+1918	1895	明细账		fms/ledger/detail/index	2
+1919	1918	明细账查询	fms:ledger:detail:query		3
+1920	1895	科目余额表		fms/ledger/subject-balance/index	2
+1921	1920	科目余额查询	fms:ledger:subject-balance:query		3
+1922	1895	数量金额明细账		fms/ledger/quantity-detail/index	2
+1923	1922	数量金额明细账查询	fms:ledger:detail:query		3
+1924	1895	数量金额总账		fms/ledger/quantity-general/index	2
+1925	1924	数量金额总账查询	fms:ledger:general:query		3
+1926	1895	多栏账		fms/ledger/multi-column/index	2
+1927	1926	多栏账查询	fms:ledger:multi-column:query		3
+1928	1895	核算项目明细账		fms/ledger/auxiliary-detail/index	2
+1929	1928	核算项目明细账查询	fms:ledger:detail:query		3
+1930	1895	核算项目余额表		fms/ledger/auxiliary-balance/index	2
+1931	1930	核算项目余额表查询	fms:ledger:subject-balance:query		3
+1932	1951	财务初始余额		fms/config/initial-balance/index	2
+1933	1932	初始余额查询	fms:config:initial-balance:query		3
+1934	1932	初始余额保存	fms:config:initial-balance:update		3
+1935	1932	初始余额导入	fms:config:initial-balance:import		3
+1936	1951	币别		fms/config/currency/index	2
+1937	1936	币别查询	fms:config:currency:query		3
+1938	1936	币别创建	fms:config:currency:create		3
+1939	1936	币别修改	fms:config:currency:update		3
+1940	1936	币别删除	fms:config:currency:delete		3
+1941	1951	财务参数		fms/config/finance-parameter/index	2
+1942	1941	财务参数查询	fms:config:finance-parameter:query		3
+1943	1941	财务参数修改	fms:config:finance-parameter:update		3
+1944	1894	首页		fms/home/index	2
+1945	1944	首页查询	fms:home:query		3
+1946	1951	财务指标		fms/config/finance-indicator/index	2
+1947	1946	财务指标查询	fms:config:finance-indicator:query		3
+1948	1946	财务指标创建	fms:config:finance-indicator:create		3
+1949	1946	财务指标修改	fms:config:finance-indicator:update		3
+1950	1946	财务指标删除	fms:config:finance-indicator:delete		3
+1951	1894	设置管理		NULL	1
+1952	1894	凭证管理		NULL	1
+1953	1952	录凭证		fms/voucher/create/index	2
+1954	1953	凭证创建	fms:voucher:create		3
+1955	1952	查凭证		fms/voucher/list/index	2
+1956	1955	凭证查询	fms:voucher:query		3
+1957	1955	凭证修改	fms:voucher:update		3
+1958	1955	凭证删除	fms:voucher:delete		3
+1959	1955	凭证审核	fms:voucher:review		3
+1960	1955	凭证整理	fms:voucher:tidy		3
+1961	1955	凭证移动	fms:voucher:move		3
+1962	1955	凭证打印	fms:voucher:print		3
+1963	1955	凭证导出	fms:voucher:export		3
+1964	1955	凭证导入	fms:voucher:import		3
+1965	1951	凭证字		fms/config/voucher-word/index	2
+1966	1965	凭证字查询	fms:config:voucher-word:query		3
+1967	1965	凭证字创建	fms:config:voucher-word:create		3
+1968	1965	凭证字修改	fms:config:voucher-word:update		3
+1969	1965	凭证字删除	fms:config:voucher-word:delete		3
+1970	1951	凭证模板		fms/config/voucher-template/index	2
+1971	1970	凭证模板查询	fms:config:voucher-template:query		3
+1972	1970	凭证模板创建	fms:config:voucher-template:create		3
+1973	1970	凭证模板修改	fms:config:voucher-template:update		3
+1974	1970	凭证模板删除	fms:config:voucher-template:delete		3
+1975	1970	凭证模板分类查询	fms:config:voucher-template-category:query		3
+1976	1970	凭证模板分类创建	fms:config:voucher-template-category:create		3
+1977	1970	凭证模板分类修改	fms:config:voucher-template-category:update		3
+1978	1970	凭证模板分类删除	fms:config:voucher-template-category:delete		3
+1979	1951	常用摘要		fms/config/digest/index	2
+1980	1979	常用摘要查询	fms:config:digest:query		3
+1981	1979	常用摘要创建	fms:config:digest:create		3
+1982	1979	常用摘要修改	fms:config:digest:update		3
+1983	1979	常用摘要删除	fms:config:digest:delete		3
+1984	1952	凭证汇总表		fms/voucher/statistics/index	2
+1985	1984	凭证汇总查询	fms:voucher:statistics:query		3
+1986	1984	凭证汇总导出	fms:voucher:statistics:export		3
+1987	1894	报表管理		NULL	1
+1988	1987	资产负债表		fms/report/balance-sheet/index	2
+1989	1988	资产负债表查询	fms:report:balance-sheet:query		3
+1990	1988	资产负债表公式修改	fms:report:balance-sheet:update		3
+1991	1988	资产负债表导出	fms:report:balance-sheet:export		3
+1992	1988	资产负债表打印	fms:report:balance-sheet:print		3
+1993	1987	利润表		fms/report/income-statement/index	2
+1994	1993	利润表查询	fms:report:income-statement:query		3
+1995	1993	利润表公式修改	fms:report:income-statement:update		3
+1996	1993	利润表导出	fms:report:income-statement:export		3
+1997	1993	利润表打印	fms:report:income-statement:print		3
+1998	1987	现金流量表		fms/report/cash-flow-statement/index	2
+1999	1998	现金流量表查询	fms:report:cash-flow-statement:query		3
+2000	1998	现金流量表调整	fms:report:cash-flow-statement:update		3
+2001	1998	现金流量表导出	fms:report:cash-flow-statement:export		3
+2002	1998	现金流量表打印	fms:report:cash-flow-statement:print		3
+2003	1894	结账管理		NULL	1
+2004	2003	结账		fms/closing/index	2
+2005	2004	结账查询	fms:closing:query		3
+2006	2004	结转损益	fms:closing:profit-loss		3
+2007	2004	结账	fms:closing:close		3
+2008	2004	反结账	fms:closing:cancel		3
+2009	2004	结账方案管理	fms:closing:update		3
+2010	1916	总账导出	fms:ledger:general:export		3
+2011	1916	总账打印	fms:ledger:general:print		3
+2012	1918	明细账导出	fms:ledger:detail:export		3
+2013	1918	明细账打印	fms:ledger:detail:print		3
+2014	1920	科目余额表导出	fms:ledger:subject-balance:export		3
+2015	1920	科目余额表打印	fms:ledger:subject-balance:print		3
+2016	1922	数量金额明细账导出	fms:ledger:detail:export		3
+2017	1922	数量金额明细账打印	fms:ledger:detail:print		3
+2018	1924	数量金额总账导出	fms:ledger:general:export		3
+2019	1924	数量金额总账打印	fms:ledger:general:print		3
+2020	1926	多栏账导出	fms:ledger:multi-column:export		3
+2021	1926	多栏账打印	fms:ledger:multi-column:print		3
+2022	1928	核算项目明细账导出	fms:ledger:detail:export		3
+2023	1928	核算项目明细账打印	fms:ledger:detail:print		3
+2024	1930	核算项目余额表导出	fms:ledger:subject-balance:export		3
+2025	1930	核算项目余额表打印	fms:ledger:subject-balance:print		3
+2026	1932	初始余额导出	fms:config:initial-balance:export		3
+8000	0	PMS 项目管理		NULL	1
+8010	8080	项目分组		pms/pm/project/list/components/group/index	2
+8011	8010	项目分组查询	pms:pm:project-group:query		3
+8012	8010	项目分组创建	pms:pm:project-group:create		3
+8013	8010	项目分组修改	pms:pm:project-group:update		3
+8014	8010	项目分组删除	pms:pm:project-group:delete		3
+8020	8080	我的项目		pms/pm/project/list/index	2
+8021	8020	项目查询	pms:pm:project:query		3
+8022	8020	项目创建	pms:pm:project:create		3
+8023	8020	项目修改	pms:pm:project:update		3
+8024	8020	项目删除	pms:pm:project:delete		3
+8025	8020	项目成员查询	pms:pm:project-member:query		3
+8026	8020	项目成员修改	pms:pm:project-member:update		3
+8027	8020	项目迭代查询	pms:pm:iteration:query		3
+8028	8020	项目迭代创建	pms:pm:iteration:create		3
+8029	8020	项目迭代修改	pms:pm:iteration:update		3
+8030	8020	项目迭代删除	pms:pm:iteration:delete		3
+8031	8020	工作项查询	pms:pm:work-item:query		3
+8032	8020	工作项创建	pms:pm:work-item:create		3
+8033	8020	工作项修改	pms:pm:work-item:update		3
+8034	8020	工作项删除	pms:pm:work-item:delete		3
+8035	8020	工作项导入	pms:pm:work-item:import		3
+8036	8020	工作项导出	pms:pm:work-item:export		3
+8040	8080	工作台	pms:pm:work-item:query	pms/pm/workbench/index	2
+8050	8090	知识库		pms/kb/library/index	2
+8051	8050	知识库查询	pms:kb:library:query		3
+8052	8050	知识库创建	pms:kb:library:create		3
+8053	8050	知识库修改	pms:kb:library:update		3
+8054	8050	知识库删除	pms:kb:library:delete		3
+8060	8090	我的关注	pms:kb:knowledge-library:query	pms/kb/favorite/index	2
+8070	8090	最近使用	pms:kb:knowledge-library:query	pms/kb/recent/index	2
+8080	8000	项目中心		NULL	1
+8081	8080	归档项目	pms:pm:project:query	pms/pm/project/archive/index	2
+8082	8080	项目回收站	pms:pm:project:query	pms/pm/project/recycle/index	2
+8090	8000	知识中心		NULL	1
+8091	8090	回收站	pms:kb:knowledge-library:delete	pms/kb/recycle/index	2
+8092	8090	文档搜索	pms:kb:library:query	pms/kb/search/index	2
+8093	8090	文档标签	pms:kb:library:query	pms/kb/label/index	2
+8094	8090	知识库模板		pms/kb/library-template/index	2
+8095	8094	知识库模板查询	pms:kb:library-template:query		3
+8096	8094	知识库模板创建	pms:kb:library-template:create		3
+8097	8094	知识库模板修改	pms:kb:library-template:update		3
+8098	8094	知识库模板删除	pms:kb:library-template:delete		3
+8100	8080	项目模板		pms/pm/project/template/index	2
+8101	8100	项目模板查询	pms:pm:project-template:query		3
+8102	8100	项目模板创建	pms:pm:project-template:create		3
+8103	8100	项目模板修改	pms:pm:project-template:update		3
+8104	8100	项目模板删除	pms:pm:project-template:delete		3
+8200	0	OA 办公协同		NULL	1
+8201	8200	工作台	oa:home:query	oa/home/index	2
+8210	8200	日程管理		NULL	1
+8211	8215	日程新增	oa:schedule:create		3
+8212	8215	日程修改	oa:schedule:update		3
+8213	8215	日程删除	oa:schedule:delete		3
+8215	8210	日程管理	oa:schedule:query	oa/schedule/list/index	2
+8216	8210	我的日历	oa:schedule:query	oa/schedule/calendar/index	2
+8220	8200	è®¡åˆ’管理		NULL	1
+8221	8225	è®¡åˆ’新增	oa:plan:create		3
+8222	8225	è®¡åˆ’修改	oa:plan:update		3
+8223	8225	è®¡åˆ’删除	oa:plan:delete		3
+8224	8226	è®¡åˆ’点评	oa:plan:comment		3
+8225	8220	è®¡åˆ’管理	oa:plan:query	oa/plan/list/index	2
+8226	8220	è®¡åˆ’报表	oa:plan:query	oa/plan/report/index	2
+8230	8200	笔记管理	oa:note:query	oa/note/index	2
+8231	8230	笔记新增	oa:note:create		3
+8232	8230	笔记修改	oa:note:update		3
+8233	8230	笔记删除	oa:note:delete		3
+8240	8200	通讯录	oa:contact:query	oa/contact/index	2
+8241	8240	联系人新增	oa:contact:create		3
+8242	8240	联系人修改	oa:contact:update		3
+8243	8240	联系人删除	oa:contact:delete		3
+8260	8200	讨论区		NULL	1
+8261	8266	讨论新增	oa:discussion:create		3
+8262	8266	讨论修改	oa:discussion:update		3
+8263	8266	讨论删除	oa:discussion:delete		3
+8264	8267	讨论互动	oa:discussion:interact		3
+8266	8260	讨论管理	oa:discussion:query	oa/discussion/manage/index	2
+8267	8260	讨论区列表	oa:discussion:query	oa/discussion/list/index	2
+8270	8295	我的考勤	oa:attendance:query	oa/attendance/my/index	2
+8271	8270	考勤打卡	oa:attendance:clock		3
+8272	8280	考勤修改	oa:attendance:update		3
+8273	8280	考勤删除	oa:attendance:delete		3
+8280	8295	考勤记录	oa:attendance:query	oa/attendance/list/index	2
+8290	8295	考勤报表	oa:attendance:query	oa/attendance/report/index	2
+8295	8200	考勤管理		NULL	1
+8300	8200	任务管理		NULL	1
+8301	8304	任务新增	oa:task:create		3
+8302	8304	任务修改	oa:task:update		3
+8303	8304	任务删除	oa:task:delete		3
+8304	8300	我发布的	oa:task:query	oa/task/list/index	2
+8305	8300	我的任务	oa:task:query	oa/task/my/index	2
+8310	8330	我发布的	oa:announcement:query	oa/announcement/list/index	2
+8311	8310	公告新增	oa:announcement:create		3
+8312	8310	公告修改	oa:announcement:update		3
+8313	8310	公告删除	oa:announcement:delete		3
+8320	8330	我收到的	oa:announcement:query	oa/announcement/my/index	2
+8321	8320	公告转发	oa:announcement:create		3
+8322	8320	公告已读	oa:announcement:update		3
+8323	8320	公告移除	oa:announcement:delete		3
+8330	8200	公告管理		NULL	1
+8340	8200	企业邮箱		NULL	1
+8341	8340	我的邮箱账号	oa:mail-account:query	oa/mail/account/index	2
+8342	8340	邮箱服务配置	oa:mail-provider:query	oa/mail/provider/index	2
+8343	8341	账号绑定	oa:mail-account:create	NULL	3
+8344	8341	账号修改	oa:mail-account:update	NULL	3
+8345	8341	账号移除	oa:mail-account:delete	NULL	3
+8346	8342	服务新增	oa:mail-provider:create	NULL	3
+8347	8342	服务修改	oa:mail-provider:update	NULL	3
+8348	8342	服务删除	oa:mail-provider:delete	NULL	3
+8349	8340	收件箱	oa:mail-account:query	oa/mail/inbox/index	2
+8350	8200	工作汇报		NULL	1
+8351	8350	我的汇报	oa:work-report:query	oa/workreport/index	2
+8352	8350	汇报统计	oa:work-report:statistics	oa/workreport/statistics/index	2
+8353	8351	汇报新增	oa:work-report:create		3
+8354	8351	汇报修改	oa:work-report:update		3
+8355	8351	汇报删除	oa:work-report:delete		3
+8360	8200	印章管理		NULL	1
+8361	8363	印章新增	oa:seal:create	NULL	3
+8362	8363	印章修改	oa:seal:update	NULL	3
+8363	8360	印章信息	oa:seal:query	oa/seal/index	2
+8364	8360	用印申请	oa:seal-apply:query	oa/seal/apply/index	2
+8365	8364	用印新增及提交	oa:seal-apply:create	NULL	3
+8366	8364	用印修改及撤销	oa:seal-apply:update	NULL	3
+8367	8364	用印草稿删除	oa:seal-apply:delete	NULL	3
+8369	8363	印章删除	oa:seal:delete	NULL	3
+8370	8200	车辆管理		NULL	1
+8371	8373	车辆新增	oa:vehicle:create	NULL	3
+8372	8373	车辆修改	oa:vehicle:update	NULL	3
+8373	8370	车辆信息	oa:vehicle:query	oa/vehicle/index	2
+8374	8370	用车申请	oa:vehicle-apply:query	oa/vehicle/apply/index	2
+8375	8374	用车新增及提交	oa:vehicle-apply:create	NULL	3
+8376	8374	用车修改及撤销	oa:vehicle-apply:update	NULL	3
+8377	8374	用车草稿删除	oa:vehicle-apply:delete	NULL	3
+8378	8373	车辆删除	oa:vehicle:delete	NULL	3
+8382	8370	还车申请	oa:vehicle-return:query	oa/vehicle/return/index	2
+8383	8382	还车新增及提交	oa:vehicle-return:create	NULL	3
+8384	8382	还车修改及撤销	oa:vehicle-return:update	NULL	3
+8385	8382	还车草稿删除	oa:vehicle-return:delete	NULL	3
+8390	8200	企业云盘	oa:file:query	oa/file/index	2
+8391	8390	文件新增	oa:file:create	NULL	3
+8392	8390	文件修改	oa:file:update	NULL	3
+8393	8390	文件删除及恢复	oa:file:delete	NULL	3
+8394	8390	文件共享	oa:file:share	NULL	3
+8450	8200	出差管理		NULL	1
+8451	8450	出差申请	oa:travel-apply:query	oa/travel/apply/index	2
+8452	8451	申请保存及提交	oa:travel-apply:save	NULL	3
+8453	8451	申请删除	oa:travel-apply:delete	NULL	3
+8454	8450	差旅报销	oa:travel-reimbursement:query	oa/travel/reimbursement/index	2
+8455	8454	报销保存及提交	oa:travel-reimbursement:save	NULL	3
+8456	8454	报销删除	oa:travel-reimbursement:delete	NULL	3
+12083	1831	内容块排序	cms:block:update-order		3
+12090	1803	模板文件		cms/file/template/index	2
+12091	12090	模板文件查询	cms:template-file:query		3
+12092	12090	模板文件创建	cms:template-file:create		3
+12093	12090	模板文件更新	cms:template-file:update		3
+12094	12090	模板文件删除	cms:template-file:delete		3
+12095	12090	模板文件下载	cms:template-file:download		3
+12096	12090	模板文件复制	cms:template-file:copy		3
+12097	12090	模板文件移动	cms:template-file:move		3
+12098	12090	模板文件 ZIP	cms:template-file:zip		3
+12099	12090	模板文件上传	cms:template-file:upload		3
+12121	1801	表单审核		cms/interaction/form/audit/index	2
+12131	12121	表单提交审核	cms:form-submission:audit		3
+12132	1708	表单提交	cms:form-submission:submit		3
+12153	1802	问卷记录		cms/interaction/survey/record/index	2
+12155	12153	问卷记录更新	cms:survey-record:update		3
+12235	1766	采集清空记录	cms:collection:clear-records		3
+12475	1816	HTML 文件创建	cms:html-file:create		3
+12476	1816	HTML 文件上传	cms:html-file:upload		3
+12477	1816	HTML 文件 ZIP	cms:html-file:zip		3
+12478	1816	HTML 文件复制	cms:html-file:copy		3
+12479	1816	HTML 文件移动	cms:html-file:move		3
+12550	1802	评论管理		cms/interaction/comment/index	2
+12551	12550	评论查询	cms:comment:query		3
+12552	12550	评论更新	cms:comment:update		3
+12553	12550	评论状态更新	cms:comment:update-status		3
+12554	12550	评论删除	cms:comment:delete		3
+12570	1804	表单类型		cms/interaction/form/type/index	2
+12571	12570	表单类型查询	cms:form-type:query		3
+12572	12570	表单类型创建	cms:form-type:create		3
+12573	12570	表单类型更新	cms:form-type:update		3
+12574	12570	表单类型删除	cms:form-type:delete		3
+12580	1801	附件管理		cms/content/attachment/index	2
+12581	12580	附件查询	cms:attachment:query		3
+12582	12580	附件删除	cms:attachment:delete		3
+12600	1801	友情链接		cms/content/friend-link/index	2
+12601	12600	友情链接查询	cms:friend-link:query		3
+12602	12600	友情链接创建	cms:friend-link:create		3
+12603	12600	友情链接更新	cms:friend-link:update		3
+12604	12600	友情链接删除	cms:friend-link:delete		3
+12610	1804	友情链接类型		cms/content/friend-link/type/index	2
+12611	12610	友情链接类型查询	cms:friend-link-type:query		3
+12612	12610	友情链接类型创建	cms:friend-link-type:create		3
+12613	12610	友情链接类型更新	cms:friend-link-type:update		3
+12614	12610	友情链接类型删除	cms:friend-link-type:delete		3
+12690	1803	全局文件管理	cms:file:global		3
+12710	1808	访客分析		cms/statistics/visitor/index	2
+12800	8200	会议室管理		NULL	1
+12801	12800	会议室信息	oa:meeting-room:query	oa/meetingroom/room/index	2
+12802	12800	会议室预定	oa:meeting-room-booking:query	oa/meetingroom/booking/index	2
+12803	12801	新增	oa:meeting-room:create	NULL	3
+12804	12801	修改	oa:meeting-room:update	NULL	3
+12805	12801	删除	oa:meeting-room:delete	NULL	3
+12806	12802	新增	oa:meeting-room-booking:create	NULL	3
+12807	12802	修改	oa:meeting-room-booking:update	NULL	3
+12808	12802	删除	oa:meeting-room-booking:delete	NULL	3
+12900	8200	办公用品管理		NULL	1
+12901	12900	办公用品信息	oa:supply-item:query	oa/supply/item/index	2
+12902	12901	物品新增	oa:supply-item:create	NULL	3
+12903	12901	物品修改	oa:supply-item:update	NULL	3
+12904	12901	物品删除	oa:supply-item:delete	NULL	3
+12905	12901	物品入库	oa:supply-item:stock-in	NULL	3
+12906	12900	领用申请	oa:supply-apply:query	oa/supply/apply/index	2
+12907	12906	申请新增及提交	oa:supply-apply:create	NULL	3
+12908	12906	申请修改及取消	oa:supply-apply:update	NULL	3
+12909	12906	申请删除	oa:supply-apply:delete	NULL	3
+12910	12900	领用发放	oa:supply-issue:query	oa/supply/issue/index	2
+12911	12910	物品发放	oa:supply-issue:issue	NULL	3
+12912	12910	物品归还	oa:supply-issue:return	NULL	3
+12913	8200	公文管理		NULL	1
+12914	12913	套红模板	oa:officialdoc-template:query	oa/officialdoc/template/index	2
+12916	12914	模板新增	oa:officialdoc-template:create	NULL	3
+12917	12914	模板修改	oa:officialdoc-template:update	NULL	3
+12918	12914	模板删除	oa:officialdoc-template:delete	NULL	3
+12919	12913	公文发文	oa:officialdoc-send:query	oa/officialdoc/send/index	2
+12920	12919	发文新增	oa:officialdoc-send:create	NULL	3
+12921	12919	发文修改及审批	oa:officialdoc-send:update	NULL	3
+12922	12919	发文删除	oa:officialdoc-send:delete	NULL	3
+12923	12913	公文收文	oa:officialdoc-receive:query	oa/officialdoc/receive/index	2
+12924	12923	收文修改及审批	oa:officialdoc-receive:update	NULL	3
+12925	12923	收文删除	oa:officialdoc-receive:delete	NULL	3
+12926	12923	收文新增	oa:officialdoc-receive:create	NULL	3
+12927	8200	流程管理		NULL	1
+12928	12927	加班申请	oa:overtime-apply:query	oa/overtime/index	2
+12929	12928	加班申请新增	oa:overtime-apply:create	NULL	3
+12930	12927	请假申请	oa:leave-apply:query	../views/oa/leave/index.vue	2
+12931	12930	请假申请新增	oa:leave-apply:create	NULL	3
+12932	12927	转正申请	oa:regular-apply:query	oa/regular/index	2
+12933	12932	转正申请新增	oa:regular-apply:create	NULL	3
+12934	12927	离职申请	oa:resign-apply:query	oa/resign/index	2
+12935	12934	离职申请新增	oa:resign-apply:create	NULL	3
+12936	12927	费用报销	oa:reimbursement:query	oa/reimbursement/index	2
+12937	12936	报销保存及提交	oa:reimbursement:create		3
+12938	12936	报销修改	oa:reimbursement:update		3
+12939	12936	报销删除	oa:reimbursement:delete		3
+12940	0	EAM 资产管理			1
+12941	12940	资产主档		eam/asset/index	2
+12942	12940	资产调拨		eam/asset_allocation/index	2
+12943	12940	维修工单		eam/repair_order/index	2
+12944	12940	资产盘点		eam/inventory/index	2
+12945	12940	巡检任务		eam/inspection_task/index	2
+12946	12940	保养任务		eam/maintain_task/index	2
+12947	12940	巡检è®¡åˆ’		eam/inspection_plan/index	2
+12948	12940	保养è®¡åˆ’		eam/maintain_plan/index	2
+12949	12940	资产领用		eam/asset_collection/index	2
+12950	12940	资产借用		eam/asset_borrow/index	2
+12951	12940	领用归还		eam/asset_collection_return/index	2
+12952	12940	借用归还		eam/asset_borrow_return/index	2
+12953	12940	库存领用		eam/asset_stock_collection/index	2
+12954	12940	资产报修		eam/asset_repair/index	2
+12955	12940	维修验收		eam/repair_order_acceptance/index	2
+12956	12940	资产入库		eam/asset_storage/index	2
+12957	12941	资产查询	eam:asset:query		3
+12958	12941	资产新增	eam:asset:create		3
+12959	12941	资产修改	eam:asset:update		3
+12960	12941	资产删除	eam:asset:delete		3
+12961	12941	资产导出	eam:asset:export		3
+12962	12942	资产调拨删除	eam:asset-allocation:delete		3
+12963	12942	资产调拨修改	eam:asset-allocation:update		3
+12964	12942	资产调拨新增	eam:asset-allocation:create		3
+12965	12942	资产调拨查询	eam:asset-allocation:query		3
+12969	12940	资产操作配置		eam/asset_operate/index	2
+12970	12969	资产操作配置删除	eam:asset-operate:delete		3
+12971	12969	资产操作配置修改	eam:asset-operate:update		3
+12972	12969	资产操作配置新增	eam:asset-operate:create		3
+12973	12969	资产操作配置查询	eam:asset-operate:query		3
+12977	12949	资产领用删除	eam:asset-collection:delete		3
+12978	12949	资产领用修改	eam:asset-collection:update		3
+12979	12949	资产领用新增	eam:asset-collection:create		3
+12980	12949	资产领用查询	eam:asset-collection:query		3
+12984	12950	资产借用删除	eam:asset-borrow:delete		3
+12985	12950	资产借用修改	eam:asset-borrow:update		3
+12986	12950	资产借用新增	eam:asset-borrow:create		3
+12987	12950	资产借用查询	eam:asset-borrow:query		3
+12991	12951	领用归还删除	eam:asset-collection-return:delete		3
+12992	12951	领用归还修改	eam:asset-collection-return:update		3
+12993	12951	领用归还新增	eam:asset-collection-return:create		3
+12994	12951	领用归还查询	eam:asset-collection-return:query		3
+12998	12952	借用归还删除	eam:asset-borrow-return:delete		3
+12999	12952	借用归还修改	eam:asset-borrow-return:update		3
+13000	12952	借用归还新增	eam:asset-borrow-return:create		3
+13001	12952	借用归还查询	eam:asset-borrow-return:query		3
+13005	12956	资产入库删除	eam:asset-storage:delete		3
+13006	12956	资产入库修改	eam:asset-storage:update		3
+13007	12956	资产入库新增	eam:asset-storage:create		3
+13008	12956	资产入库查询	eam:asset-storage:query		3
+13012	12953	库存领用删除	eam:asset-stock-collection:delete		3
+13013	12953	库存领用修改	eam:asset-stock-collection:update		3
+13014	12953	库存领用新增	eam:asset-stock-collection:create		3
+13015	12953	库存领用查询	eam:asset-stock-collection:query		3
+13019	12954	资产报修删除	eam:asset-repair:delete		3
+13020	12954	资产报修修改	eam:asset-repair:update		3
+13021	12954	资产报修新增	eam:asset-repair:create		3
+13022	12954	资产报修查询	eam:asset-repair:query		3
+13026	12955	维修验收删除	eam:repair-order-acceptance:delete		3
+13027	12955	维修验收修改	eam:repair-order-acceptance:update		3
+13028	12955	维修验收新增	eam:repair-order-acceptance:create		3
+13029	12955	维修验收查询	eam:repair-order-acceptance:query		3
+13033	12944	资产盘点删除	eam:inventory:delete		3
+13034	12944	资产盘点修改	eam:inventory:update		3
+13035	12944	资产盘点新增	eam:inventory:create		3
+13036	12944	资产盘点查询	eam:inventory:query		3
+13040	12945	巡检任务删除	eam:inspection-task:delete		3
+13041	12945	巡检任务修改	eam:inspection-task:update		3
+13042	12945	巡检任务新增	eam:inspection-task:create		3
+13043	12945	巡检任务查询	eam:inspection-task:query		3
+13047	12946	保养任务删除	eam:maintain-task:delete		3
+13048	12946	保养任务修改	eam:maintain-task:update		3
+13049	12946	保养任务新增	eam:maintain-task:create		3
+13050	12946	保养任务查询	eam:maintain-task:query		3
+13054	12947	巡检è®¡åˆ’删除	eam:inspection-plan:delete		3
+13055	12947	巡检è®¡åˆ’修改	eam:inspection-plan:update		3
+13056	12947	巡检è®¡åˆ’新增	eam:inspection-plan:create		3
+13057	12947	巡检è®¡åˆ’查询	eam:inspection-plan:query		3
+13061	12948	保养è®¡åˆ’删除	eam:maintain-plan:delete		3
+13062	12948	保养è®¡åˆ’修改	eam:maintain-plan:update		3
+13063	12948	保养è®¡åˆ’新增	eam:maintain-plan:create		3
+13064	12948	保养è®¡åˆ’查询	eam:maintain-plan:query		3
+13068	12940	巡检检查项		eam/check_item/index	2
+13069	13068	巡检检查项导出	eam:check-item:export		3
+13070	13068	巡检检查项删除	eam:check-item:delete		3
+13071	13068	巡检检查项修改	eam:check-item:update		3
+13072	13068	巡检检查项新增	eam:check-item:create		3
+13073	13068	巡检检查项查询	eam:check-item:query		3
+13076	12943	维修工单删除	eam:repair-order:delete		3
+13077	12943	维修工单修改	eam:repair-order:update		3
+13078	12943	维修工单新增	eam:repair-order:create		3
+13079	12943	维修工单查询	eam:repair-order:query		3
+13083	12940	巡检路线		eam/inspection_route/index	2
+13084	13083	巡检路线删除	eam:inspection-route:delete		3
+13085	13083	巡检路线修改	eam:inspection-route:update		3
+13086	13083	巡检路线新增	eam:inspection-route:create		3
+13087	13083	巡检路线查询	eam:inspection-route:query		3
+13091	12940	巡检位置		eam/inspection_point_pos/index	2
+13092	13091	巡检位置删除	eam:inspection-point-pos:delete		3
+13093	13091	巡检位置修改	eam:inspection-point-pos:update		3
+13094	13091	巡检位置新增	eam:inspection-point-pos:create		3
+13095	13091	巡检位置查询	eam:inspection-point-pos:query		3
+13099	12940	巡检点		eam/inspection_point/index	2
+13100	13099	巡检点导入	eam:inspection-point:import		3
+13101	13099	巡检点导出	eam:inspection-point:export		3
+13102	13099	巡检点删除	eam:inspection-point:delete		3
+13103	13099	巡检点修改	eam:inspection-point:update		3
+13104	13099	巡检点新增	eam:inspection-point:create		3
+13105	13099	巡检点查询	eam:inspection-point:query		3
+13107	12940	巡检异常单		eam/inspection_task_abnormal/index	2
+13108	13107	巡检异常单查询	eam:inspection-task-abnormal:query		3
+13109	12941	资产巡检记录查询	eam:inspection-rcd:query		3
+13110	12940	巡检处理方式		eam/inspection_process_action/index	2
+13111	13110	巡检处理方式删除	eam:inspection-process-action:delete		3
+13112	13110	巡检处理方式修改	eam:inspection-process-action:update		3
+13113	13110	巡检处理方式新增	eam:inspection-process-action:create		3
+13114	13110	巡检处理方式查询	eam:inspection-process-action:query		3
+13118	12940	仓库管理		eam/warehouse/index	2
+13119	13118	仓库修改	eam:warehouse:update		3
+13120	13118	仓库新增	eam:warehouse:create		3
+13121	13118	仓库查询	eam:warehouse:query		3
+13122	13118	仓库删除	eam:warehouse:delete		3
+13123	12940	供应商管理		eam/supplier/index	2
+13124	13123	供应商删除	eam:supplier:delete		3
+13125	13123	供应商修改	eam:supplier:update		3
+13126	13123	供应商新增	eam:supplier:create		3
+13127	13123	供应商查询	eam:supplier:query		3
+13131	12940	库位管理		eam/warehouse_position/index	2
+13132	13131	库位自动布局	eam:warehouse-position:layout		3
+13133	13131	库位删除	eam:warehouse-position:delete		3
+13134	13131	库位修改	eam:warehouse-position:update		3
+13135	13131	库位新增	eam:warehouse-position:create		3
+13136	13131	库位查询	eam:warehouse-position:query		3
+13139	12940	库存台账		eam/goods_stock/index	2
+13140	13139	库存台账查询	eam:goods-stock:query		3
+13141	12940	库存操作记录		eam/goods_stock_usage/index	2
+13142	13141	操作记录删除	eam:goods-stock-usage:delete		3
+13143	13141	操作记录修改	eam:goods-stock-usage:update		3
+13144	13141	操作记录查询	eam:goods-stock-usage:query		3
+13145	12940	库存入库单		eam/stock_goods_in/index	2
+13146	13145	库存入库单查询	eam:stock-goods-in:query		3
+13147	13145	库存入库单编辑	eam:stock-goods-in:update		3
+13148	13145	库存入库单删除	eam:stock-goods-in:delete		3
+13149	13145	库存入库明细	eam:stock-goods-in:detail		3
+13150	12940	资产财务分类		eam/asset_finance_category/index	2
+13151	13150	财务分类删除	eam:asset-finance-category:delete		3
+13152	13150	财务分类修改	eam:asset-finance-category:update		3
+13153	13150	财务分类新增	eam:asset-finance-category:create		3
+13154	13150	财务分类查询	eam:asset-finance-category:query		3
+13158	12940	档案位置		eam/asset_position/index	2
+13159	13158	档案位置删除	eam:asset-position:delete		3
+13160	13158	档案位置修改	eam:asset-position:update		3
+13161	13158	档案位置新增	eam:asset-position:create		3
+13162	13158	档案位置查询	eam:asset-position:query		3
+13166	12940	库存出库单		eam/stock_goods_out/index	2
+13167	13166	库存出库单查询	eam:stock-goods-out:query		3
+13168	13166	库存出库草稿编辑	eam:stock-goods-out:update		3
+13169	13166	库存出库单删除	eam:stock-goods-out:delete		3
+13170	12940	备件入库单		eam/part_goods_in/index	2
+13171	13170	备件入库明细	eam:stock-goods-in:detail		3
+13172	13170	备件入库单删除	eam:stock-goods-in:delete		3
+13173	13170	备件入库单编辑	eam:stock-goods-in:update		3
+13174	13170	备件入库单查询	eam:stock-goods-in:query		3
+13178	12940	折旧执行单		eam/asset_depreciation_oper/index	2
+13179	13178	折旧资产同步	eam:asset-depreciation-oper:sync		3
+13180	13178	折旧资产排除	eam:asset-depreciation-oper:exclude		3
+13181	13178	折旧计算	eam:asset-depreciation-oper:execute		3
+13182	13178	折旧资产采集	eam:asset-depreciation-oper:start		3
+13183	13178	折旧执行单新增	eam:asset-depreciation-oper:create		3
+13184	13178	折旧执行单查询	eam:asset-depreciation-oper:query		3
+13186	12940	备件出库单		eam/part_goods_out/index	2
+13187	13186	备件出库单删除	eam:stock-goods-out:delete		3
+13188	13186	备件出库草稿编辑	eam:stock-goods-out:update		3
+13189	13186	备件出库单查询	eam:stock-goods-out:query		3
+13190	12940	耗材入库单		eam/consumables_goods_in/index	2
+13191	13190	耗材入库明细	eam:stock-goods-in:detail		3
+13192	13190	耗材入库单删除	eam:stock-goods-in:delete		3
+13193	13190	耗材入库单编辑	eam:stock-goods-in:update		3
+13194	13190	耗材入库单查询	eam:stock-goods-in:query		3
+13198	12940	耗材出库单		eam/consumables_goods_out/index	2
+13199	13198	耗材出库单删除	eam:stock-goods-out:delete		3
+13200	13198	耗材出库草稿编辑	eam:stock-goods-out:update		3
+13201	13198	耗材出库单查询	eam:stock-goods-out:query		3
+13202	12940	备件台账		eam/part_goods_stock/index	2
+13203	13202	备件台账查询	eam:goods-stock:query		3
+13204	12940	耗材台账		eam/consumables_goods_stock/index	2
+13205	13204	耗材台账查询	eam:goods-stock:query		3
+13206	12940	库存预警		eam/goods_stock_warn/index	2
+13207	13206	库存预警查询	eam:goods-stock:query		3
+13208	13206	库存预警导出	eam:goods-stock:export		3
+13209	12940	负库存清单		eam/goods_stock_abnormal/index	2
+13210	13209	负库存清单查询	eam:goods-stock-abnormal:query		3
+13211	12940	折旧方案		eam/asset_depreciation/index	2
+13212	13211	折旧方案删除	eam:asset-depreciation:delete		3
+13213	13211	折旧方案修改	eam:asset-depreciation:update		3
+13214	13211	折旧方案新增	eam:asset-depreciation:create		3
+13215	13211	折旧方案查询	eam:asset-depreciation:query		3
+13219	13211	折旧规则删除	eam:asset-depreciation-rule:delete		3
+13220	13211	折旧规则修改	eam:asset-depreciation-rule:update		3
+13221	13211	折旧规则新增	eam:asset-depreciation-rule:create		3
+13222	13211	折旧规则查询	eam:asset-depreciation-rule:query		3
+13226	13211	折旧排除资产删除	eam:asset-depreciation-exclude:delete		3
+13227	13211	折旧排除资产查询	eam:asset-depreciation-exclude:query		3
+13229	12940	保养项目		eam/maintain_project/index	2
+13230	13229	保养项目删除	eam:maintain-project:delete		3
+13231	13229	保养项目修改	eam:maintain-project:update		3
+13232	13229	保养项目新增	eam:maintain-project:create		3
+13233	13229	保养项目查询	eam:maintain-project:query		3
+13237	12940	保养班组		eam/maintain_group/index	2
+13238	13237	保养班组删除	eam:maintain-group:delete		3
+13239	13237	保养班组修改	eam:maintain-group:update		3
+13240	13237	保养班组新增	eam:maintain-group:create		3
+13241	13237	保养班组查询	eam:maintain-group:query		3
+13245	12940	备件清单		eam/device_sp/index	2
+13246	13245	备件清单查询	eam:device-sp:query		3
+13247	13245	备件清单修改	eam:device-sp:update		3
+13248	13245	备件清单删除	eam:device-sp:delete		3
+13249	12940	维修执行单		eam/repair_order_act/index	2
+13250	13249	维修执行单查询	eam:repair-order-act:query		3
+13251	12940	维修班组		eam/repair_group/index	2
+13252	13251	维修班组删除	eam:repair-group:delete		3
+13253	13251	维修班组修改	eam:repair-group:update		3
+13254	13251	维修班组新增	eam:repair-group:create		3
+13255	13251	维修班组查询	eam:repair-group:query		3
+13259	12941	资产维修记录查询	eam:repair-record:query		3
+13260	12943	维修工单撤销审批	eam:repair-order:cancel		3
+13261	12943	维修工单送审	eam:repair-order:submit		3
+13263	12943	维修工单确认	eam:repair-order:confirm		3
+13264	12940	采购申请		eam/purchase_apply/index	2
+13265	13264	采购申请撤销审批	eam:purchase-apply:cancel		3
+13266	13264	采购申请送审	eam:purchase-apply:submit		3
+13267	13264	采购申请废弃	eam:purchase-apply:delete		3
+13268	13264	采购申请确认	eam:purchase-apply:confirm		3
+13269	13264	采购申请修改	eam:purchase-apply:update		3
+13270	13264	采购申请新增	eam:purchase-apply:create		3
+13271	13264	采购申请查询	eam:purchase-apply:query		3
+13272	13245	备件批量确认	eam:device-sp:confirm		3
+13273	13245	备件状态修改	eam:device-sp:status		3
+13274	13245	备件清单新增	eam:device-sp:create		3
+13275	13186	转备件清单	eam:stock-goods-out:sp-book		3
+13276	12955	维修验收确认	eam:repair-order-acceptance:confirm		3
+13277	12943	维修派单	eam:repair-order-transfer:create		3
+13278	13145	库存入库单新增	eam:stock-goods-in:create		3
+13279	12940	采购验收		eam/purchase_check/index	2
+13280	13279	采购验收删除	eam:purchase-check:delete		3
+13281	13279	采购验收修改	eam:purchase-check:update		3
+13282	13279	采购验收新增	eam:purchase-check:create		3
+13283	13279	采购验收查询	eam:purchase-check:query		3
+13287	12940	维修紧急程度		eam/repair_urgency/index	2
+13288	13287	紧急程度删除	eam:repair-urgency:delete		3
+13289	13287	紧急程度修改	eam:repair-urgency:update		3
+13290	13287	紧急程度新增	eam:repair-urgency:create		3
+13291	13287	紧急程度查询	eam:repair-urgency:query		3
+13295	12940	维修故障分类		eam/repair_category/index	2
+13296	13295	维修故障分类删除	eam:repair-category:delete		3
+13297	13295	维修故障分类修改	eam:repair-category:update		3
+13298	13295	维修故障分类新增	eam:repair-category:create		3
+13299	13295	维修故障分类查询	eam:repair-category:query		3
+13303	12940	维修故障模板		eam/repair_category_tpl/index	2
+13304	13303	维修故障模板删除	eam:repair-category-tpl:delete		3
+13305	13303	维修故障模板修改	eam:repair-category-tpl:update		3
+13306	13303	维修故障模板新增	eam:repair-category-tpl:create		3
+13307	13303	维修故障模板查询	eam:repair-category-tpl:query		3
+13311	13249	维修执行单验收	eam:repair-order-act:acceptance		3
+13312	13166	库存出库单确认	eam:stock-goods-out:confirm		3
+13313	13166	库存出库单新增	eam:stock-goods-out:create		3
+13315	13170	备件入库单新增	eam:stock-goods-in:create		3
+13316	13186	备件出库单确认	eam:stock-goods-out:confirm		3
+13317	13186	备件出库单新增	eam:stock-goods-out:create		3
+13319	13190	耗材入库单新增	eam:stock-goods-in:create		3
+13320	13198	耗材出库单确认	eam:stock-goods-out:confirm		3
+13321	13198	耗材出库单新增	eam:stock-goods-out:create		3
+13323	13145	库存入库单确认	eam:stock-goods-in:confirm		3
+13324	13170	备件入库单确认	eam:stock-goods-in:confirm		3
+13325	13190	耗材入库单确认	eam:stock-goods-in:confirm		3
+13326	12940	备件分类		eam/device_sp_type/index	2
+13327	13326	备件分类删除	eam:device-sp-type:delete		3
+13328	13326	备件分类修改	eam:device-sp-type:update		3
+13329	13326	备件分类新增	eam:device-sp-type:create		3
+13330	13326	备件分类查询	eam:device-sp-type:query		3
+13334	12940	资产报废		eam/asset_scrap/index	2
+13335	13334	资产报废查询	eam:asset-scrap:query		3
+13336	13334	资产报废清理	eam:asset-scrap:clean		3
+13337	13334	资产报废确认	eam:asset-scrap:confirm		3
+13338	13334	资产报废删除	eam:asset-scrap:delete		3
+13339	13334	资产报废修改	eam:asset-scrap:update		3
+13340	13334	资产报废新增	eam:asset-scrap:create		3
+13343	13334	资产报废撤销审批	eam:asset-scrap:cancel		3
+13344	13334	资产报废送审	eam:asset-scrap:submit		3
+13346	13107	巡检异常单处理	eam:inspection-task-abnormal:update		3
+13347	12940	盘点计划		eam/inventory_plan/index	2
+13348	13347	盘点计划删除	eam:inventory-plan:delete		3
+13349	13347	盘点计划修改	eam:inventory-plan:update		3
+13350	13347	盘点计划新增	eam:inventory-plan:create		3
+13351	13347	盘点计划查询	eam:inventory-plan:query		3
+13355	12940	资产状态		eam/asset_status/index	2
+13356	13355	资产状态删除	eam:asset-status:delete		3
+13357	13355	资产状态修改	eam:asset-status:update		3
+13358	13355	资产状态新增	eam:asset-status:create		3
+13359	13355	资产状态查询	eam:asset-status:query		3
+13363	12940	资产范围		eam/asset_data_range/index	2
+13364	13363	资产范围删除	eam:asset-data-range:delete		3
+13365	13363	资产范围修改	eam:asset-data-range:update		3
+13366	13363	资产范围新增	eam:asset-data-range:create		3
+13367	13363	资产范围查询	eam:asset-data-range:query		3
+13371	12950	直接归还资产	eam:asset-borrow:return		3
+13372	12950	确认资产借用	eam:asset-borrow:confirm		3
+13374	12950	提交资产借用审批	eam:asset-borrow:submit		3
+13375	12950	撤销资产借用审批	eam:asset-borrow:cancel		3
+13376	12940	软件资产		eam/asset_software/index	2
+13377	13376	软件资产查询	eam:asset-software:query		3
+13378	12940	维保厂商		eam/maintainer/index	2
+13379	13378	维保厂商删除	eam:maintainer:delete		3
+13380	13378	维保厂商修改	eam:maintainer:update		3
+13381	13378	维保厂商新增	eam:maintainer:create		3
+13382	13378	维保厂商查询	eam:maintainer:query		3
+13386	13376	软件资产确认	eam:asset-software:confirm		3
+13387	13376	软件资产删除	eam:asset-software:delete		3
+13388	13376	软件资产修改	eam:asset-software:update		3
+13389	13376	软件资产新增	eam:asset-software:create		3
+13393	12940	软件分发		eam/asset_software_distribute/index	2
+13394	13393	软件分发确认	eam:asset-software-distribute:confirm		3
+13395	13393	软件分发删除	eam:asset-software-distribute:delete		3
+13396	13393	软件分发修改	eam:asset-software-distribute:update		3
+13397	13393	软件分发新增	eam:asset-software-distribute:create		3
+13398	13393	软件分发查询	eam:asset-software-distribute:query		3
+13401	12940	软件变更		eam/asset_software_change/index	2
+13402	13401	软件变更确认	eam:asset-software-change:confirm		3
+13403	13401	软件变更删除	eam:asset-software-change:delete		3
+13404	13401	软件变更修改	eam:asset-software-change:update		3
+13405	13401	软件变更新增	eam:asset-software-change:create		3
+13406	13401	软件变更查询	eam:asset-software-change:query		3
+13409	12940	软件维保		eam/asset_software_maintenance/index	2
+13410	13409	软件维保确认	eam:asset-software-maintenance:confirm		3
+13411	13409	软件维保删除	eam:asset-software-maintenance:delete		3
+13412	13409	软件维保修改	eam:asset-software-maintenance:update		3
+13413	13409	软件维保新增	eam:asset-software-maintenance:create		3
+13414	13409	软件维保查询	eam:asset-software-maintenance:query		3
+13417	12941	资产保养记录查询	eam:maintain-rcd:query		3
+13418	12940	生产厂商		eam/manufacturer/index	2
+13419	13418	生产厂商删除	eam:manufacturer:delete		3
+13420	13418	生产厂商修改	eam:manufacturer:update		3
+13421	13418	生产厂商新增	eam:manufacturer:create		3
+13422	13418	生产厂商查询	eam:manufacturer:query		3
+13426	12940	巡检班组		eam/inspection_group/index	2
+13427	13426	巡检班组删除	eam:inspection-group:delete		3
+13428	13426	巡检班组修改	eam:inspection-group:update		3
+13429	13426	巡检班组新增	eam:inspection-group:create		3
+13430	13426	巡检班组查询	eam:inspection-group:query		3
+13434	12941	资产处理记录查询	eam:asset-process-record:query		3
+13435	12940	未关联物品档案		eam/asset_unlinked_goods/index	2
+13436	13435	未关联物品档案查询	eam:asset-unlinked-goods:query		3
+13437	12940	资产分类状态报表		eam/report/asset_category_status/index	2
+13438	13437	资产分类状态报表导出	eam:asset-category-status-report:export		3
+13439	13437	资产分类状态报表查询	eam:asset-category-status-report:query		3
+13441	12940	资产分类报表		eam/report/asset_category/index	2
+13442	13441	资产分类报表导出	eam:asset-category-report:export		3
+13443	13441	资产分类报表查询	eam:asset-category-report:query		3
+13445	12940	维修保养巡检看板		eam/report/mro_dashboard/index	2
+13446	13445	维修保养巡检看板查询	eam:mro-dashboard:query		3
+13447	12940	资产操作记录报表		eam/report/asset_operation/index	2
+13448	13447	资产操作记录报表导出	eam:asset-operation-report:export		3
+13449	13447	资产操作记录报表查询	eam:asset-operation-report:query		3
+13451	12940	资产总览		eam/report/asset_dashboard/index	2
+13452	13451	资产总览查询	eam:asset-dashboard:query		3
+13453	12940	资产分类目录报表		eam/report/asset_category_tree/index	2
+13454	13453	资产分类目录报表导出	eam:asset-category-tree-report:export		3
+13455	13453	资产分类目录报表查询	eam:asset-category-tree-report:query		3
+13457	12940	巡检点次数报表		eam/report/inspection_point/index	2
+13458	13457	巡检点次数报表导出	eam:inspection-point-report:export		3
+13459	13457	巡检点次数报表查询	eam:inspection-point-report:query		3
+13461	12940	离职员工名下资产		eam/asset_leaving_employee/index	2
+13462	13461	离职员工名下资产导出	eam:asset-leaving-employee:export		3
+13463	13461	离职员工名下资产查询	eam:asset-leaving-employee:query		3
+13465	12940	资产使用组织状态报表		eam/report/asset_organization_status/index	2
+13466	13465	资产使用组织状态报表导出	eam:asset-organization-status-report:export		3
+13467	13465	资产使用组织状态报表查询	eam:asset-organization-status-report:query		3
+13469	12940	资产所属公司状态报表		eam/report/asset_company_status/index	2
+13470	13469	资产所属公司状态报表导出	eam:asset-company-status-report:export		3
+13471	13469	资产所属公司状态报表查询	eam:asset-company-status-report:query		3
+13473	13249	维修执行单开工	eam:repair-order-act:start		3
+13474	13249	维修执行单完工	eam:repair-order-act:finish		3
+13475	13249	维修备件领用	eam:repair-order-act:maintenance		3
+13476	13249	维修执行单取消	eam:repair-order-act:cancel		3
+13477	13249	维修执行单修改	eam:repair-order-act:update		3

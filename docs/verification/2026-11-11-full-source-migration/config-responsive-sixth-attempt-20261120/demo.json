@@ -1,0 +1,27 @@
+{
+  "base": "http://127.0.0.1:5198",
+  "viewports": {
+    "mobile-390x844": {
+      "menuStateAfterToggle": {
+        "drawer": {
+          "left": 0,
+          "right": 200,
+          "width": 200,
+          "position": "fixed"
+        },
+        "overlays": 2
+      }
+    }
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailed": [],
+  "responses": [
+    {
+      "label": "mobile-390x844",
+      "method": "GET",
+      "path": "/admin-api/infra/config/page",
+      "status": 200
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "temporary_jar": "/var/folders/qy/zdng4xqs4bv9xz738cf74l7w0000gn/T/yh-default-fixed-ott425im/yuheng-demo.jar",
+  "source_jar_sha256": "e50bcf20ec4ca4157638393fcfd9730707bd7395e08a08296e5a9e2266da1e9f",
+  "fixed_jar_sha256": "1b9593228e67b0a9e6d10135a96a1fb46b9421343c4a07aa30cac0eaaa171abf",
+  "business_jar_sha256": "c0cbca28a21f73e43d4423a4c2251e0429505894dfb158a1c1c47ba80f3505aa",
+  "changed_nested_entry": "BOOT-INF/lib/yuheng-demo-business-0.1.0-SNAPSHOT.jar"
+}
