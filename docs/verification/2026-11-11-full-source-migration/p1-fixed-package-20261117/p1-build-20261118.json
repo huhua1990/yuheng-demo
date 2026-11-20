@@ -109,10 +109,34 @@
     "registry_install": false
   },
   "demo_python_script_tests": {
-    "tests": 38,
-    "passed": 31,
+    "tests": 39,
+    "passed": 32,
     "skipped": 7,
     "failed": 0,
-    "includes": "relative tarball path and JAR/dist static resource consistency pass/fail tests"
+    "includes": "relative tarball path and JAR/dist static resource consistency pass/fail tests; config CRUD runner package-identity wiring",
+    "latest_command": "python3 -m unittest discover -s scripts/tests -v",
+    "latest_exit_code": 0
+  },
+  "config_browser": {
+    "evidence": "../config-crud-20261117/runtime.json and ../config-crud-20261117/browser.json",
+    "jar_sha256": "9a7b8fa44a02a2d42da0da98b518018a7c1c2f2e5e83d15711bd5afac156dcbd",
+    "jar_static_resource_count": 612,
+    "jar_dist_byte_match": true,
+    "completed": true,
+    "actions": [
+      "list and filter",
+      "reset filter",
+      "create",
+      "detail readback",
+      "update",
+      "soft delete",
+      "cancel edit"
+    ],
+    "api_errors": 0,
+    "browser_errors": 0,
+    "failed_requests": 0,
+    "baseline_config_snapshot_unchanged": true,
+    "probe_row_soft_deleted": true,
+    "resources_cleaned": true
   }
 }

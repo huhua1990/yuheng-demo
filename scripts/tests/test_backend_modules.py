@@ -178,6 +178,13 @@ class BackendModulesTest(unittest.TestCase):
             runner.JAR = archive_path
             self.assertEqual(runner.assert_static_matches_jar(), 1)
 
+    def test_config_crud_runner_checks_static_assets_against_tested_jar(self):
+        runner_path = ROOT / "scripts/verification/config_page_crud_runner.py"
+        source = runner_path.read_text()
+        self.assertIn("import role_page_browser_runner as package_evidence", source)
+        self.assertIn("package_evidence.assert_static_matches_jar()", source)
+        self.assertIn('"jar_dist_byte_match": True', source)
+
     def test_reactor_and_bootstrap_dependency(self):
         root = ET.parse(ROOT / "pom.xml").getroot()
         self.assertEqual(root.findtext("m:packaging", namespaces=NS), "pom")

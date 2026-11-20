@@ -4,6 +4,7 @@
   "jar_sha256": "9a7b8fa44a02a2d42da0da98b518018a7c1c2f2e5e83d15711bd5afac156dcbd",
   "ui_source": "yuheng-demo-ui/dist; SHA-256 verified byte-for-byte against the tested JAR before startup",
   "jar_static_resource_count": 612,
+  "jar_dist_byte_match": true,
   "test_server_request_queue_size": 128,
   "ports": {
     "mysql": 13364,
@@ -302,6 +303,5 @@
       "48201": false,
       "5201": false
     }
-  },
-  "jar_dist_byte_match": true
+  }
 }

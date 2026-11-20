@@ -9,6 +9,7 @@ import time
 from pathlib import Path
 
 import config_value_security_probe as probe
+import role_page_browser_runner as package_evidence
 
 probe.SCHEMA = "yuheng_t3_configcrud_20261117"
 probe.MYSQL_PORT, probe.REDIS_PORT, probe.APP_PORT = 13353, 16433, 48188
@@ -20,6 +21,7 @@ OUT = probe.ROOT / "docs/verification/2026-11-11-full-source-migration/config-cr
 def main():
     ports = (probe.MYSQL_PORT, probe.REDIS_PORT, probe.APP_PORT, UI_PORT)
     assert probe.JAR.is_file() and (probe.ROOT / "yuheng-demo-ui/dist/index.html").is_file()
+    static_resource_count = package_evidence.assert_static_matches_jar()
     assert not any(probe.listening(port) for port in ports)
     existing = probe.run("docker", "ps", "-a", "--format", "{{.Names}}").splitlines()
     assert probe.MYSQL not in existing and probe.REDIS not in existing
@@ -30,7 +32,9 @@ def main():
     processes, containers = [], []
     OUT.mkdir(parents=True, exist_ok=True)
     result = {"work_id": "YH-20261111-full-source-migration", "schema": probe.SCHEMA,
-              "jar_sha256": hashlib.sha256(probe.JAR.read_bytes()).hexdigest(), "ports": ports}
+              "jar_sha256": hashlib.sha256(probe.JAR.read_bytes()).hexdigest(),
+              "jar_static_resource_count": static_resource_count, "jar_dist_byte_match": True,
+              "ports": ports}
     try:
         probe.run("docker", "run", "-d", "--name", probe.MYSQL, "-e", "MYSQL_ROOT_PASSWORD=" + db_password,
                   "-e", "MYSQL_DATABASE=" + probe.SCHEMA, "-p", f"127.0.0.1:{probe.MYSQL_PORT}:3306", "mysql:8.0.33")
@@ -72,7 +76,7 @@ def main():
         before = probe.sql(snapshot_sql)
         result["config_snapshot_before_sha256"] = hashlib.sha256(before.encode()).hexdigest()
         ui_log = open(OUT / "ui.log", "w")
-        ui = subprocess.Popen(["python3", "scripts/ui_server.py", "--root", "yuheng-demo-ui/dist", "--port", str(UI_PORT),
+        ui = subprocess.Popen(["python3", "-c", "import http.server, runpy; http.server.ThreadingHTTPServer.request_queue_size = 128; runpy.run_path('scripts/ui_server.py', run_name='__main__')", "--root", "yuheng-demo-ui/dist", "--port", str(UI_PORT),
                                "--backend", f"http://127.0.0.1:{probe.APP_PORT}"], cwd=probe.ROOT,
                               stdout=ui_log, stderr=ui_log)
         processes.append(ui)

@@ -87,6 +87,7 @@ def main() -> None:
         "jar_sha256": hashlib.sha256(JAR.read_bytes()).hexdigest(),
         "ui_source": "yuheng-demo-ui/dist; SHA-256 verified byte-for-byte against the tested JAR before startup",
         "jar_static_resource_count": static_resource_count,
+        "jar_dist_byte_match": True,
         "test_server_request_queue_size": 128,
         "ports": {"mysql": MYSQL_PORT, "redis": REDIS_PORT, "app": APP_PORT, "ui": UI_PORT},
         "credentials_recorded": False,
