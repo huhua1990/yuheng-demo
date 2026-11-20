@@ -94,4 +94,11 @@
 - 使用与平台、角色页相同的 JAR SHA-256 `9a7b8fa44a02a2d42da0da98b518018a7c1c2f2e5e83d15711bd5afac156dcbd`，runner 启动前确认 JAR 与 `yuheng-demo-ui/dist` 的 612 个静态资源逐项字节一致。
 - 隔离浏览器完成配置列表、筛选/重置、新增、详情读取、更新、软删除和取消编辑。所有写 API 返回成功；console/API 错误和失败请求均为 0。探针配置软删除，基线配置行前后 SHA-256 相同；隔离容器和 13353/16433/48188/5300 端口均已清理。证据：`docs/verification/2026-11-11-full-source-migration/config-crud-20261117/runtime.json`、`browser.json`。
 - 最新 Demo Python 脚本测试：39 项，32 通过、7 项条件跳过、0 失败；新增 runner 接线测试要求配置 CRUD 验收使用的 JAR 与 dist 静态资源一致。P1 汇总结构化结果见 `p1-fixed-package-20261117/p1-build-20261118.json`。
-- **P1 仍进行中。** 本地固定 tarball 路径和最终 JAR 的隔离平台/浏览器代表闭环通过；公网 npm 查询固定版本为 404，Nexus 无认证 HTTP 检查为 401，后者不足以证明私服没有该版本。`yuheng-demo-ui/pnpm-lock.yaml` 仍不存在，根 workspace 锁文件的 `workspace:*` 解析不等同独立消费锁文件。未发布制品或改写依赖坐标来规避缺口；需取得有效私服访问方式或正式制品后再完成 registry 冻结安装与独立锁验证。
+- **P1 仍进行中。** 本地固定 tarball 路径和最终 JAR 的隔离平台/浏览器代表闭环通过；2026-11-20 查询配置的 Nexus `npm-group` 对固定版本返回 404，`npm whoami` 未认证，Nexus 仓库只读 API 返回空列表，没有可发现的 hosted npm 发布目标。对该 tarball 的 publish dry-run 识别到 655 个包文件并提示需要登录，未上传。`yuheng-demo-ui/pnpm-lock.yaml` 仍不存在，根 workspace 锁文件的 `workspace:*` 解析不等同独立消费锁文件。完成这两项需要有效 hosted registry、授权凭据和其中可安装的固定版本；不对 npm-group 执行上传。
+
+## P1 发布通道与当前 Core 复核（2026-11-20）
+
+- 当前 Core `293abaf98346543613055cac36fbdb296d753d6e` 相对 P1 已验证源码提交 `836125ca005a2e340e443a9fd40f262c9a60bb38` 的 UI 差异仅为 tarball 内容一致性回归测试与同一发布包更新；Core UI 源码无变化。当前跟踪 tarball SHA-256 仍为 `7d5adb2d1a27e0c68956ed64646dd1850adb733fb0e3b5467ff6adff0d9dcebc`，与 Demo JAR 构建/浏览器证据一致。
+- 当前 Core UI 全量 Vitest 复核通过：30 个测试文件、126 项；`tests/release/package-content.test.ts` 也通过。`verify_manifest.py release/yuheng-manifest.yaml --json` 与 `verify_bundle.py . --json` 均为 `PASS`。发布 dry-run 只检查包内容，不执行上传。
+- Nexus 只读 REST `/service/rest/v1/repositories` 返回 HTTP 200 和空列表；configured `npm-group` 查询固定版本返回 404，`npm whoami` 退出码 1。当前环境未发现已认证身份或 hosted 仓库名称，不能完成 registry 安装和锁文件解析。未尝试注册、创建仓库、修改凭据或发布制品。
+- P1 本地 tarball 平台闭环保持通过；固定坐标 registry 干净安装及独立 Demo UI 锁文件仍为明确未完成项，直到 Nexus 管理方提供有效 hosted registry、发布权限及版本可用性。

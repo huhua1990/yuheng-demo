@@ -53,6 +53,11 @@
   "fixed_registry_install": "not verified; configured registry does not provide the fixed yuheng-ui version",
   "standalone_demo_ui_lockfile": "not present",
   "core_source_commit": "836125ca005a2e340e443a9fd40f262c9a60bb38",
+  "core_current_commit_at_2026_11_20": "293abaf98346543613055cac36fbdb296d753d6e",
+  "core_current_ui_source_delta_since_verified_commit": [
+    "yuheng-ui/tests/release/package-content.test.ts",
+    "yuheng-ui/vendor/yuheng-ui-0.1.0-SNAPSHOT.tgz"
+  ],
   "core_build": {
     "vite": "passed; 1466 modules; existing ineffective dynamic import warning",
     "declarations": "vue-tsc -p tsconfig.build.json passed",
@@ -116,6 +121,23 @@
     "includes": "relative tarball path and JAR/dist static resource consistency pass/fail tests; config CRUD runner package-identity wiring",
     "latest_command": "python3 -m unittest discover -s scripts/tests -v",
     "latest_exit_code": 0
+  },
+  "registry_recheck_2026_11_20": {
+    "configured_registry": "http://172.26.0.19:8081/repository/npm-group/",
+    "fixed_version_query": "404 Not Found",
+    "npm_whoami_exit_code": 1,
+    "nexus_repository_list_status": 200,
+    "nexus_repository_list_body": [],
+    "publish_dry_run": {
+      "target": "configured npm-group registry",
+      "result": "package tarball recognized; npm reports login required; no upload performed",
+      "package": "yuheng-ui@0.1.0-SNAPSHOT",
+      "files": 655,
+      "tarball_sha256": "7d5adb2d1a27e0c68956ed64646dd1850adb733fb0e3b5467ff6adff0d9dcebc"
+    },
+    "hosted_write_repository": "not discoverable from the unauthenticated Nexus repository list",
+    "publish_performed": false,
+    "blocker": "No authenticated npm identity or discoverable hosted npm repository is available in this environment; do not publish to the npm-group proxy/group endpoint."
   },
   "config_browser": {
     "evidence": "../config-crud-20261117/runtime.json and ../config-crud-20261117/browser.json",
