@@ -17,7 +17,7 @@
 
 | 项目 | 状态 | 现有证据和缺口 |
 | --- | --- | --- |
-| 前后端构建和打包 | 进行中（本地 tarball 闭环通过） | Core `836125c` 重打包 SHA-256 `7d5adb2d1a27e0c68956ed64646dd1850adb733fb0e3b5467ff6adff0d9dcebc`；独立临时消费者离线安装、Demo 类型检查和 Vite 3544 模块构建通过，JAR SHA-256 `9a7b8fa44a02a2d42da0da98b518018a7c1c2f2e5e83d15711bd5afac156dcbd`（612 项静态资源）。构建脚本相对 tarball 路径回归通过。公网 npm 对固定版本返回 404；配置 Nexus 未认证 HTTP 检查返回 401，不能据此断言私服制品不存在。registry 固定坐标安装和 Demo UI 独立锁文件仍未闭合。 |
+| 前后端构建和打包 | 已完成（P1 范围） | Core `836125c` 重打包 SHA-256 `7d5adb2d1a27e0c68956ed64646dd1850adb733fb0e3b5467ff6adff0d9dcebc`；Demo UI 从 npm 公共 registry 按 `yuheng-ui@0.1.0-SNAPSHOT` 固定坐标和独立 pnpm 锁文件完成冻结安装、类型检查、14 项消费者测试及 Vite 3546 模块生产构建。Demo 后端 JAR SHA-256 `9a7b8fa44a02a2d42da0da98b518018a7c1c2f2e5e83d15711bd5afac156dcbd`（612 项静态资源）。Vite 保留既有大 chunk 警告；registry、SRI、锁文件及隔离消费证据见 `p1-build-20261118.json`。 |
 | 数据库初始化与升级 | 已完成（P1 范围） | 同一固定 JAR 在独立 schema 首次执行 56 个 changeset，停止后重启同一 schema 再次启动；changeset 行、21 个种子用户密码哈希保持一致，空密码为 0，`system_operate_log.success` 列不存在。 |
 | 登录、首页和菜单 | 已完成（P1 范围） | 固定包在隔离实例真实登录成功；角色页动态菜单和三视口页面通过，浏览器无 console、page、request 错误；启动脚本静态首页和匿名 API 保护也通过。 |
 | 系统管理 | 已完成（P1 范围） | 隔离实例完成用户和角色创建、更新、查询回读、授权菜单和用户角色回读、删除清理；无角色用户执行授权返回 403 且关系未变。 |
@@ -94,7 +94,10 @@
 - 使用与平台、角色页相同的 JAR SHA-256 `9a7b8fa44a02a2d42da0da98b518018a7c1c2f2e5e83d15711bd5afac156dcbd`，runner 启动前确认 JAR 与 `yuheng-demo-ui/dist` 的 612 个静态资源逐项字节一致。
 - 隔离浏览器完成配置列表、筛选/重置、新增、详情读取、更新、软删除和取消编辑。所有写 API 返回成功；console/API 错误和失败请求均为 0。探针配置软删除，基线配置行前后 SHA-256 相同；隔离容器和 13353/16433/48188/5300 端口均已清理。证据：`docs/verification/2026-11-11-full-source-migration/config-crud-20261117/runtime.json`、`browser.json`。
 - 最新 Demo Python 脚本测试：39 项，32 通过、7 项条件跳过、0 失败；新增 runner 接线测试要求配置 CRUD 验收使用的 JAR 与 dist 静态资源一致。P1 汇总结构化结果见 `p1-fixed-package-20261117/p1-build-20261118.json`。
-- **P1 仍进行中。** 本地固定 tarball 路径和最终 JAR 的隔离平台/浏览器代表闭环通过；2026-11-20 查询配置的 Nexus `npm-group` 对固定版本返回 404，`npm whoami` 未认证，Nexus 仓库只读 API 返回空列表，没有可发现的 hosted npm 发布目标。对该 tarball 的 publish dry-run 识别到 655 个包文件并提示需要登录，未上传。`yuheng-demo-ui/pnpm-lock.yaml` 仍不存在，根 workspace 锁文件的 `workspace:*` 解析不等同独立消费锁文件。完成这两项需要有效 hosted registry、授权凭据和其中可安装的固定版本；不对 npm-group 执行上传。
+- 2026-11-21 用户选择 npm 公共 registry 并开启发布 2FA。账号 `huhua8812` 将 Core 跟踪 tarball提交至 npm staged publishing，用户完成最终审批后，固定包在 `https://registry.npmjs.org/` 可查询且 tarball 下载返回 HTTP 200。公开制品 `yuheng-ui@0.1.0-SNAPSHOT` 的 SHA-256 为 `7d5adb2d1a27e0c68956ed64646dd1850adb733fb0e3b5467ff6adff0d9dcebc`，registry SHA-1 为 `90cb14a37b9d3f1af1cd541c04634afaac4d6ead`，SRI 与 Core tarball发布 dry-run 匹配；包含 655 个文件，访问级别 public，dist-tag 为 `snapshot`。
+- `yuheng-demo-ui/pnpm-lock.yaml` 已从 registry 独立解析生成，yuheng-ui 锁定为 registry SRI，不包含 workspace 链接或机器路径；Demo UI 目录执行 `pnpm install --frozen-lockfile --lockfile-only --ignore-scripts --registry=https://registry.npmjs.org/` 通过。首次从干净临时消费者安装时 registry tarball 尚未完成分发，返回 404；分发就绪后再次 frozen install 成功，解析到临时消费者 pnpm store，`vue-tsc --noEmit` 通过、Vitest 3 个文件/14 项通过、Vite 3546 模块构建成功（保留既有大 chunk 警告）。此前首次测试因为临时副本未带 `.env` 有 1 项夹具文件缺失；复制 Demo `.env` 到临时目录（未提交）后全量通过。
+- P1 固定版本 registry 干净安装和独立锁文件缺口已关闭；平台运行、数据库升级、登录/菜单、系统管理/基础设施、权限边界、生命周期及代表浏览器流程均有同一固定 JAR 的隔离证据。P1 验收清单各限定范围达到通过；全量 T1/T3/T4、P2/P3 和独立 uni-app 迁移仍按更大范围计划继续开放。
+- **P1 状态：已完成（限定的平台最小闭环范围）。** 每个清单项目均有固定版本/固定 JAR 的构建、运行或浏览器证据；未把 P1 代表性权限/浏览器覆盖扩展解释为全量 T1/T3/T4、P2/P3 或独立 uni-app 验收完成。
 
 ## P1 发布通道与当前 Core 复核（2026-11-20）
 

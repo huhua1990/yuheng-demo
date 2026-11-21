@@ -50,8 +50,8 @@
     "system_infra_and_lifecycle": true,
     "resources_cleaned": true
   },
-  "fixed_registry_install": "not verified; configured registry does not provide the fixed yuheng-ui version",
-  "standalone_demo_ui_lockfile": "not present",
+  "fixed_registry_install": "passed from npmjs public registry on 2026-11-21 using a clean temporary consumer and frozen lockfile",
+  "standalone_demo_ui_lockfile": "yuheng-demo-ui/pnpm-lock.yaml; generated from npmjs and frozen-lockfile verified",
   "core_source_commit": "836125ca005a2e340e443a9fd40f262c9a60bb38",
   "core_current_commit_at_2026_11_20": "293abaf98346543613055cac36fbdb296d753d6e",
   "core_current_ui_source_delta_since_verified_commit": [
@@ -138,6 +138,36 @@
     "hosted_write_repository": "not discoverable from the unauthenticated Nexus repository list",
     "publish_performed": false,
     "blocker": "No authenticated npm identity or discoverable hosted npm repository is available in this environment; do not publish to the npm-group proxy/group endpoint."
+  },
+  "npm_public_registry_consumption_2026_11_21": {
+    "registry": "https://registry.npmjs.org/",
+    "package": "yuheng-ui@0.1.0-SNAPSHOT",
+    "visibility": "public",
+    "dist_tag": "snapshot",
+    "published_tarball_sha256": "7d5adb2d1a27e0c68956ed64646dd1850adb733fb0e3b5467ff6adff0d9dcebc",
+    "published_shasum": "90cb14a37b9d3f1af1cd541c04634afaac4d6ead",
+    "published_integrity": "sha512-zYstszt9JvGc7CHWLkV/dgxq8WcQWRYSDXbhVze5RLXy2notLDhlicUjhHo5FPh/aY37wF94lleBhdRVH74icA==",
+    "published_file_count": 655,
+    "published_tarball_http_status": 200,
+    "clean_consumer": {
+      "path": "/tmp/yuheng-demo-ui-registry.7xBddR",
+      "frozen_install": "passed",
+      "resolved_package_version": "0.1.0-SNAPSHOT",
+      "resolved_outside_core_source": true,
+      "typecheck": "passed",
+      "vitest_files": 3,
+      "vitest_passed": 14,
+      "vitest_failed": 0,
+      "vite_build_modules": 3546,
+      "vite_build": "passed with existing large-chunk warning"
+    },
+    "standalone_lockfile": {
+      "path": "yuheng-demo-ui/pnpm-lock.yaml",
+      "lockfile_only_frozen_check": "passed",
+      "contains_workspace_link_for_yuheng_ui": false,
+      "contains_machine_file_path": false,
+      "yuheng_ui_integrity_matches_registry": true
+    }
   },
   "config_browser": {
     "evidence": "../config-crud-20261117/runtime.json and ../config-crud-20261117/browser.json",
