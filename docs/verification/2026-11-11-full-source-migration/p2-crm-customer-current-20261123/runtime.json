@@ -1,0 +1,52 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_p2_crm_customer_20261123",
+  "mysql_container": "codex-qc-schema-mysql",
+  "jar_sha256": "1f68267f1954badd56df05d8c0d9f624863ba7677ee5cb760b01a019c79d89eb",
+  "ports": {
+    "mysql": 51045,
+    "redis": 16501,
+    "app": 48301,
+    "ui": 48302
+  },
+  "credentials_recorded": false,
+  "browser": {
+    "result": "PASS",
+    "viewport": "desktop-1440x900",
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "apiResponses": [
+      {
+        "method": "GET",
+        "status": 200
+      }
+    ],
+    "listVisible": true,
+    "customerRows": 1,
+    "finalUrl": "http://127.0.0.1:48302/crm/customer"
+  },
+  "changesets": 91,
+  "assertions": [
+    "anonymous_requires_auth",
+    "login",
+    "create",
+    "sql_owner_and_tenant",
+    "permission_row",
+    "page_query",
+    "update",
+    "soft_delete",
+    "permission_cleanup",
+    "seed_passwords_unchanged"
+  ],
+  "cleanup": {
+    "redis_absent": true,
+    "schema_absent": true,
+    "ports_listening": {
+      "16501": false,
+      "48301": false,
+      "48302": false
+    },
+    "passed": true
+  }
+}

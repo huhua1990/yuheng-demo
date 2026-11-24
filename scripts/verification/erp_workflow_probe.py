@@ -67,10 +67,16 @@ class Probe:
     def equal(actual, expected):
         assert Decimal(str(actual)) == Decimal(str(expected)), (actual, expected)
 
+    @staticmethod
+    def installed_changesets(count):
+        count = int(count)
+        assert count >= 54, f"incomplete Liquibase installation: {count}"
+        return count
+
     def run(self):
         assert self.sql("SELECT DATABASE();") == self.args.schema
         assert self.sql("SELECT COUNT(*) FROM erp_product;") == "0", "fresh schema required"
-        assert self.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;") == "54"
+        changesets = self.installed_changesets(self.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;"))
         assert self.sql("SELECT COUNT(*) FROM system_users WHERE password IS NULL OR password='';") == "0"
         login = self.call("POST", "/system/auth/login", {
             "username": os.environ["YUHENG_PROBE_USERNAME"],
@@ -178,7 +184,8 @@ class Probe:
         for table in ("erp_purchase_order", "erp_purchase_in", "erp_sale_order", "erp_sale_out",
                       "erp_finance_payment", "erp_finance_receipt"):
             assert self.sql(f"SELECT CONCAT(status, ':', tenant_id) FROM {table} WHERE deleted=0;") == "20:1", table
-        return {"result": "PASS", "schema": self.args.schema, "port": urlparse(self.args.base_url).port,
+        return {"result": "PASS", "schema": self.args.schema, "changesets": changesets,
+                "port": urlparse(self.args.base_url).port,
                 "time": datetime.now().astimezone().isoformat(), "requests": self.events,
                 "assertions": {"purchase_count": 10, "sale_count": 4, "stock_count": 6,
                     "payment_price": 100, "receipt_price": 80, "stock_records": 2,

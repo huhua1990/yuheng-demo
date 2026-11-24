@@ -32,6 +32,7 @@ class MemberPlatformProbeContractTests(unittest.TestCase):
                 "sign_in_rule_lifecycle": True,
                 "sign_in_rewards_lifecycle": True,
                 "sign_in_concurrency": True,
+                "sign_in_config_crud": True,
                 "cleanup": True,
             },
         )
@@ -56,6 +57,26 @@ class MemberPlatformProbeContractTests(unittest.TestCase):
         ):
             with self.subTest(api=marker):
                 self.assertIn(marker, source)
+
+    def test_member_browser_probe_covers_sign_in_rule_crud(self):
+        source = (ROOT / "scripts/verification/p2_member_browser_probe.js").read_text()
+        for marker in (
+            "/admin-api/member/sign-in/config/create",
+            "/admin-api/member/sign-in/config/update",
+            "/admin-api/member/sign-in/config/delete",
+            "/member/signin/config",
+            "sign-in-config-create",
+            "sign-in-config-update",
+            "sign-in-config-delete",
+            "signInConfigId",
+        ):
+            with self.subTest(marker=marker):
+                self.assertIn(marker, source)
+
+    def test_member_runtime_probe_verifies_deleted_browser_sign_in_rule(self):
+        source = (ROOT / "scripts/verification/p2_member_platform_probe.py").read_text()
+        self.assertIn("browser_config_id", source)
+        self.assertIn("exercise_sign_in_rules(admin, result['cases'], browser_data['signInConfigId'])", source)
 
     def test_member_probe_covers_app_password_login_and_address_ownership(self):
         source = (ROOT / "scripts/verification/p2_member_platform_probe.py").read_text()

@@ -23,6 +23,17 @@ class MemberModuleBoundaryTests(unittest.TestCase):
                       "verified member schema must run on demo startup")
         member_changelog = RESOURCE_ROOT / "member/changelog.yaml"
         self.assertIn("001-member-schema.sql", member_changelog.read_text())
+        self.assertIn("002-member-mobile-uniqueness.sql", member_changelog.read_text())
+        migration = (RESOURCE_ROOT / "member/002-member-mobile-uniqueness.sql").read_text()
+        self.assertIn("DROP INDEX `uk_mobile`", migration)
+        self.assertIn("GROUP BY tenant_id, mobile", migration)
+        self.assertIn("deleted = b'0'", migration)
+        self.assertIn("active_mobile_marker", migration)
+        self.assertIn("UNIQUE KEY `uk_tenant_mobile_active`", migration)
+        self.assertIn("MODIFY COLUMN `mobile` varchar(11) NULL", migration)
+        self.assertIn("MODIFY COLUMN `email` varchar(50) NULL", migration)
+        self.assertIn("onFail:HALT", migration)
+        self.assertNotRegex(migration, r"(?im)^\s*(?:DELETE|UPDATE)\s+`?member_user`?")
         content = (RESOURCE_ROOT / "member/001-member-schema.sql").read_text()
         for table in (
             "member_user",

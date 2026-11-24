@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "viewport": "desktop-1440x900",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "apiResponses": [
+    {
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "listVisible": true,
+  "customerRows": 1,
+  "finalUrl": "http://127.0.0.1:48302/crm/customer"
+}

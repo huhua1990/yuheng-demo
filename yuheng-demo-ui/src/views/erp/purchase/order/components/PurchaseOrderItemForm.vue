@@ -243,6 +243,7 @@ const handleDelete = (index: number) => {
 const onChangeProduct = (productId: number, row: any) => {
   const product = productList.value.find((item) => item.id === productId)
   if (product) {
+    row.productUnitId = product.unitId
     row.productUnitName = product.unitName
     row.productBarCode = product.barCode
     row.productPrice = product.purchasePrice

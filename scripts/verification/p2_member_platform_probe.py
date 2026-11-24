@@ -28,7 +28,8 @@ OUT = Path(os.environ.get('YH_MEMBER_PROBE_OUTPUT_DIR',
 REQUIRED_CASES = dict.fromkeys(('member_crud', 'member_user_update', 'unauthorized_write_rejected',
                               'tenant_header_rejected', 'point_transaction', 'member_app_login',
                               'address_owner_isolation', 'sign_in_rule_lifecycle',
-                              'sign_in_rewards_lifecycle', 'sign_in_concurrency', 'cleanup'), True)
+                              'sign_in_rewards_lifecycle', 'sign_in_concurrency',
+                              'sign_in_config_crud', 'cleanup'), True)
 
 
 def validate_probe_target(schema, app_port):
@@ -192,8 +193,11 @@ class Probe:
                 'cross_user_get_rejected': True, 'soft_delete_verified': True,
                 'events': [event for event in self.events if event['path'].startswith('/member/address/')]}
 
-    def exercise_sign_in_rules(self, admin, cases):
+    def exercise_sign_in_rules(self, admin, cases, browser_config_id=None):
         call = self.call
+        if browser_config_id is not None:
+            assert sql(f'SELECT COUNT(*) FROM member_sign_in_config WHERE id={int(browser_config_id)} AND deleted=b\'1\';') == '1'
+            cases['sign_in_config_crud'] = True
         rule = {'day': 27, 'point': 8, 'experience': 3, 'status': 0}
         identifier = call('POST', '/member/sign-in/config/create', admin, rule)
         assert sql(f'SELECT day,point,experience,status FROM member_sign_in_config WHERE id={int(identifier)};') == '27\t8\t3\t0'
@@ -430,7 +434,8 @@ def main():
                                             'FROM system_users WHERE id < 990953;')
             result['cases']['seed_passwords_unchanged'] = True
             result['changesets'] = changesets
-            result['completed'] = all(result['cases'].get(key) for key in REQUIRED_CASES if key != 'cleanup')
+            result['completed'] = all(result['cases'].get(key) for key in REQUIRED_CASES
+                                      if key not in ('cleanup', 'sign_in_config_crud'))
             ui_log = (Path(temp) / 'ui.log').open('w')
             ui = subprocess.Popen(['python3', '-c',
                 'import http.server,runpy; http.server.ThreadingHTTPServer.request_queue_size=128; '
@@ -452,6 +457,9 @@ def main():
             result['cases']['member_browser'] = browser_data
             result['completed'] = result['completed'] and browser.returncode == 0 and browser_data.get('completed')
             if result['completed']:
+                probe.exercise_sign_in_rules(admin, result['cases'], browser_data['signInConfigId'])
+                result['completed'] = all(result['cases'].get(key) for key in REQUIRED_CASES
+                                          if key != 'cleanup')
                 user_point = sql('SELECT point FROM member_user WHERE id=990951;')
                 point_record = sql('SELECT CONCAT(point,":",total_point,":",biz_type) '
                                    'FROM member_point_record WHERE user_id=990951 '

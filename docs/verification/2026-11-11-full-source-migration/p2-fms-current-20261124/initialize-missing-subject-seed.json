@@ -1,0 +1,37 @@
+{
+  "result": "FAIL",
+  "jar_sha256": "740d6a4b57f3d4195d0d4e71dee0365959b3912e2b4062a7c24e6d8b2ef1ef34",
+  "credentials_recorded": false,
+  "schema": "yuheng_p2_fms_current_20261124",
+  "actions": [
+    {
+      "method": "GET",
+      "path": "/system/auth/get-permission-info",
+      "code": 401
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/fms/config/account-set/create",
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/fms/config/account-set/get",
+      "code": 0
+    }
+  ],
+  "error": "('PUT', '/fms/config/account-set/initialize', {'code': 1052105025, 'msg': '结账模板【daily-travel-reimbursement】所需科目【560107】不存在', 'data': None})",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13507": false,
+      "16507": false,
+      "48307": false
+    }
+  }
+}

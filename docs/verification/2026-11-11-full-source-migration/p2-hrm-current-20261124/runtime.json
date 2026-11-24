@@ -1,0 +1,111 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "result": "PASS",
+  "schema": "yuheng_p2_hrm_20261124",
+  "jar_sha256": "4d73591ba3df70be8db360f92374fe8cdae8f8b09a55f953213eca3f9b88f109",
+  "actions": [
+    {
+      "method": "GET",
+      "path": "/hrm/employee/page",
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/hrm/recruit/channel/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/hrm/recruit/channel/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/hrm/recruit/channel/get",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/hrm/employee/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/hrm/employee/get",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/hrm/employee/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/hrm/employee/create",
+      "http": 200,
+      "code": 1050100003
+    },
+    {
+      "method": "GET",
+      "path": "/hrm/employee/dept-statistics",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/hrm/employee/page",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/hrm/employee/delete",
+      "http": 200,
+      "code": 0
+    }
+  ],
+  "credentials_recorded": false,
+  "changesets_first": 118,
+  "hrm_changesets": 51,
+  "hrm_tables": 50,
+  "business_tables_initially_empty": true,
+  "employee_sql": {
+    "updated_name_persisted": true,
+    "duplicate_mobile_rejected_without_write": true,
+    "regular_status": 1
+  },
+  "browser": {
+    "result": "PASS",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "channelId": 2
+  },
+  "seed_passwords_unchanged": true,
+  "changesets_after_restart": 118,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13509": false,
+      "16509": false,
+      "48309": false
+    }
+  }
+}

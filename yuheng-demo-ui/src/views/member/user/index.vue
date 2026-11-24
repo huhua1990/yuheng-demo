@@ -77,7 +77,11 @@
           <Icon class="mr-5px" icon="ep:refresh" />
           重置
         </el-button>
-        <el-button v-hasPermi="['promotion:coupon:send']" @click="openCoupon">发送优惠券</el-button>
+        <el-button
+          v-if="integrations.promotion"
+          v-hasPermi="['promotion:coupon:send']"
+          @click="openCoupon"
+        >发送优惠券</el-button>
       </el-form-item>
     </el-form>
   </ContentWrap>
@@ -150,7 +154,7 @@
                 'member:user:update',
                 'member:user:update-level',
                 'member:user:update-point',
-                'pay:wallet:update-balance'
+                ...(integrations.pay ? ['pay:wallet:update-balance'] : [])
               ]"
               @command="(command: string) => handleCommand(command, scope.row)"
             >
@@ -179,7 +183,7 @@
                     修改积分
                   </el-dropdown-item>
                   <el-dropdown-item
-                    v-if="checkPermi(['pay:wallet:update-balance'])"
+                    v-if="integrations.pay && checkPermi(['pay:wallet:update-balance'])"
                     command="handleUpdateBlance"
                   >
                     修改余额
@@ -207,9 +211,18 @@
   <!-- 修改用户积分弹窗 -->
   <UserPointUpdateForm ref="updatePointFormRef" @success="getList" />
   <!-- 修改用户余额弹窗 -->
-  <UserBalanceUpdateForm ref="UpdateBalanceFormRef" @success="getList" />
+  <component
+    :is="payComponents.balanceUpdateForm"
+    v-if="integrations.pay && payComponents?.balanceUpdateForm"
+    ref="UpdateBalanceFormRef"
+    @success="getList"
+  />
   <!-- 发送优惠券弹窗 -->
-  <CouponSendForm ref="couponSendFormRef" />
+  <component
+    :is="promotionComponents.couponSendForm"
+    v-if="integrations.promotion && promotionComponents?.couponSendForm"
+    ref="couponSendFormRef"
+  />
 </template>
 <script lang="ts" setup>
 import { dateFormatter } from '@/utils/formatTime'
@@ -221,11 +234,16 @@ import MemberLevelSelect from '@/views/member/level/components/MemberLevelSelect
 import MemberGroupSelect from '@/views/member/group/components/MemberGroupSelect.vue'
 import UserLevelUpdateForm from './components/UserLevelUpdateForm.vue'
 import UserPointUpdateForm from './components/UserPointUpdateForm.vue'
-import UserBalanceUpdateForm from './components/UserBalanceUpdateForm.vue'
-import { CouponSendForm } from '@/views/mall/promotion/coupon/components'
 import { checkPermi } from '@/utils/permission'
+import { memberIntegrationConfig, resolveMemberIntegrations } from '../integrations'
+import { memberIntegrationComponents } from '../integration-components.adapter'
+import type { MemberIntegrationComponents } from '../integration-components'
 
 defineOptions({ name: 'MemberUser' })
+
+const integrations = resolveMemberIntegrations(memberIntegrationConfig)
+const payComponents: MemberIntegrationComponents['pay'] = memberIntegrationComponents.pay
+const promotionComponents: MemberIntegrationComponents['promotion'] = memberIntegrationComponents.promotion
 
 const message = useMessage() // 消息弹窗
 

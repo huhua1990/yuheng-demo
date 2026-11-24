@@ -103,7 +103,7 @@ class UpdateOwnerProbe(OwnerProbe):
 
     def run(self):
         assert self.sql("SELECT DATABASE();") == self.args.schema
-        assert self.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;") == "54"
+        self.installed_changesets(self.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;"))
         assert self.sql("SELECT COUNT(*) FROM erp_product;") == "0"
         self.snapshot()
         seed_passwords = self.sql("SELECT id,password FROM system_users ORDER BY id;")

@@ -1,0 +1,127 @@
+{
+  "result": "PASS",
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "schema": "yuheng_p2_member_auth_20261123_current",
+  "ports": {
+    "mysql": 13436,
+    "redis": 16491,
+    "app": 48278
+  },
+  "credentials_recorded": false,
+  "scope": "debug SMS channel success plus social/WeChat failure boundaries; no real provider callback",
+  "probe_stdout": "",
+  "probe_stderr": "",
+  "probe": {
+    "work_id": "YH-20261111-full-source-migration",
+    "schema": "yuheng_p2_member_auth_20261123_current",
+    "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+    "credentials_recorded": false,
+    "cases": {
+      "sms_validation": true,
+      "sms_send_configured_channel": true,
+      "sms_invalid_code": true,
+      "sms_login_success": true,
+      "sms_login_creates_member_and_token": true,
+      "access_token_recorded": false,
+      "refresh_token_recorded": false,
+      "social_validation": true,
+      "social_invalid_code": true,
+      "weixin_validation": true,
+      "weixin_invalid_code": true,
+      "failed_requests_no_member_or_binding": true,
+      "failed_requests_no_oauth_token": true,
+      "seed_passwords_unchanged": true,
+      "events": [
+        {
+          "method": "POST",
+          "path": "/member/auth/send-sms-code",
+          "http": 200,
+          "code": 400
+        },
+        {
+          "method": "POST",
+          "path": "/member/auth/validate-sms-code",
+          "http": 200,
+          "code": 400
+        },
+        {
+          "method": "POST",
+          "path": "/member/auth/sms-login",
+          "http": 200,
+          "code": 400
+        },
+        {
+          "method": "POST",
+          "path": "/member/auth/send-sms-code",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "POST",
+          "path": "/member/auth/validate-sms-code",
+          "http": 200,
+          "code": 1002014000
+        },
+        {
+          "method": "POST",
+          "path": "/member/auth/sms-login",
+          "http": 200,
+          "code": 1002014000
+        },
+        {
+          "method": "POST",
+          "path": "/member/auth/sms-login",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "POST",
+          "path": "/member/auth/social-login",
+          "http": 200,
+          "code": 400
+        },
+        {
+          "method": "GET",
+          "path": "/member/auth/social-auth-redirect?type=999&redirectUri=http%3A%2F%2F127.0.0.1%2Fcallback",
+          "http": 200,
+          "code": 400
+        },
+        {
+          "method": "GET",
+          "path": "/member/auth/social-auth-redirect?type=10&redirectUri=http%3A%2F%2F127.0.0.1%2Fcallback",
+          "http": 200,
+          "code": 1002018000
+        },
+        {
+          "method": "POST",
+          "path": "/member/auth/social-login",
+          "http": 200,
+          "code": 1002018000
+        },
+        {
+          "method": "POST",
+          "path": "/member/auth/weixin-mini-app-login",
+          "http": 200,
+          "code": 400
+        },
+        {
+          "method": "POST",
+          "path": "/member/auth/weixin-mini-app-login",
+          "http": 200,
+          "code": 1002018200
+        }
+      ],
+      "cleanup": true
+    },
+    "changesets": 59
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13436": false,
+      "16491": false,
+      "48278": false
+    },
+    "passed": true
+  }
+}

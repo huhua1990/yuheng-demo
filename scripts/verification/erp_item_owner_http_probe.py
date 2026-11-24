@@ -85,7 +85,7 @@ class OwnerProbe(Probe):
 
     def run(self):
         assert self.sql("SELECT DATABASE();") == self.args.schema
-        assert self.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;") == "54"
+        self.installed_changesets(self.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;"))
         assert self.sql("SELECT COUNT(*) FROM erp_product;") == "0"
         before = self.snapshot()
         login = self.call("POST", "/system/auth/login", {

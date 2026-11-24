@@ -1,0 +1,618 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_member_acl_20261123_current",
+  "ports": {
+    "mysql": 13441,
+    "redis": 16521,
+    "app": 48321
+  },
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "credentials_recorded": false,
+  "changesets": 59,
+  "permission_denied_cases": [
+    "user-get",
+    "user-page",
+    "tag-get",
+    "tag-page",
+    "tag-list",
+    "group-get",
+    "group-page",
+    "level-get",
+    "level-list",
+    "experience-page",
+    "level-record-page",
+    "point-record-page",
+    "sign-in-config-list",
+    "sign-in-record-page",
+    "config-get"
+  ],
+  "allowed_cases": [
+    "user-get",
+    "user-page",
+    "tag-get",
+    "tag-page",
+    "tag-list",
+    "group-get",
+    "group-page",
+    "level-get",
+    "level-list",
+    "experience-page",
+    "level-record-page",
+    "point-record-page",
+    "sign-in-config-list",
+    "sign-in-record-page",
+    "config-get",
+    "tag-create",
+    "tag-update",
+    "tag-delete",
+    "group-create",
+    "group-update",
+    "group-delete",
+    "level-create",
+    "level-update",
+    "level-delete",
+    "sign-in-create",
+    "sign-in-update",
+    "sign-in-delete",
+    "config-save",
+    "user-update",
+    "user-update-level",
+    "user-update-point"
+  ],
+  "authenticated_read_cases": [
+    "tag-simple-list",
+    "group-simple-list",
+    "level-simple-list"
+  ],
+  "requests": [
+    {
+      "name": "login",
+      "method": "POST",
+      "path": "/system/auth/login",
+      "permission": "",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "login",
+      "method": "POST",
+      "path": "/system/auth/login",
+      "permission": "",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "user-get",
+      "method": "GET",
+      "path": "/member/user/get?id=990961",
+      "permission": "member:user:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "user-get",
+      "method": "GET",
+      "path": "/member/user/get?id=990961",
+      "permission": "member:user:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "user-page",
+      "method": "GET",
+      "path": "/member/user/page?pageNo=1&pageSize=10",
+      "permission": "member:user:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "user-page",
+      "method": "GET",
+      "path": "/member/user/page?pageNo=1&pageSize=10",
+      "permission": "member:user:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "tag-get",
+      "method": "GET",
+      "path": "/member/tag/get?id=990962",
+      "permission": "member:tag:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "tag-get",
+      "method": "GET",
+      "path": "/member/tag/get?id=990962",
+      "permission": "member:tag:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "tag-page",
+      "method": "GET",
+      "path": "/member/tag/page?pageNo=1&pageSize=10",
+      "permission": "member:tag:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "tag-page",
+      "method": "GET",
+      "path": "/member/tag/page?pageNo=1&pageSize=10",
+      "permission": "member:tag:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "tag-list",
+      "method": "GET",
+      "path": "/member/tag/list?ids=990962",
+      "permission": "member:tag:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "tag-list",
+      "method": "GET",
+      "path": "/member/tag/list?ids=990962",
+      "permission": "member:tag:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "group-get",
+      "method": "GET",
+      "path": "/member/group/get?id=990963",
+      "permission": "member:group:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "group-get",
+      "method": "GET",
+      "path": "/member/group/get?id=990963",
+      "permission": "member:group:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "group-page",
+      "method": "GET",
+      "path": "/member/group/page?pageNo=1&pageSize=10",
+      "permission": "member:group:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "group-page",
+      "method": "GET",
+      "path": "/member/group/page?pageNo=1&pageSize=10",
+      "permission": "member:group:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "level-get",
+      "method": "GET",
+      "path": "/member/level/get?id=990964",
+      "permission": "member:level:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "level-get",
+      "method": "GET",
+      "path": "/member/level/get?id=990964",
+      "permission": "member:level:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "level-list",
+      "method": "GET",
+      "path": "/member/level/list?status=0",
+      "permission": "member:level:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "level-list",
+      "method": "GET",
+      "path": "/member/level/list?status=0",
+      "permission": "member:level:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "experience-page",
+      "method": "GET",
+      "path": "/member/experience-record/page?pageNo=1&pageSize=10",
+      "permission": "member:experience-record:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "experience-page",
+      "method": "GET",
+      "path": "/member/experience-record/page?pageNo=1&pageSize=10",
+      "permission": "member:experience-record:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "level-record-page",
+      "method": "GET",
+      "path": "/member/level-record/page?pageNo=1&pageSize=10",
+      "permission": "member:level-record:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "level-record-page",
+      "method": "GET",
+      "path": "/member/level-record/page?pageNo=1&pageSize=10",
+      "permission": "member:level-record:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "point-record-page",
+      "method": "GET",
+      "path": "/member/point/record/page?pageNo=1&pageSize=10",
+      "permission": "point:record:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "point-record-page",
+      "method": "GET",
+      "path": "/member/point/record/page?pageNo=1&pageSize=10",
+      "permission": "point:record:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "sign-in-config-list",
+      "method": "GET",
+      "path": "/member/sign-in/config/list",
+      "permission": "point:sign-in-config:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "sign-in-config-list",
+      "method": "GET",
+      "path": "/member/sign-in/config/list",
+      "permission": "point:sign-in-config:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "sign-in-record-page",
+      "method": "GET",
+      "path": "/member/sign-in/record/page?pageNo=1&pageSize=10",
+      "permission": "point:sign-in-record:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "sign-in-record-page",
+      "method": "GET",
+      "path": "/member/sign-in/record/page?pageNo=1&pageSize=10",
+      "permission": "point:sign-in-record:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "config-get",
+      "method": "GET",
+      "path": "/member/config/get",
+      "permission": "member:config:query",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "config-get",
+      "method": "GET",
+      "path": "/member/config/get",
+      "permission": "member:config:query",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "tag-simple-list",
+      "method": "GET",
+      "path": "/member/tag/list-all-simple",
+      "permission": "authenticated-read",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "group-simple-list",
+      "method": "GET",
+      "path": "/member/group/list-all-simple",
+      "permission": "authenticated-read",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "level-simple-list",
+      "method": "GET",
+      "path": "/member/level/list-all-simple",
+      "permission": "authenticated-read",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "tag-create",
+      "method": "POST",
+      "path": "/member/tag/create",
+      "permission": "member:tag:create",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "tag-create",
+      "method": "POST",
+      "path": "/member/tag/create",
+      "permission": "member:tag:create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "tag-update",
+      "method": "PUT",
+      "path": "/member/tag/update",
+      "permission": "member:tag:update",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "tag-update",
+      "method": "PUT",
+      "path": "/member/tag/update",
+      "permission": "member:tag:update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "tag-delete",
+      "method": "DELETE",
+      "path": "/member/tag/delete?id=990962",
+      "permission": "member:tag:delete",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "tag-delete",
+      "method": "DELETE",
+      "path": "/member/tag/delete?id=990962",
+      "permission": "member:tag:delete",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "group-create",
+      "method": "POST",
+      "path": "/member/group/create",
+      "permission": "member:group:create",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "group-create",
+      "method": "POST",
+      "path": "/member/group/create",
+      "permission": "member:group:create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "group-update",
+      "method": "PUT",
+      "path": "/member/group/update",
+      "permission": "member:group:update",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "group-update",
+      "method": "PUT",
+      "path": "/member/group/update",
+      "permission": "member:group:update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "group-delete",
+      "method": "DELETE",
+      "path": "/member/group/delete?id=990963",
+      "permission": "member:group:delete",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "group-delete",
+      "method": "DELETE",
+      "path": "/member/group/delete?id=990963",
+      "permission": "member:group:delete",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "level-create",
+      "method": "POST",
+      "path": "/member/level/create",
+      "permission": "member:level:create",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "level-create",
+      "method": "POST",
+      "path": "/member/level/create",
+      "permission": "member:level:create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "level-update",
+      "method": "PUT",
+      "path": "/member/level/update",
+      "permission": "member:level:update",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "level-update",
+      "method": "PUT",
+      "path": "/member/level/update",
+      "permission": "member:level:update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "level-delete",
+      "method": "DELETE",
+      "path": "/member/level/delete?id=990964",
+      "permission": "member:level:delete",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "level-delete",
+      "method": "DELETE",
+      "path": "/member/level/delete?id=990964",
+      "permission": "member:level:delete",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "sign-in-create",
+      "method": "POST",
+      "path": "/member/sign-in/config/create",
+      "permission": "point:sign-in-config:create",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "sign-in-create",
+      "method": "POST",
+      "path": "/member/sign-in/config/create",
+      "permission": "point:sign-in-config:create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "sign-in-update",
+      "method": "PUT",
+      "path": "/member/sign-in/config/update",
+      "permission": "point:sign-in-config:update",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "sign-in-update",
+      "method": "PUT",
+      "path": "/member/sign-in/config/update",
+      "permission": "point:sign-in-config:update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "sign-in-delete",
+      "method": "DELETE",
+      "path": "/member/sign-in/config/delete?id=990965",
+      "permission": "point:sign-in-config:delete",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "sign-in-delete",
+      "method": "DELETE",
+      "path": "/member/sign-in/config/delete?id=990965",
+      "permission": "point:sign-in-config:delete",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "config-save",
+      "method": "PUT",
+      "path": "/member/config/save",
+      "permission": "member:config:save",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "config-save",
+      "method": "PUT",
+      "path": "/member/config/save",
+      "permission": "member:config:save",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "user-update",
+      "method": "PUT",
+      "path": "/member/user/update",
+      "permission": "member:user:update",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "user-update",
+      "method": "PUT",
+      "path": "/member/user/update",
+      "permission": "member:user:update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "user-update-level",
+      "method": "PUT",
+      "path": "/member/user/update-level",
+      "permission": "member:user:update-level",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "user-update-level",
+      "method": "PUT",
+      "path": "/member/user/update-level",
+      "permission": "member:user:update-level",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "name": "user-update-point",
+      "method": "PUT",
+      "path": "/member/user/update-point",
+      "permission": "member:user:update-point",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "name": "user-update-point",
+      "method": "PUT",
+      "path": "/member/user/update-point",
+      "permission": "member:user:update-point",
+      "http": 200,
+      "code": 0
+    }
+  ],
+  "seed_passwords_unchanged": true,
+  "limits": [
+    "Member admin permission and representative CRUD matrix only; external authentication success and optional Pay/Mall integrations remain outside this probe."
+  ],
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13441": false,
+      "16521": false,
+      "48321": false
+    },
+    "passed": true
+  }
+}

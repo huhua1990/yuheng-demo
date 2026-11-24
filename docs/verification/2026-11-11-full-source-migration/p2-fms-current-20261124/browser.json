@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "errors": [],
+  "failed": [],
+  "actions": [
+    "desktop_create_and_list"
+  ],
+  "accountId": 2
+}

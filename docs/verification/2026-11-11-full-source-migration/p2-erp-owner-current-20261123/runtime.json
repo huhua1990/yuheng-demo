@@ -1,0 +1,49 @@
+{
+  "result": "FAIL",
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "ports": {
+    "mysql": 13420,
+    "redis": 16495,
+    "app": 48290
+  },
+  "schemas": {
+    "create": "yuheng_t4_item_owner_20261123_p2",
+    "update": "yuheng_t4_item_update_20261123_p2",
+    "workflow": "yuheng_t4_flows_20261123_p2",
+    "stock-lifecycle": "yuheng_t4_stock_lifecycle_20261123_p2",
+    "audit-status": "yuheng_t4_status_20261123_p2"
+  },
+  "probes": {
+    "create": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 11}\n",
+      "stderr": ""
+    },
+    "update": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 99, \"cases\": 10}\n",
+      "stderr": ""
+    },
+    "workflow": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 53, \"assertions\": {\"purchase_count\": 10, \"sale_count\": 4, \"stock_count\": 6, \"payment_price\": 100, \"receipt_price\": 80, \"stock_records\": 2, \"final_document_status\": 20, \"tenant_id\": 1, \"overpayment_and_overreceipt_rolled_back\": true}}\n",
+      "stderr": ""
+    },
+    "stock-lifecycle": {
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: erp_stock_lifecycle_probe.py [-h] --base-url BASE_URL --schema SCHEMA\n                                    [--mysql-container MYSQL_CONTAINER]\n                                    --output OUTPUT\nerp_stock_lifecycle_probe.py: error: only yuheng_t4_stock_lifecycle_YYYYMMDD disposable schemas are allowed\n"
+    }
+  },
+  "error": "stock-lifecycle probe failed with 2",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_p2_sidecar_runner.py\", line 139, in main\n    raise RuntimeError(f\"{name} probe failed with {result.returncode}\")\nRuntimeError: stock-lifecycle probe failed with 2\n",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13420": false,
+      "16495": false,
+      "48290": false
+    },
+    "passed": true
+  }
+}

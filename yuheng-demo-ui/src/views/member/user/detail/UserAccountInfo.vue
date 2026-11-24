@@ -24,19 +24,19 @@
       </template>
       {{ user.totalPoint || 0 }}
     </el-descriptions-item>
-    <el-descriptions-item>
+    <el-descriptions-item v-if="showWallet">
       <template #label>
         <descriptions-item-label icon="svg-icon:member_balance" label=" 当前余额 " />
       </template>
       {{ fenToYuan(wallet.balance || 0) }}
     </el-descriptions-item>
-    <el-descriptions-item>
+    <el-descriptions-item v-if="showWallet">
       <template #label>
         <descriptions-item-label icon="svg-icon:member_expenditure_balance" label=" 支出金额 " />
       </template>
       {{ fenToYuan(wallet.totalExpense || 0) }}
     </el-descriptions-item>
-    <el-descriptions-item>
+    <el-descriptions-item v-if="showWallet">
       <template #label>
         <descriptions-item-label icon="svg-icon:member_recharge_balance" label=" 充值金额 " />
       </template>
@@ -47,12 +47,23 @@
 <script lang="ts" setup>
 import { DescriptionsItemLabel } from '@/components/Descriptions'
 import * as UserApi from '@/api/member/user'
-import * as WalletApi from '@/api/pay/wallet/balance'
 import { fenToYuan } from '@/utils'
+import { memberIntegrationConfig, resolveMemberIntegrations } from '../../integrations'
+import type { MemberWallet } from '../../integration-components'
 
-withDefaults(defineProps<{ user: UserApi.UserVO; wallet: WalletApi.WalletVO; column?: number }>(), {
-  column: 2
-}) // 用户信息
+const props = withDefaults(
+  defineProps<{
+    user: UserApi.UserVO
+    wallet: MemberWallet
+    column?: number
+    showWallet?: boolean
+  }>(),
+  {
+    column: 2,
+    showWallet: resolveMemberIntegrations(memberIntegrationConfig).pay
+  }
+)
+const showWallet = computed(() => props.showWallet)
 </script>
 <style lang="scss" scoped>
 .cell-item {

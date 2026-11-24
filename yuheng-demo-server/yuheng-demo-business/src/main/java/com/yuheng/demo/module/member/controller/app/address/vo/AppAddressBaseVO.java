@@ -1,6 +1,7 @@
 package com.yuheng.demo.module.member.controller.app.address.vo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
 
 import jakarta.validation.constraints.NotNull;
 
@@ -14,6 +15,7 @@ public class AppAddressBaseVO {
 
     @Schema(description = "收件人名称", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotNull(message = "收件人名称不能为空")
+    @Length(max = 10, message = "收件人名称不能超过 10 个字符")
     private String name;
 
     @Schema(description = "手机号", requiredMode = Schema.RequiredMode.REQUIRED)

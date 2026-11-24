@@ -1,0 +1,11 @@
+{
+  "result": "FAIL",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('columnheader', { name: '渠道名称', exact: true }) to be visible\u001b[22m\n"
+}

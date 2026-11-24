@@ -73,7 +73,6 @@ const getList = async () => {
   loading.value = true
   try {
     const data = await SignInConfigApi.getSignInConfigList()
-    console.log(data)
     list.value = data
   } finally {
     loading.value = false

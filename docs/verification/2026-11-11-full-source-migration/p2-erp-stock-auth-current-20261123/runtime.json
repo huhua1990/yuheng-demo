@@ -1,0 +1,21 @@
+{
+  "result": "FAIL",
+  "schema": "yuheng_t4_erp_stock_auth_20261123_current",
+  "ports": {
+    "mysql": 13445,
+    "redis": 16525,
+    "app": 48325
+  },
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "credentials_recorded": false,
+  "error": "{'todayPrice': 0.0, 'yesterdayPrice': 80.0, 'monthPrice': 80.0, 'yearPrice': 80.0}",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13445": false,
+      "16525": false,
+      "48325": false
+    },
+    "passed": true
+  }
+}

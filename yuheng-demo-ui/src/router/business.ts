@@ -4,10 +4,12 @@ import Home from '../views/Home/index.vue'
 // Keys match the component paths returned by the platform menu API.
 const memberViewComponents = import.meta.glob('../views/member/**/*.{vue,tsx}')
 const erpViewComponents = import.meta.glob('../views/erp/**/*.{vue,tsx}')
+const crmViewComponents = import.meta.glob('../views/crm/**/*.{vue,tsx}')
 
 export const businessViewComponents = {
   ...memberViewComponents,
-  ...erpViewComponents
+  ...erpViewComponents,
+  ...crmViewComponents
 }
 
 export const businessRoutes: RouteRecordRaw[] = [

@@ -3,3 +3,5 @@ databaseChangeLog:
       file: db/changelog/business/member/changelog.yaml
   - include:
       file: db/changelog/business/erp/changelog.yaml
+  - include:
+      file: db/changelog/business/crm/changelog.yaml

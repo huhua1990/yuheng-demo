@@ -95,8 +95,6 @@
     />
   </ContentWrap>
 
-  <!-- 表单弹窗：添加/修改 -->
-  <RecordForm ref="formRef" @success="getList" />
 </template>
 
 <script lang="ts" setup>

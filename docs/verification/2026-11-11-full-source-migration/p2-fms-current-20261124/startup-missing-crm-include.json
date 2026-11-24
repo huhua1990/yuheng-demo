@@ -1,0 +1,16 @@
+{
+  "result": "FAIL",
+  "jar_sha256": "d5fd5bfbc0d838a1ea011b5be8eec3cee8fc8e2408708085633fba78d86755e0",
+  "credentials_recorded": false,
+  "schema": "yuheng_p2_fms_current_20261124",
+  "actions": [],
+  "error": "app exited; inspect private temp log",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13507": false,
+      "16507": false,
+      "48307": false
+    }
+  }
+}

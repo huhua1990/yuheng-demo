@@ -1,0 +1,113 @@
+{
+  "result": "PARTIAL",
+  "jar_sha256": "740d6a4b57f3d4195d0d4e71dee0365959b3912e2b4062a7c24e6d8b2ef1ef34",
+  "credentials_recorded": false,
+  "schema": "yuheng_p2_fms_current_20261124",
+  "actions": [
+    {
+      "method": "GET",
+      "path": "/system/auth/get-permission-info",
+      "code": 401
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/fms/config/account-set/create",
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/fms/config/account-set/get",
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/fms/config/account-set/initialize",
+      "code": 1052105025
+    },
+    {
+      "method": "PUT",
+      "path": "/fms/config/account-set/update",
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/fms/config/account-set/get",
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/system/auth/get-permission-info",
+      "code": 401
+    }
+  ],
+  "initialization": {
+    "result": "FAIL",
+    "code": 1052105025,
+    "cause": "fms_subject_template has no standard subject seed; closing preset needs 560107",
+    "transaction_rollback_verified": true
+  },
+  "browser": {
+    "result": "PASS",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "errors": [],
+    "failed": [],
+    "actions": [
+      "desktop_create_and_list"
+    ],
+    "accountId": 2
+  },
+  "changesets_first": 95,
+  "changesets_after_restart": 95,
+  "fms_changesets": 36,
+  "business_tables": 30,
+  "business_rows_before_api": 0,
+  "rows_after_initialization": {
+    "fms_account_set": 1,
+    "fms_account_user": 1,
+    "fms_assist_combination": 0,
+    "fms_auxiliary_item": 0,
+    "fms_auxiliary_type": 0,
+    "fms_balance_sheet_config": 0,
+    "fms_balance_sheet_report": 0,
+    "fms_cash_flow_extend_config": 0,
+    "fms_cash_flow_extend_data": 0,
+    "fms_cash_flow_statement_config": 0,
+    "fms_cash_flow_statement_report": 0,
+    "fms_closing": 0,
+    "fms_closing_period": 0,
+    "fms_closing_template": 0,
+    "fms_closing_voucher": 0,
+    "fms_currency": 0,
+    "fms_digest": 0,
+    "fms_finance_indicator": 0,
+    "fms_finance_parameter": 0,
+    "fms_income_statement_config": 0,
+    "fms_income_statement_report": 0,
+    "fms_initial_balance": 0,
+    "fms_report_template": 0,
+    "fms_subject": 0,
+    "fms_subject_template": 0,
+    "fms_voucher": 0,
+    "fms_voucher_entry": 0,
+    "fms_voucher_template": 0,
+    "fms_voucher_template_category": 0,
+    "fms_voucher_word": 0
+  },
+  "seed_passwords_unchanged": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13507": false,
+      "16507": false,
+      "48307": false
+    }
+  }
+}

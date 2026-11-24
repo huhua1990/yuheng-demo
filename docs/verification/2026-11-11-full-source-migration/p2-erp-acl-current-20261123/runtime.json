@@ -1,0 +1,934 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_erp_acl_20261123_current",
+  "ports": {
+    "mysql": 13440,
+    "redis": 16520,
+    "app": 48320
+  },
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "credentials_recorded": false,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-category/create",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-unit/create",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/supplier/create",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/customer/create",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/account/create",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/simple-list",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/list",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/simple-list",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/simple-list",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/simple-list",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/simple-list",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/simple-list",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/simple-list",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/get-count?productId=1",
+      "http": 200,
+      "code": 0,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/export-excel",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-order/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-in/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-return/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-order/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-out/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-return/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-in/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-in/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-out/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-out/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-check/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-check/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-move/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-move/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-payment/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/finance-payment/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-receipt/create",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=1&status=20",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/finance-receipt/delete?ids=1",
+      "http": 200,
+      "code": 403,
+      "body_sha256": null
+    }
+  ],
+  "protected_denials": 111,
+  "authenticated_without_erp_permission": [
+    "/erp/product/simple-list",
+    "/erp/product-category/simple-list",
+    "/erp/product-unit/simple-list",
+    "/erp/supplier/simple-list",
+    "/erp/customer/simple-list",
+    "/erp/account/simple-list",
+    "/erp/warehouse/simple-list",
+    "/erp/stock/get-count?productId=1"
+  ],
+  "erp_snapshot_unchanged_after_denials": true,
+  "limits": [
+    "Simple-list and stock get-count follow the upstream controller contract and are authenticated but lack method-level ERP permission annotations.",
+    "This probe verifies method-security boundaries; it does not prove every data-scope combination."
+  ],
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13440": false,
+      "16520": false,
+      "48320": false
+    },
+    "passed": true
+  }
+}

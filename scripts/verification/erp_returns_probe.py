@@ -95,7 +95,7 @@ class ReturnsProbe(Probe):
     def run(self):
         self.checks = []
         assert self.sql("SELECT DATABASE();") == self.args.schema
-        assert self.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;") == "54"
+        changesets = self.installed_changesets(self.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;"))
         assert self.sql("SELECT COUNT(*) FROM erp_product;") == "0", "fresh schema required"
         self.snapshot()  # Fail before API writes if current table names do not match.
         # Keep the complete comparison only in memory; GROUP_CONCAT can truncate.
@@ -208,7 +208,8 @@ class ReturnsProbe(Probe):
         assert movements == "50\t2\n60\t4\n61\t4\n70\t2\n80\t4\n81\t4", movements
         assert self.sql("SELECT COUNT(*) FROM erp_stock WHERE deleted=0 AND tenant_id<>1;") == "0"
         assert self.sql("SELECT id,password FROM system_users ORDER BY id;") == seed_passwords, "seed passwords changed"
-        return {"result": "PASS", "schema": self.args.schema, "port": urlparse(self.args.base_url).port,
+        return {"result": "PASS", "schema": self.args.schema, "changesets": changesets,
+                "port": urlparse(self.args.base_url).port,
                 "time": datetime.now().astimezone().isoformat(), "requests": self.events, "amount_checks": self.checks,
                 "assertions": {"two_line_purchase_and_sale_returns": True, "line_half_up_scale": 2,
                     "second_line_overflow_full_rollback": True, "approval_reverse_delete_stock_consistency": True,

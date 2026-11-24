@@ -18,6 +18,7 @@ RESOURCES = (
     "stock-in", "stock-out", "stock-check", "stock-move",
     "finance-payment", "finance-receipt",
 )
+MIN_CHANGESETS = 59
 
 
 class Probe:
@@ -60,7 +61,8 @@ class Probe:
 
     def run(self):
         assert self.sql("SELECT DATABASE();").strip() == self.args.schema
-        assert self.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;").strip() == "54"
+        changesets = int(self.sql("SELECT COUNT(*) FROM DATABASECHANGELOG;").strip())
+        assert changesets >= MIN_CHANGESETS, f"incomplete Liquibase installation: {changesets}"
         login = self.call("POST", "/system/auth/login", {
             "username": os.environ["YUHENG_PROBE_USERNAME"],
             "password": os.environ["YUHENG_PROBE_PASSWORD"]})
@@ -73,6 +75,7 @@ class Probe:
             assert self.snapshot() == self.baseline, f"{resource}: ERP rows changed for unsupported status"
 
         return {"result": "PASS", "schema": self.args.schema,
+                "changesets": changesets,
                 "port": urlparse(self.args.base_url).port,
                 "time": datetime.now().astimezone().isoformat(), "requests": self.events,
                 "assertions": {"unsupported_status_rejected_for_all_resources": len(RESOURCES),
@@ -90,8 +93,8 @@ def main():
     if (url.scheme != "http" or url.hostname != "127.0.0.1" or not url.port
             or url.port in (48080, 5173) or url.path or url.query or url.fragment or url.username):
         parser.error("use a dedicated loopback HTTP port, without a path or credentials")
-    if not re.fullmatch(r"yuheng_t4_status_[0-9]{8}", args.schema):
-        parser.error("only yuheng_t4_status_YYYYMMDD disposable schemas are allowed")
+    if not re.fullmatch(r"yuheng_t4_status_[0-9]{8}(?:_[a-z0-9]+)?", args.schema):
+        parser.error("only yuheng_t4_status_YYYYMMDD[_suffix] disposable schemas are allowed")
     probe = Probe(args)
     try:
         result = probe.run()
