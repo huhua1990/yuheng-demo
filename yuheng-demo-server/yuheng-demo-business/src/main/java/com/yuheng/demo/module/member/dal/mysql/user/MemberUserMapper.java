@@ -23,6 +23,10 @@ import java.util.stream.IntStream;
 @Mapper
 public interface MemberUserMapper extends BaseMapperX<MemberUserDO> {
 
+    default MemberUserDO selectByIdForUpdate(Long id) {
+        return selectOneForUpdate(MemberUserDO::getId, id);
+    }
+
     default MemberUserDO selectByMobile(String mobile) {
         return selectOne(MemberUserDO::getMobile, mobile);
     }

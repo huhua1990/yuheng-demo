@@ -11,6 +11,8 @@ import socket
 import subprocess
 import tempfile
 import time
+from concurrent.futures import ThreadPoolExecutor
+from threading import Barrier
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
@@ -20,9 +22,13 @@ APP_PORT, MYSQL_PORT, REDIS_PORT = 48220, 13373, 16453
 UI_PORT = 5203
 MYSQL, REDIS = 'yh-p2-member-mysql-20261117', 'yh-p2-member-redis-20261117'
 JAR = ROOT / 'yuheng-demo-server/yuheng-demo-server-bootstrap/target/yuheng-demo.jar'
-OUT = ROOT / 'docs/verification/2026-11-11-full-source-migration/p2-member-platform-20261117'
+UI_DIST = Path(os.environ.get('YH_MEMBER_UI_DIST', ROOT / 'yuheng-demo-ui/dist')).resolve()
+OUT = Path(os.environ.get('YH_MEMBER_PROBE_OUTPUT_DIR',
+                          ROOT / 'docs/verification/2026-11-11-full-source-migration/p2-member-platform-20261117'))
 REQUIRED_CASES = dict.fromkeys(('member_crud', 'member_user_update', 'unauthorized_write_rejected',
-                              'tenant_header_rejected', 'point_transaction', 'cleanup'), True)
+                              'tenant_header_rejected', 'point_transaction', 'member_app_login',
+                              'address_owner_isolation', 'sign_in_rule_lifecycle',
+                              'sign_in_rewards_lifecycle', 'sign_in_concurrency', 'cleanup'), True)
 
 
 def validate_probe_target(schema, app_port):
@@ -57,11 +63,11 @@ class Probe:
     def __init__(self):
         self.events = []
 
-    def call(self, method, path, token=None, body=None, tenant=1, expected=0):
+    def call(self, method, path, token=None, body=None, tenant=1, expected=0, prefix='/admin-api'):
         headers = {'Content-Type': 'application/json', 'tenant-id': str(tenant)}
         if token:
             headers['Authorization'] = 'Bearer ' + token
-        request = Request('http://127.0.0.1:%d/admin-api%s' % (APP_PORT, path), method=method,
+        request = Request('http://127.0.0.1:%d%s%s' % (APP_PORT, prefix, path), method=method,
                           headers=headers, data=None if body is None else json.dumps(body).encode())
         try:
             response = urlopen(request, timeout=30)
@@ -97,9 +103,7 @@ class Probe:
             assert sql(f'SELECT name FROM member_{resource} WHERE id={int(identifier)};') == body['name']
 
         # Member users are tenant-owned; create only isolated test fixtures in SQL.
-        sql("INSERT INTO member_user (id,mobile,status,register_ip,nickname,tenant_id) VALUES "
-            "(990951,'19900000951',0,'127.0.0.1','P2 member 1',1),"
-            "(990952,'19900000952',0,'127.0.0.1','P2 member 2',2);")
+        assert sql('SELECT COUNT(*) FROM member_user WHERE id IN (990951,990952,990955);') == '3'
         before = sql('SELECT id,nickname,point,tenant_id FROM member_user WHERE id IN (990951,990952) ORDER BY id;')
         assert call('GET', '/member/user/get?id=990952', admin, tenant=1) is None
         call('GET', '/member/user/get?id=990951', admin, tenant=2, expected=403)
@@ -149,6 +153,157 @@ class Probe:
                 'referenced_group_and_level_delete_rejected': True,
                 'dimension_records_soft_deleted': True, 'events': self.events}
 
+    @staticmethod
+    def installed_changesets(count):
+        count = int(count)
+        assert count >= 56, f'incomplete Liquibase installation: {count}'
+        return count
+
+    def exercise_app(self, first_token, second_token, cases):
+        call = self.call
+        invalid_address = call('POST', '/member/address/create', first_token,
+                          {'name': 'P2 recipient too long', 'mobile': '19900000951', 'areaId': 110000,
+                           'detailAddress': 'isolated address', 'defaultStatus': True}, expected=400, prefix='/app-api')
+        assert sql('SELECT COUNT(*) FROM member_address;') == '0'
+        address_id = call('POST', '/member/address/create', first_token,
+                          {'name': 'P2 member', 'mobile': '19900000951', 'areaId': 110000,
+                           'detailAddress': 'isolated address', 'defaultStatus': True}, prefix='/app-api')
+        first_list = call('GET', '/member/address/list', first_token, prefix='/app-api')
+        second_list = call('GET', '/member/address/list', second_token, prefix='/app-api')
+        assert [item['id'] for item in first_list] == [address_id]
+        assert all(item['id'] != address_id for item in second_list)
+        assert call('GET', f'/member/address/get?id={address_id}', second_token,
+                    prefix='/app-api') is None
+        assert call('GET', f'/member/address/get?id={address_id}', first_token,
+                    prefix='/app-api')['id'] == address_id
+        assert sql('SELECT user_id,default_status+0 FROM member_address WHERE id=%d;' % int(address_id)) == '990951\t1'
+        call('PUT', '/member/address/update', first_token,
+             {'id': address_id, 'name': 'P2 updated', 'mobile': '19900000951', 'areaId': 110000,
+              'detailAddress': 'updated isolated address', 'defaultStatus': True}, prefix='/app-api')
+        assert call('GET', f'/member/address/get?id={address_id}', first_token,
+                    prefix='/app-api')['name'] == 'P2 updated'
+        assert sql('SELECT name,default_status+0 FROM member_address WHERE id=%d;' % int(address_id)) == 'P2 updated\t1'
+        call('DELETE', f'/member/address/delete?id={address_id}', first_token, prefix='/app-api')
+        assert sql('SELECT deleted+0 FROM member_address WHERE id=%d;' % int(address_id)) == '1'
+        cases['address_owner_isolation'] = True
+        cases['address_validation'] = {'overlong_name_rejected_before_write': invalid_address is None,
+                                       'valid_name_persisted': True}
+        return {'created_address_owned_by': 990951, 'foreign_user_hidden': True,
+                'cross_user_get_rejected': True, 'soft_delete_verified': True,
+                'events': [event for event in self.events if event['path'].startswith('/member/address/')]}
+
+    def exercise_sign_in_rules(self, admin, cases):
+        call = self.call
+        rule = {'day': 27, 'point': 8, 'experience': 3, 'status': 0}
+        identifier = call('POST', '/member/sign-in/config/create', admin, rule)
+        assert sql(f'SELECT day,point,experience,status FROM member_sign_in_config WHERE id={int(identifier)};') == '27\t8\t3\t0'
+        duplicate = dict(rule, day=27, point=9)
+        call('POST', '/member/sign-in/config/create', admin, duplicate, expected=1004009001)
+        assert sql('SELECT COUNT(*) FROM member_sign_in_config WHERE day=27 AND deleted=b\'0\';') == '1'
+        updated = dict(rule, id=identifier, day=28, point=9)
+        call('PUT', '/member/sign-in/config/update', admin, updated)
+        assert sql(f'SELECT day,point,experience FROM member_sign_in_config WHERE id={int(identifier)};') == '28\t9\t3'
+        call('DELETE', f'/member/sign-in/config/delete?id={identifier}', admin)
+        assert sql(f'SELECT deleted+0 FROM member_sign_in_config WHERE id={int(identifier)};') == '1'
+        cases['sign_in_rule_lifecycle'] = True
+        return {'created_updated_deleted': True, 'duplicate_day_rejected': True}
+
+    def exercise_sign_in_rewards(self, first_token, second_token, cases):
+        call = self.call
+        user_id = 990951
+        sql('UPDATE member_user SET experience=0,level_id=NULL WHERE id=990951;')
+        sql('INSERT INTO member_level (id,name,level,experience,discount_percent,status,tenant_id) '
+            "VALUES (991001,'P2 sign-in level',1,3,90,0,1);")
+        sql("INSERT INTO member_sign_in_config (id,day,point,experience,status,tenant_id) "
+            'VALUES (991001,1,4,3,0,1);')
+        call('GET', '/member/sign-in/record/get-summary', first_token, prefix='/app-api')
+
+        def snapshot():
+            return {
+                'sign_in': sql(f'SELECT id,user_id,day,point,experience FROM member_sign_in_record WHERE user_id={user_id} ORDER BY id;'),
+                'point': sql(f'SELECT id,biz_type,biz_id,point,total_point FROM member_point_record WHERE user_id={user_id} ORDER BY id;'),
+                'experience': sql(f'SELECT id,biz_type,biz_id,experience,total_experience FROM member_experience_record WHERE user_id={user_id} ORDER BY id;'),
+                'level': sql(f'SELECT id,level_id,experience,user_experience FROM member_level_record WHERE user_id={user_id} ORDER BY id;'),
+                'member': sql(f'SELECT point,experience,level_id FROM member_user WHERE id={user_id};'),
+            }
+
+        injected = []
+        for trigger_name, table, case_name in (
+            ('sign_in_experience_failure', 'member_experience_record', 'sign_in_experience_rollback'),
+            ('sign_in_level_failure', 'member_level_record', 'sign_in_level_rollback'),
+        ):
+            before = snapshot()
+            sql(f"CREATE TRIGGER {trigger_name} BEFORE INSERT ON {table} FOR EACH ROW "
+                "SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='P2_SIGN_IN_INJECTED';")
+            try:
+                call('POST', '/member/sign-in/record/create', first_token, prefix='/app-api', expected=500)
+            finally:
+                sql(f'DROP TRIGGER {trigger_name};')
+            after = snapshot()
+            assert after == before, (case_name, before, after)
+            injected.append(case_name)
+
+        signed = call('POST', '/member/sign-in/record/create', first_token, prefix='/app-api')
+        assert signed['day'] == 1 and signed['point'] == 4 and signed['experience'] == 3, signed
+        after_success = snapshot()
+        assert after_success['member'] == '19\t3\t991001', after_success
+        assert sql('SELECT COUNT(*) FROM member_sign_in_record WHERE user_id=990951;') == '1'
+        assert sql("SELECT COUNT(*) FROM member_point_record WHERE user_id=990951 AND biz_type=1 AND point=4;") == '1'
+        assert sql("SELECT COUNT(*) FROM member_experience_record WHERE user_id=990951 AND biz_type=4 AND experience=3;") == '1'
+        assert sql('SELECT COUNT(*) FROM member_level_record WHERE user_id=990951 AND level_id=991001;') == '1'
+        cases['sign_in_rewards_lifecycle'] = True
+
+        before_repeat = snapshot()
+        call('POST', '/member/sign-in/record/create', first_token, prefix='/app-api', expected=1004010000)
+        assert snapshot() == before_repeat
+        foreign_page = call('GET', '/member/sign-in/record/page?pageNo=1&pageSize=10',
+                            second_token, prefix='/app-api')
+        assert foreign_page['total'] == 0 and foreign_page['list'] == [], foreign_page
+        assert call('GET', '/member/sign-in/record/get-summary', second_token,
+                    prefix='/app-api')['totalDay'] == 0
+        cases['sign_in_rewards_lifecycle'] = True
+        return {'automatic_level_up': True, 'repeat_sign_in_rejected_without_writes': True,
+                'other_member_sign_in_not_visible': True, 'injected_rollbacks': injected,
+                'member_state_after_sign_in': after_success['member']}
+
+    def exercise_concurrent_sign_in(self, token, cases):
+        user_id = 990955
+        sql('INSERT INTO member_sign_in_record (id,user_id,day,point,experience,create_time,tenant_id) '
+            'VALUES (991055,990955,1,0,0,DATE_SUB(NOW(), INTERVAL 2 DAY),1);')
+        barrier = Barrier(2)
+
+        def request_sign_in():
+            barrier.wait(timeout=10)
+            try:
+                data = self.call('POST', '/member/sign-in/record/create', token, prefix='/app-api')
+                return {'outcome': 'success', 'data': data}
+            except AssertionError as error:
+                if '1004010000' in str(error):
+                    return {'outcome': 'duplicate'}
+                raise
+
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            responses = list(pool.map(lambda _: request_sign_in(), range(2)))
+        outcomes = sorted(response['outcome'] for response in responses)
+        diagnostics = {
+            'responses': responses,
+            'sign_in_rows': sql('SELECT id,day,point,experience FROM member_sign_in_record WHERE user_id=990955 ORDER BY id;'),
+            'point_rows': sql('SELECT id,biz_id,biz_type,point,total_point FROM member_point_record WHERE user_id=990955 ORDER BY id;'),
+            'experience_rows': sql('SELECT id,biz_id,biz_type,experience,total_experience FROM member_experience_record WHERE user_id=990955 ORDER BY id;'),
+            'member_state': sql('SELECT point,experience,level_id FROM member_user WHERE id=990955;'),
+        }
+        assert outcomes == ['duplicate', 'success'], diagnostics
+        assert sql('SELECT COUNT(*) FROM member_sign_in_record WHERE user_id=990955 AND id > 991055;') == '1', diagnostics
+        assert sql("SELECT COUNT(*) FROM member_point_record WHERE user_id=990955 AND biz_type=1 AND point=4;") == '1', diagnostics
+        assert sql("SELECT COUNT(*) FROM member_experience_record WHERE user_id=990955 AND biz_type=4 AND experience=3;") == '1', diagnostics
+        assert sql('SELECT point,experience FROM member_user WHERE id=990955;') == '4\t3', diagnostics
+        cases['sign_in_concurrency'] = True
+        return {'concurrent_requests': 2, 'outcomes': outcomes,
+                'same_day_sign_in_records': 1, 'single_reward_set': True,
+                'one_success_one_duplicate': True,
+                'success_response': next(response['data'] for response in responses
+                                         if response['outcome'] == 'success')}
+
 
 def stop(app):
     if app is None or app.poll() is not None:
@@ -166,6 +321,8 @@ def stop(app):
 def main():
     validate_probe_target(SCHEMA, APP_PORT)
     assert JAR.is_file()
+    if any((OUT / name).exists() for name in ('member-runtime.json', 'member-browser.json')):
+        raise FileExistsError(f'refusing to overwrite prior evidence in {OUT}; set YH_MEMBER_PROBE_OUTPUT_DIR')
     ports = (MYSQL_PORT, REDIS_PORT, APP_PORT, UI_PORT)
     assert not any(listening(port) for port in ports)
     existing = run('docker', 'ps', '-a', '--format', '{{.Names}}').splitlines()
@@ -200,7 +357,9 @@ def main():
             assert time.monotonic() < deadline, 'isolated MySQL readiness timeout'
             time.sleep(1)
         with tempfile.TemporaryDirectory(prefix='yuheng-p2-member-') as temp:
-            log_path = Path(temp) / 'demo.log'
+            log_path = Path(temp) / 'application-diagnostic.log'
+            log_path.touch(mode=0o600, exist_ok=True)
+            log_path.write_text('')
             env = dict(os.environ, YUHENG_DB_HOST='127.0.0.1', YUHENG_DB_PORT=str(MYSQL_PORT),
                        YUHENG_DB_NAME=SCHEMA, YUHENG_DB_USERNAME='root', YUHENG_DB_PASSWORD=db_password,
                        YUHENG_REDIS_PASSWORD=redis_password)
@@ -216,9 +375,17 @@ def main():
                 assert app.poll() is None and time.monotonic() < deadline, 'isolated Demo failed to start'
                 time.sleep(1)
             deadline = time.monotonic() + 30
-            while sql('SELECT COUNT(*) FROM DATABASECHANGELOG;') != '56':
-                assert time.monotonic() < deadline, 'Liquibase changeset count mismatch'
-                time.sleep(1)
+            deadline = time.monotonic() + 60
+            changesets = None
+            while changesets is None:
+                try:
+                    changesets = Probe.installed_changesets(sql('SELECT COUNT(*) FROM DATABASECHANGELOG;'))
+                except AssertionError:
+                    assert time.monotonic() < deadline, 'Liquibase changeset count mismatch'
+                    changesets = None
+                    time.sleep(1)
+            password_snapshot = sql("SELECT SHA2(GROUP_CONCAT(CONCAT(id,':',password) ORDER BY id SEPARATOR '|'),256) "
+                                    'FROM system_users;')
             sql("UPDATE system_tenant SET status=0, expire_time=DATE_ADD(NOW(), INTERVAL 1 YEAR) WHERE id=2 AND deleted=0;")
             sql('INSERT INTO system_users (id,username,password,nickname,dept_id,post_ids,status,deleted,tenant_id) '
                 'VALUES (990954,' + sql_literal(admin_name) + ',' + sql_literal(admin_hash) +
@@ -230,17 +397,45 @@ def main():
             sql('INSERT INTO system_users (id,username,password,nickname,dept_id,post_ids,status,deleted,tenant_id) '
                 'VALUES (990953,' + sql_literal(guest_name) + ',' + sql_literal(guest_hash) +
                 ",'P2 no-role',NULL,'[]',0,b'0',1);")
+            member_one = {'mobile': '19900000951', 'email': '', 'password': 'P2Member51',
+                          'point': 10, 'status': 0, 'register_ip': '127.0.0.1',
+                          'nickname': 'P2 app member 1', 'tenant_id': 1}
+            member_two = {'mobile': '19900000955', 'email': '', 'password': 'P2Member55',
+                          'status': 0, 'register_ip': '127.0.0.1', 'nickname': 'P2 app member 2', 'tenant_id': 1}
+            admin_member = {'mobile': '19900000952', 'email': '', 'password': secrets.token_urlsafe(16),
+                            'status': 0, 'register_ip': '127.0.0.1', 'nickname': 'P2 admin tenant member', 'tenant_id': 2}
+            for identifier, member in ((990951, member_one), (990955, member_two), (990952, admin_member)):
+                member['password'] = subprocess.run(
+                    ['htpasswd', '-bnBC', '4', member['mobile'], member['password']],
+                    capture_output=True, text=True, check=True).stdout.strip().split(':', 1)[1]
+                sql('INSERT INTO member_user (id,mobile,email,password,status,register_ip,nickname,tenant_id) VALUES '
+                    f"({identifier},{sql_literal(member['mobile'])},'',{sql_literal(member['password'])},0,'127.0.0.1',"
+                    f"{sql_literal(member['nickname'])},{member['tenant_id']});")
             probe = Probe()
             admin = probe.call('POST', '/system/auth/login', body={'username': admin_name, 'password': admin_password})['accessToken']
             guest = probe.call('POST', '/system/auth/login', body={'username': guest_name, 'password': guest_password})['accessToken']
+            first_app = probe.call('POST', '/member/auth/login', body={'mobile': member_one['mobile'],
+                                       'password': 'P2Member51'}, prefix='/app-api')['accessToken']
+            second_app = probe.call('POST', '/member/auth/login', body={'mobile': member_two['mobile'],
+                                        'password': 'P2Member55'}, prefix='/app-api')['accessToken']
+            result['cases']['member_app_login'] = True
+            result['cases']['member_app_address'] = probe.exercise_app(first_app, second_app, result['cases'])
             result['cases']['member_runtime'] = probe.exercise(admin, guest, None, result['cases'])
-            result['changesets'] = 56
+            result['cases']['sign_in_rule_lifecycle'] = probe.exercise_sign_in_rules(admin, result['cases'])
+            result['cases']['sign_in_rewards_lifecycle'] = probe.exercise_sign_in_rewards(
+                first_app, second_app, result['cases'])
+            result['cases']['sign_in_concurrency'] = probe.exercise_concurrent_sign_in(
+                second_app, result['cases'])
+            assert password_snapshot == sql("SELECT SHA2(GROUP_CONCAT(CONCAT(id,':',password) ORDER BY id SEPARATOR '|'),256) "
+                                            'FROM system_users WHERE id < 990953;')
+            result['cases']['seed_passwords_unchanged'] = True
+            result['changesets'] = changesets
             result['completed'] = all(result['cases'].get(key) for key in REQUIRED_CASES if key != 'cleanup')
             ui_log = (Path(temp) / 'ui.log').open('w')
             ui = subprocess.Popen(['python3', '-c',
                 'import http.server,runpy; http.server.ThreadingHTTPServer.request_queue_size=128; '
                 'runpy.run_path("scripts/ui_server.py",run_name="__main__")',
-                '--root', 'yuheng-demo-ui/dist', '--host', '127.0.0.1', '--port', str(UI_PORT),
+                '--root', str(UI_DIST), '--host', '127.0.0.1', '--port', str(UI_PORT),
                 '--backend', f'http://127.0.0.1:{APP_PORT}'],
                 cwd=ROOT, env=env, stdout=ui_log, stderr=ui_log)
             deadline = time.monotonic() + 30
@@ -261,7 +456,7 @@ def main():
                 point_record = sql('SELECT CONCAT(point,":",total_point,":",biz_type) '
                                    'FROM member_point_record WHERE user_id=990951 '
                                    'ORDER BY id DESC LIMIT 1;')
-                assert user_point == '13' and point_record == '-2:13:2', (user_point, point_record)
+                assert user_point == '17' and point_record == '-2:17:2', (user_point, point_record)
                 result['cases']['member_browser_sql'] = {
                     'member_user_point': int(user_point),
                     'latest_point_record': point_record,
@@ -281,6 +476,8 @@ def main():
         result['completed'] = result.get('completed', False) and result['cases']['cleanup']
         (OUT / 'member-runtime.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
         assert result['cases']['cleanup'], result['cleanup']
+    if not result.get('completed'):
+        raise SystemExit('member verification did not complete; see runtime evidence')
 
 
 if __name__ == '__main__':

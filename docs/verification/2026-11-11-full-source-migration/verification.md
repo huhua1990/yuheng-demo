@@ -1699,3 +1699,228 @@ Core UI Vitest 29 文件、125 项通过（必填校验测试输出预期的 asy
 最终 JAR SHA-256 `9a7b8fa44a02a2d42da0da98b518018a7c1c2f2e5e83d15711bd5afac156dcbd`。`python3 scripts/verification/role_page_browser_runner.py` 退出 0：1440×900、390×844、320×844 鼠标和 390×844、320×844 触摸共五场景真实登录、表格加载、新增打开/填写/取消通过，无角色写请求，无 console/page/request 错误；桌面折叠菜单悬停/重新展开通过。`python3 scripts/verification/p1_platform_probe.py` 退出 0：同一 JAR 完成 56 changesets 冷装及重启，21 个种子用户密码不变，用户角色 CRUD/授权、权限拒绝、文件下载、任务查询与启停脚本通过。独立容器和端口均已清理，共享库和历史密码未触碰。
 
 证据：`p1-fixed-package-20261117/p1-build-20261118.json`、`platform-runtime.json`，及 `role-page-collapse-desktop-20261117/result.json`/`browser.json`。截图继续保留本地未提交。P1 浏览器 runner 现于启动前逐文件校验 JAR 与 dist 的 612 项资源完全一致。Demo Python 测试 38 项、31 通过/7 跳过，含资源不匹配拒绝和匹配放行回归。P1 本地 tarball 闭环通过，固定 registry 坐标安装和独立锁文件仍缺失，因此 P1 总项继续进行中；全量 T1/T3/T4 和 P2/P3 不外推为完成。
+
+### 2026-11-21 Member 与 ERP 模板 Liquibase 隔离验收
+
+Member 和 ERP 的模板迁移在专用容器 `codex-qc-schema-mysql`、映射端口 `51045` 的一次性 schema 中按正式 Liquibase formatted SQL 执行。未连接共享 `yuheng_demo`、本机 `mysql8` 或历史用户数据；测试 schema 在验证后删除。
+
+Member 模板入口冷装成功，执行 14 个 changeset；同一 changelog 再次执行没有新增 changeset。构造原历史 `(mobile, tenant_id)` 复合唯一索引后应用 `002-member-mobile-uniqueness.sql`，旧索引被移除，新 `uk_tenant_mobile_active` 生效。两个空手机号可共存；同租户不同活动手机号可用，活动重复被唯一键拒绝；逻辑删除后同手机号可重新使用，不同租户可使用相同手机号。通过保留用户邮箱长度 51 的历史夹具验证 preflight HALT：Liquibase 退出失败，旧索引仍存在、`active_mobile_marker` 未创建、changeset 未记录，会员行保持原样。验证发现旧索引前置条件曾按索引列计数，复合索引导致删除步骤误标 `MARK_RAN`；现改为按索引名去重计数。模板与 Demo 增量 SQL 相同，SHA-256 `1b8f6da037f75dae86f3cc258a90dd2a62a1046c3c72f34e85f099e4dc019f2e`。
+
+ERP 模板入口冷装成功，执行 35 个 changeset 并创建 33 张 ERP 表；重启后仍为 35。`erp_product.unit_id` 最终为 bigint。库存约束拒绝同租户、同商品和仓库的重复活动行，允许逻辑删除后重建，也允许不同租户各自维护记录。插入历史重复库存后单独执行唯一性 changeset，Liquibase 按 precondition HALT，`active_marker` 未创建、changeset 未记账、原数据未修改。模板与 Demo 的三份 ERP SQL SHA-256 一致：`001` `3eb5c0e2111ee393900e14051fc17106c3b623c4a984349ea1f0681dd6a2c368`、`002` `c310693d0d53cbff0cb9664d4430e0d704e3de438b2c390657572c0f6997a642`、`003` `068b4f16a1e020fb81e96ec7c02a1c9cea1693807271bb58ad959cd5358497f5`。
+
+模板迁移/资源/Schema 合约测试 47 项通过；Demo Python 脚本测试 39 项，32 项通过、7 项因需要外部服务跳过、0 失败。Core 模板迁移 Skill 已同步至 Demo，治理同步 `--verify` 通过。Member/ERP 的 SQL 验收通过不替代 Demo HTTP/API 业务流程验收；下一项是隔离环境中 ERP 主单、明细、库存、状态流转和失败回滚的端到端验证。
+
+### 2026-11-21 当前分支按 Skill 重新初始化 ERP/Member
+
+按用户指示直接在当前 Demo 分支验证，不创建 worktree。执行前将现有模块后端、前端及迁移文件备份到本机临时目录 `/tmp/yuheng-demo-module-sync-backup-20261121`；分别移除 Demo 中 ERP/Member 后端源码目录、前端 API/页面目录和模块迁移目录，再从 `yuheng-business-templates/template-erp` 与 `template-member` 初始化。模板源码包名归一为 `com.yuheng.demo.module.<module>`，`jakarta` 按当前 Demo Core 版本适配；ERP Mapper XML namespace 一并迁移。模板 README/教程不作为运行代码复制。前端保留已审计的消费端差异：23 个 ERP API、10 个 Member API 改用 `yuheng-ui/compat/config/axios`，其余严格 TS 标注及等价写法维持原样。重跑 parity 审计后，ERP 305/305、Member 227/227 文件路径集合均匹配；后端 Java/XML 无差异，原有 47 个前端接入适配差异仍是唯一差异，没有新增或遗漏文件。
+
+保留数据库历史兼容边界：ERP changelog 中原有 `db/changelog/business/erp/*.sql` 逻辑路径不变，避免改写已执行 changeset 的身份；Member 已执行 `001-member-schema.sql` 保持逐字节不变，仅从模板加入新的 `002-member-mobile-uniqueness.sql` 并注册到 Member changelog。业务总 changelog 在隔离 schema `yuheng_selected_modules_probe_20261121` 冷装 49 个 changeset（ERP 35、Member 14），第二次执行无新增；生成 33 张 ERP 表与 11 张 Member 表，`erp_product.unit_id` 为 bigint、`member_user.mobile` 可空。随后删除专用 schema；未连接共享数据库或访问历史密码。
+
+消费构建验证：Maven `mvn -o -Dexec.skip=true test` 编译 402 个业务 Java 源文件，后端 40/40 测试通过；Demo Python 39 项、32 通过/7 个外部实例条件跳过；Demo UI `typecheck` 通过，Vitest 3 文件/14 项通过，平台导入边界检查通过，Vite 3545 模块生产构建通过（保留既有大 chunk 警告）。首次编译失败确认模板 `javax` 与当前 Jakarta Core 不兼容，按消费端适配为 `jakarta` 后通过。模板迁移治理测试 47/47 通过。没有运行有写入的真实 ERP/Member HTTP 工作流，本轮不能据此关闭 P2 业务闭环。
+
+当前分支原有 `AGENTS.md`、治理技能、升级草稿及历史截图均保留；临时初始化前备份仅作为本机可恢复副本，没有清理。下一项继续在隔离服务和数据库中验收 ERP 主单、明细、库存变化、状态流转、权限拒绝与失败回滚。
+
+### 2026-11-21 当前 Demo JAR ERP API/SQL 主流程及退货闭环
+
+使用当前 Demo JAR（SHA-256 `dfa2bf7863a2d31afbe7ef06f704b8a074a4b290cb2274d46a79c2d32ae46b5c`）在 Docker 隔离 MySQL 容器 `codex-qc-schema-mysql` 的一次性 schema 和本轮专用密码保护 Redis 中运行真实后端 API。未连接共享 `yuheng_demo`、宿主机 `mysql8:3306` 或共享 Redis。每个 schema 冷装 59 个 Liquibase changeset；为登录仅在各自一次性 schema 创建随机临时管理员并复制种子管理员角色关系。历史用户密码未读取或修改，证据不含临时凭据或密码哈希。
+
+采购/库存/付款和销售/库存/收款工作流运行 53 次真实 HTTP 请求，通过未审核来源拒绝、重复审核拒绝、超额付款/收款事务回滚、资金审核/反审核、租户归属和 SQL 状态断言。最终采购入库数量 10、销售出库数量 4、库存结余 6，付款 100、收款 80，库存流水为入库 `+10` 和出库 `-4`。机器证据为 `erp-workflows-20261121.json`。
+
+双明细采购/销售退货工作流运行 77 次真实 HTTP 请求，通过金额精度、第二明细超量时整单回滚、审核/反审核/重审库存一致性、负金额退款、退款超额事务回滚与释放；最终库存为 `[7, 6]`，库存流水 20 条，种子密码哈希前后相同。机器证据为 `erp-returns-20261121.json`。
+
+本轮发现 ERP 工作流与退货探针将 Liquibase 行数硬编码为 54，已改为拒绝少于 54 的不完整基线，同时在结果中记录实际数量；新增测试覆盖 53 拒绝和扩展基线接受。两个专用 schema 已删除，专用 Redis 容器已删除，后端及 Redis 端口均释放。以上通过的是 ERP API/SQL 代表业务闭环，不覆盖 ERP 前端浏览器、全角色/租户矩阵及所有业务边界；这些仍属 P2/P3 后续验收。
+
+### 2026-11-21 ERP 采购页面浏览器烟测
+
+使用同一 Demo JAR 在隔离 MySQL schema `yuheng_t4_erp_browser_20261121`（59 changesets）、Redis 容器 `yh-erp-browser-redis-20261121` 和独立后端/UI 端口 48192/5204 上运行 Chrome Playwright。临时管理员仅写入本轮隔离 schema，使用完随 schema 删除；未连接共享数据库或 Redis。桌面 1440×900 和窄屏 390×844 均真实登录，依次打开 `/erp/purchase/order` 与 `/erp/purchase/in`，等待页面列表及新增对话框资源加载，打开新增表单后取消。
+
+四个页面/视口组合均成功；采购订单和采购入库新增对话框在两个视口均处于视口边界内，文档没有横向溢出。探针观察到 ERP 下拉数据 API 均返回 HTTP 200；浏览器 page error、console error、request failure 均为 0。截图保存在 `erp-browser-20261121/screenshots/`，机器结果为 `browser-result.json`，运行环境及 JAR 摘要为 `runtime.json`。
+
+### 2026-11-21 ERP 采购到入库浏览器业务闭环
+
+首次真实浏览器提交发现选择产品后缺少后端必需的 `productUnitId`。对照模板与 Demo，确认采购订单、销售订单、库存入库/出库、调拨、盘点共 6 个商品明细表单均有同一遗漏。业务模板新增回归测试先红（6 个表单失败），再将 `row.productUnitId = product.unitId` 同步修复至模板源和 Demo；测试转绿，Demo `vue-tsc` 通过。构建 UI 时配置的 npm 代理对固定坐标返回 404，本轮改用 Core 本地 tarball（SHA-256 `7d5adb2d1a27e0c68956ed64646dd1850adb733fb0e3b5467ff6adff0d9dcebc`）及已安装依赖构建 3545 个模块，再离线打包后端。新 Demo JAR SHA-256 为 `9596b4d8fc524b825a7537dc1d51817372b288a0369e88833aa9b9f123dec72b`。
+
+在隔离 schema `yuheng_t4_erp_browser_flow_20261121k`（59 changesets）、专用 Redis 和后端/UI 端口 48203/5215/16503 中，浏览器通过真实登录创建采购订单、执行审批；再从“可入库订单”选择该订单，选择仓库和结算账户，创建并审批采购入库。4 个业务写请求均返回 HTTP 200，浏览器错误、控制台错误和失败请求均为 0。最终 SQL 为采购订单 `status=20`、采购入库 `status=20`、库存 `1.000000`、库存流水 1 条。浏览器机器结果见 `erp-browser-flow-20261121/browser-flow-result.json`，运行与 SQL 结果见 `runtime-flow.json`，截图在对应 `screenshots-run-*` 目录。专用 schema 和 Redis 已删除，16503/48203/5215 端口已释放。
+
+### 2026-11-21 ERP 财务编辑与明细归属复验
+
+使用当前 Demo JAR SHA-256 `9596b4d8fc524b825a7537dc1d51817372b288a0369e88833aa9b9f123dec72b`，在两个顺序隔离 schema 中重新运行既有 ERP 财务探针。财务编辑 schema `yuheng_t4_edit_20261121` 覆盖采购付款和销售收款金额修改、源单切换、超额编辑回滚、移除旧明细后新增、切换为采购/销售退货负金额退款及来源余额联动，共 66 次真实 HTTP 请求和 16 项来源金额断言通过。超额请求前后完整相关表快照一致。
+
+第二 schema `yuheng_t4_owner_20261121` 覆盖付款/收款各自的外单明细 ID、不存在 ID、重复 ID、创建请求携带明细 ID，以及 SQL 构造的 tenant 999 明细 ID。非法请求均返回对应业务错误，前后行快照不变；合法更新成功，40 次真实 HTTP 请求通过。两个隔离 schema 使用独立临时管理员，不修改历史种子密码；密码和 token 未写入结果。专用 MySQL/Redis 容器删除，13376、16457、48211 均无监听。结果为 `erp-finance-20261121/runtime.json`、`finance-edit.json` 和 `finance-owner.json`。
+
+为允许当前 59 changeset JAR 复用，修正财务编辑与明细归属探针中的旧 `== 54` 断言，统一调用 `installed_changesets` 最低完整性检查；测试覆盖扩展基线接受和不完整基线拒绝，3 项通过。另有一次编排失败源于 owner probe schema 必须匹配 `yuheng_t4_owner_YYYYMMDD` 且临时用户 SQL 最初错误写入另一 schema；失败运行的隔离容器和端口均按 finally 清理，修正后全新环境通过，不把失败轮次记为产品结果。
+
+后台 ERP 属于管理端 Web。本轮用户明确要求除非工程本身是手机端程序，否则不纳入手机视口验收；因此之前保存的 390×844 采购弹窗截图只作为本地诊断历史，不作为本轮通过项，也不据此修改 ERP 表单。窄屏诊断使用的临时浏览器探针已移除，既有截图及 JSON 证据保留。
+
+### P2 补充验证（2026-11-22）
+
+会员模板的详情和列表增加可选业务集成开关，默认不调用 Pay、Product、Trade、Promotion；会员账户的等级、成长值及积分保持显示。模板源修复同步到 Demo，未清空或重建消费工程。隔离运行使用后端 JAR SHA-256 `fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302` 与本次单独构建的 UI dist，59 个 Liquibase changeset，会员 API/SQL、标签 CRUD、积分调整及详情自有标签浏览器验证通过；无上述跨模块请求，浏览器错误和失败请求为零。证据 `p2-member-optional-final-20261122/member-runtime.json`；首次浏览器运行因断言选择器不唯一失败，结果保留 `p2-member-optional-20261122/`。两个容器和四个专用端口已清理。UI 类型检查、20 项 Vitest、平台导入检查及 3546 模块生产构建通过，模板迁移及会员测试 53 项通过。开启 Pay/Mall 后的实际集成及会员独立源码构建仍待验证。
+
+同一后端 JAR 的 ERP 隔离补充验证 `erp-p2-sidecar-20261122/runtime.json` 包括创建/更新明细归属、采购销售与财务流程及库存单据审核/反审核；隔离资源清理通过。ERP 负向盘点、库存不足、并发与完整权限矩阵仍待验证；上述结果不代表 P2 全部完成。
+
+随后在同版 JAR 的新隔离环境补充了 31 请求的盘亏、库存不足事务回滚验证，以及 37 请求的并发出库验证。盘亏审核、反审核、再审核保持库存一致；两行出库的第二行库存不足时，第一行变动、单据状态和库存流水全部回滚；两个并发出库各申请 4 件时只有一单成功，另一单返回库存不足，库存只扣减一次。两轮容器和专用端口均已清理，结构化结果分别为 `erp-stock-negative-20261122/runtime.json` 和 `erp-stock-concurrency-20261122/runtime.json`。完整权限及租户组合仍待验证。
+
+本轮继续补充 ERP 产品/仓库的权限与租户组合。使用同版 JAR 在一次性 schema `yuheng_t4_erp_tenant_20261122` 冷装 59 个 changeset，为租户 121、122 分别建立有权限和无权限的真实登录用户。56 个 HTTP 请求逐项验证了产品和仓库的查询、创建、更新、默认状态写入及删除：无权限请求全部返回 403 且 SQL 快照不变；本租户可以读取和维护自己的记录；跨租户详情和分页不返回对方记录；同一 token 伪造 `tenant-id` 读取和写入均返回 403，快照不变；历史种子用户密码保持不变。结构化证据为 `erp-tenant-permission-20261122/runtime.json`，入口为 `scripts/verification/erp_tenant_permission_runner.py`。专用 MySQL、Redis、48235/13390/16471 均已清理。该轮只关闭产品/仓库的权限与租户组合，不代表其它 ERP 控制器、数据权限范围、并发授权或 P2 全部完成。
+
+同一版 JAR 在另一隔离 schema `yuheng_t4_status_20261122` 中继续验证非法审核状态。对采购订单、采购入库、采购退货、销售订单、销售出库、销售退货、其它入库、其它出库、库存盘点、库存调拨、付款单、收款单共 12 个 `update-status` 接口提交 `status=99`，全部返回业务码 400；登录加 12 次请求共 13 次，ERP 全表快照在每次请求后保持不变。当前 schema 执行 59 个 changeset，结构化证据为 `erp-p2-sidecar-20261122/audit-status.json`，可复跑入口为 `scripts/verification/erp_audit_status_probe.py`，编排结果为同目录 `runtime.json`。专用容器和 13386/16467/48231 均已清理。该证据只关闭非法状态输入边界，不代表完整 ERP 权限、数据权限或 P2 总体验收完成。
+
+随后用同版 JAR 在一次性 schema `yuheng_t4_erp_acl_20261122` 执行 ERP 方法级权限矩阵。隔离夹具创建了产品、分类、单位、供应商、客户、结算账户和仓库，再用真实登录但无角色的普通用户访问 20 个 ERP 控制器的详情、分页、导出、创建、更新、审核和删除入口。最终 128 个请求中，111 个带 `@PreAuthorize` 的入口均返回 HTTP 200、业务码 403；每次拒绝后查询 33 张 ERP 业务表，完整快照均未改变。另有 8 个上游控制器方法没有 `@PreAuthorize`：产品、分类、单位、供应商、客户、账户、仓库的 `simple-list`，以及库存 `get-count`。这些接口要求先认证，但无 ERP 权限用户可以读取；Core 的 `anyRequest().authenticated()` 仍阻止匿名访问。该行为在原始 `ruoyi-vue-pro` 与 Templates 源码中一致，本轮只记录继承契约，没有在 Templates 或 Demo 擅自改变业务接口。
+
+结构化结果为 `erp-permission-matrix-20261122/runtime.json`，可复跑入口为 `scripts/verification/erp_permission_matrix_runner.py`，脚本回归为 `scripts/tests/test_erp_permission_matrix_probe.py`。结果记录 `erp_snapshot_unchanged_after_denials=true`、`cleanup.passed=true`，固定 Demo JAR SHA-256 为 `fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302`；专用 MySQL、Redis 及 13391/16472/48236 已清理。该轮关闭 ERP 方法级权限拒绝子项，不代表角色授权成功矩阵、数据权限范围、全量跨租户组合或 P2 总体验收完成。
+
+在同版 JAR 的另一隔离 schema `yuheng_t4_erp_auth_20261122` 中继续验证授权后的基础资料正向路径。为一个真实普通用户建立只包含 7 类基础资料 create/query/update/delete 权限的角色，完成分类、单位、供应商、客户、账户、仓库、产品的创建、详情/精简列表/分页查询、更新、仓库默认状态切换和删除，共 44 个 HTTP 请求；每个夹具行最终在对应 ERP 表中 `deleted=1`。历史种子密码前后相同，专用 MySQL、Redis 及 13392/16473/48237 已清理。结构化结果为 `erp-authorized-master-20261122/runtime.json`，可复跑入口为 `scripts/verification/erp_authorized_master_runner.py`，脚本回归为 `scripts/tests/test_erp_authorized_master_probe.py`。本轮只证明基础资料角色的正向可用性，单据、库存和统计接口的授权成功矩阵、数据权限范围及 P2 总体验收仍开放。
+
+### 2026-11-22 ERP 库存与统计授权正向矩阵
+
+同版 Demo JAR（SHA-256 `fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302`）在一次性 schema `yuheng_t4_erp_stock_auth_20261122` 冷装 59 个 Liquibase changeset。为真实普通用户建立只包含 `erp:stock:query`、`erp:stock:export`、`erp:stock-record:query`、`erp:stock-record:export` 和 `erp:statistics:query` 的角色，使用最小 SQL 夹具写入一个商品、仓库、库存、库存流水及采购/销售统计单据。
+
+11 个真实 HTTP 请求全部通过：库存详情、分页和 Excel 导出；库存明细详情、分页和 Excel 导出；登录后的 `stock/get-count`；采购统计和销售统计的 summary、time-summary。统计结果符合模板 Mapper 的业务定义，采购为入库 100 减退货 20 得 80，销售为出库 200 减退货 30 得 170。库存详情和库存明细能够返回夹具数据，历史种子密码未修改。结构化证据为 `erp-stock-statistics-auth-20261122/runtime.json`，可复跑入口为 `scripts/verification/erp_stock_statistics_runner.py`，契约回归为 `scripts/tests/test_erp_stock_statistics_probe.py`。专用 MySQL、Redis 和 13393/16474/48238 均已清理。
+
+本轮关闭的是库存/统计查询的正向授权子项。`stock/get-count` 仍按上游契约只要求认证而没有方法级 ERP 权限；ERP 全量角色授权成功矩阵、数据权限范围组合、Member 外部认证和 Pay/Mall 开启后的真实联调仍属于 P2 开放项。
+
+### 2026-11-22 ERP 单据授权正向矩阵
+
+同版 Demo JAR 在一次性 schema `yuheng_t4_erp_document_auth_20261122` 冷装 59 个 Liquibase changeset。为真实普通用户建立只包含采购订单、采购入库、销售订单、销售出库、付款单、收款单各自 `create/query/export/update-status` 权限的角色，并通过最小 SQL 夹具提供供应商、客户、账户、仓库、单位和商品。
+
+30 个真实 HTTP 请求全部通过：六类单据各自完成创建、详情、分页、Excel 导出和审核。采购入库与销售出库审核后的库存为 6，付款单 SQL 金额为 100，收款单 SQL 金额为 80，六个核心单据状态均为 20。结构化证据为 `erp-document-auth-20261122/runtime.json`，可复跑入口为 `scripts/verification/erp_document_authorized_runner.py`，契约回归为 `scripts/tests/test_erp_document_authorized_probe.py`。历史种子密码未修改，专用 MySQL、Redis 和 13394/16475/48239 均已清理。
+
+本轮关闭的是采购/销售/资金主单的正向授权子项。退货、其它入库/出库、库存盘点/调拨的角色成功路径，以及 ERP 全量权限、数据权限组合、Member 外部认证和 Pay/Mall 开启后的真实联调仍属于 P2 开放项。
+
+### 2026-11-22 ERP 退货与库存辅助单据授权正向矩阵
+
+同版 Demo JAR 在一次性 schema `yuheng_t4_erp_aux_auth_20261122` 冷装 59 个 Liquibase changeset。为真实普通用户建立只包含采购/销售来源单、采购/销售退货、其它入库/出库、库存调拨/盘点各自 `create/query/export/update-status` 权限的角色，并通过最小 SQL 夹具提供供应商、客户、账户、两个仓库、单位和商品。
+
+50 个真实 HTTP 请求全部通过：采购/销售退货、其它入库/出库、库存调拨和库存盘点均完成创建、详情、分页、Excel 导出和审核。SQL 核对所有 10 个单据状态均为 20；库存变化按业务顺序正确，辅助单据完成后两个仓库分别为 4 和 3。结构化证据为 `erp-auxiliary-auth-20261122/runtime.json`，可复跑入口为 `scripts/verification/erp_auxiliary_authorized_runner.py`，契约回归为 `scripts/tests/test_erp_auxiliary_authorized_probe.py`。历史种子密码未修改，专用 MySQL、Redis 和 13395/16476/48240 均已清理。
+
+本轮关闭的是退货和库存辅助单据的正向授权子项。ERP 全量数据权限范围、其它 update/delete 权限组合、Member 外部认证和 Pay/Mall 开启后的真实联调仍属于 P2 开放项。
+
+### 2026-11-22 ERP 单据更新与删除授权矩阵
+
+同版 Demo JAR 在一次性 schema `yuheng_t4_erp_mutation_auth_20261122` 冷装 59 个 Liquibase changeset。为真实普通用户建立覆盖 12 类 ERP 单据的 `create/query/export/update/update-status/delete` 权限。验证顺序先创建采购/销售来源单并完成必要审核，再分别创建草稿单据，调用 `update` 修改请求内容，随后调用 `delete`。
+
+49 个真实 HTTP 请求通过，覆盖采购订单、采购入库、采购退货、销售订单、销售出库、销售退货、其它入库、其它出库、库存盘点、库存调拨、付款单和收款单。SQL 确认每个草稿行最终 `deleted=1`，采购/销售来源单链仍可用于后续业务动作。结构化证据为 `erp-mutation-auth-20261122/runtime.json`，可复跑入口为 `scripts/verification/erp_mutation_authorized_runner.py`，契约回归为 `scripts/tests/test_erp_mutation_authorized_probe.py`。历史种子密码未修改，专用 MySQL、Redis 和 13396/16477/48241 均已清理。
+
+本轮关闭的是 ERP 单据 `update/delete` 的正向授权子项。已审核单据的删除保护策略、全量数据权限范围以及 Member 外部认证和 Pay/Mall 开启后的真实联调仍属于 P2 开放项。
+
+### Member 单模块前端消费验证（2026-11-22）
+
+会员模板核心页面已移除 Pay/Mall 静态导入，改为依赖无业务导入的集成契约和空适配器。Demo 在消费端自己的 `yuheng-demo-ui/src/views/member/integration-components.adapter.ts` 注册现有钱包、订单、售后、收藏、推广和优惠券组件；这部分属于 Demo 定制。使用临时消费者排除所有 Pay/Mall API、商城页面及会员可选组件，并替换为空适配器后，`vue-tsc --noEmit` 和 `vite build` 均通过。Demo 类型检查、20 项 Vitest、平台导入边界和模板 76 项测试也通过。结果见 `p2-member-standalone-20261122/runtime.json`。临时目录已删除，未使用共享数据库、Redis 或凭据。Pay/Mall 开启后的真实联调仍待验证。
+### 2026-11-22 ERP 全业务租户边界验证
+
+使用当前 Demo JAR（SHA-256 `fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302`）在一次性 schema `yuheng_t4_erp_full_tenant_20261122` 中执行 59 个 Liquibase changeset，使用租户 121、122 的两个真实登录账号和完整 ERP 权限角色，验证 23 个 ERP 资源族及模板 SQL 定义的 33 张业务表。验证入口为 `scripts/verification/erp_full_tenant_permission_runner.py`，探针为 `scripts/verification/erp_full_tenant_permission_probe.py`，契约测试为 `scripts/tests/test_erp_full_tenant_permission_probe.py`。
+
+263 个真实 HTTP 请求通过：两个租户各自完成采购、销售、退货、其它入库/出库、库存调拨/盘点、付款、收款单据的创建和审核，并完成基础资料、库存、库存流水及统计的详情/列表读取；跨租户详情和分页不可见；跨租户审核与删除请求没有改变 33 张 ERP 表的完整 SQL 快照；伪造 `tenant-id` 的请求被拒绝；历史种子用户密码前后保持一致。上游删除服务对租户过滤后的空结果返回成功值，因此跨租户删除以 SQL 快照不变作为安全断言，没有把该兼容行为误判为漏洞。
+
+机器证据为 `docs/verification/2026-11-11-full-source-migration/erp-full-tenant-20261122/runtime.json`，其中 `result=PASS`、`resource_count=23`、`business_table_count=33`、`foreign_write_sql_unchanged=true`、`seed_passwords_unchanged=true`。专用 MySQL、Redis、应用进程及 13397/16478/48242 已清理。中途三次探针失败分别修正了夹具密码长度、资源键映射和列表响应形态，均未修改 Core 或业务模板源码；最终全新隔离环境重跑通过。
+
+该证据关闭 ERP 全业务资源的代表性租户读取和跨租户写入边界，仍不等于关闭 P2 全部范围。Member 外部短信/微信/社交认证、Pay/Mall 开启后的真实联调、ERP 更细的数据权限范围和外部依赖仍按计划开放。
+
+本轮随后使用当前 Demo JAR `963149b3978618f370df9f63fe1db1a2841b7c3b2298d80766086cae27da5c97` 重跑同一全业务探针，结果为 `PASS`：59 个 changeset、263 个 HTTP 请求、23 个 ERP 资源族、33 张业务表，跨租户读取不可见，跨租户审核/删除前后 SQL 快照不变，伪造租户头拒绝，历史种子用户密码保持不变；专用容器及 13397/16478/48242 已清理。机器证据仍位于 `erp-full-tenant-20261122/runtime.json`。
+
+源码边界审查同时确认，`yuheng-business-templates/template-erp/db/changelog/001-erp-schema.sql` 的业务表按当前模板定义使用 `tenant_id` 和审计 `creator` 等字段，没有 `dept_id` 或 `user_id` 归属列；模板和 Demo 也没有为 ERP 注册 `DeptDataPermissionRuleCustomizer`。因此本轮关闭的是当前 ERP 的全资源租户隔离，不宣称部门、本部门及子部门、仅本人四类数据范围已经支持。该能力如果未来需要，应先在业务模板中定义字段、写入归属规则、SQL/索引迁移和 Skill 更新策略，再由 Demo 通过模板更新流程接入；本轮没有擅自改变业务模型。
+
+### 2026-11-22 Member 外部认证边界与 Core 修复
+
+本轮在独立 MySQL/Redis、schema `yuheng_p2_member_auth_20261122` 和应用端口 48255 中使用重新打包的 Demo JAR（SHA-256 `963149b3978618f370df9f63fe1db1a2841b7c3b2298d80766086cae27da5c97`）完成 Member 外部认证边界验证。Liquibase 执行 59 个 changeset；短信参数校验、调试短信渠道发送、错误短信验证码、调试短信成功登录、社交参数校验、非法社交类型、无效社交 code、微信小程序参数校验和无效 code 均返回预期业务码。成功路径验证了隔离库生成的验证码被消费、会员按手机号创建且 `tenant_id=1`、OAuth access/refresh token 各增加一条、登录日志增加一条；令牌值只在内存中校验，没有写入证据。短信错误请求相对初始快照没有新增会员或 OAuth token，社交/微信失败请求相对短信成功快照没有新增会员、社交用户、绑定关系或 OAuth token，系统用户历史密码摘要保持不变；临时容器、应用进程和 13388/16468/48255 已清理。结构化证据为 `docs/verification/2026-11-11-full-source-migration/p2-member-external-auth-20261122/member-external-auth-runtime.json`，可复跑入口为 `scripts/verification/p2_member_external_auth_probe.py`。
+
+验证过程中定位并修复了 Core 两个边界问题：JustAuth 未配置可选 `extend` 时 `AuthRequestFactory` 的空指针，以及社交请求构建阶段/第三方调用阶段异常未统一转换为 `SOCIAL_USER_AUTH_FAILURE`。修复位于 `yuheng-core/yuheng-module-system/src/main/java/com/yuheng/platform/module/system/framework/justauth/core/AuthRequestFactory.java` 和 `.../SocialClientServiceImpl.java`，新增 5 项 Core 定向回归测试，全部通过；修复后的 Core JAR SHA-256 为 `f281a3d229f40fc3ad0ed09c93cca5acd70950a761181856ad099126da7531cb`，该制品已重新安装并进入 Demo 最终 JAR。P2 探针契约测试最终为 5 项通过。
+
+本轮关闭的是 Member 外部认证的调试短信成功闭环及失败/不写入边界。该成功路径不等同于真实运营商短信服务；没有真实第三方账号，因此没有把社交/微信成功授权、回调、Pay/Mall 开启后的联调或其它外部服务验收记为通过；P2 其它开放项继续按计划执行。
+
+### 2026-11-22 P2 模板更新治理闭环
+
+本轮按三仓库关系验证模板更新边界：`yuheng-core` 提供平台能力和迁移 Skill，`yuheng-business-templates` 提供业务模板源码及更新工具，`yuheng-demo` 作为最终可运行、可交付、可定制工程。模板不是 Demo 的运行时依赖；模板更新必须由使用者显式触发，更新时保留 Demo 定制，不重建、不清空、不整目录覆盖 Demo。
+
+在 Templates 中修正 ERP 示例映射，移除不存在的 `template-erp/api`、`convert` 和 `job` 等源路径；映射现在覆盖实际的 controller、dal、enums、framework、service、resources、db/changelog 以及 UI API/页面目录。新增 `tools/template_update.py` 支持基线记录、只读预览和显式 `--apply`，默认阻止冲突、未分类差异和模板删除，数据库文件仅参与比较，不改写已执行 changeset、checksum 或业务数据。
+
+以当前 Demo 初始化结果建立 ERP 基线后，运行预览得到 309 个 `unchanged`，`template_added`、`template_changed`、`consumer_only`、`consumer_customized`、`conflict`、`template_deleted`、`unclassified_difference` 均为 0；预览输出明确 `consumer files were not modified`。当前基线已经包含 Demo 的包名、请求实例、UI 集成和 changelog 适配，因此没有执行 `--apply`。机器证据为 `docs/verification/yuheng-template-update/erp-preview-20261122.json`，对应 Core 提交 `40f0e40`、Templates 提交 `0802802`；本机基线为 `/tmp/yuheng-erp-template-state-20261122.json`，基线不提交。
+
+验证中发现并修复两处更新工具分类缺陷。第一处是已记录的消费端适配在源文件和目标文件均未变化时被误报为 `unclassified_difference`；第二处是基线已存在适配时模板后续修改可能被错误归类为 `template_changed` 并覆盖消费端。两项均按红灯测试复现后最小修复；Templates 更新工具定向测试 7 项、全量测试 83 项通过。Core `AuthRequestFactoryTest` 与 `SocialClientServiceImplTest` 定向测试 5 项通过，Demo 升级 Skill 测试 4 项通过，Demo 全量 Python 脚本测试 82 项（7 项因外部服务条件跳过）通过。
+
+Core 的模板迁移 Skill 已同步到 Demo，`sync-specs-api.py --apply` 返回 `changes: []`，随后 `--verify --json` 为 `PASS`；没有覆盖 Demo 的业务代码、业务 SQL、升级 Skill、计划或历史截图。三仓库 `git diff --check` 通过；本轮没有新增未跟踪的 `target`、`dist`、`node_modules`、JAR 或日志。P2 总项仍继续进行中，Pay/Mall 开启后的真实联调、真实社交/微信授权、ERP 更细数据权限及其它外部依赖继续按计划开放。
+
+### 2026-11-22 Member 管理端权限矩阵
+
+本轮在当前 Demo JAR（SHA-256 `963149b3978618f370df9f63fe1db1a2841b7c3b2298d80766086cae27da5c97`）上使用一次性 schema `yuheng_t4_member_acl_20261123`、隔离 MySQL/Redis 和 13399/16480/48260 端口，冷装并等待 59 个 Liquibase changeset 完成后执行 Member 管理端权限矩阵。验证结束后临时容器、应用进程和端口均已清理。
+
+`member_permission_matrix_runner.py` 建立两个真实登录账号：无角色账号和只授予 Member 权限的普通账号。67 次真实 HTTP 请求覆盖会员用户、标签、分组、等级、会员配置、经验记录、等级记录、积分记录、签到配置和签到记录的查询与授权写入口。无角色账号对所有方法级保护入口均收到 HTTP 200、业务码 403；有权限账号对对应入口均收到业务码 0。标签、分组和等级的三个 `list-all-simple` 方法在源码中没有 `@PreAuthorize`，本轮按既有“认证可读”契约单独记录为成功，不将其误报为权限缺陷。
+
+每次拒绝请求前后均比较 `member_config`、`member_level`、`member_group`、`member_tag`、`member_user`、`member_address`、`member_experience_record`、`member_level_record`、`member_point_record`、`member_sign_in_config` 和 `member_sign_in_record` 11 张表的完整 SQL 快照，均未发生写入；历史系统用户密码字段保持不变。结构化结果为 `docs/verification/2026-11-11-full-source-migration/member-permission-matrix-20261123/runtime.json`，契约测试为 `scripts/tests/test_member_permission_matrix_probe.py`。证据未记录凭据、token 或密码哈希。
+
+本轮没有发现需要修复 Core 或业务模板的产品缺陷；运行中暴露的用户名格式、创建夹具唯一性和快照基线问题均属于验证脚本，已通过红绿测试和隔离重跑修正。该结果只关闭 Member 管理端权限矩阵子项；Member 调试短信成功路径已由后续当前 JAR 证据关闭，真实社交/微信授权、Pay/Mall 开启后的真实联调、ERP 更细数据权限和 P2 总体验收继续开放。
+
+### 2026-11-22 Member App 当前 JAR 复验
+
+为避免历史 Member 证据继续支撑当前版本，本轮使用当前 Demo JAR（SHA-256 `963149b3978618f370df9f63fe1db1a2841b7c3b2298d80766086cae27da5c97`）在一次性 schema `yuheng_p2_member_20261117` 中重新启动隔离 MySQL/Redis 和 Demo，Liquibase 执行 59 个 changeset 后完成复验。验证入口为 `scripts/verification/p2_member_platform_probe.py`，结构化结果写入 `docs/verification/2026-11-11-full-source-migration/p2-member-platform-20261117/member-runtime.json`，浏览器结果写入同目录 `member-browser.json`。
+
+真实请求覆盖后台匿名 401、无角色 403、伪造租户头拒绝和授权操作；App 密码登录；地址超长姓名返回 400 且没有数据库写入、地址增改查删、另一会员列表/详情不可见；积分记录故障注入时会员积分和积分流水事务回滚，移除故障后正常加分；标签/分组/等级创建更新查询、引用保护和软删除；签到配置增改删及重复日期拒绝。桌面浏览器完成标签 CRUD、会员搜索和扣积分，以及分组、等级、积分、签到配置/记录、会员参数读取，浏览器 console/page error 和失败请求均为 0。数据库断言确认租户归属、积分值及流水值与 API 一致，历史系统用户密码未修改。
+
+本轮结果 `completed=true`，应用/UI 已停止，隔离容器已删除，13373、16453、48220、5203 均无监听。该证据关闭当前 JAR 下 Member App/API/SQL 及桌面代表页面的限定复验子项；真实社交/微信授权回调、Pay/Mall 开启后的真实联调、ERP 更细数据权限组合和 P2 总体验收仍开放。ERP 是桌面后台，本轮没有增加手机视口验收。
+
+### 2026-11-22 Pay/PMS 临时消费者运行验证
+
+桌面补验：隔离消费副本将分享页面注册为顶层匿名路由，使用 Core `067f48e` 本地 UI 包；生产构建及开发模式均在同轮隔离后端生成令牌后立即启动 1440×900 浏览器，实际文档内容可见，浏览器错误和失败请求均为零。后端重启前后均为 107 个 changeset，隔离容器及端口已停止。将分享路由错误挂在 Home 下时会发起认证请求并产生刷新令牌错误，顶层接线消除此问题；中途 502 是验证环境未就绪。开发模式因 `qs` CommonJS 未预构建出现默认导入错误，消费端 Vite 设置 `optimizeDeps.include: ['yuheng-ui > qs']` 后复验通过，Templates `c3049cd` 已补充说明。浏览器结构化结果见 `p2-pay-pms-consumer-20261122/desktop-share.json`。
+
+补充：Templates `8d727bf` 增加 Pay/PMS 映射示例及 Pay 转账可选回调的前向 changeset，`04d0544` 声明 PMS 消费端共享 UI 资产。隔离映射消费者 JAR SHA-256 `15993a3d1986380abc84a9c07e7c0a0e8a0e6f1831e831605d1a99531571e8a5` 的 `p2-pay-pms-consumer-20261122/runtime.json` 记录 107 个 changeset 首次及重启一致，Pay 应用、钱包余额、PMS 项目、知识库文档和匿名分享代表调用通过；Pay 匿名查询返回 401、PMS 无权限查询返回 403，拒绝前后 Pay/PMS 表快照一致。隔离容器已删除。该证据不覆盖普通角色完整授权、租户隔离、桌面浏览器、真实支付渠道及回调。Core `067f48e` 完成严格消费兼容修复和本地包重建，UI 130 项测试通过；Templates `05530e5` 修复 Pay/PMS/Member 类型及直接依赖说明，99 项测试通过。独立安装的隔离消费工程使用本地 Core tarball `e517810021a1567784935a76ff196356431259aa7f6a2cafd19b07793d7397d2`，补齐消费端依赖、修正请求类型转发并更新 Member 字典类型后，完整类型检查和生产构建通过，存在大 chunk 警告。该 tarball 未发布 npm；正式 Demo 未预置 Pay/PMS，P2 总体验收继续进行中。
+
+前端补充检查：隔离复制 Demo UI，将 Pay/PMS 模板前端接入后，直接调用已有 `vue-tsc` 失败，149 行诊断包括模板隐式 `any`、缺失的本地兼容转发及类型声明。Core 的已发布包包含 Qrcode、FilePreview、用户/部门选择组件及部分工具，Demo 当前声明尚未覆盖这些用途；模板自身和依赖错误仍需逐项确认。Pay API 目录与 Demo 副本已有文件合并，因此此结果只证明当前组合不可编译，不代表干净模板接入结果。未执行前端构建、浏览器或真实支付渠道验证；P2 保持进行中。正式 Demo 未接入 Pay/PMS，也未修改共享数据库。
+
+将 Demo 复制到临时目录，人工复制 Pay/PMS 后端源码及模块 changelog，适配包名并加入 Pay SDK 依赖；该轮没有实际执行 Skill 初始化流程，也没有验证 Pay/PMS 前端。补充 Core 的 `lombok.config` 后，临时消费者离线编译 910 个 Java 文件并打包成功，JAR SHA-256 `f7a5dc29077b2f9230e0809ba89075d6615f32cd42f545a87d3eb1ddd2c379f1`。首次链式 setter 编译失败源于临时消费者缺少 Core Lombok 配置，并非 Pay Java 源码缺陷。Templates 的 Pay README 已补充该配置和支付 SDK 依赖要求。
+
+专用 MySQL/Redis 中应用启动成功，Liquibase 记录 106 个 changeset，包含 Pay 14 张和 PMS 33 张表；再次启动时没有新增 changeset。管理员真实登录后，Pay 应用完成创建、读取、更新和逻辑删除，应用、订单、钱包空列表查询成功，匿名应用查询返回业务码 401。PMS 项目完成创建、读取、更新、回收、恢复、归档、恢复、回收和删除；知识库完成创建、读取、更新和删除。项目及应用活动探针记录的 SQL 计数为零，知识库删除后分页为空。
+
+首次启动因验证命令漏传 Redis 端口而尝试连接本机 6379，认证失败；修正为专用端口后启动成功。探针曾因漏传令牌收到 401，及尝试回收已归档项目收到状态错误，随后按真实状态机完成验证。上述不是生产源码修复。正式 Demo 未加入 Pay/PMS 源码；Pay/PMS 前端、Skill 实际初始化、普通用户权限矩阵、支付渠道、真实支付宝/微信回调和会员支付联动仍待验证，P2 总项继续进行中。
+
+补充租户及普通角色验证：固定 JAR `15993a3d1986380abc84a9c07e7c0a0e8a0e6f1831e831605d1a99531571e8a5` 在新隔离 MySQL/Redis 中复跑 `scripts/verification/p2_pay_pms_consumer_probe.py`。两个独立登录租户分别创建 Pay 应用、PMS 项目和知识库，直接查询对应业务表确认 `tenant_id` 与当前租户一致；双方读取自身记录成功，跨租户读取返回空或资源不存在，PMS 跨租户更新被拒绝，拒绝前后业务表快照相同。限定普通角色的五项越权写入和伪造租户头均返回 403，快照不变。首次与重启均为 107 个 changeset，隔离容器清理成功；结构化结果为 `p2-pay-pms-tenant-20261122/runtime.json`。Pay 应用继承 `BaseDO` 但没有 `@TenantIgnore`，Core 当前拦截器仍对其追加租户条件；此结果不证明所有 Pay/PMS 接口、外部支付渠道或第三方回调均已验证。
+
+### 2026-11-22 Pay/PMS 模板 SQL 迁移复验
+
+本轮使用 `yuheng-business-templates/template-pay/db/changelog/changelog.yaml` 和 `template-pms/db/changelog/changelog.yaml`，通过隔离 MySQL 8.0.33 容器 `codex-qc-schema-mysql` 的临时 probe 用户执行 Liquibase 4.29.2。Pay 首次更新执行 14 个 changeset，重复更新执行 0 个；PMS 首次更新执行 33 个，重复更新执行 0 个。Pay 14 张业务表和 PMS 33 张业务表均创建成功，所有业务表初始行数为 0；`DATABASECHANGELOG` 只记录各自对应的 14/33 个 changeset，没有示例订单、钱包、支付凭据、知识库文档或其他初始化业务数据。
+
+在两个新的冲突 schema 中分别预创建 `pay_app` 和 `pms_project`，再次执行对应 changelog 均在首个 changeset 以 `PreconditionFailedException` 退出，更新摘要 `Run: 0`，原有表未被覆盖，未留下错误的 Liquibase 执行记录。结构化结果为 `docs/verification/2026-11-11-full-source-migration/p2-template-sql-20261122/runtime.json`，其中记录业务表数、changeset 数、空数据断言、冲突保护和清理状态。验证结束已删除 probe 用户、四个临时 schema；共享 `yuheng_demo`、历史密码、Redis 和运行服务未触碰。
+
+该证据只关闭 Pay/PMS 模板 SQL 的冷装、重复执行、空初始化和已有表冲突保护子项。当前 Demo 后端仅初始化 ERP、Member；Core 的 Pay/PMS 路由是禁用占位入口，Templates 当前也没有完整 Trade/Promotion/Product 后端接入，因此没有把本轮 SQL 结果记为 Pay/PMS API 或商城支付联调通过。后续若验证这些业务，必须先按 Skill 将完整模板源码和自有 changelog 显式复制到 Demo，再在当前 Core 版本上构建和执行真实 API/SQL 验证。
+
+### 2026-11-22 Member 与 Pay 钱包桌面联动
+
+通过显式初始化 Pay/PMS 的临时消费 JAR（SHA-256 `15993a3d1986380abc84a9c07e7c0a0e8a0e6f1831e831605d1a99531571e8a5`），并用 Demo 正式 UI 源码开启 `VITE_MEMBER_ENABLE_PAY=true` 构建临时 dist；Pay/PMS 源码没有写入正式 Demo。隔离 schema `yuheng_p2_member_pay_20261122` 首次和重启均为 107 个 Liquibase changeset，平台种子用户密码以及新建会员密码字段均保持不变。
+
+桌面 1440×900 浏览器登录后打开会员详情和余额流水，确认初始 1.25 元；在列表使用“修改余额”增加 2.50 元，再减少 0.75 元。页面/API 金额与 SQL 分一致，最终钱包余额 300 分，流水依次为 `125/125`、`250/375`、`-75/300`。只读角色无法看到写操作，直接更新请求返回 403；匿名更新返回 401；伪造 `tenant-id: 2` 返回 403。通过 `pay_wallet_transaction` 插入触发器故障注入，更新返回 500 后钱包和流水完整快照均与操作前一致；移除触发器后正常更新成功。浏览器 page/console error、失败及取消请求均为 0。
+
+回归入口为 `scripts/verification/p2_member_pay_runner.py`、`scripts/verification/p2_member_pay_browser_probe.js`，对应契约测试 `scripts/tests/test_p2_member_pay_runner.py`。完整结果位于 `docs/verification/2026-11-11-full-source-migration/p2-member-pay-second-20261122/member-pay-runtime.json` 与 `member-pay-browser.json`；首轮未通过记录和角色菜单夹具修正前截图另存于 `p2-member-pay-first-20261122/`。两轮结束时均确认隔离容器已删除，13402、16482、48262 和 5220 均无监听。Demo 全量 Python 回归 96 项（89 通过、7 条件跳过），Demo UI 类型检查、20 项 Vitest 和平台导入边界检查通过；开启 Pay 的 Vite 生产构建 3548 模块成功并保留既有 chunk 体积警告。此次只关闭 Member 管理 UI 与 Pay 钱包联动的代表性桌面/API/SQL/权限/事务子项；真实支付渠道、支付回调和第三方认证仍未执行，P2 总验收继续进行中。未发现需修复的 Core 或 Templates 产品源码问题。
+
+### 2026-11-23 Member 实际签到与奖励事务
+
+使用当前 Demo JAR `963149b3978618f370df9f63fe1db1a2841b7c3b2298d80766086cae27da5c97`、一次性 MySQL/Redis 和关闭 Pay/Product/Trade/Promotion 的独立 UI 构建，冷装 59 个 changeset。真实 App 登录后，分别对 `member_experience_record` 和 `member_level_record` 注入插入故障，签到接口返回 500，签到、积分、经验、等级流水和会员状态的操作前后快照均相同。移除故障后首次签到获得 4 积分、3 经验并自动升级；重复签到返回 `1004010000` 且快照不变；另一会员的签到分页和统计均为空。桌面会员页完成原有流程，扣减 2 分后的用户积分和流水均为 17；浏览器错误及失败请求为零，系统种子用户密码未变。
+
+最终机器证据 `p2-member-signin-rewards-final4-20261123/member-runtime.json`、`member-browser.json`，探针及对应测试为 `scripts/verification/p2_member_platform_probe.py`、`scripts/tests/test_member_verification.py`。容器和 13373/16453/48220/5203 端口均已清理。首次桌面失败因探针保留签到前的固定积分期望；后续使用了先前开启 Pay 的 UI 构建，导致可选集成关闭断言失败；分别记录在独立目录，最终使用独立默认构建复跑通过。本轮未发现需修改 Core/Templates 的产品缺陷；签到并发幂等、真实第三方授权及 P2 总体验收仍开放。
+
+### 2026-11-23 Member 同日并发签到幂等
+
+源码检查发现签到事务原先先查询最近记录后插入，而 `member_sign_in_record` 没有用户/日期唯一约束；两个并发请求可在检查处竞争。业务模板修复为在事务开始时通过 `MemberUserMapper.selectByIdForUpdate` 锁定会员主行，再读取最近签到。该行在事务提交前保持锁定，因此同一会员请求串行化；第二个请求按原业务码拒绝。没有修改 Core、已执行 changeset 或跨天签到模型。
+
+修复先由 `yuheng-business-templates/tests/test_member_signin_concurrency.py` 红灯确认缺少行锁，再实现后绿灯，并提交为 Templates `3ea638f`。借助 `tools/template_update.py` 按 Demo 原始模板基线预览并选择性应用两个 Java 文件；Demo 目录内三个消费端专有签到服务文件被分类为 `consumer_only` 并保留，未重建 Demo。模板全量治理测试 100 项通过，Demo Member 探针及模块测试 11 项通过。`./scripts/build.sh` 完成后端打包、前端类型检查及 Vite 生产构建（3548 模块，既有大 chunk 警告保留）；JAR SHA-256 为 `4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1`，内含 612 个静态资源。
+
+在独立 schema `yuheng_p2_member_20261117` 的最终运行中，59 个 changeset 冷装成功；两个同步起跑的真实 App API 请求一个成功、一个返回重复签到业务码。成功响应为第 1 天、4 积分、3 经验；SQL 确认只有一条新增签到、积分流水和经验流水各一条，会员状态为 4 积分/3 经验。该轮同时复验签到各奖励阶段故障回滚、普通重复请求拒绝、另一会员记录隔离、会员管理端桌面流程和系统种子密码未变。浏览器 `completed=true`，错误与失败请求为零。专用 MySQL/Redis、应用/UI 进程及 13373、16453、48220、5203 端口清理完成。
+
+最终证据为 `p2-member-signin-concurrency-pass-20261123/member-runtime.json` 与 `member-browser.json`。前四个隔离运行目录均保留。逐份检查它们的机器记录，四轮真实并发请求都返回一次成功和一次重复拒绝，随后分别因 `CURDATE()` 时区假设或探针重复签到规则的奖励金额期望不符而失败；前几轮没有逐个失败分支修正重跑。`p2-member-signin-concurrency-diagnostic-20261123/member-runtime.json` 保留成功响应 day 1/point 4/experience 3、单条签到、积分/经验流水和会员状态快照，定位了规则夹具歧义。最终轮复用唯一有效规则，完成所有断言并通过。以上失败是验证夹具问题，不作为产品失败结论。此项关闭同会员同日并发签到幂等子项，不关闭真实社交/微信成功回调、真实支付渠道、ERP 部门或本人级数据范围及 P2 总体验收。
+
+### 2026-11-23 P2 模板更新 Skill 隔离消费验收
+
+使用 Templates 当前提交 `c3049cd3f524b646639681f69478ddc311f880e9` 的 ERP 映射和 `tools/template_update.py`，在临时 Git 消费工程中初始化 271 个映射文件并记录基线。验证首次预览无差异；添加消费端独有文件后，预览仍只读且分类为 `consumer_only`；在临时模板副本单方修改仓库 Service，预览归类 `template_changed`，显式 `--apply` 只更新该文件，消费端独有文件及映射外工程文档保持不变。随后同时修改模板与消费端同一文件，预览归类 `conflict`，`--apply` 返回 1 且消费端字节不变。临时消费者未重建；正式 Demo 源码、数据库及共享服务均未触碰。结构化结果为 `p2-template-update-e2e-20261123.json`。该项验证模板更新工具与 Skill 的选择性同步约束，不代表已对正式 Demo 执行模板更新或完整模块构建。
+
+Member 数据边界初步静态复核曾将 `BaseDO` 误判为默认不受租户条件约束；该判断已由下文 Core 拦截器源码和真实双租户运行纠正。最终结论以修正后的 `TenantDatabaseInterceptor` 源码路径及 35 请求隔离运行证据为准。
+
+**修正上述静态推断：** Core `TenantDatabaseInterceptor` 对已注册实体默认按租户过滤；只有 `TenantBaseDO` 明确返回“不忽略”，`@TenantIgnore` 才显式忽略，普通 `BaseDO` 在 interceptor 的现有分支下并不会自动忽略。因此不能由 DO 没有 `tenantId` 字段推断为全局共享。Templates 与 Demo 的 Member Liquibase 表也都有 `tenant_id` 列，插入由 Core 拦截器按当前租户填入。
+
+跨租户第一次运行使用当前 Demo JAR SHA-256 `963149b3978618f370df9f63fe1db1a2841b7c3b2298d80766086cae27da5c97`，隔离 schema `yuheng_p2_member_dimensions_20261123` 和 59 个 changesets。基线没有第二租户，租户 2 登录返回 `1002015000`，在创建业务数据前停止；失败记录保留于 `p2-member-dimensions-20261123/member-dimensions-runtime.json`。第二次运行通过 Core 正式 `/system/tenant/create` API 创建租户 162 并分配普通套餐生成的角色/权限，未直接写系统租户、套餐、角色或菜单表。租户 1 和 162 各自真实登录后分别创建 Member 标签、分组和等级；35 个 HTTP 请求确认：创建行 SQL `tenant_id` 分别等于 1/162，本租户分页、详情和 `list-all-simple` 可见，对方租户三种读取均不可见；伪造 `tenant-id` 返回 403，拒绝前后标签/分组/等级表快照相同。冷装 59 changesets，种子密码未改变；应用及容器已清理，13375、16455、48222 无监听。最终证据 `p2-member-dimensions-final-runtime.json`。因此 Member 三类维度的租户隔离限定子项通过；不因先前静态误判修改 Core 或 Templates 源码。
+
+### 2026-11-22 PMS 模板前端类型与构建复验
+
+Templates 提交 `95c2903` 修复 PMS 模板 UI 在严格消费工程中的类型契约问题。修复内容包括 Element Plus `TreeInstance` 引用、回收站父级推断、知识库分组命令、项目列表命令、项目成员字典选项、迭代状态统计、工作台页签类型、Sortable 表格引用和项目模板业务 VO 回调类型；工作台“全部/迭代”页签不再把不存在的工作项类型传给 API。该修复属于业务模板，未写入 Demo 业务源码。
+
+修复前新增的 `tests/test_pms_ui_type_contract.py` 按红灯运行；提交 `95c2903` 后 Templates 全量测试为 91 项通过；补充第二处 Sortable DOM 类型收窄后提交 `b2570b3`，定向契约和全量测试仍通过。以两个提交的 `template-pms/ui/pms` 复制到隔离消费工程，直接安装 `sortablejs`、`@types/sortablejs` 与 `@types/lodash-es` 后，正式 `src/views/pms` 路径的 `vue-tsc --noEmit` 诊断为 0，正式 Pay/PMS 目录也无自身诊断，Vite 生产构建退出码为 0；构建保留既有大 chunk 警告。完整隔离消费者类型检查仍有 Core compat 源码、Demo 系统组件重复默认导出，以及模板分享工具被从仓库外部路径直接纳入检查的问题，因此本轮只关闭 PMS 模板前端类型和 Pay/PMS 正式目录生产构建子项。
+
+进一步核对发现，隔离消费者中的 `src/pay/app/index.vue` 是早期实验残留，缺少 `AppForm.vue`；Templates 的 `template-pay/ui/pay/app/components/AppForm.vue` 和原始项目均有该文件。该错误属于实验副本复制不完整，不能认定为模板缺陷；该副本中另有正式位置 `src/views/pay`，因此本次也不是干净的 Pay 模板初始化验收。
+
+模板 README 已说明依赖和更新边界。`yuheng-demo` 仍只初始化 ERP/Member；PMS 页面、路由、后端源码、权限和自己的 Liquibase changelog 不因本轮模板修复自动进入 Demo。需要使用 PMS 时，应由使用者通过 Skill 显式复制和接入；后续模板修复先预览，再选择性合并到已有模块，保留消费端定制。

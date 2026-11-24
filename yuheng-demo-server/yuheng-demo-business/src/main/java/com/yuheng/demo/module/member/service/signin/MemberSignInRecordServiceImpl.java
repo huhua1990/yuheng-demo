@@ -14,6 +14,7 @@ import com.yuheng.demo.module.member.dal.dataobject.signin.MemberSignInConfigDO;
 import com.yuheng.demo.module.member.dal.dataobject.signin.MemberSignInRecordDO;
 import com.yuheng.demo.module.member.dal.dataobject.user.MemberUserDO;
 import com.yuheng.demo.module.member.dal.mysql.signin.MemberSignInRecordMapper;
+import com.yuheng.demo.module.member.dal.mysql.user.MemberUserMapper;
 import com.yuheng.demo.module.member.enums.MemberExperienceBizTypeEnum;
 import com.yuheng.demo.module.member.enums.point.MemberPointBizTypeEnum;
 import com.yuheng.demo.module.member.service.level.MemberLevelService;
@@ -52,6 +53,8 @@ public class MemberSignInRecordServiceImpl implements MemberSignInRecordService 
 
     @Resource
     private MemberUserService memberUserService;
+    @Resource
+    private MemberUserMapper memberUserMapper;
 
     @Override
     public AppMemberSignInRecordSummaryRespVO getSignInRecordSummary(Long userId) {
@@ -109,6 +112,9 @@ public class MemberSignInRecordServiceImpl implements MemberSignInRecordService 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public MemberSignInRecordDO createSignRecord(Long userId) {
+        // Serialize sign-in attempts for the same member before checking today's record.
+        memberUserMapper.selectByIdForUpdate(userId);
+
         // 1. 获取当前用户最近的签到
         MemberSignInRecordDO lastRecord = signInRecordMapper.selectLastRecordByUserId(userId);
         // 1.1. 判断是否重复签到
