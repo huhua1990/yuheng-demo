@@ -1,0 +1,44 @@
+{
+  "workId": "YH-20261111-full-source-migration",
+  "verification": "p2-template-update-governance",
+  "date": "2026-11-22",
+  "scope": "ERP template update preview and consumer adaptation protection",
+  "repositories": {
+    "coreCommit": "40f0e40",
+    "templateCommit": "0802802",
+    "demoCommit": "908c562",
+    "mapping": "../yuheng-business-templates/docs/template-update-mapping.example.json"
+  },
+  "command": "python3 tools/template_update.py --template-root /Users/huhua/study/ai/yuheng/yuheng-business-templates --consumer-root /Users/huhua/study/ai/yuheng/yuheng-demo --mapping docs/template-update-mapping.example.json --state /tmp/yuheng-erp-template-state-20261122.json",
+  "result": {
+    "mode": "preview",
+    "consumerModified": false,
+    "classificationCounts": {
+      "unchanged": 309,
+      "template_added": 0,
+      "template_changed": 0,
+      "consumer_only": 0,
+      "consumer_customized": 0,
+      "conflict": 0,
+      "template_deleted": 0,
+      "unclassified_difference": 0
+    }
+  },
+  "interpretation": {
+    "initialBaseline": "Recorded after the current ERP template initialization and therefore includes reviewed package, request-adapter, UI and changelog differences as the consumer baseline.",
+    "safeApply": false,
+    "reason": "There are no template-only changes to apply. The preview did not overwrite or rebuild Demo.",
+    "database": "Liquibase files participate in comparison; the tool does not rewrite executed changesets, clear checksums, delete data or run migrations. Database fixes require a new forward changeset and separate isolated verification."
+  },
+  "regression": {
+    "templateUpdateTests": "6 passed",
+    "templatesFullTests": "82 passed",
+    "redGreen": "The baseline-adaptation regression first failed, then passed after the minimal classifier fix."
+  },
+  "cleanup": {
+    "sharedDatabaseTouched": false,
+    "consumerFilesWritten": false,
+    "baselinePath": "/tmp/yuheng-erp-template-state-20261122.json",
+    "baselineCommitted": false
+  }
+}
