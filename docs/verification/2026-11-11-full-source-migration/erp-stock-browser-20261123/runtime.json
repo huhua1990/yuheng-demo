@@ -1,0 +1,145 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_erp_stock_browser_20261123",
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "jar_static_resource_count": 612,
+  "jar_dist_byte_match": true,
+  "ports": {
+    "mysql": 13434,
+    "redis": 16489,
+    "app": 48276
+  },
+  "credentials_recorded": false,
+  "viewport": "desktop-1440x900",
+  "browser_stdout": "",
+  "browser_stderr": "",
+  "browser": {
+    "viewport": "desktop-1440x900",
+    "actions": [
+      "stock-check-create-with-positive-adjustment",
+      "stock-check-approve",
+      "stock-move-create-two-warehouses",
+      "stock-move-approve"
+    ],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "apiResponses": [
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/stock-check/page",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/warehouse/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/warehouse/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/stock/get",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/admin-api/erp/stock-check/create",
+        "status": 200,
+        "body": 1
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/stock-check/page",
+        "status": 200
+      },
+      {
+        "method": "PUT",
+        "path": "/admin-api/erp/stock-check/update-status",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/stock-move/page",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/warehouse/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/warehouse/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/stock/get",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/admin-api/erp/stock-move/create",
+        "status": 200,
+        "body": 1
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/stock-move/page",
+        "status": 200
+      },
+      {
+        "method": "PUT",
+        "path": "/admin-api/erp/stock-move/update-status",
+        "status": 200
+      }
+    ],
+    "checkId": 1,
+    "moveId": 1,
+    "finalUrl": "http://127.0.0.1:48276/erp/stock/move",
+    "result": "PASS"
+  },
+  "sql": {
+    "check": "20:2.000000:1",
+    "check_item": "994002:994006:5.000000:7.000000:2.000000",
+    "move": "20:3.000000:1",
+    "move_item": "994002:994003:994006:3.000000",
+    "stock": "994002:4.000000\n994003:3.000000",
+    "stock_records": "10:994002:5.000000\n10:994003:0.000000\n40:994002:2.000000\n32:994002:-3.000000\n30:994003:3.000000",
+    "changesets": 59,
+    "seed_passwords_unchanged": true
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13434": false,
+      "16489": false,
+      "48276": false
+    },
+    "passed": true
+  }
+}

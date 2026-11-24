@@ -1,0 +1,110 @@
+{
+  "viewport": "desktop-1440x900",
+  "actions": [
+    "stock-check-create-with-positive-adjustment",
+    "stock-check-approve",
+    "stock-move-create-two-warehouses",
+    "stock-move-approve"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "apiResponses": [
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-check/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/warehouse/simple-list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/warehouse/simple-list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock/get",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/stock-check/create",
+      "status": 200,
+      "body": 1
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-check/page",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/stock-check/update-status",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-move/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/warehouse/simple-list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/warehouse/simple-list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock/get",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/stock-move/create",
+      "status": 200,
+      "body": 1
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/stock-move/page",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/stock-move/update-status",
+      "status": 200
+    }
+  ],
+  "checkId": 1,
+  "moveId": 1,
+  "finalUrl": "http://127.0.0.1:48276/erp/stock/move",
+  "result": "PASS"
+}

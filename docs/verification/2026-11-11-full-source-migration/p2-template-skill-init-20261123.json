@@ -1,0 +1,58 @@
+{
+  "result": "PASS",
+  "templates_commit": "1a48e5c52cae86cd03abd94a416b8be993dd7524",
+  "consumer_is_disposable_git_project": true,
+  "consumer_removed_after_audit": true,
+  "full_disposable_consumer_validation": {
+    "path": "/tmp/yuheng-p2-skill-consumer-20261123",
+    "templates_commit": "1a48e5c52cae86cd03abd94a416b8be993dd7524",
+    "creation": {
+      "erp": "tools/template_update.py --apply using template-update-mapping.example.json",
+      "member": "tools/template_update.py --apply using template-member-mapping.example.json",
+      "created_files": {"erp": 309, "member": 237},
+      "source_manifest_audit": "PASS"
+    },
+    "consumer_adaptations": {
+      "known_files_applied_from_current_demo": 37,
+      "known_total_adaptations": 47,
+      "preserved_adaptation_categories": [
+        "package/core integration",
+        "optional Pay/PMS Member integration",
+        "strict TypeScript fixes",
+        "Liquibase identity and changelog registration"
+      ],
+      "consumer_owned_changelog_and_dynamic_router": "retained from disposable Demo baseline"
+    },
+    "validation": {
+      "backend": "mvn -o -Dexec.skip=true test: PASS, 40 tests",
+      "frontend_typecheck": "pnpm install --frozen-lockfile --ignore-scripts --offline && pnpm typecheck: PASS",
+      "frontend_build": "Vite production build: PASS, 3544 modules",
+      "platform_permission_seed": {"erp": "112/112 present", "member": "26/26 present"},
+      "liquibase_module_registration": "ERP and Member changelogs included by consumer-owned business changelog",
+      "route_discovery": "consumer-owned dynamic ERP/Member view globs retained"
+    },
+    "database_runtime": "Not rerun in this initialization-only build check; current Demo fixed-JAR P2 API/SQL evidence remains separately indexed",
+    "consumer_git_baseline_created_before_module_removal": true,
+    "formal_demo_modified": false
+  },
+  "modules": {
+    "erp": {
+      "mapping": "template-update-mapping.example.json",
+      "expected_file_count": 309,
+      "created_file_count": 309,
+      "missing": [],
+      "extra": [],
+      "byte_different": [],
+      "result": "PASS"
+    },
+    "member": {
+      "mapping": "template-member-mapping.example.json",
+      "expected_file_count": 237,
+      "created_file_count": 237,
+      "missing": [],
+      "extra": [],
+      "byte_different": [],
+      "result": "PASS"
+    }
+  }
+}

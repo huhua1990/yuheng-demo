@@ -1,0 +1,456 @@
+{
+  "result": "FAIL",
+  "errors": [
+    "Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+    "Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+    "Failed to fetch dynamically imported module: http://127.0.0.1:5219/src/views/pay/app/index.vue",
+    "Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+    "Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+    "Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+    "Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+    "Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+    "Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+    "Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+    "Failed to fetch dynamically imported module: http://127.0.0.1:5219/src/views/pms/pm/project/list/index.vue",
+    "Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+    "ref is not defined"
+  ],
+  "failed": [
+    {
+      "url": "http://127.0.0.1:5219/admin-api/system/notice/page?pageNo=1&pageSize=5&status=0",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://api.iconify.design/fa6-solid.json?icons=brush",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://api.iconify.design/foundation.json?icons=page-edit",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://api.iconify.design/simple-icons.json?icons=civicrm%2Cerpnext",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://api.iconify.design/tabler.json?icons=ai",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://api.iconify.design/zmdi.json?icons=fullscreen",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/element-plus_es_components_form_style_css.js?v=233f3a1b",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/element-plus_es_components_button_style_css.js?v=9f25e6f5",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/element-plus_es_components_date-picker_style_css.js?v=a9b8cd02",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/element-plus_es_components_select_style_css.js?v=15f47f78",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/element-plus_es_components_option_style_css.js?v=bfd052fe",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/element-plus_es_components_form-item_style_css.js?v=12a4a9ef",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/element-plus_es_components_input_style_css.js?v=9b8ea01b",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/hooks/web/useValidator.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/hooks/web/useDesign.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/components/Icon/index.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/layout/components/UserInfo/src/components/LockPage.vue?vue&type=style&index=0&scoped=751fdc82&lang.scss",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/store/modules/lock.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/layout/components/UserInfo/src/components/LockDialog.vue?vue&type=style&index=0&scoped=2b86e081&lang.scss",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/hooks/web/useI18n.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/rolldown-runtime-FZ4Itg2g.js?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/lodash-es.js?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/layout/components/Breadcrumb/src/helper.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/yuheng-ui_n_qs.js?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/utils/tree.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/runtime-dom.esm-bundler-DrLD0HWk.js?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/store/modules/tagsView.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/union-aJpjXCv_.js?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/store/modules/user.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/vue-router.js?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/store/modules/permission.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/layout/components/Breadcrumb/src/Breadcrumb.vue?vue&type=style&index=0&scoped=6b70d669&lang.scss",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/@element-plus_icons-vue.js?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/hooks/web/useCache.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/hooks/web/useNow.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/runtime.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/store/modules/app.ts?v=a3ed0a6e",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/admin-api/pay/app/page?pageNo=1&pageSize=10",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://api.iconify.design/foundation.json?icons=page-edit",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://api.iconify.design/simple-icons.json?icons=civicrm%2Cerpnext",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://api.iconify.design/fa6-solid.json?icons=brush",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/element-plus_es_components_dropdown-item_style_css.js?v=d86a49c6",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/element-plus_es_components_tooltip_style_css.js?v=1e663ee8",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/element-plus_es_components_progress_style_css.js?v=af7bdef0",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/layout/components/UserInfo/src/components/LockPage.vue",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/utils/routerHelper.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/runtime-dom.esm-bundler-DrLD0HWk.js?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/hooks/web/useCache.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/layout/components/Breadcrumb/src/Breadcrumb.vue?vue&type=script&lang.tsx",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/vue-types.js?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/router/index.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/layout/components/UserInfo/src/UserInfo.vue?vue&type=style&index=0&scoped=978debaa&lang.scss",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/hooks/web/useI18n.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/@vueuse+core@14.4.0_vue@3.5.34_typescript@6.0.3_/node_modules/@vueuse/core/dist/index.js?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/components/Icon/index.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/config/axios/index.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/pinia.js?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/store/index.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/hooks/web/useLocale.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/dist/index.js?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/es-D_bw_BET.js?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/layout/components/UserInfo/src/components/LockDialog.vue",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/store/modules/lock.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/utils/color.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/utils/index.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/layout/components/Menu/src/components/useRenderMenuTitle.tsx",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/dayjs.js?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/utils/layout.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/layout/components/Breadcrumb/src/Breadcrumb.vue?vue&type=style&index=0&scoped=6b70d669&lang.scss",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/store/modules/locale.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/yuheng-ui_n_qs.js?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.vite/deps/dist-C_xL6f4V.js?v=35528739",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5219/node_modules/.pnpm/yuheng-ui@file+..+..+..+..+..+..+..+Users+huhua+study+ai+yuheng+yuheng-core+yuheng-ui+v_0863e8d4ec9e43cc601a9aa0f73ab860/node_modules/yuheng-ui/compat/runtime.ts?v=35528739",
+      "error": "net::ERR_ABORTED"
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-id-by-name"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/system/auth/login"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notice/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/app/page"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/pay/app/create"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/app/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project-group/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project-group/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/favorite-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/favorite-list"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/pms/pm/project/create"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project-group/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/favorite-list"
+    }
+  ],
+  "actions": [
+    "pay-app-route",
+    "pay-app-create",
+    "pms-project-route",
+    "pms-project-create"
+  ]
+}

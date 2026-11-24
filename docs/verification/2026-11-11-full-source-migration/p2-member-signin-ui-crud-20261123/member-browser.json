@@ -1,0 +1,231 @@
+{
+  "errors": [],
+  "failed": [],
+  "events": [
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/member/tag/create",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/get",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/member/tag/update",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/admin-api/member/tag/delete",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/list-all-simple",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/group/list-all-simple",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/level/list-all-simple",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get",
+      "status": 200
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-id-by-name"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/system/auth/login"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/member/tag/create"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/get"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/member/tag/update"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "DELETE",
+      "path": "/admin-api/member/tag/delete"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/level/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/group/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get"
+    }
+  ],
+  "actions": [
+    "create",
+    "update",
+    "delete",
+    "member-search"
+  ],
+  "pageStates": []
+}

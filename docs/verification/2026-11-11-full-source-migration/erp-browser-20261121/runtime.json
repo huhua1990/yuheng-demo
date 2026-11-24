@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "jar_sha256": "dfa2bf7863a2d31afbe7ef06f704b8a074a4b290cb2274d46a79c2d32ae46b5c",
+  "schema": "yuheng_t4_erp_browser_20261121",
+  "changesets": 59,
+  "backend_port": 48192,
+  "ui_port": 5204,
+  "redis_port": 16492,
+  "viewports": {
+    "desktop-1440x900": [
+      "/erp/purchase/order",
+      "/erp/purchase/in"
+    ],
+    "mobile-390x844": [
+      "/erp/purchase/order",
+      "/erp/purchase/in"
+    ]
+  },
+  "page_errors": 0,
+  "console_errors": 0,
+  "failed_requests": 0,
+  "create_dialogs_opened_and_cancelled": true,
+  "browser_result": "browser-result.json"
+}

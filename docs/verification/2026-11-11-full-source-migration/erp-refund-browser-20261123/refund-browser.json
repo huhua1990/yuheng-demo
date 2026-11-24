@@ -1,0 +1,52 @@
+{
+  "viewport": "desktop-1440x900",
+  "actions": [
+    "sale-return-refund-create-negative-receipt",
+    "sale-return-refund-approve",
+    "purchase-return-refund-create-negative-payment",
+    "purchase-return-refund-approve"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "apiResponses": [
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/sale-return/page",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/finance-receipt/create",
+      "status": 200,
+      "body": 1
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/finance-receipt/update-status",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-return/page",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/erp/finance-payment/create",
+      "status": 200,
+      "body": 1
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/erp/finance-payment/update-status",
+      "status": 200
+    }
+  ],
+  "saleRefundInput": "-2.00",
+  "receiptId": 1,
+  "purchaseRefundInput": "-3.00",
+  "paymentId": 1,
+  "finalUrl": "http://127.0.0.1:5234/erp/finance/payment",
+  "result": "PASS"
+}

@@ -1,0 +1,318 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_erp_auth_20261122",
+  "ports": {
+    "mysql": 13392,
+    "redis": 16473,
+    "app": 48237
+  },
+  "jar_sha256": "fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302",
+  "credentials_recorded": false,
+  "changesets": 59,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-category/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-unit/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/supplier/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/customer/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/account/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/simple-list",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/simple-list",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/simple-list",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/simple-list",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/simple-list",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/simple-list",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/simple-list",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/list?status=0",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/product-category/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/product-unit/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/supplier/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/customer/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/account/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/warehouse/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/warehouse/update-default-status?id=1&defaultStatus=true",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/product/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/product/delete?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/warehouse/delete?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/account/delete?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/customer/delete?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/supplier/delete?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/product-unit/delete?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/product-category/delete?id=1",
+      "http": 200,
+      "code": 0
+    }
+  ],
+  "limited_role_permissions": [
+    "erp:product-category:create",
+    "erp:product-category:query",
+    "erp:product-category:update",
+    "erp:product-category:delete",
+    "erp:product-unit:create",
+    "erp:product-unit:query",
+    "erp:product-unit:update",
+    "erp:product-unit:delete",
+    "erp:supplier:create",
+    "erp:supplier:query",
+    "erp:supplier:update",
+    "erp:supplier:delete",
+    "erp:customer:create",
+    "erp:customer:query",
+    "erp:customer:update",
+    "erp:customer:delete",
+    "erp:account:create",
+    "erp:account:query",
+    "erp:account:update",
+    "erp:account:delete",
+    "erp:warehouse:create",
+    "erp:warehouse:query",
+    "erp:warehouse:update",
+    "erp:warehouse:delete",
+    "erp:product:create",
+    "erp:product:query",
+    "erp:product:update",
+    "erp:product:delete"
+  ],
+  "all_created_master_rows_soft_deleted": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13392": false,
+      "16473": false,
+      "48237": false
+    },
+    "passed": true
+  }
+}

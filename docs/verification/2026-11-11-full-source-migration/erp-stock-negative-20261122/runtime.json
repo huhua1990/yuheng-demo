@@ -1,0 +1,28 @@
+{
+  "result": "PASS",
+  "jar_sha256": "fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302",
+  "ports": {
+    "mysql": 13387,
+    "redis": 16468,
+    "app": 48232
+  },
+  "schemas": {
+    "stock-lifecycle": "yuheng_t4_stock_lifecycle_20261122"
+  },
+  "probes": {
+    "stock-lifecycle": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 31, \"assertions\": {\"stock_in_approve_reverse_reapprove\": true, \"stock_out_approve_reverse_reapprove\": true, \"stock_move_two_warehouse_approve_reverse_reapprove\": true, \"stock_check_positive_adjustment_approve_reverse_reapprove\": true, \"stock_check_negative_adjustment_approve_reverse_reapprove\": true, \"insufficient_stock_rolls_back_prior_line_status_and_records\": true, \"final_stock\": [[\"1\", \"5.000000\"], [\"2\", \"2.000000\"]]}}\n",
+      "stderr": ""
+    }
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13387": false,
+      "16468": false,
+      "48232": false
+    },
+    "passed": true
+  }
+}

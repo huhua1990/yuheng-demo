@@ -1,0 +1,37 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_p2_wms_20261123",
+  "mysql_container": "codex-qc-schema-mysql",
+  "jar_sha256": "8fa2b4b8bf689710d2962ff48b15d46ae01ee13745a8f54bfec972c3a10eba92",
+  "ports": {"mysql": 51045, "redis": 56379, "app": 48190, "ui": 5210},
+  "credentials_recorded": false,
+  "liquibase": {"initial_changesets": 76, "restart_changesets": 76, "wms_changesets": 17, "wms_tables": 16},
+  "assertions": [
+    "cold_install_and_restart_are_idempotent",
+    "wms_inventory_tenant_sku_warehouse_unique_index",
+    "warehouse_page_api",
+    "item_page_api",
+    "warehouse_create_update_delete_api",
+    "inventory_query_api",
+    "anonymous_api_rejected",
+    "desktop_browser_crud",
+    "sql_update_and_soft_delete_match_browser"
+  ],
+  "browser": {
+    "result": "PASS",
+    "viewport": "desktop-1440x900",
+    "actions": ["login", "warehouse-page", "warehouse-create", "warehouse-update", "warehouse-delete"],
+    "wms_api_responses": 8,
+    "page_errors": [],
+    "wms_failed_requests": [],
+    "external_asset_issue": "One existing avatar image request was blocked by Chromium ORB; WMS pages and API operations were unaffected."
+  },
+  "cleanup": {
+    "schema_absent": true,
+    "wms_probe_user_absent": true,
+    "redis_container_absent": true,
+    "ports_listening": {"48190": false, "5209": false, "5210": false, "56379": false},
+    "shared_mysql_container_preserved": true,
+    "passed": true
+  }
+}

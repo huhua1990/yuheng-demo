@@ -1,0 +1,36 @@
+{
+  "result": "FAIL",
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "ports": {
+    "mysql": 13421,
+    "redis": 16496,
+    "app": 48291
+  },
+  "schemas": {
+    "stock-lifecycle": "yuheng_t4_stock_lifecycle_20261124",
+    "audit-status": "yuheng_t4_status_20261124_p2"
+  },
+  "probes": {
+    "stock-lifecycle": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 37, \"assertions\": {\"stock_in_approve_reverse_reapprove\": true, \"stock_out_approve_reverse_reapprove\": true, \"stock_move_two_warehouse_approve_reverse_reapprove\": true, \"stock_check_positive_adjustment_approve_reverse_reapprove\": true, \"stock_check_negative_adjustment_approve_reverse_reapprove\": true, \"insufficient_stock_rolls_back_prior_line_status_and_records\": true, \"concurrent_stock_out_one_approved_one_rejected\": true, \"final_stock\": [[\"1\", \"1.000000\"], [\"2\", \"2.000000\"]]}}\n",
+      "stderr": ""
+    },
+    "audit-status": {
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: erp_audit_status_probe.py [-h] --base-url BASE_URL --schema SCHEMA\n                                 [--mysql-container MYSQL_CONTAINER] --output\n                                 OUTPUT\nerp_audit_status_probe.py: error: only yuheng_t4_status_YYYYMMDD disposable schemas are allowed\n"
+    }
+  },
+  "error": "audit-status probe failed with 2",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_p2_sidecar_runner.py\", line 139, in main\n    raise RuntimeError(f\"{name} probe failed with {result.returncode}\")\nRuntimeError: audit-status probe failed with 2\n",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13421": false,
+      "16496": false,
+      "48291": false
+    },
+    "passed": true
+  }
+}

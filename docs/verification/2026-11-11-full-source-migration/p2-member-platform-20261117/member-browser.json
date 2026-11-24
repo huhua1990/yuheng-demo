@@ -54,12 +54,12 @@
     },
     {
       "method": "GET",
-      "path": "/admin-api/member/group/list-all-simple",
+      "path": "/admin-api/member/tag/list-all-simple",
       "status": 200
     },
     {
       "method": "GET",
-      "path": "/admin-api/member/tag/list-all-simple",
+      "path": "/admin-api/member/group/list-all-simple",
       "status": 200
     },
     {
@@ -91,9 +91,104 @@
       "method": "GET",
       "path": "/admin-api/member/user/page",
       "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/point/record/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/sign-in/record/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/experience-record/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/address/list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/group/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/level/list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/point/record/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/sign-in/config/list",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/sign-in/record/page",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/config/get",
+      "status": 200
     }
   ],
   "requests": [
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-id-by-name"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/system/auth/login"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
     {
       "method": "GET",
       "path": "/admin-api/member/tag/page"
@@ -124,6 +219,22 @@
     },
     {
       "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
       "path": "/admin-api/member/tag/page"
     },
     {
@@ -133,6 +244,22 @@
     {
       "method": "GET",
       "path": "/admin-api/member/tag/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
     },
     {
       "method": "GET",
@@ -165,6 +292,114 @@
     {
       "method": "GET",
       "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/point/record/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/sign-in/record/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/experience-record/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/address/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/group/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/level/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/point/record/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/sign-in/config/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/sign-in/record/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/config/get"
     }
   ],
   "actions": [
@@ -172,7 +407,46 @@
     "update",
     "delete",
     "member-search",
-    "member-point-decrease"
+    "member-point-decrease",
+    "member-detail-optional-disabled",
+    "page:/member/group",
+    "page:/member/level",
+    "page:/member/record",
+    "page:/member/sign-in-config",
+    "page:/member/sign-in-record",
+    "page:/member/config"
+  ],
+  "pageStates": [
+    {
+      "route": "/member/group",
+      "url": "http://127.0.0.1:5203/member/group",
+      "title": "Yuheng Demo\n首页\n作者动态\nBoot 开发文档\nCloud 开发文档\n系统管理\n基础设施\n支付管理\n报表管理\n工作流程\n会员中心\n会员配置\n会员管理\n会员标签\n会员等级\n会员分组\n会员积分\n会员签到\nMALL 商城系统\nEAM 资产管理\nCRM 系统\nERP 系统\nWMS 系统\nMES 系统\nOA 办公协同"
+    },
+    {
+      "route": "/member/level",
+      "url": "http://127.0.0.1:5203/member/level",
+      "title": "Yuheng Demo\n首页\n作者动态\nBoot 开发文档\nCloud 开发文档\n系统管理\n基础设施\n支付管理\n报表管理\n工作流程\n会员中心\n会员配置\n会员管理\n会员标签\n会员等级\n会员分组\n会员积分\n会员签到\nMALL 商城系统\nEAM 资产管理\nCRM 系统\nERP 系统\nWMS 系统\nMES 系统\nOA 办公协同"
+    },
+    {
+      "route": "/member/record",
+      "url": "http://127.0.0.1:5203/member/record",
+      "title": "Yuheng Demo\n首页\n作者动态\nBoot 开发文档\nCloud 开发文档\n系统管理\n基础设施\n支付管理\n报表管理\n工作流程\n会员中心\n会员配置\n会员管理\n会员标签\n会员等级\n会员分组\n会员积分\n会员签到\nMALL 商城系统\nEAM 资产管理\nCRM 系统\nERP 系统\nWMS 系统\nMES 系统\nOA 办公协同"
+    },
+    {
+      "route": "/member/signin/config",
+      "url": "http://127.0.0.1:5203/member/signin/config",
+      "title": "Yuheng Demo\n首页\n作者动态\nBoot 开发文档\nCloud 开发文档\n系统管理\n基础设施\n支付管理\n报表管理\n工作流程\n会员中心\n会员配置\n会员管理\n会员标签\n会员等级\n会员分组\n会员积分\n会员签到\n签到配置\n签到记录\nMALL 商城系统\nEAM 资产管理\nCRM 系统\nERP 系统\nWMS 系统\nMES "
+    },
+    {
+      "route": "/member/signin/record",
+      "url": "http://127.0.0.1:5203/member/signin/record",
+      "title": "Yuheng Demo\n首页\n作者动态\nBoot 开发文档\nCloud 开发文档\n系统管理\n基础设施\n支付管理\n报表管理\n工作流程\n会员中心\n会员配置\n会员管理\n会员标签\n会员等级\n会员分组\n会员积分\n会员签到\n签到配置\n签到记录\nMALL 商城系统\nEAM 资产管理\nCRM 系统\nERP 系统\nWMS 系统\nMES "
+    },
+    {
+      "route": "/member/config",
+      "url": "http://127.0.0.1:5203/member/config",
+      "title": "Yuheng Demo\n首页\n作者动态\nBoot 开发文档\nCloud 开发文档\n系统管理\n基础设施\n支付管理\n报表管理\n工作流程\n会员中心\n会员配置\n会员管理\n会员标签\n会员等级\n会员分组\n会员积分\n会员签到\nMALL 商城系统\nEAM 资产管理\nCRM 系统\nERP 系统\nWMS 系统\nMES 系统\nOA 办公协同"
+    }
   ],
   "completed": true
 }

@@ -1,0 +1,289 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_erp_document_auth_20261122",
+  "ports": {
+    "mysql": 13394,
+    "redis": 16475,
+    "app": 48239
+  },
+  "jar_sha256": "fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302",
+  "credentials_recorded": false,
+  "changesets": 59,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 28,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 805,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 873,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/export-excel?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "",
+      "bytes": 4080
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=1&status=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 31,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 28,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 820,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 888,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/export-excel?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "",
+      "bytes": 4080
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=1&status=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 31,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-payment/create",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 28,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=1",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 532,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 597,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/export-excel?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "",
+      "bytes": 3695
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=1&status=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 31,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 28,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 829,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 889,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/export-excel?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "",
+      "bytes": 4082
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=1&status=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 31,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 28,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 843,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 903,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/export-excel?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "",
+      "bytes": 4076
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=1&status=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 31,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-receipt/create",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 28,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=1",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 533,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 598,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/export-excel?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "",
+      "bytes": 3694
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=1&status=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 31,
+      "code": 0
+    }
+  ],
+  "limited_role_permissions": [
+    "erp:purchase-order:create",
+    "erp:purchase-order:query",
+    "erp:purchase-order:export",
+    "erp:purchase-order:update-status",
+    "erp:purchase-in:create",
+    "erp:purchase-in:query",
+    "erp:purchase-in:export",
+    "erp:purchase-in:update-status",
+    "erp:sale-order:create",
+    "erp:sale-order:query",
+    "erp:sale-order:export",
+    "erp:sale-order:update-status",
+    "erp:sale-out:create",
+    "erp:sale-out:query",
+    "erp:sale-out:export",
+    "erp:sale-out:update-status",
+    "erp:finance-payment:create",
+    "erp:finance-payment:query",
+    "erp:finance-payment:export",
+    "erp:finance-payment:update-status",
+    "erp:finance-receipt:create",
+    "erp:finance-receipt:query",
+    "erp:finance-receipt:export",
+    "erp:finance-receipt:update-status"
+  ],
+  "assertions": {
+    "six_document_create_query_export_status": true,
+    "stock_after_purchase_and_sale": "6.000000",
+    "payment_price": "100.000000",
+    "receipt_price": "80.000000"
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13394": false,
+      "16475": false,
+      "48239": false
+    },
+    "passed": true
+  }
+}

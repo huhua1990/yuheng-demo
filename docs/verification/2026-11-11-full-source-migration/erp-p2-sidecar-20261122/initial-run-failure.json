@@ -1,0 +1,22 @@
+{
+  "result": "FAIL",
+  "phase": "create probe invocation",
+  "error": "KeyError: YUHENG_PROBE_USERNAME",
+  "root_cause": "sidecar runner did not pass its generated probe credentials to the child probe environment",
+  "jar_sha256": "fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302",
+  "ports": {
+    "mysql": 13386,
+    "redis": 16467,
+    "app": 48231
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13386": false,
+      "16467": false,
+      "48231": false
+    },
+    "passed": true
+  },
+  "source_evidence": "The original run was retained in the conversation execution output; this file preserves its deterministic failure and cleanup result without credentials."
+}

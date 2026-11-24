@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "scope": "member-only frontend consumer with optional integrations disabled",
+  "source_template_commit": "d8fe427",
+  "consumer_adapter": "yuheng-demo-ui/src/views/member/integration-components.adapter.ts",
+  "excluded_optional_sources": [
+    "src/api/pay",
+    "src/api/mall",
+    "src/views/mall",
+    "src/views/member/user/components/UserBalanceUpdateForm.vue",
+    "src/views/member/user/detail/UserBalanceList.vue",
+    "src/views/member/user/detail/UserFavoriteList.vue",
+    "src/views/member/user/detail/UserOrderList.vue",
+    "src/views/member/user/detail/UserAftersaleList.vue",
+    "src/views/member/user/detail/UserBrokerageList.vue",
+    "src/views/member/user/detail/UserCouponList.vue"
+  ],
+  "checks": {
+    "template_core_pages_have_no_optional_static_imports": true,
+    "consumer_typecheck": { "command": "vue-tsc --noEmit", "exit": 0 },
+    "consumer_build": { "command": "vite build", "exit": 0 },
+    "consumer_used_template_empty_adapter": true,
+    "demo_typecheck": { "command": "pnpm typecheck", "exit": 0 },
+    "demo_vitest": { "tests": 20, "failed": 0 },
+    "platform_import_boundary": "PASS",
+    "template_tests": { "tests": 76, "failed": 0 }
+  },
+  "credentials_recorded": false,
+  "shared_resources_used": false,
+  "cleanup": { "temporary_consumer_removed": true }
+}

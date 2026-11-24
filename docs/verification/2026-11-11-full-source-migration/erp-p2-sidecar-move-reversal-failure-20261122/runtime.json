@@ -1,0 +1,48 @@
+{
+  "result": "FAIL",
+  "jar_sha256": "fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302",
+  "ports": {
+    "mysql": 13386,
+    "redis": 16467,
+    "app": 48231
+  },
+  "schemas": {
+    "create": "yuheng_t4_item_owner_20261122",
+    "update": "yuheng_t4_item_update_20261122",
+    "workflow": "yuheng_t4_flows_20261122",
+    "stock-lifecycle": "yuheng_t4_stock_lifecycle_20261122"
+  },
+  "probes": {
+    "create": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 11}\n",
+      "stderr": ""
+    },
+    "update": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 99, \"cases\": 10}\n",
+      "stderr": ""
+    },
+    "workflow": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 53, \"assertions\": {\"purchase_count\": 10, \"sale_count\": 4, \"stock_count\": 6, \"payment_price\": 100, \"receipt_price\": 80, \"stock_records\": 2, \"final_document_status\": 20, \"tenant_id\": 1, \"overpayment_and_overreceipt_rolled_back\": true}}\n",
+      "stderr": ""
+    },
+    "stock-lifecycle": {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_stock_lifecycle_probe.py\", line 116, in <module>\n    main()\n  File \"/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_stock_lifecycle_probe.py\", line 105, in main\n    result = probe.run()\n  File \"/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_stock_lifecycle_probe.py\", line 68, in run\n    self.expect_stock([(str(warehouse1), \"8.000000\")])\n  File \"/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_stock_lifecycle_probe.py\", line 22, in expect_stock\n    assert actual == expected, (actual, expected)\nAssertionError: ([('1', '8.000000'), ('2', '0.000000')], [('1', '8.000000')])\n"
+    }
+  },
+  "error": "stock-lifecycle probe failed with 1",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_p2_sidecar_runner.py\", line 138, in main\n    raise RuntimeError(f\"{name} probe failed with {result.returncode}\")\nRuntimeError: stock-lifecycle probe failed with 1\n",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13386": false,
+      "16467": false,
+      "48231": false
+    },
+    "passed": true
+  }
+}

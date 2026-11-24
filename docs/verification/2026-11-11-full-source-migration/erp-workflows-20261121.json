@@ -1,0 +1,338 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_flows_20261121_codex",
+  "changesets": 59,
+  "port": 48190,
+  "time": "2026-11-21T20:29:13.450284+08:00",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-category/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-unit/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/supplier/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/customer/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/account/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 1030101006
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=1&status=20",
+      "http": 200,
+      "code": 1030102003
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-payment/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=1&status=20",
+      "http": 200,
+      "code": 1030601003
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=1&status=10",
+      "http": 200,
+      "code": 1030102008
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-payment/create",
+      "http": 200,
+      "code": 1030102007
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 1020201006
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=1&status=20",
+      "http": 200,
+      "code": 1020202003
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-receipt/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=1&status=20",
+      "http": 200,
+      "code": 1030602003
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=1&status=10",
+      "http": 200,
+      "code": 1020202008
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-receipt/create",
+      "http": 200,
+      "code": 1020202007
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=1&status=10",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=1&status=10",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=10",
+      "http": 200,
+      "code": 0
+    }
+  ],
+  "assertions": {
+    "purchase_count": 10,
+    "sale_count": 4,
+    "stock_count": 6,
+    "payment_price": 100,
+    "receipt_price": 80,
+    "stock_records": 2,
+    "final_document_status": 20,
+    "tenant_id": 1,
+    "overpayment_and_overreceipt_rolled_back": true
+  }
+}

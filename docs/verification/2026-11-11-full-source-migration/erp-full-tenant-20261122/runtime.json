@@ -1,0 +1,1871 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_erp_full_tenant_20261122",
+  "ports": {
+    "mysql": 13397,
+    "redis": 16478,
+    "app": 48242
+  },
+  "jar_sha256": "963149b3978618f370df9f63fe1db1a2841b7c3b2298d80766086cae27da5c97",
+  "credentials_recorded": false,
+  "changesets": 59,
+  "resource_count": 23,
+  "business_table_count": 33,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-in/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-out/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-move/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-check/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-payment/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-receipt/create",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=1&status=20",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/get?id=994007",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/list?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/get?id=994006",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/get?id=994008",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/get?id=994001",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/get?id=994002",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/get?id=994003",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/get?id=994004",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/get?id=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-statistics/summary",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-statistics/time-summary?count=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-statistics/summary",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-statistics/time-summary?count=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-in/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-out/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-move/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-check/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-payment/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-receipt/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=2&status=20",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/get?id=995007",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/list?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/get?id=995006",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/get?id=995008",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/get?id=995001",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/get?id=995002",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/get?id=995003",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/get?id=995004",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/get?id=10",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/get?id=10",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-statistics/summary",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-statistics/time-summary?count=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-statistics/summary",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-statistics/time-summary?count=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/get?id=995007",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/list?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/get?id=995006",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/get?id=995008",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/get?id=995001",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/get?id=995002",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/get?id=995003",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/get?id=995004",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/get?id=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/get?id=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/page?pageNo=1&pageSize=100",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-statistics/summary",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-statistics/time-summary?count=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-statistics/summary",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-statistics/time-summary?count=1",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/get?id=994007",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-category/list?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/get?id=994006",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product-unit/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/get?id=994008",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/get?id=994001",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/supplier/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/get?id=994002",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/customer/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/get?id=994003",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/account/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/get?id=994004",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/warehouse/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-in/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-out/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-in/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-out/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-check/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-move/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-statistics/summary",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-statistics/time-summary?count=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-statistics/summary",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-statistics/time-summary?count=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1030101000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-order/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1030102000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-in/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1030103000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-return/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1020201000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-order/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1020202000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-out/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1020203000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-return/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1030401000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-in/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1030402000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-out/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1030403000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-check/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1030402000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-move/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1030601000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/finance-payment/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=2&status=10",
+      "tenant": 121,
+      "http": 200,
+      "code": 1030602000
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/finance-receipt/delete?ids=2",
+      "tenant": 121,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/product/page?pageNo=1&pageSize=100",
+      "tenant": 122,
+      "http": 200,
+      "code": 403
+    }
+  ],
+  "foreign_write_sql_unchanged": true,
+  "seed_passwords_unchanged": true,
+  "limits": [
+    "External authentication and optional Member integrations are outside this ERP probe."
+  ],
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13397": false,
+      "16478": false,
+      "48242": false
+    },
+    "passed": true
+  }
+}

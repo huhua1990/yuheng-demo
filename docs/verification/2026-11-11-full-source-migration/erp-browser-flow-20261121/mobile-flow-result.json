@@ -1,0 +1,54 @@
+{
+  "viewports": {},
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "apiResponses": [
+    {
+      "label": "mobile-390x844",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-order/page",
+      "status": 200
+    },
+    {
+      "label": "mobile-390x844",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "mobile-390x844",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "mobile-390x844",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "mobile-390x844",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "mobile-390x844",
+      "method": "GET",
+      "path": "/admin-api/erp/account/simple-list",
+      "status": 200
+    }
+  ],
+  "fixtures": {
+    "categoryId": 1,
+    "unitId": 1,
+    "supplierId": 1,
+    "accountId": 1,
+    "warehouseId": 1,
+    "productId": 1,
+    "marker": 1795268615199
+  },
+  "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.el-dialog:visible').last().locator('.el-form-item').filter({ hasText: '供应商' }).locator('.el-select')\u001b[22m\n\u001b[2m    - locator resolved to <div class=\"el-select el-select--default !w-1/1\" data-erp-probe-select=\"1795268625279-f4f780aa0120e\">…</div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m  57 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n    at chooseOption (/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_browser_smoke_probe.js:54:17)\n    at async createAndApprovePurchaseFlow (/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_browser_smoke_probe.js:92:3)\n    at async inspectViewport (/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_browser_smoke_probe.js:168:7)\n    at async /Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_browser_smoke_probe.js:224:7"
+}

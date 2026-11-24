@@ -1,0 +1,8 @@
+{
+  "result": "FAIL",
+  "phase": "stock-in reverse approval assertion",
+  "error": "expected empty stock rows, observed warehouse 1 with 0.000000",
+  "root_cause": "probe assumed zero-count stock rows are deleted; runtime keeps the active stock row at zero",
+  "jar_sha256": "fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302",
+  "cleanup": "runtime.json records containers absent and all dedicated ports closed"
+}

@@ -1,0 +1,379 @@
+{
+  "result": "PASS",
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_p2_member_pay_20261122",
+  "jar_sha256": "15993a3d1986380abc84a9c07e7c0a0e8a0e6f1831e831605d1a99531571e8a5",
+  "ports": [
+    13402,
+    16482,
+    48262,
+    5220
+  ],
+  "credentials_recorded": false,
+  "events": [
+    {
+      "method": "GET",
+      "path": "/pay/wallet/get",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/pay/wallet/update-balance",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "method": "PUT",
+      "path": "/pay/wallet/update-balance",
+      "http": 200,
+      "code": 403
+    },
+    {
+      "method": "PUT",
+      "path": "/pay/wallet/update-balance",
+      "http": 200,
+      "code": 401
+    },
+    {
+      "method": "PUT",
+      "path": "/pay/wallet/update-balance",
+      "http": 200,
+      "code": 500
+    },
+    {
+      "method": "PUT",
+      "path": "/pay/wallet/update-balance",
+      "http": 200,
+      "code": 0
+    }
+  ],
+  "changesets_first": 107,
+  "changesets_second": 107,
+  "wallet_id": 1,
+  "wallet_before_rejected_writes": "0\t0\t0\t1",
+  "wallet_final": "300\t0\t0\t1",
+  "ledger_final": "125\t125\t5\t1\n250\t375\t5\t1\n-75\t300\t5\t1",
+  "rollback_on_ledger_failure": true,
+  "member_password_unchanged": true,
+  "seed_passwords_unchanged": true,
+  "restarted": true,
+  "browser": {
+    "result": "PASS",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "errors": [],
+    "failed": [],
+    "canceled": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/get-by-website"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/get-by-website"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/get-id-by-name"
+      },
+      {
+        "method": "POST",
+        "path": "/admin-api/system/auth/login"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notify-message/get-unread-count"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notice/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notify-message/get-unread-count"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/point/record/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/get"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pay/wallet/get"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pay/wallet-transaction/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notify-message/get-unread-count"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/tag/list-all-simple"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/level/list-all-simple"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/group/list-all-simple"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/get"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pay/wallet/get"
+      },
+      {
+        "method": "PUT",
+        "path": "/admin-api/pay/wallet/update-balance"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notify-message/get-unread-count"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/point/record/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/get"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pay/wallet/get"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notify-message/get-unread-count"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/tag/list-all-simple"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/level/list-all-simple"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/group/list-all-simple"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/get"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pay/wallet/get"
+      },
+      {
+        "method": "PUT",
+        "path": "/admin-api/pay/wallet/update-balance"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notify-message/get-unread-count"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/point/record/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/get"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pay/wallet/get"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pay/wallet-transaction/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/get-by-website"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/get-by-website"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/get-id-by-name"
+      },
+      {
+        "method": "POST",
+        "path": "/admin-api/system/auth/login"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notify-message/get-unread-count"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/tag/list-all-simple"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/level/list-all-simple"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/group/list-all-simple"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/member/user/page"
+      }
+    ],
+    "actions": [
+      "member-wallet-detail",
+      "member-wallet-transactions",
+      "member-wallet-增加",
+      "member-wallet-减少",
+      "member-wallet-ledger-after-adjustments",
+      "readonly-wallet-action-hidden"
+    ]
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13402": false,
+      "16482": false,
+      "48262": false,
+      "5220": false
+    },
+    "complete": true
+  }
+}

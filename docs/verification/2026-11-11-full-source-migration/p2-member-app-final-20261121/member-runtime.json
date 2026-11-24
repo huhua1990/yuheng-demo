@@ -1,0 +1,78 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_p2_member_20261117",
+  "jar_sha256": "fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302",
+  "credentials_recorded": false,
+  "cases": {
+    "member_app_login": true,
+    "address_owner_isolation": true,
+    "address_validation": {
+      "overlong_name_rejected_before_write": true,
+      "valid_name_persisted": true
+    },
+    "member_app_address": {
+      "created_address_owned_by": 990951,
+      "foreign_user_hidden": true,
+      "cross_user_get_rejected": true,
+      "soft_delete_verified": true,
+      "events": [
+        {
+          "method": "POST",
+          "path": "/member/address/create",
+          "http": 200,
+          "code": 400
+        },
+        {
+          "method": "POST",
+          "path": "/member/address/create",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "GET",
+          "path": "/member/address/list",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "GET",
+          "path": "/member/address/list",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "GET",
+          "path": "/member/address/get?id=1",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "GET",
+          "path": "/member/address/get?id=1",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "DELETE",
+          "path": "/member/address/delete?id=1",
+          "http": 200,
+          "code": 0
+        }
+      ]
+    },
+    "unauthorized_write_rejected": true,
+    "cleanup": true
+  },
+  "cleanup": {
+    "app_stopped": true,
+    "ui_stopped": true,
+    "containers_absent": true,
+    "ports_listening": {
+      "13373": false,
+      "16453": false,
+      "48220": false,
+      "5203": false
+    }
+  },
+  "completed": false
+}

@@ -1,0 +1,121 @@
+{
+  "result": "FAIL",
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_p2_member_dimensions_20261123_retry",
+  "jar_sha256": "963149b3978618f370df9f63fe1db1a2841b7c3b2298d80766086cae27da5c97",
+  "credentials_recorded": false,
+  "ports": [
+    13374,
+    16454,
+    48221
+  ],
+  "events": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/tenant/create",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/member/tag/create",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/member/group/create",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/member/level/create",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/page",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/group/page",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/level/list",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/list-all-simple",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/group/list-all-simple",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/level/list-all-simple",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/page",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    }
+  ],
+  "changesets": 59,
+  "second_tenant_created_via_core_api": true,
+  "created_in_tenant_1": {
+    "tag": 1,
+    "group": 1,
+    "level": 1
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13374": false,
+      "16454": false,
+      "48221": false
+    },
+    "complete": true
+  }
+}

@@ -1,0 +1,418 @@
+{
+  "schema": "yuheng_t4_erp_mobile_smoke_20261121",
+  "jar_sha256": "9596b4d8fc524b825a7537dc1d51817372b288a0369e88833aa9b9f123dec72b",
+  "jar_static_resource_count": 1116,
+  "ui_source": "static resources extracted byte-for-byte from tested JAR",
+  "jar_dist_byte_match": false,
+  "test_server_request_queue_size": 128,
+  "ports": {
+    "mysql": 13375,
+    "redis": 16456,
+    "app": 48210,
+    "ui": 5210
+  },
+  "credentials_recorded": false,
+  "browser": {
+    "viewports": {
+      "desktop-1440x900": {
+        "checks": [
+          {
+            "path": "/erp/purchase/order",
+            "initial": {
+              "viewport": 1440,
+              "documentWidth": 1440,
+              "scrollWidth": 1440,
+              "tablePresent": true,
+              "headers": [
+                "订单单号",
+                "产品信息",
+                "供应商",
+                "订单时间",
+                "创建人",
+                "总数量",
+                "入库数量",
+                "退货数量",
+                "金额合计",
+                "含税金额",
+                "支付订金",
+                "状态",
+                "操作"
+              ]
+            },
+            "dialog": {
+              "bounds": {
+                "left": 180,
+                "right": 1260,
+                "width": 1080
+              },
+              "visibleInputs": 11
+            },
+            "screenshot": "/Users/huhua/study/ai/yuheng/yuheng-demo/docs/verification/2026-11-11-full-source-migration/erp-browser-flow-20261121/screenshots-mobile-smoke/desktop-1440x900-order-create-dialog.png",
+            "apiResponses": [
+              {
+                "label": "desktop-1440x900",
+                "method": "GET",
+                "path": "/admin-api/erp/product/simple-list",
+                "status": 200
+              },
+              {
+                "label": "desktop-1440x900",
+                "method": "GET",
+                "path": "/admin-api/erp/supplier/simple-list",
+                "status": 200
+              },
+              {
+                "label": "desktop-1440x900",
+                "method": "GET",
+                "path": "/admin-api/erp/account/simple-list",
+                "status": 200
+              }
+            ]
+          },
+          {
+            "path": "/erp/purchase/in",
+            "initial": {
+              "viewport": 1440,
+              "documentWidth": 1440,
+              "scrollWidth": 1440,
+              "tablePresent": true,
+              "headers": [
+                "入库单号",
+                "产品信息",
+                "供应商",
+                "入库时间",
+                "创建人",
+                "总数量",
+                "应付金额",
+                "已付金额",
+                "未付金额",
+                "审核状态",
+                "操作"
+              ]
+            },
+            "dialog": {
+              "bounds": {
+                "left": 0,
+                "right": 1440,
+                "width": 1440
+              },
+              "visibleInputs": 6
+            },
+            "screenshot": "/Users/huhua/study/ai/yuheng/yuheng-demo/docs/verification/2026-11-11-full-source-migration/erp-browser-flow-20261121/screenshots-mobile-smoke/desktop-1440x900-in-create-dialog.png",
+            "apiResponses": [
+              {
+                "label": "desktop-1440x900",
+                "method": "GET",
+                "path": "/admin-api/erp/warehouse/simple-list",
+                "status": 200
+              },
+              {
+                "label": "desktop-1440x900",
+                "method": "GET",
+                "path": "/admin-api/erp/supplier/simple-list",
+                "status": 200
+              },
+              {
+                "label": "desktop-1440x900",
+                "method": "GET",
+                "path": "/admin-api/erp/account/simple-list",
+                "status": 200
+              }
+            ]
+          }
+        ]
+      },
+      "mobile-390x844": {
+        "checks": [
+          {
+            "path": "/erp/purchase/order",
+            "initial": {
+              "viewport": 390,
+              "documentWidth": 390,
+              "scrollWidth": 390,
+              "tablePresent": true,
+              "headers": [
+                "订单单号",
+                "产品信息",
+                "供应商",
+                "订单时间",
+                "创建人",
+                "总数量",
+                "入库数量",
+                "退货数量",
+                "金额合计",
+                "含税金额",
+                "支付订金",
+                "状态",
+                "操作"
+              ]
+            },
+            "dialog": {
+              "bounds": {
+                "left": 0,
+                "right": 390,
+                "width": 390
+              },
+              "visibleInputs": 8
+            },
+            "screenshot": "/Users/huhua/study/ai/yuheng/yuheng-demo/docs/verification/2026-11-11-full-source-migration/erp-browser-flow-20261121/screenshots-mobile-smoke/mobile-390x844-order-create-dialog.png",
+            "apiResponses": [
+              {
+                "label": "mobile-390x844",
+                "method": "GET",
+                "path": "/admin-api/erp/supplier/simple-list",
+                "status": 200
+              },
+              {
+                "label": "mobile-390x844",
+                "method": "GET",
+                "path": "/admin-api/erp/product/simple-list",
+                "status": 200
+              },
+              {
+                "label": "mobile-390x844",
+                "method": "GET",
+                "path": "/admin-api/erp/account/simple-list",
+                "status": 200
+              }
+            ]
+          },
+          {
+            "path": "/erp/purchase/in",
+            "initial": {
+              "viewport": 390,
+              "documentWidth": 390,
+              "scrollWidth": 390,
+              "tablePresent": true,
+              "headers": [
+                "入库单号",
+                "产品信息",
+                "供应商",
+                "入库时间",
+                "创建人",
+                "总数量",
+                "应付金额",
+                "已付金额",
+                "未付金额",
+                "审核状态",
+                "操作"
+              ]
+            },
+            "dialog": {
+              "bounds": {
+                "left": 0,
+                "right": 390,
+                "width": 390
+              },
+              "visibleInputs": 2
+            },
+            "screenshot": "/Users/huhua/study/ai/yuheng/yuheng-demo/docs/verification/2026-11-11-full-source-migration/erp-browser-flow-20261121/screenshots-mobile-smoke/mobile-390x844-in-create-dialog.png",
+            "apiResponses": [
+              {
+                "label": "mobile-390x844",
+                "method": "GET",
+                "path": "/admin-api/erp/supplier/simple-list",
+                "status": 200
+              },
+              {
+                "label": "mobile-390x844",
+                "method": "GET",
+                "path": "/admin-api/erp/warehouse/simple-list",
+                "status": 200
+              },
+              {
+                "label": "mobile-390x844",
+                "method": "GET",
+                "path": "/admin-api/erp/account/simple-list",
+                "status": 200
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "apiResponses": [
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/purchase-order/page",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/supplier/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/supplier/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/account/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/purchase-in/page",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/supplier/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/warehouse/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/account/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/warehouse/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/supplier/simple-list",
+        "status": 200
+      },
+      {
+        "label": "desktop-1440x900",
+        "method": "GET",
+        "path": "/admin-api/erp/account/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/purchase-order/page",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/supplier/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/supplier/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/account/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/purchase-in/page",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/supplier/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/warehouse/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/account/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/supplier/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/warehouse/simple-list",
+        "status": 200
+      },
+      {
+        "label": "mobile-390x844",
+        "method": "GET",
+        "path": "/admin-api/erp/account/simple-list",
+        "status": 200
+      }
+    ],
+    "completed": true
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13375": false,
+      "16456": false,
+      "48210": false,
+      "5210": false
+    }
+  }
+}

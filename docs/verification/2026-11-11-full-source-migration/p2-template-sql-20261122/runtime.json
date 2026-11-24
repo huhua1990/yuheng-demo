@@ -1,0 +1,22 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "database": "isolated MySQL 8.0.33 via codex-qc-schema-mysql",
+  "modules": {
+    "pay": {
+      "changesets_first_run": 14,
+      "changesets_repeat_run": 0,
+      "business_tables": 14,
+      "business_rows": 0
+    },
+    "pms": {
+      "changesets_first_run": 33,
+      "changesets_repeat_run": 0,
+      "business_tables": 33,
+      "business_rows": 0
+    }
+  },
+  "conflict_precondition": "verified separately: existing first table caused PreconditionFailedException, Run=0, existing table preserved",
+  "credentials_recorded": false,
+  "shared_schema_used": false,
+  "cleanup": true
+}

@@ -1,0 +1,28 @@
+{
+  "result": "PASS",
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "ports": {
+    "mysql": 13422,
+    "redis": 16497,
+    "app": 48292
+  },
+  "schemas": {
+    "audit-status": "yuheng_t4_status_20261125"
+  },
+  "probes": {
+    "audit-status": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 13, \"assertions\": {\"unsupported_status_rejected_for_all_resources\": 12, \"erp_full_row_snapshot_unchanged_after_each_request\": true}}\n",
+      "stderr": ""
+    }
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13422": false,
+      "16497": false,
+      "48292": false
+    },
+    "passed": true
+  }
+}

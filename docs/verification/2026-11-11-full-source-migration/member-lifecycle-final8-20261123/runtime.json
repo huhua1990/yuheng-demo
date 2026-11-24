@@ -1,0 +1,23 @@
+{
+  "result": "FAIL",
+  "schema": "yuheng_p2_member_lifecycle_20261123i",
+  "ports": {
+    "mysql": 13413,
+    "redis": 16494,
+    "app": 48275
+  },
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "credentials_recorded": false,
+  "changesets": 59,
+  "error": "('POST', '/member/auth/send-sms-code', 200, 1002014005, '短信发送过于频繁')",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13413": false,
+      "16494": false,
+      "48275": false
+    },
+    "passed": true
+  },
+  "completed": false
+}

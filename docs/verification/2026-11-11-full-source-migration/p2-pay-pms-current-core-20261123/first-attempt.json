@@ -1,0 +1,15 @@
+{
+  "result": "FAIL",
+  "schema": "yuheng_p2_pay_pms_consumer_20261122",
+  "ports": {
+    "mysql": 13401,
+    "redis": 16481,
+    "app": 48261
+  },
+  "jar_sha256": "0a4706735b78854ca847fb98cc7c8e446ad713a69b2aa99079710bf6b5a5994d",
+  "credentials_recorded": false,
+  "error": "Command '['node', '/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/p2_pay_pms_browser_probe.js']' returned non-zero exit status 1.",
+  "cleanup": {
+    "containers_absent": true
+  }
+}

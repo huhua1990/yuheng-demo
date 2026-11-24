@@ -1,0 +1,273 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_stock_lifecycle_20261123_current",
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "ports": {
+    "mysql": 13435,
+    "redis": 16490,
+    "app": 48277
+  },
+  "credentials_recorded": false,
+  "probe_stdout": "{\"result\": \"PASS\", \"requests\": 37, \"assertions\": {\"stock_in_approve_reverse_reapprove\": true, \"stock_out_approve_reverse_reapprove\": true, \"stock_move_two_warehouse_approve_reverse_reapprove\": true, \"stock_check_positive_adjustment_approve_reverse_reapprove\": true, \"stock_check_negative_adjustment_approve_reverse_reapprove\": true, \"insufficient_stock_rolls_back_prior_line_status_and_records\": true, \"concurrent_stock_out_one_approved_one_rejected\": true, \"final_stock\": [[\"1\", \"1.000000\"], [\"2\", \"2.000000\"]]}}\n",
+  "probe_stderr": "",
+  "probe": {
+    "result": "PASS",
+    "schema": "yuheng_t4_stock_lifecycle_20261123_current",
+    "changesets": 59,
+    "port": 48277,
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/system/auth/login",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/product-category/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/product-unit/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/supplier/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/customer/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/warehouse/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/warehouse/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/product/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/stock-in/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-in/update-status?id=1&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-in/update-status?id=1&status=10",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-in/update-status?id=1&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/stock-out/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-out/update-status?id=1&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-out/update-status?id=1&status=10",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-out/update-status?id=1&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/stock-move/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-move/update-status?id=1&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-move/update-status?id=1&status=10",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-move/update-status?id=1&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/stock-check/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-check/update-status?id=1&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-check/update-status?id=1&status=10",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-check/update-status?id=1&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/stock-check/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-check/update-status?id=2&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-check/update-status?id=2&status=10",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-check/update-status?id=2&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/stock-out/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-out/update-status?id=2&status=20",
+        "http": 200,
+        "code": 1030404000
+      },
+      {
+        "method": "GET",
+        "path": "/erp/stock-out/get?id=2",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/stock-out/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/erp/stock-out/create",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-out/update-status?id=3&status=20",
+        "http": 200,
+        "code": 1030404000
+      },
+      {
+        "method": "PUT",
+        "path": "/erp/stock-out/update-status?id=4&status=20",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "GET",
+        "path": "/erp/stock-out/get?id=3",
+        "http": 200,
+        "code": 0
+      },
+      {
+        "method": "GET",
+        "path": "/erp/stock-out/get?id=4",
+        "http": 200,
+        "code": 0
+      }
+    ],
+    "assertions": {
+      "stock_in_approve_reverse_reapprove": true,
+      "stock_out_approve_reverse_reapprove": true,
+      "stock_move_two_warehouse_approve_reverse_reapprove": true,
+      "stock_check_positive_adjustment_approve_reverse_reapprove": true,
+      "stock_check_negative_adjustment_approve_reverse_reapprove": true,
+      "insufficient_stock_rolls_back_prior_line_status_and_records": true,
+      "concurrent_stock_out_one_approved_one_rejected": true,
+      "final_stock": [
+        [
+          "1",
+          "1.000000"
+        ],
+        [
+          "2",
+          "2.000000"
+        ]
+      ]
+    }
+  },
+  "seed_passwords_unchanged": true,
+  "changesets": 59,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13435": false,
+      "16490": false,
+      "48277": false
+    },
+    "passed": true
+  }
+}

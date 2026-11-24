@@ -1,0 +1,339 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_p2_pay_pms_consumer_20261122",
+  "ports": {
+    "mysql": 13401,
+    "redis": 16481,
+    "app": 48261
+  },
+  "jar_sha256": "85240edb6794c5e30fb34dbf79ac35e6f1e5e892fe909186911fec5692fe5e17",
+  "credentials_recorded": false,
+  "changesets_first": 107,
+  "changesets_second": 107,
+  "flows": {
+    "pay_app": true,
+    "wallet_balance": 125,
+    "pms_project": true,
+    "pms_library_document_share": true
+  },
+  "anonymous_code": 401,
+  "invalid_token_code": null,
+  "limited_role_permissions": [
+    "pay:app:create",
+    "pay:app:query",
+    "pay:wallet:query",
+    "pay:wallet:update-balance",
+    "pms:pm:project:create",
+    "pms:pm:project:update",
+    "pms:pm:project:query",
+    "pms:kb:library:create",
+    "pms:kb:library:update",
+    "pms:kb:library:query"
+  ],
+  "cross_tenant_checks": [
+    {
+      "method": "POST",
+      "path": "/pay/app/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/pms/pm/project/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/pms/kb/library/create",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/pay/app/get?id=1",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/pay/app/get?id=2",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/pms/pm/project/get?id=1",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/pms/pm/project/get?id=2",
+      "tenant": 1,
+      "http": 200,
+      "code": 1053100000
+    },
+    {
+      "method": "PUT",
+      "path": "/pms/pm/project/update",
+      "tenant": 1,
+      "http": 200,
+      "code": 1053100000
+    },
+    {
+      "method": "GET",
+      "path": "/pms/kb/library/get?id=1",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/pms/kb/library/get?id=2",
+      "tenant": 1,
+      "http": 200,
+      "code": 1053130000
+    },
+    {
+      "method": "PUT",
+      "path": "/pms/kb/library/update",
+      "tenant": 1,
+      "http": 200,
+      "code": 1053130000
+    },
+    {
+      "method": "GET",
+      "path": "/pay/app/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/pay/app/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/pms/pm/project/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/pms/pm/project/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 1053100000
+    },
+    {
+      "method": "PUT",
+      "path": "/pms/pm/project/update",
+      "tenant": 122,
+      "http": 200,
+      "code": 1053100000
+    },
+    {
+      "method": "GET",
+      "path": "/pms/kb/library/get?id=2",
+      "tenant": 122,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/pms/kb/library/get?id=1",
+      "tenant": 122,
+      "http": 200,
+      "code": 1053130000
+    },
+    {
+      "method": "PUT",
+      "path": "/pms/kb/library/update",
+      "tenant": 122,
+      "http": 200,
+      "code": 1053130000
+    }
+  ],
+  "browser": {
+    "result": "PASS",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "errors": [],
+    "failed": [],
+    "canceled": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/get-by-website"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/get-by-website"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/get-id-by-name"
+      },
+      {
+        "method": "POST",
+        "path": "/admin-api/system/auth/login"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notify-message/get-unread-count"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notice/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notify-message/get-unread-count"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pay/app/page"
+      },
+      {
+        "method": "POST",
+        "path": "/admin-api/pay/app/create"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pay/app/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/auth/get-permission-info"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/dict-data/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/tenant/simple-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/system/notify-message/get-unread-count"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pms/pm/project-group/list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pms/pm/project-group/list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pms/pm/project/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pms/pm/project/favorite-list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pms/pm/project/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pms/pm/project/favorite-list"
+      },
+      {
+        "method": "POST",
+        "path": "/admin-api/pms/pm/project/create"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pms/pm/project/page"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pms/pm/project-group/list"
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/pms/pm/project/favorite-list"
+      }
+    ],
+    "actions": [
+      "pay-app-route",
+      "pay-app-create",
+      "pms-project-route",
+      "pms-project-create",
+      "anonymous-share-visible"
+    ]
+  },
+  "denied_mutations": [
+    {
+      "method": "PUT",
+      "path": "/pay/app/update",
+      "code": 403
+    },
+    {
+      "method": "DELETE",
+      "path": "/pay/app/delete",
+      "code": 403
+    },
+    {
+      "method": "POST",
+      "path": "/pay/channel/create",
+      "code": 403
+    },
+    {
+      "method": "DELETE",
+      "path": "/pms/kb/library/delete",
+      "code": 403
+    },
+    {
+      "method": "POST",
+      "path": "/pms/pm/project/create",
+      "code": 403
+    }
+  ],
+  "denied_user_project_query_code": 403,
+  "spoofed_tenant_project_query_code": 403,
+  "cleanup": {
+    "containers_absent": true
+  }
+}

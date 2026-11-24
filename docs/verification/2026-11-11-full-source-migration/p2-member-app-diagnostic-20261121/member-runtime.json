@@ -1,0 +1,22 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_p2_member_20261117",
+  "jar_sha256": "4f52c0664041716e290304ea054c91aae52787428c8267e485cc805013f3aeb0",
+  "credentials_recorded": false,
+  "cases": {
+    "member_app_login": true,
+    "cleanup": true
+  },
+  "cleanup": {
+    "app_stopped": true,
+    "ui_stopped": true,
+    "containers_absent": true,
+    "ports_listening": {
+      "13373": false,
+      "16453": false,
+      "48220": false,
+      "5203": false
+    }
+  },
+  "completed": false
+}

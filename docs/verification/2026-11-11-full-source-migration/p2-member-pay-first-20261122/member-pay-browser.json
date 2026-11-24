@@ -1,0 +1,283 @@
+{
+  "result": "FAIL",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "errors": [],
+  "failed": [],
+  "canceled": [],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-id-by-name"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/system/auth/login"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notice/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/point/record/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/wallet/get"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/wallet-transaction/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/level/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/group/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/wallet/get"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/pay/wallet/update-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/point/record/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/wallet/get"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/tag/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/level/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/group/list-all-simple"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/wallet/get"
+    },
+    {
+      "method": "PUT",
+      "path": "/admin-api/pay/wallet/update-balance"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/point/record/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/member/user/get"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/wallet/get"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/wallet-transaction/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-id-by-name"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/system/auth/login"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    }
+  ],
+  "actions": [
+    "member-wallet-detail",
+    "member-wallet-transactions",
+    "member-wallet-增加",
+    "member-wallet-减少",
+    "member-wallet-ledger-after-adjustments"
+  ]
+}

@@ -1,0 +1,608 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_returns_20261123_current",
+  "changesets": 59,
+  "port": 48280,
+  "time": "2026-11-23T06:28:08.943043+08:00",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-category/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-unit/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/supplier/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/customer/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/account/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "http": 200,
+      "code": 1030101009,
+      "msg": "采购订单项(RET product 2)超过最大允许退货数量(8.375000)"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=2&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=2&status=10",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=2&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=2&status=20",
+      "http": 200,
+      "code": 1030103003,
+      "msg": "审核失败，只有未审核的退货单才能审核"
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update",
+      "http": 200,
+      "code": 1030103005,
+      "msg": "采购退货单(CGTH20261123000002)已审核，无法修改"
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-return/delete?ids=2",
+      "http": 200,
+      "code": 1030103001,
+      "msg": "采购退货单(CGTH20261123000002)已审核，无法删除"
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-payment/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-payment/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=2&status=10",
+      "http": 200,
+      "code": 1030103008,
+      "msg": "反审核失败，已存在对应的退款单"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-payment/create",
+      "http": 200,
+      "code": 1030103007,
+      "msg": "退款金额(1.060000)超过采购退货单总金额(1.050000)"
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/finance-payment/delete?ids=1",
+      "http": 200,
+      "code": 1030601001,
+      "msg": "付款单(FKD20261123000001)已审核，无法删除"
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update-status?id=1&status=10",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/finance-payment/delete?ids=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update-status?id=2&status=10",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-return/delete?ids=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "http": 200,
+      "code": 1020201009,
+      "msg": "销售订单项(RET product 2)超过最大允许退货数量(2.375000)"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=2&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=2&status=10",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=2&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=2&status=20",
+      "http": 200,
+      "code": 1020203003,
+      "msg": "审核失败，只有未审核的退货单才能审核"
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update",
+      "http": 200,
+      "code": 1020203005,
+      "msg": "销售退货单(XSTH20261123000002)已审核，无法修改"
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-return/delete?ids=2",
+      "http": 200,
+      "code": 1020203001,
+      "msg": "销售退货单(XSTH20261123000002)已审核，无法删除"
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-receipt/create",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/finance-receipt/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=2&status=10",
+      "http": 200,
+      "code": 1020203008,
+      "msg": "反审核失败，已存在对应的退款单"
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-receipt/create",
+      "http": 200,
+      "code": 1020203007,
+      "msg": "退款金额(0.470000)超过销售退货单总金额(0.460000)"
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/finance-receipt/delete?ids=1",
+      "http": 200,
+      "code": 1030602001,
+      "msg": "收款单(SKD20261123000001)已审核，无法删除"
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update-status?id=1&status=10",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/finance-receipt/delete?ids=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-return/get?id=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update-status?id=2&status=10",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-return/delete?ids=2",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0,
+      "msg": ""
+    }
+  ],
+  "amount_checks": [
+    {
+      "resource": "purchase-order",
+      "id": 1,
+      "totals": {
+        "totalProductPrice": "32.15",
+        "totalTaxPrice": "2.81",
+        "discountPrice": "2.62",
+        "totalPrice": "32.34",
+        "totalCount": "18.500"
+      }
+    },
+    {
+      "resource": "sale-order",
+      "id": 1,
+      "totals": {
+        "totalProductPrice": "21.65",
+        "totalTaxPrice": "2.05",
+        "discountPrice": "1.78",
+        "totalPrice": "21.92",
+        "totalCount": "5.500"
+      }
+    },
+    {
+      "resource": "purchase-return",
+      "id": 2,
+      "totals": {
+        "totalProductPrice": "1.03",
+        "totalTaxPrice": "0.07",
+        "discountPrice": "0.08",
+        "totalPrice": "1.05",
+        "totalCount": "0.500"
+      }
+    },
+    {
+      "resource": "sale-return",
+      "id": 2,
+      "totals": {
+        "totalProductPrice": "0.43",
+        "totalTaxPrice": "0.03",
+        "discountPrice": "0.03",
+        "totalPrice": "0.46",
+        "totalCount": "0.100"
+      }
+    }
+  ],
+  "assertions": {
+    "two_line_purchase_and_sale_returns": true,
+    "line_half_up_scale": 2,
+    "second_line_overflow_full_rollback": true,
+    "approval_reverse_delete_stock_consistency": true,
+    "refund_finance_reservation_excess_rollback_and_release": true,
+    "final_stock": [
+      "7.000000",
+      "6.000000"
+    ],
+    "stock_record_count": 20,
+    "seed_passwords_unchanged": true,
+    "supplementary_workflows_not_covered": "finance update; negative/illegal status inputs; UI acceptance"
+  }
+}

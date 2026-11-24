@@ -1,0 +1,157 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_finance_browser_20261123",
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "jar_static_resource_count": 612,
+  "jar_dist_byte_match": true,
+  "ports": {
+    "mysql": 13432,
+    "redis": 16487,
+    "backend": 48274,
+    "ui": 5233
+  },
+  "credentials_recorded": false,
+  "viewport": "desktop-1440x900",
+  "browser_stdout": "",
+  "browser_stderr": "",
+  "browser": {
+    "viewport": "desktop-1440x900",
+    "actions": [
+      "receipt-create-from-sale-out",
+      "receipt-approve",
+      "payment-create-from-purchase-in",
+      "payment-approve"
+    ],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "apiResponses": [
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/finance-receipt/page",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/customer/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/customer/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/account/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/account/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/sale-out/page",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/admin-api/erp/finance-receipt/create",
+        "status": 200,
+        "body": 1
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/finance-receipt/page",
+        "status": 200
+      },
+      {
+        "method": "PUT",
+        "path": "/admin-api/erp/finance-receipt/update-status",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/finance-payment/page",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/supplier/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/supplier/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/account/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/account/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/product/simple-list",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/purchase-in/page",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/admin-api/erp/finance-payment/create",
+        "status": 200,
+        "body": 1
+      },
+      {
+        "method": "GET",
+        "path": "/admin-api/erp/finance-payment/page",
+        "status": 200
+      },
+      {
+        "method": "PUT",
+        "path": "/admin-api/erp/finance-payment/update-status",
+        "status": 200
+      }
+    ],
+    "receiptId": 1,
+    "paymentId": 1,
+    "finalUrl": "http://127.0.0.1:5233/erp/finance/payment",
+    "result": "PASS"
+  },
+  "sql": {
+    "receipt": "20:3.000000:0.000000:3.000000:993101:1",
+    "receipt_item": "21:993109:36.000000:0.000000:3.000000:1",
+    "sale_out": "20:3.000000:36.000000:1",
+    "payment": "20:4.000000:0.000000:4.000000:993201:1",
+    "payment_item": "11:993204:20.000000:0.000000:4.000000:1",
+    "purchase_in": "20:4.000000:20.000000:1",
+    "changesets": 59,
+    "seed_passwords_unchanged": true
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13432": false,
+      "16487": false,
+      "48274": false,
+      "5233": false
+    },
+    "passed": true
+  }
+}

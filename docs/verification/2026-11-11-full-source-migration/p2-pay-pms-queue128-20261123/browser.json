@@ -1,0 +1,139 @@
+{
+  "result": "PASS",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "errors": [],
+  "failed": [],
+  "canceled": [],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-id-by-name"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/system/auth/login"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notice/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/app/page"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/pay/app/create"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/app/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project-group/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project-group/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/favorite-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/favorite-list"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/pms/pm/project/create"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project-group/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/favorite-list"
+    }
+  ],
+  "actions": [
+    "pay-app-route",
+    "pay-app-create",
+    "pms-project-route",
+    "pms-project-create",
+    "anonymous-share-visible"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "result": "PASS",
+  "template_repository": "yuheng-business-templates",
+  "template_commit_before_this_change": "3ea638f",
+  "consumer_repository": "disposable Member consumer fixture",
+  "module": "member",
+  "mapping": "docs/template-member-mapping.example.json",
+  "mapped_files": 237,
+  "formal_demo_touched": false,
+  "database_touched": false,
+  "checks": {
+    "baseline_has_no_differences": true,
+    "template_only_change_classified": true,
+    "template_only_change_selectively_applied": true,
+    "consumer_only_file_preserved": true,
+    "consumer_customization_conflict_blocked": true,
+    "conflicting_apply_leaves_consumer_unchanged": true,
+    "demo_rebuilt_or_recreated": false
+  },
+  "scope": "Template update tooling and Member mapping only; no formal Demo update, build, or database migration was performed."
+}

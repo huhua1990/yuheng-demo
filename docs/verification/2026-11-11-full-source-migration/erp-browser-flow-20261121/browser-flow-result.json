@@ -1,0 +1,368 @@
+{
+  "viewports": {
+    "desktop-1440x900": {
+      "checks": [
+        {
+          "path": "/erp/purchase/order",
+          "initial": {
+            "viewport": 1440,
+            "documentWidth": 1440,
+            "scrollWidth": 1440,
+            "tablePresent": true,
+            "headers": [
+              "订单单号",
+              "产品信息",
+              "供应商",
+              "订单时间",
+              "创建人",
+              "总数量",
+              "入库数量",
+              "退货数量",
+              "金额合计",
+              "含税金额",
+              "支付订金",
+              "状态",
+              "操作"
+            ]
+          },
+          "dialog": {
+            "bounds": {
+              "left": 180,
+              "right": 1260,
+              "width": 1080
+            },
+            "visibleInputs": 11
+          },
+          "screenshot": "/Users/huhua/study/ai/yuheng/yuheng-demo/docs/verification/2026-11-11-full-source-migration/erp-browser-flow-20261121/screenshots-run-k/desktop-1440x900-order-create-dialog.png",
+          "apiResponses": [
+            {
+              "label": "desktop-1440x900",
+              "method": "GET",
+              "path": "/admin-api/erp/supplier/simple-list",
+              "status": 200
+            },
+            {
+              "label": "desktop-1440x900",
+              "method": "GET",
+              "path": "/admin-api/erp/product/simple-list",
+              "status": 200
+            },
+            {
+              "label": "desktop-1440x900",
+              "method": "GET",
+              "path": "/admin-api/erp/account/simple-list",
+              "status": 200
+            }
+          ]
+        },
+        {
+          "path": "/erp/purchase/in",
+          "initial": {
+            "viewport": 1440,
+            "documentWidth": 1440,
+            "scrollWidth": 1440,
+            "tablePresent": true,
+            "headers": [
+              "入库单号",
+              "产品信息",
+              "供应商",
+              "入库时间",
+              "创建人",
+              "总数量",
+              "应付金额",
+              "已付金额",
+              "未付金额",
+              "审核状态",
+              "操作"
+            ]
+          },
+          "dialog": {
+            "bounds": {
+              "left": 0,
+              "right": 1440,
+              "width": 1440
+            },
+            "visibleInputs": 6
+          },
+          "screenshot": "/Users/huhua/study/ai/yuheng/yuheng-demo/docs/verification/2026-11-11-full-source-migration/erp-browser-flow-20261121/screenshots-run-k/desktop-1440x900-in-create-dialog.png",
+          "apiResponses": [
+            {
+              "label": "desktop-1440x900",
+              "method": "GET",
+              "path": "/admin-api/erp/supplier/simple-list",
+              "status": 200
+            },
+            {
+              "label": "desktop-1440x900",
+              "method": "GET",
+              "path": "/admin-api/erp/warehouse/simple-list",
+              "status": 200
+            },
+            {
+              "label": "desktop-1440x900",
+              "method": "GET",
+              "path": "/admin-api/erp/account/simple-list",
+              "status": 200
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "apiResponses": [
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-order/page",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/account/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/stock/get-count",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "POST",
+      "path": "/admin-api/erp/purchase-order/create",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-order/page",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "PUT",
+      "path": "/admin-api/erp/purchase-order/update-status",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-order/page",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-in/page",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/warehouse/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/account/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/warehouse/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/account/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-order/page",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "POST",
+      "path": "/admin-api/erp/purchase-in/create",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-in/page",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "PUT",
+      "path": "/admin-api/erp/purchase-in/update-status",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-in/page",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-order/page",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/account/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-in/page",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/warehouse/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/account/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/warehouse/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/account/simple-list",
+      "status": 200
+    }
+  ],
+  "fixtures": {
+    "categoryId": 1,
+    "unitId": 1,
+    "supplierId": 1,
+    "accountId": 1,
+    "warehouseId": 1,
+    "productId": 1,
+    "marker": 1795267724993
+  },
+  "browserFlow": {
+    "orderId": 1,
+    "orderApproved": true,
+    "inId": 1,
+    "inApproved": true
+  },
+  "completedFlow": true,
+  "completed": true
+}

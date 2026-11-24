@@ -1,0 +1,23 @@
+{
+  "result": "FAIL",
+  "schema": "yuheng_p2_member_lifecycle_20261123c",
+  "ports": {
+    "mysql": 13407,
+    "redis": 16488,
+    "app": 48268
+  },
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "credentials_recorded": false,
+  "changesets": 59,
+  "error": "",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13407": false,
+      "16488": false,
+      "48268": false
+    },
+    "passed": true
+  },
+  "completed": false
+}

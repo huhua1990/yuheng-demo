@@ -1,0 +1,396 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_erp_mutation_auth_20261122",
+  "ports": {
+    "mysql": 13396,
+    "redis": 16477,
+    "app": 48241
+  },
+  "jar_sha256": "fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302",
+  "credentials_recorded": false,
+  "changesets": 59,
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-order/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-order/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-order/update-status?id=2&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-in/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-in/update-status?id=2&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-order/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-order/get?id=2",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-order/update-status?id=2&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-out/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-out/update-status?id=2&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/purchase-return/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/purchase-return/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/sale-return/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/sale-return/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-in/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-in/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-out/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-out/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-check/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-check/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-check/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-move/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/stock-move/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-payment/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-payment/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/finance-payment/delete?ids=1",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/finance-receipt/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/finance-receipt/update",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "DELETE",
+      "path": "/erp/finance-receipt/delete?ids=1",
+      "http": 200,
+      "code": 0
+    }
+  ],
+  "limited_role_permissions": [
+    "erp:purchase-order:create",
+    "erp:purchase-order:query",
+    "erp:purchase-order:export",
+    "erp:purchase-order:update",
+    "erp:purchase-order:update-status",
+    "erp:purchase-order:delete",
+    "erp:purchase-in:create",
+    "erp:purchase-in:query",
+    "erp:purchase-in:export",
+    "erp:purchase-in:update",
+    "erp:purchase-in:update-status",
+    "erp:purchase-in:delete",
+    "erp:purchase-return:create",
+    "erp:purchase-return:query",
+    "erp:purchase-return:export",
+    "erp:purchase-return:update",
+    "erp:purchase-return:update-status",
+    "erp:purchase-return:delete",
+    "erp:sale-order:create",
+    "erp:sale-order:query",
+    "erp:sale-order:export",
+    "erp:sale-order:update",
+    "erp:sale-order:update-status",
+    "erp:sale-order:delete",
+    "erp:sale-out:create",
+    "erp:sale-out:query",
+    "erp:sale-out:export",
+    "erp:sale-out:update",
+    "erp:sale-out:update-status",
+    "erp:sale-out:delete",
+    "erp:sale-return:create",
+    "erp:sale-return:query",
+    "erp:sale-return:export",
+    "erp:sale-return:update",
+    "erp:sale-return:update-status",
+    "erp:sale-return:delete",
+    "erp:stock-in:create",
+    "erp:stock-in:query",
+    "erp:stock-in:export",
+    "erp:stock-in:update",
+    "erp:stock-in:update-status",
+    "erp:stock-in:delete",
+    "erp:stock-out:create",
+    "erp:stock-out:query",
+    "erp:stock-out:export",
+    "erp:stock-out:update",
+    "erp:stock-out:update-status",
+    "erp:stock-out:delete",
+    "erp:stock-check:create",
+    "erp:stock-check:query",
+    "erp:stock-check:export",
+    "erp:stock-check:update",
+    "erp:stock-check:update-status",
+    "erp:stock-check:delete",
+    "erp:stock-move:create",
+    "erp:stock-move:query",
+    "erp:stock-move:export",
+    "erp:stock-move:update",
+    "erp:stock-move:update-status",
+    "erp:stock-move:delete",
+    "erp:finance-payment:create",
+    "erp:finance-payment:query",
+    "erp:finance-payment:export",
+    "erp:finance-payment:update",
+    "erp:finance-payment:update-status",
+    "erp:finance-payment:delete",
+    "erp:finance-receipt:create",
+    "erp:finance-receipt:query",
+    "erp:finance-receipt:export",
+    "erp:finance-receipt:update",
+    "erp:finance-receipt:update-status",
+    "erp:finance-receipt:delete"
+  ],
+  "assertions": {
+    "all_document_update_delete": true,
+    "draft_rows_soft_deleted": true,
+    "source_chains_remained_valid": true
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13396": false,
+      "16477": false,
+      "48241": false
+    },
+    "passed": true
+  }
+}

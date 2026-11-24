@@ -1,0 +1,38 @@
+{
+  "result": "FAIL",
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_p2_member_dimensions_20261123",
+  "jar_sha256": "963149b3978618f370df9f63fe1db1a2841b7c3b2298d80766086cae27da5c97",
+  "credentials_recorded": false,
+  "ports": [
+    13373,
+    16453,
+    48220
+  ],
+  "events": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": 2,
+      "http": 200,
+      "code": 1002015000
+    }
+  ],
+  "changesets": 59,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13373": false,
+      "16453": false,
+      "48220": false
+    },
+    "complete": true
+  }
+}

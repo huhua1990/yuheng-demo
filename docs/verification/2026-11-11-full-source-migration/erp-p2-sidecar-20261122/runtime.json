@@ -1,0 +1,52 @@
+{
+  "result": "PASS",
+  "jar_sha256": "fb66307402876756a689c7a9e4a079ceb351d16619d05404d2f67138fdc81302",
+  "ports": {
+    "mysql": 13386,
+    "redis": 16467,
+    "app": 48231
+  },
+  "schemas": {
+    "create": "yuheng_t4_item_owner_20261122",
+    "update": "yuheng_t4_item_update_20261122",
+    "workflow": "yuheng_t4_flows_20261122",
+    "stock-lifecycle": "yuheng_t4_stock_lifecycle_20261122",
+    "audit-status": "yuheng_t4_status_20261122"
+  },
+  "probes": {
+    "create": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 11}\n",
+      "stderr": ""
+    },
+    "update": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 99, \"cases\": 10}\n",
+      "stderr": ""
+    },
+    "workflow": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 53, \"assertions\": {\"purchase_count\": 10, \"sale_count\": 4, \"stock_count\": 6, \"payment_price\": 100, \"receipt_price\": 80, \"stock_records\": 2, \"final_document_status\": 20, \"tenant_id\": 1, \"overpayment_and_overreceipt_rolled_back\": true}}\n",
+      "stderr": ""
+    },
+    "stock-lifecycle": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 37, \"assertions\": {\"stock_in_approve_reverse_reapprove\": true, \"stock_out_approve_reverse_reapprove\": true, \"stock_move_two_warehouse_approve_reverse_reapprove\": true, \"stock_check_positive_adjustment_approve_reverse_reapprove\": true, \"stock_check_negative_adjustment_approve_reverse_reapprove\": true, \"insufficient_stock_rolls_back_prior_line_status_and_records\": true, \"concurrent_stock_out_one_approved_one_rejected\": true, \"final_stock\": [[\"1\", \"1.000000\"], [\"2\", \"2.000000\"]]}}\n",
+      "stderr": ""
+    },
+    "audit-status": {
+      "returncode": 0,
+      "stdout": "{\"result\": \"PASS\", \"requests\": 13, \"assertions\": {\"unsupported_status_rejected_for_all_resources\": 12, \"erp_full_row_snapshot_unchanged_after_each_request\": true}}\n",
+      "stderr": ""
+    }
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13386": false,
+      "16467": false,
+      "48231": false
+    },
+    "passed": true
+  }
+}

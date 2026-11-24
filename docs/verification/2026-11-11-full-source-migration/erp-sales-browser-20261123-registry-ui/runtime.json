@@ -1,0 +1,26 @@
+{
+  "result": "FAIL",
+  "schema": "yuheng_t4_erp_sales_regui_20261123",
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "ui_package": "yuheng-ui@0.1.0-SNAPSHOT",
+  "ui_package_resolution": "/private/tmp/yuheng-demo-ui-registry-J9isPf/node_modules/.pnpm/yuheng-ui@0.1.0-SNAPSHOT_debug@4.4.3_element-plus@2.13.7_typescript@6.0.3_vue@3.5.34_ty_a8fb3641f1da82c4b600ae5b78489725/node_modules/yuheng-ui",
+  "ports": {
+    "mysql": 13405,
+    "redis": 16486,
+    "backend": 48273,
+    "ui": 5232
+  },
+  "credentials_recorded": false,
+  "viewport": "desktop-1440x900",
+  "error": "registry UI Vite startup failed",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13405": false,
+      "16486": false,
+      "48273": false,
+      "5232": false
+    },
+    "passed": true
+  }
+}

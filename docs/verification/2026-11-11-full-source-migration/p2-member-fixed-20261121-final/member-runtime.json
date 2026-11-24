@@ -1,0 +1,412 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_p2_member_20261117",
+  "jar_sha256": "4f52c0664041716e290304ea054c91aae52787428c8267e485cc805013f3aeb0",
+  "credentials_recorded": false,
+  "cases": {
+    "unauthorized_write_rejected": true,
+    "tenant_header_rejected": true,
+    "member_user_update": true,
+    "point_transaction": true,
+    "member_crud": true,
+    "member_runtime": {
+      "fixture_user_count": 2,
+      "member_data_tenant_scoped": true,
+      "lookup_foreign_tenant_hidden": true,
+      "spoofed_tenant_rejected": true,
+      "points_after_injected_failure": 10,
+      "points_after_credit": 15,
+      "referenced_group_and_level_delete_rejected": true,
+      "dimension_records_soft_deleted": true,
+      "events": [
+        {
+          "method": "POST",
+          "path": "/system/auth/login",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "POST",
+          "path": "/system/auth/login",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "POST",
+          "path": "/member/tag/create",
+          "http": 200,
+          "code": 401
+        },
+        {
+          "method": "POST",
+          "path": "/member/tag/create",
+          "http": 200,
+          "code": 403
+        },
+        {
+          "method": "POST",
+          "path": "/member/tag/create",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "PUT",
+          "path": "/member/tag/update",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "GET",
+          "path": "/member/tag/get?id=1",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "POST",
+          "path": "/member/group/create",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "PUT",
+          "path": "/member/group/update",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "GET",
+          "path": "/member/group/get?id=1",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "POST",
+          "path": "/member/level/create",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "PUT",
+          "path": "/member/level/update",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "GET",
+          "path": "/member/level/get?id=1",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "GET",
+          "path": "/member/user/get?id=990952",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "GET",
+          "path": "/member/user/get?id=990951",
+          "http": 200,
+          "code": 403
+        },
+        {
+          "method": "PUT",
+          "path": "/member/user/update",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "GET",
+          "path": "/member/user/get?id=990951",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "PUT",
+          "path": "/member/user/update-point",
+          "http": 200,
+          "code": 500
+        },
+        {
+          "method": "PUT",
+          "path": "/member/user/update-point",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "DELETE",
+          "path": "/member/group/delete?id=1",
+          "http": 200,
+          "code": 1004012001
+        },
+        {
+          "method": "DELETE",
+          "path": "/member/level/delete?id=1",
+          "http": 200,
+          "code": 1004011005
+        },
+        {
+          "method": "DELETE",
+          "path": "/member/tag/delete?id=1",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "DELETE",
+          "path": "/member/group/delete?id=1",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "DELETE",
+          "path": "/member/level/delete?id=1",
+          "http": 200,
+          "code": 0
+        }
+      ]
+    },
+    "member_browser": {
+      "errors": [],
+      "failed": [],
+      "events": [
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/admin-api/member/tag/create",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/get",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/admin-api/member/tag/update",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/admin-api/member/tag/delete",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/list-all-simple",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/level/list-all-simple",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/group/list-all-simple",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/user/page",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/user/page",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/user/get",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/admin-api/member/user/update-point",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/user/page",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/group/page",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/level/list",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/point/record/page",
+          "status": 200
+        }
+      ],
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page"
+        },
+        {
+          "method": "POST",
+          "path": "/admin-api/member/tag/create"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/get"
+        },
+        {
+          "method": "PUT",
+          "path": "/admin-api/member/tag/update"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page"
+        },
+        {
+          "method": "DELETE",
+          "path": "/admin-api/member/tag/delete"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/page"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/tag/list-all-simple"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/level/list-all-simple"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/group/list-all-simple"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/user/page"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/user/page"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/user/get"
+        },
+        {
+          "method": "PUT",
+          "path": "/admin-api/member/user/update-point"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/user/page"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/group/page"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/level/list"
+        },
+        {
+          "method": "GET",
+          "path": "/admin-api/member/point/record/page"
+        }
+      ],
+      "actions": [
+        "create",
+        "update",
+        "delete",
+        "member-search",
+        "member-point-decrease",
+        "page:/member/group",
+        "page:/member/level",
+        "page:/member/point/record"
+      ],
+      "pageStates": [
+        {
+          "route": "/member/group",
+          "url": "http://127.0.0.1:5203/member/group",
+          "title": "Yuheng Demo\n首页\n作者动态\nBoot 开发文档\nCloud 开发文档\n系统管理\n基础设施\n支付管理\n报表管理\n工作流程\n会员中心\n会员配置\n会员管理\n会员标签\n会员等级\n会员分组\n会员积分\n会员签到\nMALL 商城系统\nEAM 资产管理\nCRM 系统\nERP 系统\nWMS 系统\nMES 系统\nOA 办公协同"
+        },
+        {
+          "route": "/member/level",
+          "url": "http://127.0.0.1:5203/member/level",
+          "title": "Yuheng Demo\n首页\n作者动态\nBoot 开发文档\nCloud 开发文档\n系统管理\n基础设施\n支付管理\n报表管理\n工作流程\n会员中心\n会员配置\n会员管理\n会员标签\n会员等级\n会员分组\n会员积分\n会员签到\nMALL 商城系统\nEAM 资产管理\nCRM 系统\nERP 系统\nWMS 系统\nMES 系统\nOA 办公协同"
+        },
+        {
+          "route": "/member/record",
+          "url": "http://127.0.0.1:5203/member/record",
+          "title": "Yuheng Demo\n首页\n作者动态\nBoot 开发文档\nCloud 开发文档\n系统管理\n基础设施\n支付管理\n报表管理\n工作流程\n会员中心\n会员配置\n会员管理\n会员标签\n会员等级\n会员分组\n会员积分\n会员签到\nMALL 商城系统\nEAM 资产管理\nCRM 系统\nERP 系统\nWMS 系统\nMES 系统\nOA 办公协同"
+        },
+        {
+          "route": "/member/record",
+          "url": "http://127.0.0.1:5203/member/record",
+          "title": "Yuheng Demo\n首页\n作者动态\nBoot 开发文档\nCloud 开发文档\n系统管理\n基础设施\n支付管理\n报表管理\n工作流程\n会员中心\n会员配置\n会员管理\n会员标签\n会员等级\n会员分组\n会员积分\n会员签到\n签到配置\n签到记录\nMALL 商城系统\nEAM 资产管理\nCRM 系统\nERP 系统\nWMS 系统\nMES "
+        }
+      ]
+    },
+    "cleanup": true
+  },
+  "changesets": 59,
+  "completed": false,
+  "cleanup": {
+    "app_stopped": true,
+    "ui_stopped": true,
+    "containers_absent": true,
+    "ports_listening": {
+      "13373": false,
+      "16453": false,
+      "48220": false,
+      "5203": false
+    }
+  }
+}

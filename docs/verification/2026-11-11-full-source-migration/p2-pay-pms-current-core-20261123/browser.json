@@ -1,0 +1,445 @@
+{
+  "result": "FAIL",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "errors": [
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET",
+    "Failed to load resource: net::ERR_CONNECTION_RESET"
+  ],
+  "failed": [
+    {
+      "url": "http://127.0.0.1:5221/assets/css--RSMt2FN.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-Ca7FNId0.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-BJaCXrqZ.css",
+      "error": "net::ERR_SOCKET_NOT_CONNECTED"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-GgrXhtAP.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-GF-yQkxY.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-RJWiMvYx.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-BeHmV2Q2.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-Ciemdyvv.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-D_6SYB2i.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-BIUTcNqp.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-DlacDRt-.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-MfyfTy-D.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-CQ-Vz9bD.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-BFXl5gsQ.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-B7X4OvaL.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-Bit6Pm_l.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-D_GTv2Fl.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-BGnMugfV.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-Wv38huFO.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-BWW0qfJ_.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-D1kJTgkC.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/css-BevIVULC.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/UploadImg-JDGjl0Z9.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/UploadFile-DV7Fqebe.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/Editor-BBZ-nvxQ.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/DocAlert-C7IZFP1C.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/index-Bn7hFD0M.css",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/_plugin-vue_export-helper-BZ0d7pOQ.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/_baseClone-Bem9ZXBM.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/omit-CqfNzOcz.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/toNumber-Bfrj9Y1C.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/debounce-BE-LOuSx.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/focus-trap-rbwgra2X.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/use-empty-values-C_L2_y9f.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/tooltip-Dipe7HnM.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/click-outside-DDpLAoYL.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/repeat-click-Am7E5zwt.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/use-composition-Bc5dDbQQ.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/typescript-DOc6skV4.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/input-D268BBzZ.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/numbers-DxlMDwH2.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/scrollbar-y3O4aDF8.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/use-deprecated-TzoY5FmE.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/use-global-config-BHjn0HyP.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/message-ORdwRAp1.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/card-DYSX92F5.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/radio-Qg9MHNrF.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/row-Bnr_BX3F.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/col-HeNcwWnP.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/text-CIhvb_8k.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/divider-C-5oZv31.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/empty-DFi7t86k.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/input-number-D6hfg8iI.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/link-BaUBHRE-.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/popconfirm-BWwFfy_U.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/switch-DtzDUHQV.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/tree-select-0nmLUUjw.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/directive-CFjpo_Eq.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/vue-i18n-CffPR080.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/dist-WfZuG9Tu.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    },
+    {
+      "url": "http://127.0.0.1:5221/assets/iconify-DlbPYLYz.js",
+      "error": "net::ERR_CONNECTION_RESET"
+    }
+  ],
+  "canceled": [],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-by-website"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/get-id-by-name"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/system/auth/login"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notice/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/app/page"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/pay/app/create"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pay/app/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/auth/get-permission-info"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/dict-data/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/tenant/simple-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/system/notify-message/get-unread-count"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project-group/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project-group/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/favorite-list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/favorite-list"
+    },
+    {
+      "method": "POST",
+      "path": "/admin-api/pms/pm/project/create"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/page"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project-group/list"
+    },
+    {
+      "method": "GET",
+      "path": "/admin-api/pms/pm/project/favorite-list"
+    }
+  ],
+  "actions": [
+    "pay-app-route",
+    "pay-app-create",
+    "pms-project-route",
+    "pms-project-create"
+  ]
+}

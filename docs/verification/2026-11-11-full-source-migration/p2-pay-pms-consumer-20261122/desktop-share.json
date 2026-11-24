@@ -1,0 +1,15 @@
+{
+  "scope": "isolated PMS public document share at desktop viewport",
+  "viewport": "1440x900",
+  "core_ui_commit": "067f48e",
+  "core_ui_tarball_sha256": "e517810021a1567784935a76ff196356431259aa7f6a2cafd19b07793d7397d2",
+  "templates_ui_commit": "05530e5",
+  "backend_jar_sha256": "15993a3d1986380abc84a9c07e7c0a0e8a0e6f1831e831605d1a99531571e8a5",
+  "production": {"content_visible": true, "browser_errors": 0, "failed_requests": 0},
+  "development": {"content_visible": true, "browser_errors": 0, "failed_requests": 0},
+  "consumer_setup": ["top-level anonymous share route", "Vite optimizeDeps include yuheng-ui > qs"],
+  "liquibase_changesets_first": 107,
+  "liquibase_changesets_restart": 107,
+  "cleanup": "dedicated MySQL and Redis containers and preview port stopped",
+  "limitations": ["third-party development sourcemap warnings", "other Pay/PMS desktop pages not covered", "real payment callbacks not exercised"]
+}

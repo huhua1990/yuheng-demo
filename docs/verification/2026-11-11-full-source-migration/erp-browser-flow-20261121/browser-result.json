@@ -1,0 +1,65 @@
+{
+  "viewports": {},
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "label": "desktop-1440x900",
+      "message": "{0.productId: Array(1), 0.productPrice: Array(1)}"
+    }
+  ],
+  "failedRequests": [],
+  "apiResponses": [
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/purchase-order/page",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/product/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/supplier/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/account/simple-list",
+      "status": 200
+    },
+    {
+      "label": "desktop-1440x900",
+      "method": "GET",
+      "path": "/admin-api/erp/stock/get-count",
+      "status": 200
+    }
+  ],
+  "fixtures": {
+    "categoryId": 1,
+    "unitId": 1,
+    "supplierId": 1,
+    "accountId": 1,
+    "warehouseId": 1,
+    "productId": 1,
+    "marker": 1795266197909
+  },
+  "error": "page.waitForResponse: Timeout 30000ms exceeded while waiting for event \"response\"\n    at submitDialog (/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_browser_smoke_probe.js:68:25)\n    at createAndApprovePurchaseFlow (/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_browser_smoke_probe.js:90:25)\n    at async inspectViewport (/Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_browser_smoke_probe.js:156:7)\n    at async /Users/huhua/study/ai/yuheng/yuheng-demo/scripts/verification/erp_browser_smoke_probe.js:207:7"
+}

@@ -1,0 +1,324 @@
+{
+  "result": "PASS",
+  "work_id": "YH-20261111-full-source-migration",
+  "schema": "yuheng_p2_member_dimensions_20261123_final",
+  "jar_sha256": "963149b3978618f370df9f63fe1db1a2841b7c3b2298d80766086cae27da5c97",
+  "credentials_recorded": false,
+  "ports": [
+    13375,
+    16455,
+    48222
+  ],
+  "events": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/tenant/create",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/member/tag/create",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/member/group/create",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/member/level/create",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/member/tag/create",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/member/group/create",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/member/level/create",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/page",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/page",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/get",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/list-all-simple",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/group/page",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/group/page",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/group/get",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/group/list-all-simple",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/level/list",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/level/list",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/level/get",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/level/list-all-simple",
+      "tenant": 1,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/page",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/page",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/get",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/list-all-simple",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/group/page",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/group/page",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/group/get",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/group/list-all-simple",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/level/list",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/level/list",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/level/get",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/level/list-all-simple",
+      "tenant": 162,
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/list-all-simple",
+      "tenant": 162,
+      "http": 200,
+      "code": 403
+    },
+    {
+      "method": "GET",
+      "path": "/member/tag/list-all-simple",
+      "tenant": 1,
+      "http": 200,
+      "code": 403
+    }
+  ],
+  "changesets": 59,
+  "tenant_ids": [
+    1,
+    162
+  ],
+  "changesets_first": 59,
+  "tenant_2_created_via_core_api": true,
+  "dimension_rows": {
+    "tag:1": "1\tP2 tag 1 14cb\t1\t0",
+    "group:1": "1\tP2 group 1 4c74\t1\t0",
+    "level:1": "1\tP2 level 1 1fec\t1\t0",
+    "tag:162": "2\tP2 tag 162 c0ca\t162\t0",
+    "group:162": "2\tP2 group 162 253f\t162\t0",
+    "level:162": "2\tP2 level 162 79dd\t162\t0"
+  },
+  "tenant_scope_cases": [
+    {
+      "tenant": 1,
+      "module": "tag",
+      "own_list_and_detail_visible": true,
+      "foreign_list_detail_and_simple_list_hidden": true
+    },
+    {
+      "tenant": 1,
+      "module": "group",
+      "own_list_and_detail_visible": true,
+      "foreign_list_detail_and_simple_list_hidden": true
+    },
+    {
+      "tenant": 1,
+      "module": "level",
+      "own_list_and_detail_visible": true,
+      "foreign_list_detail_and_simple_list_hidden": true
+    },
+    {
+      "tenant": 162,
+      "module": "tag",
+      "own_list_and_detail_visible": true,
+      "foreign_list_detail_and_simple_list_hidden": true
+    },
+    {
+      "tenant": 162,
+      "module": "group",
+      "own_list_and_detail_visible": true,
+      "foreign_list_detail_and_simple_list_hidden": true
+    },
+    {
+      "tenant": 162,
+      "module": "level",
+      "own_list_and_detail_visible": true,
+      "foreign_list_detail_and_simple_list_hidden": true
+    }
+  ],
+  "forged_tenant_header_rejected_without_mutation": true,
+  "history_seed_passwords_unchanged": true,
+  "claim": "member_tag, member_group, and member_level are tenant-scoped at runtime under the Core tenant interceptor",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13375": false,
+      "16455": false,
+      "48222": false
+    },
+    "complete": true
+  }
+}

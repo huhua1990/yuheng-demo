@@ -1,0 +1,224 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_p2_member_lifecycle_20261123h",
+  "ports": {
+    "mysql": 13412,
+    "redis": 16493,
+    "app": 48273
+  },
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "credentials_recorded": false,
+  "changesets": 59,
+  "cases": {
+    "config": {
+      "initial_save": true,
+      "update_in_place": true,
+      "single_active_row": true,
+      "sql_consistent": true
+    },
+    "addresses": {
+      "new_default_clears_previous": true,
+      "update_default_clears_previous": true,
+      "get_default_follows_active_row": true,
+      "deleting_default_leaves_no_default": true,
+      "remaining_address_preserved": true,
+      "deleted_address_soft_deleted": true
+    },
+    "level": {
+      "grant_updates_member_and_records": true,
+      "revoke_clears_member_level_and_experience": true,
+      "level_soft_deleted_after_revoke": true
+    },
+    "account": {
+      "profile_update_api_and_sql": true,
+      "phone_update_uses_sms_code": true,
+      "old_mobile_login_rejected": true,
+      "new_mobile_login_accepted": true,
+      "password_update_uses_sms_code": true,
+      "old_password_login_rejected": true,
+      "new_password_login_accepted": true,
+      "original_mobile_snapshot": "991202\t19900001202"
+    },
+    "events": [
+      {
+        "method": "POST",
+        "path": "/system/auth/login",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/member/auth/login",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/member/config/save",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "GET",
+        "path": "/member/config/get",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/member/config/save",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "GET",
+        "path": "/member/config/get",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/member/address/create",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/member/address/create",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "GET",
+        "path": "/member/address/get-default",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/member/address/update",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "GET",
+        "path": "/member/address/get-default",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "DELETE",
+        "path": "/member/address/delete?id=2",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "GET",
+        "path": "/member/address/get-default",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/member/level/create",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/member/user/update-level",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/member/user/update-level",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "DELETE",
+        "path": "/member/level/delete?id=1",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/member/user/update",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "GET",
+        "path": "/member/user/get",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/member/auth/send-sms-code",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/member/user/update-mobile",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/member/auth/login",
+        "status": 200,
+        "code": 1004003000
+      },
+      {
+        "method": "POST",
+        "path": "/member/auth/login",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/member/auth/login",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/member/auth/send-sms-code",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "PUT",
+        "path": "/member/user/update-password",
+        "status": 200,
+        "code": 0
+      },
+      {
+        "method": "POST",
+        "path": "/member/auth/login",
+        "status": 200,
+        "code": 1004003000
+      },
+      {
+        "method": "POST",
+        "path": "/member/auth/login",
+        "status": 200,
+        "code": 0
+      }
+    ]
+  },
+  "seed_passwords_unchanged": true,
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13412": false,
+      "16493": false,
+      "48273": false
+    },
+    "passed": true
+  },
+  "completed": true
+}

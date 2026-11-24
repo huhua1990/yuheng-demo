@@ -1,0 +1,25 @@
+{
+  "work_id": "YH-20261111-full-source-migration",
+  "result": "PASS",
+  "template_repository": "yuheng-business-templates",
+  "template_commit": "c3049cd3f524b646639681f69478ddc311f880e9",
+  "consumer_repository": "disposable ERP consumer",
+  "consumer_commit": "generated isolated fixture",
+  "module": "erp",
+  "mapping": "docs/template-update-mapping.example.json",
+  "mapped_source_files": 309,
+  "formal_demo_touched": false,
+  "consumer_rebuilt": false,
+  "checks": {
+    "baseline_recorded": true,
+    "initial_preview_reports_unchanged_sources": true,
+    "preview_does_not_modify_consumer": true,
+    "template_only_change_classified": true,
+    "template_only_change_selectively_applied": true,
+    "consumer_only_file_preserved": true,
+    "file_outside_mapping_preserved": true,
+    "two_sided_change_classified_as_conflict": true,
+    "conflicting_apply_blocked_without_mutation": true
+  },
+  "scope": "Tool contract only; no production Demo files or database were changed."
+}

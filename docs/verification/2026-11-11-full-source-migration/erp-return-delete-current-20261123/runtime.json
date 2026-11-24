@@ -1,0 +1,584 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_return_delete_20261123_current",
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "jar_static_resource_count": 612,
+  "jar_dist_byte_match": true,
+  "viewport": "desktop-1440x900",
+  "credentials_recorded": false,
+  "ports": {
+    "mysql": 13437,
+    "redis": 16492,
+    "app": 48279
+  },
+  "browser_flows": {
+    "purchase": {
+      "stdout": "",
+      "stderr": "",
+      "browser": {
+        "viewport": "desktop-1440x900",
+        "actions": [
+          "purchase-order-create",
+          "purchase-order-approve",
+          "purchase-in-create-from-order",
+          "purchase-in-approve",
+          "purchase-return-create-from-order",
+          "purchase-return-approve"
+        ],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "apiResponses": [
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/purchase-order/page",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/supplier/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/supplier/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/account/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/stock/get-count",
+            "status": 200
+          },
+          {
+            "method": "POST",
+            "path": "/admin-api/erp/purchase-order/create",
+            "status": 200,
+            "body": 1
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/purchase-order/page",
+            "status": 200
+          },
+          {
+            "method": "PUT",
+            "path": "/admin-api/erp/purchase-order/update-status",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/purchase-in/page",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/supplier/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/warehouse/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/supplier/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/account/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/warehouse/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/account/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/purchase-order/page",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/stock/get",
+            "status": 200
+          },
+          {
+            "method": "POST",
+            "path": "/admin-api/erp/purchase-in/create",
+            "status": 200,
+            "body": 1
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/purchase-in/page",
+            "status": 200
+          },
+          {
+            "method": "PUT",
+            "path": "/admin-api/erp/purchase-in/update-status",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/purchase-return/page",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/warehouse/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/supplier/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/supplier/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/warehouse/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/account/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/account/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/purchase-order/page",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/stock/get",
+            "status": 200
+          },
+          {
+            "method": "POST",
+            "path": "/admin-api/erp/purchase-return/create",
+            "status": 200,
+            "body": 1
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/purchase-return/page",
+            "status": 200
+          },
+          {
+            "method": "PUT",
+            "path": "/admin-api/erp/purchase-return/update-status",
+            "status": 200
+          }
+        ],
+        "orderId": 1,
+        "inId": 1,
+        "returnId": 1,
+        "finalUrl": "http://127.0.0.1:48279/erp/purchase/return",
+        "result": "PASS"
+      }
+    },
+    "sale": {
+      "stdout": "",
+      "stderr": "",
+      "browser": {
+        "viewport": "desktop-1440x900",
+        "actions": [
+          "sales-order-create",
+          "sales-order-approve",
+          "sales-out-create-from-order",
+          "sales-out-approve",
+          "sales-return-create-from-order",
+          "sales-return-approve"
+        ],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "apiResponses": [
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/sale-order/page",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/customer/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/customer/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/account/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/stock/get-count",
+            "status": 200
+          },
+          {
+            "method": "POST",
+            "path": "/admin-api/erp/sale-order/create",
+            "status": 200,
+            "body": 1
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/sale-order/page",
+            "status": 200
+          },
+          {
+            "method": "PUT",
+            "path": "/admin-api/erp/sale-order/update-status",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/sale-out/page",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/customer/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/customer/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/warehouse/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/warehouse/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/account/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/account/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/sale-order/page",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/stock/get",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/stock/get",
+            "status": 200
+          },
+          {
+            "method": "POST",
+            "path": "/admin-api/erp/sale-out/create",
+            "status": 200,
+            "body": 1
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/sale-out/page",
+            "status": 200
+          },
+          {
+            "method": "PUT",
+            "path": "/admin-api/erp/sale-out/update-status",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/sale-return/page",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/customer/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/customer/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/warehouse/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/warehouse/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/account/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/account/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/product/simple-list",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/sale-order/page",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/stock/get",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/stock/get",
+            "status": 200
+          },
+          {
+            "method": "POST",
+            "path": "/admin-api/erp/sale-return/create",
+            "status": 200
+          },
+          {
+            "method": "GET",
+            "path": "/admin-api/erp/sale-return/page",
+            "status": 200
+          },
+          {
+            "method": "PUT",
+            "path": "/admin-api/erp/sale-return/update-status",
+            "status": 200
+          }
+        ],
+        "orderId": 1,
+        "outId": 1,
+        "returnId": 1,
+        "finalUrl": "http://127.0.0.1:48279/erp/sale/return",
+        "result": "PASS"
+      }
+    }
+  },
+  "return_lifecycle": {
+    "purchase": {
+      "approved_delete_rejected_without_mutation": true,
+      "reverse_approval_and_draft_delete_restored_source_and_stock": true,
+      "before": {
+        "header": "20\t0\t0.000000",
+        "items": "1\t0",
+        "order": "2.000000",
+        "stock": "18.000000",
+        "records": "7"
+      },
+      "rejected_delete_after": {
+        "header": "20\t0\t0.000000",
+        "items": "1\t0",
+        "order": "2.000000",
+        "stock": "18.000000",
+        "records": "7"
+      },
+      "after_delete": {
+        "header": "10\t1\t0.000000",
+        "items": "1\t1",
+        "order": "0.000000",
+        "stock": "20.000000",
+        "records": "8"
+      },
+      "api_events": [
+        {
+          "method": "POST",
+          "path": "/system/auth/login",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "DELETE",
+          "path": "/erp/purchase-return/delete?ids=1",
+          "http": 200,
+          "code": 1030103001
+        },
+        {
+          "method": "PUT",
+          "path": "/erp/purchase-return/update-status?id=1&status=10",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "DELETE",
+          "path": "/erp/purchase-return/delete?ids=1",
+          "http": 200,
+          "code": 0
+        }
+      ]
+    },
+    "sale": {
+      "approved_delete_rejected_without_mutation": true,
+      "reverse_approval_and_draft_delete_restored_source_and_stock": true,
+      "before": {
+        "header": "20\t0\t0.000000",
+        "items": "1\t0",
+        "order": "3.000000",
+        "stock": "10.000000",
+        "records": "8"
+      },
+      "rejected_delete_after": {
+        "header": "20\t0\t0.000000",
+        "items": "1\t0",
+        "order": "3.000000",
+        "stock": "10.000000",
+        "records": "8"
+      },
+      "after_delete": {
+        "header": "10\t1\t0.000000",
+        "items": "1\t1",
+        "order": "0.000000",
+        "stock": "7.000000",
+        "records": "9"
+      },
+      "api_events": [
+        {
+          "method": "POST",
+          "path": "/system/auth/login",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "DELETE",
+          "path": "/erp/sale-return/delete?ids=1",
+          "http": 200,
+          "code": 1020203001
+        },
+        {
+          "method": "PUT",
+          "path": "/erp/sale-return/update-status?id=1&status=10",
+          "http": 200,
+          "code": 0
+        },
+        {
+          "method": "DELETE",
+          "path": "/erp/sale-return/delete?ids=1",
+          "http": 200,
+          "code": 0
+        }
+      ]
+    }
+  },
+  "sql": {
+    "purchase_return": "10\t\u0001\t1\t2.000000",
+    "sale_return": "10\t\u0001\t1\t3.000000",
+    "purchase_order_return_count": "0.000000",
+    "sale_order_return_count": "0.000000",
+    "purchase_stock": "20.000000",
+    "sale_stock": "7.000000",
+    "changesets": 59,
+    "seed_passwords_unchanged": true
+  },
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13437": false,
+      "16492": false,
+      "48279": false
+    },
+    "passed": true
+  }
+}

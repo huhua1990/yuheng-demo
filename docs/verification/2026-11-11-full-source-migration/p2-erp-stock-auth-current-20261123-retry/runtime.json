@@ -1,0 +1,124 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_erp_stock_auth_20261123_retry",
+  "ports": {
+    "mysql": 13447,
+    "redis": 16527,
+    "app": 48327
+  },
+  "jar_sha256": "4e1f11283c811a908d2b534c518524a843a354ac28a968223eb73e1da15bb6b1",
+  "credentials_recorded": false,
+  "changesets": 59,
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/erp/stock/get?id=991210",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 174,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 239,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/export-excel?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "",
+      "bytes": 3813
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/get?id=991211",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 333,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/page?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 408,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock-record/export-excel?pageNo=1&pageSize=20",
+      "http": 200,
+      "content_type": "",
+      "bytes": 4091
+    },
+    {
+      "method": "GET",
+      "path": "/erp/stock/get-count?productId=991201",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 36,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-statistics/summary",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 122,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-statistics/summary",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 125,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/purchase-statistics/time-summary?count=1",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 65,
+      "code": 0
+    },
+    {
+      "method": "GET",
+      "path": "/erp/sale-statistics/time-summary?count=1",
+      "http": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 66,
+      "code": 0
+    }
+  ],
+  "limited_role_permissions": [
+    "erp:stock:query",
+    "erp:stock:export",
+    "erp:stock-record:query",
+    "erp:stock-record:export",
+    "erp:statistics:query"
+  ],
+  "assertions": {
+    "stock_detail_page_export": true,
+    "stock_record_detail_page_export": true,
+    "authenticated_stock_count": true,
+    "purchase_today_and_month_summary": true,
+    "sale_today_and_month_summary": true
+  },
+  "verified_at": "2026-11-23T06:53:01",
+  "cleanup": {
+    "containers_absent": true,
+    "ports_listening": {
+      "13447": false,
+      "16527": false,
+      "48327": false
+    },
+    "passed": true
+  }
+}

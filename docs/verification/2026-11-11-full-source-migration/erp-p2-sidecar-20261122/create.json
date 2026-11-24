@@ -1,0 +1,73 @@
+{
+  "result": "PASS",
+  "schema": "yuheng_t4_item_owner_20261122",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-order/create",
+      "http": 200,
+      "code": 1030101011
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-in/create",
+      "http": 200,
+      "code": 1030102009
+    },
+    {
+      "method": "POST",
+      "path": "/erp/purchase-return/create",
+      "http": 200,
+      "code": 1030103009
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-order/create",
+      "http": 200,
+      "code": 1020201011
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-out/create",
+      "http": 200,
+      "code": 1020202009
+    },
+    {
+      "method": "POST",
+      "path": "/erp/sale-return/create",
+      "http": 200,
+      "code": 1020203009
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-in/create",
+      "http": 200,
+      "code": 1030401099
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-out/create",
+      "http": 200,
+      "code": 1030402099
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-check/create",
+      "http": 200,
+      "code": 1030410000
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-move/create",
+      "http": 200,
+      "code": 1030410001
+    }
+  ],
+  "scope": "create-time client item IDs rejected for ten ERP document endpoints; full business row snapshots unchanged"
+}

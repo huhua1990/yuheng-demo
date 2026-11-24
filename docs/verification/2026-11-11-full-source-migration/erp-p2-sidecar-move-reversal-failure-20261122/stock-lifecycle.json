@@ -1,0 +1,121 @@
+{
+  "result": "FAIL",
+  "schema": "yuheng_t4_stock_lifecycle_20261122",
+  "error": "([('1', '8.000000'), ('2', '0.000000')], [('1', '8.000000')])",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/system/auth/login",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-category/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product-unit/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/supplier/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/customer/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/warehouse/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/product/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-in/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update-status?id=1&status=10",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-in/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-out/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update-status?id=1&status=10",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-out/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "POST",
+      "path": "/erp/stock-move/create",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update-status?id=1&status=20",
+      "http": 200,
+      "code": 0
+    },
+    {
+      "method": "PUT",
+      "path": "/erp/stock-move/update-status?id=1&status=10",
+      "http": 200,
+      "code": 0
+    }
+  ]
+}

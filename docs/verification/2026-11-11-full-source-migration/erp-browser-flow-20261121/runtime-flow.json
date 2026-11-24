@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "jar_sha256": "9596b4d8fc524b825a7537dc1d51817372b288a0369e88833aa9b9f123dec72b",
+  "changesets": 59,
+  "schema": "yuheng_t4_erp_browser_flow_20261121k",
+  "backend_port": 48203,
+  "ui_port": 5215,
+  "redis_port": 16503,
+  "browser_flow": {
+    "orderId": 1,
+    "orderApproved": true,
+    "inId": 1,
+    "inApproved": true
+  },
+  "sql": [
+    "stock=1.000000",
+    "po=20",
+    "in=20",
+    "records=1"
+  ],
+  "page_errors": 0,
+  "console_errors": 0,
+  "failed_requests": 0,
+  "browser_result": "browser-flow-result.json"
+}
