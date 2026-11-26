@@ -1,5 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: db/changelog/business/member/001-member-schema.sql
-  - include:
-      file: db/changelog/business/member/002-member-mobile-uniqueness.sql

@@ -45,7 +45,7 @@ metadata:
    ./scripts/build.sh
    ```
 
-   记录 Maven/npm 解析的实际版本、构建输出和失败信息。当前 Demo 没有独立 pnpm lockfile；不得把冻结安装成功或依赖解析完全可复现作为既成事实。检查项目已有测试入口，按升级影响运行必要测试。
+   记录 Maven/npm 解析的实际版本、构建输出和失败信息。当前 Demo 使用独立的 `yuheng-demo-ui/pnpm-lock.yaml` 并以 `--frozen-lockfile` 安装；升级 `yuheng-ui` 版本后需使用 `CI=true pnpm --dir yuheng-demo-ui --ignore-workspace install --no-frozen-lockfile --ignore-scripts` 刷新锁文件再执行构建。检查项目已有测试入口，按升级影响运行必要测试。
 
 6. 检查 core 发布是否包含数据库 changeset 变化。变更由版本化 `yuheng-server` 提供，应用启动时会按消费端 master changelog 加载；启动前先核对 `YUHENG_DB_*` 指向的目标数据库、备份/恢复方案和授权。升级 Skill 不代替数据库迁移审批或已有库接续评估。
 

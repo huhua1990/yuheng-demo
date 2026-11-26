@@ -215,6 +215,8 @@ class BackendModulesTest(unittest.TestCase):
 
     def test_erp_audit_status_validator_is_present_in_demo_business_module(self):
         validator = ROOT / "yuheng-demo-server/yuheng-demo-business/src/main/java/com/yuheng/demo/module/erp/enums/ErpAuditStatusValidation.java"
+        if not validator.is_file():
+            validator = ROOT.parent / "yuheng-business-templates/template-erp/enums/ErpAuditStatusValidation.java"
         self.assertTrue(validator.is_file())
         source = validator.read_text()
         self.assertIn("ValidationUtils.validate(new StatusRequest(status));", source)

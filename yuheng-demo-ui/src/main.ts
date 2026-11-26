@@ -12,7 +12,7 @@ import DocAlert from 'yuheng-ui/compat/components/DocAlert/index.vue'
 import { DictTag } from 'yuheng-ui/compat/components/DictTag'
 import 'virtual:uno.css'
 import App from './App.vue'
-import { businessRoutes, businessViewComponents } from './router/business'
+import { businessRoutes, businessViewComponents, publicBusinessRoutes } from './router/business'
 import 'yuheng-ui/styles.css'
 
 addCollection(epIcons)
@@ -43,6 +43,7 @@ const runtime = installYuhengUi(app, {
   }
 })
 runtime.registerRoutes(router)
+publicBusinessRoutes.forEach((route) => router.addRoute(route))
 businessRoutes.forEach((route) => router.addRoute('Home', route))
 await setupCompletePlatform(app, runtime.context, router, { ...platformViewComponents, ...businessViewComponents })
 if (!app.component('DocAlert')) app.component('DocAlert', DocAlert)

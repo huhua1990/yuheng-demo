@@ -18,11 +18,14 @@ metadata:
 
 ## 实施
 
-- 按消费端结构复制选定源码，调整业务包名和导入，保留 `com.yuheng.platform`；接入现有构建、组件、路由、请求实例和运行配置。检查版本化 core 的真实导出及依赖，避免引用 core 工作区源码或假定模板可以独立构建。
+- 按消费端结构复制选定源码，调整业务包名和导入，保留 `com.yuheng.platform`；接入现有构建、组件、路由、请求实例和运行配置。对于 Core 的动态菜单组件解析器，必须把所选模板页面目录纳入消费端实际使用的组件注册表（例如 `businessViewComponents` 中按需 `import.meta.glob('../views/<module>/**/*.{vue,tsx}')`），并确认模板菜单中的 `component` 字符串能解析到页面组件；只复制页面而不注册目录会导致菜单访问落到缺省页。具有显式业务路由的页面还要单独注册顶层/业务路由，并验证刷新和匿名访问行为。检查版本化 core 的真实导出及依赖，避免引用 core 工作区源码或假定模板可以独立构建。
+- 公开分享等匿名页面必须注册为不带受保护布局的顶层路由，不能挂在 `Home` 或其他会加载登录态组件的布局下；在采用 Vue Router 的消费端可用 `router.addRoute(route)` 注册公开路由，受保护业务页面才使用 `router.addRoute('Home', route)`。`meta.public` 本身不会改变路由父布局；还需核实实际路由守卫允许该地址，并在全新匿名浏览器上下文中验证直接打开和刷新均不请求受保护接口。
+- 使用 Vite 开发模式消费 Core compat 源码时，检查自动导入插件产生的公开子路径是否又被单独预构建。`setupCompletePlatform` 与页面必须使用同一份语言、请求和运行时状态；将自动导入的 `yuheng-ui/compat/hooks/web/useI18n`、`useMessage`、`useTable`、`useCrudSchemas` 及 `yuheng-ui/compat/utils/formRules`、`dict` 子路径加入 `optimizeDeps.exclude`，与 `yuheng-ui` 一起排除；CommonJS 依赖 `qs` 则通过 `optimizeDeps.include: ['yuheng-ui > qs']` 转换。配置变更后强制重启预构建，实际验证登录中文文案、动态菜单和业务请求；不能把出现 `login.*` 文案键的问题仅通过放宽浏览器定位器绕过。生产构建与开发模式分别验证。
+- 当消费端直接引用 Core compat 入口时，确认其解析到版本化 `yuheng-ui` 包的真实 compat 源码和随包声明，不依赖 Core 仓库相对路径或消费端宽松声明掩盖问题。消费端运行时直接导入的依赖必须在消费端 manifest 中声明为直接依赖；通过严格类型检查验证集成，避免用宽泛 `any` shim 绕过缺失或冲突类型。保留并记录确有必要的接入 shim，逐项证明其边界；不能据局部入口类型检查通过推断整棵旧版 compat 路由或初始化源码无错误。
 - 盘点并复制模块运行资源，包括 MyBatis XML、预置 JSON 和流程定义；同步调整 XML 的 namespace、resultType、OGNL 等业务类名，检查消费端 classpath 和 Mapper 扫描配置。流程文件与预置数据只在其业务流程明确要求时导入，不能把文件存在当作已部署或已验证。
 - 将模板已交付的模块迁移随源码复制到消费端，依据原始表结构、实际代码和数据库现状审查业务表、索引、约束和数据，遵守消费端数据库迁移规则并注册统一 Liquibase 入口。模板缺失迁移时记为交付缺口；补齐并验证后再接入。已执行的 changeset 不得改写；未经明确授权不得清理或覆盖现有数据。缺少可信的结构来源时保留未完成状态，不猜测 DDL。
-- 对 mapping 声明的 `consumerIntegration.liquibase` 执行消费端接线：把其 `include` 路径注册到 `file` 指向的统一 Liquibase changelog，并在隔离冷装中确认该模块预期 changeset 确实出现；仅复制迁移目录不算完成。
 - 接入所选菜单、权限、字典和租户配置，检查冲突及数据归属；不因历史菜单存在就认定对应模块、表和权限已可用。
+- 检查消费端是否为未启用模块注册了 catch-all/disabled fallback Controller。模板 mapping 必须声明启用模块需要解除的精确兜底路由、文件和 handler；只移除所选模块对应的兜底映射，保留所有未选择模块的兜底。验证真实模块 Controller 已被 Spring 注册并能处理代表 API，不能仅凭源码复制、编译或 Liquibase 成功认定模块已接通。
 
 ## 验证与交付
 
@@ -43,17 +46,20 @@ metadata:
 
 ### 可复用更新工具
 
-业务模板仓库提供 `tools/template_update.py`。它是消费端的显式更新工具，不是运行时依赖，也不会重建、清空或删除消费工程。消费端为每个模块提供映射 JSON，将模板相对路径映射到自己的源码、资源和 Liquibase 目录，并按需要声明包名替换。
+业务模板仓库提供 `tools/template_update.py`。它是消费端的显式更新工具，不是运行时依赖，也不会重建、清空或删除消费工程。消费端为每个模块提供映射 JSON，将模板相对路径映射到自己的源码、资源和 Liquibase 目录，并按需要声明包名替换。映射可以声明 `consumerDependencies`；工具预览时会原样输出依赖清单和版本来源。使用者选择模板后，应逐项检查并按需把依赖加入承载模板代码的消费端模块，确认其版本能由当前 Core BOM 或消费端既有版本目录解析，再运行构建。此步骤只调整已选择模块所需的消费端构建接线，不会自动改 POM，也不为未选择的模块引入依赖。
 
-首次接入或确认一个模板版本后，先记录基线：
+首次接入或确认一个模板版本后，可执行应用并记录基线（注意：单独使用 `--record-state` 仅记录现状基线而不会写入模板文件；首次初始化需配合 `--apply` 或先 `--apply` 再 `--record-state`）：
 
 ```bash
 python3 tools/template_update.py \
   --template-root /path/to/yuheng-business-templates \
   --consumer-root /path/to/yuheng-demo \
   --mapping /path/to/erp-mapping.json \
+  --apply \
   --record-state /path/to/erp-template-state.json
 ```
+
+若新增模板的 `consumerDependencies.npm` 修改了消费端 `package.json`，且消费端使用独立 `pnpm-lock.yaml` 并位于父级 workspace 目录内，需使用 `CI=true pnpm --dir <ui-dir> --ignore-workspace install --no-frozen-lockfile --ignore-scripts` 刷新锁文件，避免触发交互式提示或与根 workspace 冲突。
 
 模板仓库有变更且使用者明确要求更新时，先只读预览：
 
