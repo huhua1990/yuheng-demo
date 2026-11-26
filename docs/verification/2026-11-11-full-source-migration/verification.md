@@ -2157,6 +2157,12 @@ HRM mapping 已声明 Core compat 子路径、直接 npm 依赖、统一 Liquiba
 
 本轮 HRM 主体 API/SQL/桌面范围通过，但类型门禁未闭合；P2-C 主体仍有 **6 个模板未闭合**：AI、IoT、MES、FMS、IM、OA；HRM 主体已通过但严格类型门禁未闭合。FMS 账套 CRUD 与迁移部分通过，但初始化缺权威标准科目数据，继续阻塞 P2；IM 已通过隔离 Vite/Maven 消费构建，但其类型检查、Liquibase、API/SQL 和桌面业务闭环仍待验证；OA、AI、IoT、MES 的主体清洁消费构建和业务闭环仍待验证。外部模型、真实硬件/时序库及复杂跨域流程维持 P3，主体关系型表、页面、API、Liquibase 和消费构建继续留在 P2。
 
+### 2026-11-24 P2 OA 桌面公告消费闭环补充
+
+**状态：桌面代表流程和 UI/API/SQL 子项通过；OA 整体仍留 P2。** 在 `/tmp/yuheng-oa-p2-current-20261124` 隔离消费者使用其专用 MySQL/Redis、既有一次性 schema 和 mock 登录模式。未连接共享服务、未修改正式 Demo 或 Core 包。消费端 Vite 诊断配置让 AutoImport/Components 处理 pnpm 路径上的 Core compat Vue 源码，并把登录与 Element Plus 使用的 CommonJS compat 依赖/Day.js 插件纳入预构建；浏览器逐步复现并清除了 `crypto-js`、Day.js 插件和 `qrcode` 缺少 default export 的致命导入错误。登录页 tenant 初始化、权限、字典、OA 公告页/详情/CRUD API 均返回 HTTP 200。1440x1000 桌面公告页显示 OA 菜单和有权限控制的新增、编辑、删除操作，两个验收公告经页面创建、编辑和删除；SQL 回读为两条 `deleted=1`、有效记录 0，浏览器 JS 错误 0。截图位于 `yuheng-business-templates/docs/verification/2026-11-24-oa-p2-consumer/desktop-announcement.png`。
+
+Vite 配置只存在于 disposable consumer，未合入 Demo；这项验证不能抹掉全量 `vue-tsc` 被已发布 Core compat 类型错误阻塞的结论。原 159 changeset / 48 表冷装与重启证据维持在前文，另一次 BPM+OA clean consumer 冷装记录 117 总 changeset（8 BPM、50 OA、59 Core）；两种注册基线分开记载。精确名称的 OA MySQL/Redis 容器、48081 后端、Vite 诊断进程和四项临时凭据均已清理，4183-4190、48081、14773、16773 端口复核无监听。
+
 ### 2026-11-24 P2 IM 消费构建预检
 
 **状态：部分通过，IM 仍未达到 P2 主体验收。** 在已有隔离消费者 `/tmp/yuheng-im-p2-consumer-build` 中只验证消费构建，不修改正式 Demo。Maven 首次失败暴露 IM mapping 漏声明直接依赖 `com.github.houbb:sensitive-word`；将版本来源指向 Core `yuheng-dependencies` BOM，并仅在临时消费者 business POM 加入对应依赖后，`mvn -f pom.xml -pl yuheng-demo-server/yuheng-demo-business -am clean test` 编译 680 个源码成功。该 Maven artifact 首次尝试离线时未缓存，在线从配置的 Maven 镜像解析后通过。模板 mapping 契约已增加此依赖断言。
@@ -2176,3 +2182,17 @@ OA Liquibase 既有表保护在一次性 schema `yuheng_p2_oa_conflict_20261124`
 随后在干净 schema `yuheng_p2_oa_cold_20261124` 使用同一 JAR 首次冷装和重启复验均成功：总计 159 changesets、OA 50 个、48 张 OA 表、794 列、56 个非主键索引；OA 业务表行数为 0。两次启动都正常，数据库快照一致。应用停止后精确清理本轮两个 schema、两个一次性 DB 用户、专用 Redis，以及 51783/51784/51785/51786 端口资源。隔离 MySQL 工具容器和既有 `yuheng_p2_oa_20261124` schema 保留，未修改。
 
 仍未完成 OA HTTP/SQL 主流程和桌面浏览器闭环。隔离消费者 Vite 全量构建被 BPM 流程/表单设计器与私有资源缺口阻断；bootstrap Maven 打包正常入口被 Core 强制的固定 registry 坐标检查阻断（本地 `file:` tarball 不接受），本轮为隔离数据库验证使用 `-Dexec.skip=true` 打包。真实邮箱服务和外部发送可按计划列入 P3；OA 基础 API 和至少一条关系型桌面流程继续属于 P2。
+
+### 2026-11-24 P2 IM 主体消费闭环
+
+**状态：限定主体闭环通过，使用本地重打包 Core，P2 总目标继续开放。** 在新建的 `/tmp/yuheng-im-p2-20261124` 按 Skill 预览并初始化 IM，最终 450 个映射文件与模板一致。保留全部消费者页面，移除宽泛 compat shim 后完整严格 `vue-tsc` 为 0 诊断；4 文件/20 项 UI 测试、3877 模块 Vite 构建与平台导入检查通过；Maven 离线打包通过，40 项测试无失败。Core 公共文件上传回调从宽泛 Function 改为实际请求回调类型，IM 媒体上传 helper 同步从公开 API 推导类型；分别保留 TS2322 和两处 TS2345 红灯，以及修复后的绿灯证据。Core 38 文件/141 项测试与归档源码一致性通过；本地 UI tarball SHA-256 `98233183a721ddf1eed174488df5a295faf507d0eb7c59bc220c1a10c5056150` 未发布到 registry。
+
+固定消费者 JAR SHA-256 `934692cf8c756aeafbdcab54acaf74c6a600f5e7720acbafc16e1493e0e76a56` 在 MySQL 8.0.33 一次性 schema 冷装和重启均为 77 个 changeset，其中 IM 18 个；17 张 IM 表初始为空，249 列与实际索引清单已留存。权限和账号夹具经平台支持 API 创建，重启后关闭 mock、使用真实账号登录。29 个 HTTP 调用覆盖好友申请/接收者同意/双向 SQL 关系、私聊发送幂等/拉取/已读/撤回、群组/成员/消息/更新/解散及 SQL；匿名、代表性管理权限和无关用户操作被拒，拒绝后数据不变。
+
+1440×1000 Google Chrome 桌面从真实菜单进入敏感词页面，完成新增、编辑、删除和直接路由刷新。最终 10 个 IM API 响应均 HTTP 200/业务码 0，页面异常、控制台错误及失败请求均为 0；SQL 确认两条探针记录最终 `deleted=1`。原 Python 静态夹具服务器出现连接重置后，使用同一构建产物的 Vite preview 完成最终验收；定位和详情加载竞态等早期探针失败单独保留。种子用户密码快照不变，专用 schema、Redis、后端与两个 UI 端口均清理。正式 Demo 未加入 IM 模板；其已提交基线的悬空 CRM changelog 引用只在隔离副本中移除。完整证据在 Templates `docs/verification/2026-11-24-im-p2-consumer/verification.md`。
+
+本轮不覆盖 LiveKit、WebSocket 实际消息通道、外部推送、全量权限/租户和并发；迁移完整来源、索引及初始化审查继续开放，IM migration matrix 保持 `generated-pending-verification`。
+
+### 2026-11-24 P2 OA 严格消费补验
+
+在原 OA 隔离消费者的独立副本 `/tmp/yuheng-oa-strict-20261124/yuheng-demo-ui`，保留全部 OA、BPM 和其他页面，移除宽泛 compat shim、额外类型 paths 和页面排除，使用真实包声明和本地 Core UI 归档 SHA-256 `98233183a721ddf1eed174488df5a295faf507d0eb7c59bc220c1a10c5056150`。完整 strict `vue-tsc` 0 诊断、4 文件/20 项 UI 测试通过，Vite 构建转换 4095 模块通过。既有 Member `getStrDictOptions` 修正仅应用于该隔离副本；归档未发布 registry。日志及命令退出码见 Templates `docs/verification/2026-11-24-oa-p2-consumer/`。这补齐 OA 的本地包严格类型证据，不改变先前 117 与独立 159 changeset 运行的基线，也不关闭生产迁移来源、约束及初始化审查。

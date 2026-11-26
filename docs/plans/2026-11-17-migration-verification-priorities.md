@@ -6,6 +6,25 @@
 **版本:** code `0.1.0-SNAPSHOT`、governance `0.2.0`、knowledge `0.1.0`。  
 **状态口径:** 已完成是限定场景已有证据；进行中是已有实现或部分证据但未达到验收；待验证包含已有计划但尚无充分证据。历史证据需标明版本与环境，不能替代当前提交的复验。
 
+## 2026-11-24 当前执行增量
+
+本节覆盖下文较早快照的进度描述，保留原始拆批范围和历史记录。继续按用户明确的 BPM → OA → HRM 严格类型 → IM → AI/IoT/MES/FMS 顺序推进。
+
+- BPM 基础消费闭环通过，证据在 Templates `docs/verification/2026-11-24-bpm-p2-consumer/`；复杂建模、表单和打印编辑器仍为 P3，迁移来源授权及约束审查不据此关闭。
+- OA 已补齐 117 changeset 消费者的公告 UI/API/SQL 代表闭环；独立 159 changeset / 48 表冷装重启证据保留。后续消费者副本在本地 Core 归档 `98233183…` 下通过完整 strict 类型（0 诊断）、20 项 UI 测试和 4095 模块构建，无宽泛 shim 或页面排除；该包未发布 registry。不能将历史冷装独立外推为同制品全业务验收。
+- HRM 主体不重复扩测；严格类型已在本地 Core 归档 `18d3cbb2…` 的隔离消费者通过，0 诊断。未发布或替换 registry 包，证据在 Templates `docs/verification/2026-11-24-hrm-p2-strict-consumer/`。
+- IM 主体限定消费闭环通过：Skill 新建消费者、450 文件映射一致、严格类型 0 诊断、20 项 UI 测试、Vite 构建、40 项后端测试/打包、77 changeset 冷装/重启（IM 18）、17 张初始空表/249 列、好友/私聊/群组 API/SQL 及敏感词桌面 CRUD/刷新。Core/IM 上传进度回调类型经红绿验证修复；本地 Core 归档 `98233183…` 未发布。证据在 Templates `docs/verification/2026-11-24-im-p2-consumer/`。真实消息通道和推送仍为 P3。
+- AI、IoT、MES 的主体消费批次继续开放；FMS 账套初始化仍缺权威完整科目树，不以临时数据代替。模板迁移的 `generated-pending-verification` 标记不等于上述限定消费工作未执行，也不因限定消费通过自动升级为已交付。
+
+## 2026-11-25 剩余 P2 消费批次更新
+
+本节更新上一节 AI/IoT/MES 继续开放的历史描述，保留原始拆批范围。
+
+- AI、IoT、MES 的基础消费闭环已有本批次验收记录，分别位于 Templates `docs/verification/2026-11-25-{ai,iot,mes}-p2-consumer/verification.md`。AI 的原始日志已补齐同 schema 的 90/0 冷装重启证据；MES 最终 strict 归档边界及同 JAR 证据单独记录。不重复扩测已通过的 BPM、OA、HRM 门禁与 IM。
+- FMS 新干净消费者已通过 376 文件映射核对、实际本地 Core 归档的消费构建、40 项已有后端测试、最终 JAR 的空库冷装及同 schema 重启（95 总 changeset / 36 FMS，30 表 / 494 列）。基础账套 API/SQL 与桌面列表、编辑已有证据；完整初始化仍因缺少 `560107` 失败，整组 FMS 行数据回滚已核验。
+- FMS 官方 `fms.sql.zip` 分发入口已定位到知识星球主题 `55522821552524824`，当前会话需登录；附件内容、版本匹配和模板使用授权尚未取得。财政部官方 66 个编号科目仍不能替代本产品完整明细树。未取得并验证完整权威数据之前，FMS 与整体剩余 P2 目标保持未完成。
+- 本地 Core archive 均未发布 registry；矩阵 `generated-pending-verification` 不因基础消费通过而升级。统一目标见 Templates `docs/plans/2026-11-25-remaining-p2-goal.md`，FMS 来源及运行证据见 `docs/verification/2026-11-25-fms-subject-source-audit.md` 与 `docs/verification/2026-11-25-fms-p2-consumer/verification.md`。
+
 ## P2/P3 范围拆分（2026-11-23）
 
 **2026-11-24 P2/P3 收敛决定：** P2 验收主体交付：模板可被 Skill 选择性初始化到干净消费者；Core 版本和直接依赖明确；前后端基础页面、主体 API/逻辑可构建；DO/Mapper/继承字段与 SQL 表/索引覆盖一致；Liquibase 可冷装、重跑且保护已有表；初始化数据边界清晰；至少一条桌面代表流程在 API/SQL 上闭合。任一主体门槛未通过，模板仍留在 P2 待验收。
