@@ -2196,3 +2196,9 @@ OA Liquibase 既有表保护在一次性 schema `yuheng_p2_oa_conflict_20261124`
 ### 2026-11-24 P2 OA 严格消费补验
 
 在原 OA 隔离消费者的独立副本 `/tmp/yuheng-oa-strict-20261124/yuheng-demo-ui`，保留全部 OA、BPM 和其他页面，移除宽泛 compat shim、额外类型 paths 和页面排除，使用真实包声明和本地 Core UI 归档 SHA-256 `98233183a721ddf1eed174488df5a295faf507d0eb7c59bc220c1a10c5056150`。完整 strict `vue-tsc` 0 诊断、4 文件/20 项 UI 测试通过，Vite 构建转换 4095 模块通过。既有 Member `getStrDictOptions` 修正仅应用于该隔离副本；归档未发布 registry。日志及命令退出码见 Templates `docs/verification/2026-11-24-oa-p2-consumer/`。这补齐 OA 的本地包严格类型证据，不改变先前 117 与独立 159 changeset 运行的基线，也不关闭生产迁移来源、约束及初始化审查。
+
+### 2026-11-26 P2 消费验收阶段收尾记录
+
+- **AI、IoT、MES 与 FMS 干净消费者证据汇总：** AI、IoT、MES 已在各自 Skill 初始化的干净隔离消费者完成限定范围 P2 消费闭环，证据分别位于 `yuheng-business-templates/docs/verification/2026-11-25-{ai,iot,mes}-p2-consumer/verification.md`；不重复扩测已通过的 BPM、OA、HRM 严格类型门禁与 IM。FMS 干净消费者证据位于 `yuheng-business-templates/docs/verification/2026-11-25-fms-p2-consumer/verification.md` 与 `2026-11-25-fms-subject-source-audit.md`。本地 Core UI 归档均未发布 registry，所有模块迁移矩阵保持 `generated-pending-verification`。
+- **FMS 阻塞冻结：** 用户已明确无法提供 `fms.sql.zip`，不再要求提供该文件或重复访问知识星球入口，也不扩写未经证实的科目树或跳过初始化步骤。FMS 准确状态为“基础消费验证部分通过；完整账套初始化因缺少权威、版本匹配且允许使用的科目数据而阻塞”，该阻塞已冻结。不依赖 FMS 科目数据的 P2 必要工作已全部收尾，整体目标因 FMS 初始化阻塞仍未全部完成。
+- **本地保留未提交材料说明：** 本仓库工作区保留的未跟踪文件 `docs/verification/2026-11-11-full-source-migration/p2-member-external-auth-20261122/application-error-excerpt.txt` 为仅本地保留的第三方认证错误日志摘录，不纳入正式提交证据。
