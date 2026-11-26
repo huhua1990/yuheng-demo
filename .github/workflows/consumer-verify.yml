@@ -22,20 +22,32 @@ jobs:
         with:
           repository: huhua1990/yuheng-core
           ref: main
-          path: yuheng-core
+          path: .yuheng-core
 
       - name: Verify consumer project
         run: |
           python3 sync/skills/sync-specs/scripts/postcheck_project.py \
             --project-root . --project-id yuheng-demo --json
           python3 sync/skills/sync-specs/scripts/sync-specs-api.py \
-            --source yuheng-core --target . --verify --json
+            --source .yuheng-core --target . --verify --json
 
   verify-ui:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Checkout core UI source
+        uses: actions/checkout@v4
+        with:
+          repository: huhua1990/yuheng-core
+          ref: main
+          path: .yuheng-core
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -44,10 +56,13 @@ jobs:
           cache: pnpm
           cache-dependency-path: yuheng-demo-ui/pnpm-lock.yaml
 
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.9
+      - name: Prepare local yuheng-ui package artifact
+        run: |
+          cd .yuheng-core/yuheng-ui
+          pnpm install --frozen-lockfile
+          pnpm run build
+          mkdir -p ../../.yuheng/cache/packages
+          npm pack --pack-destination ../../.yuheng/cache/packages
 
       - name: Check consumer package metadata
         working-directory: yuheng-demo-ui
@@ -63,7 +78,7 @@ jobs:
         if: ${{ hashFiles('yuheng-demo-ui/pnpm-lock.yaml') != '' }}
         working-directory: yuheng-demo-ui
         run: |
-          pnpm install --frozen-lockfile
+          pnpm install --no-frozen-lockfile
           pnpm test
           pnpm run typecheck
           pnpm run build
